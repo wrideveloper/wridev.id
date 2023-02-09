@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html,
+	body {
+		@apply h-full;
+	}
+
+	body {
+		@apply bg-gradient-to-t from-yellow-400 bg-yellow-300;
+	}
+}
