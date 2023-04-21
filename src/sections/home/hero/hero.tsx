@@ -19,7 +19,7 @@ export function HeroSection() {
 				<Button>Telusuri Selengkapnya</Button>
 			</div>
 			<div className="relative w-full h-full rounded-b-3xl overflow-hidden">
-				<Image src="/assets/hero.png" alt="Hero" fill className="object-cover" />
+				<Image priority src="/assets/hero.png" alt="Hero" fill className="object-cover" />
 			</div>
 		</section>
 	);

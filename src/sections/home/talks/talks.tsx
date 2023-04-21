@@ -1,3 +1,3 @@
 export function TalksSection() {
-	return <div>talks section</div>;
+	return <section className="w-full bg-amber-400 h-[400px]">talks</section>;
 }

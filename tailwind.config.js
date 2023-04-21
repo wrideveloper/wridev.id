@@ -3,8 +3,8 @@ module.exports = {
 	content: ["./src/**/*.{js,ts,jsx,tsx}"],
 	theme: {
 		fontFamily: {
-			sans: ['"Poppins"', "sans-serif"],
-			heading: ['"Poppins"', "sans-serif"],
+			sans: ['"IBM Plex Sans"', "sans-serif"],
+			heading: ['"IBM Plex Sans"', "sans-serif"],
 		},
 		extend: {},
 	},
