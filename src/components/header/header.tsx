@@ -6,7 +6,7 @@ import { Menu } from "~/components/header/menu";
 export function Header() {
 	return (
 		<header className="p-4 shadow-md w-full sticky left-0 right-0 top-0">
-			<div className="mx-auto max-w-screen-xl grid grid-cols-[1fr,4fr,1fr] gap-8">
+			<div className="mx-auto max-w-screen-2xl grid grid-cols-[1fr,4fr,1fr] gap-8">
 				<div>
 					<Image src="/assets/wri-logo.png" alt="WRI Logo" width={200} height={64} />
 				</div>
