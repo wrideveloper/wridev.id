@@ -19,14 +19,16 @@ export function TechnologySlider() {
 				speed={2000}
 				grabCursor
 			>
+				{/* TODO: this is just a placeholder */}
 				{[
 					...TECHNOLOGY_SLIDES,
 					...TECHNOLOGY_SLIDES,
 					...TECHNOLOGY_SLIDES,
 					...TECHNOLOGY_SLIDES,
 					...TECHNOLOGY_SLIDES,
-				].map((slide) => (
-					<SwiperSlide key={slide.url} style={{ width: "fit-content" }}>
+				].map((slide, index) => (
+					// TODO: use proper index when the TODO above has been resolved
+					<SwiperSlide key={`slide.url-${index}`} style={{ width: "fit-content" }}>
 						<img src={slide.icon} alt={slide.name} />
 					</SwiperSlide>
 				))}
