@@ -1,4 +1,4 @@
-[*{.js,ts,tsx,json}]
+[*{.js,ts,tsx,json,css,scss}]
 root = true
 indent_style = tab
 indent_size = 4

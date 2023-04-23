@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .swiper-wrapper {
-    transition-timing-function: linear;
+	transition-timing-function: linear;
 }
