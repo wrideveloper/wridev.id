@@ -1,4 +1,4 @@
-import type { TechStack } from "~/sections/home/projects/components/project-card";
+import type { TechStack } from "./components/project-card";
 
 type Project = {
 	title: string;
