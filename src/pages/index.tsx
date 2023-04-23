@@ -5,6 +5,7 @@ import { TalksSection } from "~/sections/home/talks";
 import { ArticlesSection } from "~/sections/home/articles";
 import { ProjectsSection } from "~/sections/home/projects";
 import { CrewsSection } from "~/sections/home/crews";
+import { Footer } from "~/components/footer";
 
 export default function HomePage() {
 	return (
@@ -16,6 +17,7 @@ export default function HomePage() {
 			<ArticlesSection />
 			<ProjectsSection />
 			<CrewsSection />
+			<Footer />
 		</>
 	);
 }
