@@ -1,0 +1,30 @@
+---
+import Container from "./container.astro";
+
+type Technology = {
+	icon: string;
+	name: string;
+};
+const technologies: Technology[] = [
+	{ icon: "/assets/technology/laravel.png", name: "Laravel" },
+	{ icon: "/assets/technology/figma.png", name: "Figma" },
+	{ icon: "/assets/technology/svelte.png", name: "Svelte" },
+	{ icon: "/assets/technology/flutter.png", name: "Flutter" },
+	{ icon: "/assets/technology/unity.png", name: "Unity" },
+	{ icon: "/assets/technology/node.png", name: "NodeJS" },
+];
+---
+
+<div class="py-12">
+	<Container>
+		<div class="flex items-center justify-between">
+			{
+				technologies.map((technology) => (
+					<div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+						<img src={technology.icon} class="h-12 w-auto mx-auto" loading="lazy" alt={technology.name} />
+					</div>
+				))
+			}
+		</div>
+	</Container>
+</div>
