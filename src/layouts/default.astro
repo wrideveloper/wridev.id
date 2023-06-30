@@ -1,6 +1,6 @@
 ---
 import Unfont from "unplugin-fonts/astro/component.astro";
-import Navbar from "~/components/navbar/navbar.astro";
+import Navbar from "~/components/navbar/navbar.svelte";
 import Footer from "~/components/footer/footer.astro";
 import "swiper/swiper-bundle.css";
 import "../styles/main.css";
@@ -14,35 +14,35 @@ const footerData = [
 	{
 		title: "Miniclass",
 		items: [
-			{ url: "/", text: "Mobile Development" },
-			{ url: "/", text: "Web Development" },
-			{ url: "/", text: "Game Development" },
-			{ url: "/", text: "UI/UX Design" },
+			{ href: "/", text: "Mobile Development" },
+			{ href: "/", text: "Web Development" },
+			{ href: "/", text: "Game Development" },
+			{ href: "/", text: "UI/UX Design" },
 		],
 	},
 	{
 		title: "Activities",
 		items: [
-			{ url: "/", text: "Open Talk" },
-			{ url: "/", text: "WRI OOT" },
-			{ url: "/", text: "Workshop" },
+			{ href: "/", text: "Open Talk" },
+			{ href: "/", text: "WRI OOT" },
+			{ href: "/", text: "Workshop" },
 		],
 	},
 	{
 		title: "Contact Us",
 		items: [
-			{ url: "/", text: "Instagram" },
-			{ url: "/", text: "Facebook" },
-			{ url: "/", text: "Github" },
-			{ url: "/", text: "LinkedIn" },
-			{ url: "/", text: "Medium" },
+			{ href: "/", text: "Instagram" },
+			{ href: "/", text: "Facebook" },
+			{ href: "/", text: "Github" },
+			{ href: "/", text: "LinkedIn" },
+			{ href: "/", text: "Medium" },
 		],
 	},
 	{
 		title: "Talents",
 		items: [
-			{ url: "/", text: "Talent Pool" },
-			{ url: "/", text: "Recruitment" },
+			{ href: "/", text: "Talent Pool" },
+			{ href: "/", text: "Recruitment" },
 		],
 	},
 ];
@@ -59,10 +59,9 @@ const footerData = [
 		<meta name="generator" content={Astro.generator} />
 		<title>WRI {"- " + title}</title>
 	</head>
-	<body x-data="homeSpy()">
-		<Navbar />
+	<body>
+		<Navbar client:load />
 		<slot />
 		<Footer navigationLists={footerData} />
-		<script src="../scripts/main"></script>
 	</body>
 </html>
