@@ -1,0 +1,68 @@
+---
+import Unfont from "unplugin-fonts/astro/component.astro";
+import Navbar from "~/components/navbar/navbar.astro";
+import Footer from "~/components/footer/footer.astro";
+import "swiper/swiper-bundle.css";
+import "../styles/main.css";
+
+type Props = {
+	title: string;
+};
+const { title } = Astro.props as Props;
+
+const footerData = [
+	{
+		title: "Miniclass",
+		items: [
+			{ url: "/", text: "Mobile Development" },
+			{ url: "/", text: "Web Development" },
+			{ url: "/", text: "Game Development" },
+			{ url: "/", text: "UI/UX Design" },
+		],
+	},
+	{
+		title: "Activities",
+		items: [
+			{ url: "/", text: "Open Talk" },
+			{ url: "/", text: "WRI OOT" },
+			{ url: "/", text: "Workshop" },
+		],
+	},
+	{
+		title: "Contact Us",
+		items: [
+			{ url: "/", text: "Instagram" },
+			{ url: "/", text: "Facebook" },
+			{ url: "/", text: "Github" },
+			{ url: "/", text: "LinkedIn" },
+			{ url: "/", text: "Medium" },
+		],
+	},
+	{
+		title: "Talents",
+		items: [
+			{ url: "/", text: "Talent Pool" },
+			{ url: "/", text: "Recruitment" },
+		],
+	},
+];
+---
+
+<!DOCTYPE html>
+<html lang="en" x-data="theme()" :class="$store.app.isDark ? 'dark' : ''">
+	<head>
+		<meta charset="UTF-8" />
+		<Unfont />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>WRI {"- " + title}</title>
+	</head>
+	<body x-data="homeSpy()">
+		<Navbar />
+		<slot />
+		<Footer navigationLists={footerData} />
+		<script src="../scripts/main"></script>
+	</body>
+</html>
