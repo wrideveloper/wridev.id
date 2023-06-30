@@ -1,3 +1,0 @@
-# WRI Website Refreshed
-
-soon
