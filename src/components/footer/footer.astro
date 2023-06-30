@@ -1,10 +1,7 @@
 ---
 import Container from "~/components/section/container.astro";
-
-type NavigationItem = {
-	href: string;
-	text: string;
-};
+import type { NavigationItem } from "./footer-list.astro";
+import FooterList from "./footer-list.astro";
 
 type SiteNavigationList = {
 	title: string;
@@ -34,27 +31,7 @@ const { navigationLists } = Astro.props as Props;
 						</p>
 					</div>
 				</div>
-				{
-					navigationLists.map((list) => (
-						<div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
-							<h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
-								{list.title}
-							</h2>
-							<ul class="list-none space-y-3 mb-10">
-								{list.items.map((item) => (
-									<li>
-										<a
-											href={item.href}
-											class="text-sm text-muted-500 hover:underline dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300 cursor-pointer"
-										>
-											{item.text}
-										</a>
-									</li>
-								))}
-							</ul>
-						</div>
-					))
-				}
+				{navigationLists.map((list) => <FooterList {...list} />)}
 			</div>
 		</div>
 	</Container>
@@ -62,18 +39,21 @@ const { navigationLists } = Astro.props as Props;
 		<Container>
 			<div class="py-4 px-5 flex flex-wrap flex-col sm:flex-row">
 				<p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
-					© 2023-{new Date().getFullYear()} All Rights Reserved —
+					© 2023 - {new Date().getFullYear()} All Rights Reserved —
 					<a
 						href="https://github.com/wrideveloper"
 						class="hover:text-primary-500"
 						target="_blank"
-						rel="noopener noreferrer">Workshop Riset Informatika</a
+						rel="noopener noreferrer"
 					>
+						Workshop Riset Informatika
+					</a>
 				</p>
 				<span
 					class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-muted-500 dark:text-muted-400 text-sm"
 				>
-					Built with <a href="https://astro.build" class="hover:text-primary-500">Astro.build</a>
+					Built with <a href="https://astro.build" class="hover:text-primary-500">Astro</a>
+					and <a href="https://svelte.dev" class="hover:text-primary-500"> Svelte</a>
 				</span>
 			</div>
 		</Container>
