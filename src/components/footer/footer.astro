@@ -1,0 +1,81 @@
+---
+import Container from "~/components/section/container.astro";
+
+type NavigationItem = {
+	href: string;
+	text: string;
+};
+
+type SiteNavigationList = {
+	title: string;
+	items: NavigationItem[];
+};
+
+export type Props = {
+	navigationLists: SiteNavigationList[];
+};
+const { navigationLists } = Astro.props as Props;
+---
+
+<footer class="font-sans bg-white dark:bg-muted-900">
+	<Container>
+		<div class="px-5 py-24 mx-auto">
+			<div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+				<div class="w-full mb-10 ltablet:mb-0 lg:mb-0 ltablet:w-2/6 lg:w-2/6 px-4">
+					<div class="max-w-[280px] mx-auto md:mx-0">
+						<a href="/" class="flex items-center justify-center md:justify-start gap-3 mb-4">
+							<div class="text-primary-600 transition-all duration-300">
+								<img src="https://elianiva.my.id/wri/light.png" class="w-auto h-16" />
+							</div>
+						</a>
+						<p class="text-sm text-muted-500 dark:text-muted-400 mb-10 md:mb-0">
+							Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang
+							ilmu pengetahuan dan teknologi
+						</p>
+					</div>
+				</div>
+				{
+					navigationLists.map((list) => (
+						<div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
+							<h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+								{list.title}
+							</h2>
+							<ul class="list-none space-y-3 mb-10">
+								{list.items.map((item) => (
+									<li>
+										<a
+											href={item.href}
+											class="text-sm text-muted-500 hover:underline dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300 cursor-pointer"
+										>
+											{item.text}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</Container>
+	<div class="bg-muted-100 dark:bg-muted-800">
+		<Container>
+			<div class="py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+				<p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
+					© 2023-{new Date().getFullYear()} All Rights Reserved —
+					<a
+						href="https://github.com/wrideveloper"
+						class="hover:text-primary-500"
+						target="_blank"
+						rel="noopener noreferrer">Workshop Riset Informatika</a
+					>
+				</p>
+				<span
+					class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-muted-500 dark:text-muted-400 text-sm"
+				>
+					Built with <a href="https://astro.build" class="hover:text-primary-500">Astro.build</a>
+				</span>
+			</div>
+		</Container>
+	</div>
+</footer>
