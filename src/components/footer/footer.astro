@@ -1,17 +1,7 @@
 ---
 import Container from "~/components/section/container.astro";
-import type { NavigationItem } from "./footer-list.astro";
 import FooterList from "./footer-list.astro";
-
-type SiteNavigationList = {
-	title: string;
-	items: NavigationItem[];
-};
-
-export type Props = {
-	navigationLists: SiteNavigationList[];
-};
-const { navigationLists } = Astro.props as Props;
+import { FOOTER_DATA } from "~/data/footer";
 ---
 
 <footer class="font-sans bg-white dark:bg-muted-900">
@@ -22,16 +12,15 @@ const { navigationLists } = Astro.props as Props;
 					<div class="max-w-[280px] mx-auto md:mx-0">
 						<a href="/" class="flex items-center justify-center md:justify-start gap-3 mb-4">
 							<div class="text-primary-600 transition-all duration-300">
-								<img src="https://elianiva.my.id/wri/light.png" class="w-auto h-16" />
+								<img src={FOOTER_DATA.logo} class="w-auto h-16" />
 							</div>
 						</a>
 						<p class="text-sm text-muted-500 dark:text-muted-400 mb-10 md:mb-0">
-							Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang
-							ilmu pengetahuan dan teknologi
+							{FOOTER_DATA.description}
 						</p>
 					</div>
 				</div>
-				{navigationLists.map((list) => <FooterList {...list} />)}
+				{FOOTER_DATA.navigationList.map((list) => <FooterList {...list} />)}
 			</div>
 		</div>
 	</Container>
