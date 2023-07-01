@@ -1,0 +1,20 @@
+---
+import Container from "../container.astro";
+import Title from "../title.astro";
+import Toolbar from "./toolbar.svelte";
+---
+
+<div class="py-20">
+	<Container>
+		<Title
+			title="Talent Pool"
+			subtitle="These are the people from Workshop Riset Informatika who are ready to work professionally"
+			miniTitle="Talents from Workshop Riset Informatika"
+			class="mx-auto text-center"
+		/>
+
+		<div>
+			<Toolbar client:visible />
+		</div>
+	</Container>
+</div>
