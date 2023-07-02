@@ -110,8 +110,7 @@ export const TALENT_DATA: TalentData = {
 			name: "Alfan (Alivan) Olivan",
 			about: "College Student at State Polytechnic of Malang",
 			position: "Web Developer",
-			profileImage:
-				"https://media.licdn.com/dms/image/D5603AQGhIOADW_kdpg/profile-displayphoto-shrink_200_200/0/1670218954352?e=1694044800&v=beta&t=I07xGfyRwoOIGsx6krxK4Xo-OeT7HkMZLXSI5DASFfA",
+			profileImage: "https://avatars.githubusercontent.com/u/79490122?v=4",
 			yearsOfExperience: 4,
 			proficiencies: ["frontend", "backend"],
 			contacts: [

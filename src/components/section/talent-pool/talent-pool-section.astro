@@ -4,7 +4,7 @@ import Container from "../container.astro";
 import Title from "../title.astro";
 import Toolbar from "./components/toolbar.svelte";
 import Filters from "./components/filters.svelte";
-import Grid from "./components/grid.astro";
+import Grid from "./components/grid.svelte";
 import { TALENT_DATA } from "~/data/talents";
 ---
 
@@ -21,10 +21,10 @@ import { TALENT_DATA } from "~/data/talents";
 			<div class="py-10">
 				<div class="grid grid-cols-12 md:gap-12 pb-20">
 					<div class="hidden lg:block col-span-12 lg:col-span-3">
-						<Filters />
+						<Filters client:visible />
 					</div>
 					<div class="col-span-12 lg:col-span-9">
-						<Grid talents={TALENT_DATA.talents} />
+						<Grid client:visible talents={TALENT_DATA.talents} />
 					</div>
 				</div>
 				<div class="flex items-center justify-center mt-10">

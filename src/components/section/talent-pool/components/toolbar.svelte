@@ -6,17 +6,18 @@
 	import GameIcon from "~icons/ph/game-controller-duotone";
 	import PaletteIcon from "~icons/ph/palette-duotone";
 	import type { SvelteComponent } from "svelte";
+	import type { Proficiency } from "~/models/talent";
+	import { activeProficiencyFilter } from "../stores/filter";
 
-	type CategoryId = "all" | "backend" | "frontend" | "mobile" | "game" | "ui/ux";
 	type IconComponent = typeof SvelteComponent;
 	type TalentCategory = {
-		id: CategoryId;
+		id: Proficiency | null;
 		name: string;
 		icon: IconComponent;
 	};
 
 	const categories: TalentCategory[] = [
-		{ id: "all", name: "All", icon: AllIcon as unknown as IconComponent },
+		{ id: null, name: "All", icon: AllIcon as unknown as IconComponent },
 		{ id: "backend", name: "Backend", icon: DatabaseIcon as unknown as IconComponent },
 		{ id: "frontend", name: "Frontend", icon: CodeIcon as unknown as IconComponent },
 		{ id: "mobile", name: "Mobile", icon: MobileIcon as unknown as IconComponent },
@@ -24,11 +25,9 @@
 		{ id: "ui/ux", name: "UI/UX", icon: PaletteIcon as unknown as IconComponent },
 	];
 
-	let activeCategory: CategoryId = "all";
-
-	function handleChangeCategory(category: CategoryId) {
+	function handleChangeCategory(category: Proficiency | null) {
 		return () => {
-			activeCategory = category;
+			activeProficiencyFilter.set(category);
 		};
 	}
 </script>
@@ -38,13 +37,13 @@
 >
 	{#each categories as category}
 		<button
-			class="{activeCategory === category.id
+			class="{$activeProficiencyFilter === category.id
 				? 'bg-muted-50 dark:bg-muted-700'
 				: ''} group flex-1 flex items-center px-5 py-3 whitespace-nowrap font-sans text-muted-800 dark:text-muted-100 hover:bg-muted-50 dark:hover:bg-muted-700 transition-colors duration-300"
 			on:click={handleChangeCategory(category.id)}
 		>
 			<span
-				class="flex items-center justify-center h-10 w-10 {activeCategory === category.id
+				class="flex items-center justify-center h-10 w-10 {$activeProficiencyFilter === category.id
 					? 'text-rose-500'
 					: 'text-muted-400 group-hover:text-primary-500'}"
 			>

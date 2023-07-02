@@ -1,11 +1,13 @@
 <script lang="ts">
+	export let name: string;
 	export let title: string;
 	type Option = {
 		value: string;
 		text: string;
 	};
 	export let options: Option[] = [];
-	let selected = "";
+	export let selected = "";
+	export let onSelect: (selected: string) => void = () => {};
 </script>
 
 <div class="pt-6 pb-10 border-b border-muted-200 dark:border-muted-800">
@@ -17,17 +19,23 @@
 					class="bg-white dark:bg-muted-900 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative"
 				>
 					<input
-						id="radio-6"
+						id="radio-{option.value}"
 						type="radio"
-						name="radio_experience"
+						{name}
 						class="peer appearance-none ring-offset-white dark:ring-offset-muted-900 focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 focus:outline-none border rounded-full border-muted-400 absolute cursor-pointer w-full h-full checked:border-none"
 						value={option.value}
-						on:change={() => (selected = option.value)}
+						on:change={() => {
+							selected = option.value;
+							onSelect(option.value);
+						}}
 						checked={selected === option.value}
 					/>
 					<div class="border-2 border-transparent peer-checked:border-primary-600 rounded-full w-full h-full z-1" />
 				</div>
-				<label for="radio-6" class="ml-2 text-sm leading-4 font-normal text-muted-800 dark:text-muted-400">
+				<label
+					for="radio-{option.value}"
+					class="cursor-pointer ml-2 text-sm leading-4 font-normal text-muted-800 dark:text-muted-400"
+				>
 					{option.text}
 				</label>
 			</div>
