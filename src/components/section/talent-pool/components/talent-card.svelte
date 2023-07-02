@@ -9,6 +9,7 @@
 	export let position: string;
 	export let about: string;
 	export let profileImage: string;
+	export let yearsOfExperience: number;
 
 	type Contact = {
 		type: "github" | "email" | "dribbble" | "linkedin";
@@ -18,21 +19,17 @@
 </script>
 
 <div
-	class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300 p-4"
+	class="relative grid grid-rows-[15rem,3.5rem,4rem,3rem] rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300 p-4"
 >
-	<div class="relative w-full h-40 rounded-lg bg-muted-200 dark:bg-muted-800">
-		<img
-			class="absolute bottom-0 inset-x-0 mx-auto w-full max-w-[170px] ptablet:max-w-[150px]"
-			src={profileImage}
-			alt="Doctor"
-		/>
+	<div class="relative w-full h-60 rounded-lg bg-muted-200 dark:bg-muted-800 border border-muted-200 overflow-hidden">
+		<img class="absolute bottom-0 inset-x-0 mx-auto w-full object-cover" src={profileImage} alt="Doctor" />
 	</div>
 	<div class="font-sans mt-3">
 		<h4 class="font-semibold text-muted-800 dark:text-muted-100">{name}</h4>
 		<p class="text-sm text-muted-400">{position}</p>
 	</div>
-	<div class="mt-2">
-		<p class="text-sm ptablet:text-xs text-muted-500 dark:text-muted-400">
+	<div class="mt-2 flex-1">
+		<p class="text-sm text-muted-500 dark:text-muted-400">
 			{about}
 		</p>
 	</div>
@@ -56,7 +53,15 @@
 		</div>
 		<div class="flex items-center justify-end gap-2">
 			<StarIcon class="w-4 h-4 text-amber-600" />
-			<span class="font-semibold text-xs text-muted-500 dark:text-muted-400">+3 yrs exp</span>
+			<span class="font-semibold text-xs text-muted-500 dark:text-muted-400">
+				{#if yearsOfExperience > 5}
+					+5 yrs exp
+				{:else if yearsOfExperience > 0}
+					+{yearsOfExperience} yrs exp
+				{:else}
+					&lt;1 yr exp
+				{/if}
+			</span>
 		</div>
 	</div>
 </div>

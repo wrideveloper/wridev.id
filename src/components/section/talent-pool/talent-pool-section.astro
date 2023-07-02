@@ -2,17 +2,18 @@
 import Button from "~/components/button/button.svelte";
 import Container from "../container.astro";
 import Title from "../title.astro";
-import Toolbar from "./toolbar.svelte";
-import Filters from "./filters.svelte";
-import Grid from "./grid.astro";
+import Toolbar from "./components/toolbar.svelte";
+import Filters from "./components/filters.svelte";
+import Grid from "./components/grid.astro";
+import { TALENT_DATA } from "~/data/talents";
 ---
 
 <div class="py-20">
 	<Container>
 		<Title
-			title="Talent Pool"
-			subtitle="These are the people from Workshop Riset Informatika who are ready to work professionally"
-			miniTitle="Talents from Workshop Riset Informatika"
+			title={TALENT_DATA.title}
+			subtitle={TALENT_DATA.subtitle}
+			miniTitle={TALENT_DATA.miniTitle}
 			class="mx-auto text-center"
 		/>
 		<div>
@@ -23,11 +24,11 @@ import Grid from "./grid.astro";
 						<Filters />
 					</div>
 					<div class="col-span-12 lg:col-span-9">
-						<Grid />
+						<Grid talents={TALENT_DATA.talents} />
 					</div>
 				</div>
 				<div class="flex items-center justify-center mt-10">
-					<Button variant="main" to="#" class="'w-64 !h-14 max-w-full'">View All Talents</Button>
+					<Button variant="main" to="#" class="w-64 !h-14 max-w-full">View All Talents</Button>
 				</div>
 			</div>
 		</div>
