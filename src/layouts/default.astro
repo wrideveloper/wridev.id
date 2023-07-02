@@ -9,43 +9,6 @@ type Props = {
 	title: string;
 };
 const { title } = Astro.props as Props;
-
-const footerData = [
-	{
-		title: "Miniclass",
-		items: [
-			{ href: "/", text: "Mobile Development" },
-			{ href: "/", text: "Web Development" },
-			{ href: "/", text: "Game Development" },
-			{ href: "/", text: "UI/UX Design" },
-		],
-	},
-	{
-		title: "Activities",
-		items: [
-			{ href: "/", text: "Open Talk" },
-			{ href: "/", text: "WRI OOT" },
-			{ href: "/", text: "Workshop" },
-		],
-	},
-	{
-		title: "Contact Us",
-		items: [
-			{ href: "/", text: "Instagram" },
-			{ href: "/", text: "Facebook" },
-			{ href: "/", text: "Github" },
-			{ href: "/", text: "LinkedIn" },
-			{ href: "/", text: "Medium" },
-		],
-	},
-	{
-		title: "Talents",
-		items: [
-			{ href: "/", text: "Talent Pool" },
-			{ href: "/", text: "Recruitment" },
-		],
-	},
-];
 ---
 
 <!DOCTYPE html>
@@ -62,6 +25,6 @@ const footerData = [
 	<body>
 		<Navbar client:load />
 		<slot />
-		<Footer navigationLists={footerData} />
+		<Footer />
 	</body>
 </html>
