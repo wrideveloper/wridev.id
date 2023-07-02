@@ -19,6 +19,7 @@ export const TALENT_DATA: TalentData = {
 			profileImage: "https://avatars.githubusercontent.com/u/44225519?v=4",
 			yearsOfExperience: 4,
 			proficiencies: ["backend", "frontend", "mobile"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/4RSIM3R" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ilzam-mulkhaq-309709189/" },
@@ -33,6 +34,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/C4E03AQERUEmXZjsIrg/profile-displayphoto-shrink_200_200/0/1628156772321?e=1694044800&v=beta&t=KAjY0ur59pzBS5RQTQlYHjMkPQTx7TMCsVatG64GfAU",
 			yearsOfExperience: 4,
 			proficiencies: ["backend", "frontend"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/alizul01" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alizulfikar/" },
@@ -47,6 +49,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/D5603AQHOvoLiXlMxHQ/profile-displayphoto-shrink_200_200/0/1675064044571?e=1694044800&v=beta&t=QkuvDQgonIsZgAfpoE0bMTw1BcfhidQ7V1s_WMjL_bk",
 			yearsOfExperience: 4,
 			proficiencies: ["ui/ux"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ahmadshodikin/" },
 				{ type: "email", url: "mailto:dikiahmad05@gmail.com" },
@@ -60,6 +63,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/D5603AQH03DfNua6WrQ/profile-displayphoto-shrink_200_200/0/1671933716567?e=1694044800&v=beta&t=sP3LRo8dw_tYqTWXo2lnYgF2kYkanjcfcIPDlYB7veI",
 			yearsOfExperience: 4,
 			proficiencies: ["ui/ux"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "linkedin", url: "https://www.linkedin.com/in/fitrahrahmadhani/" },
 				{ type: "email", url: "mailto:fitrahrahmadani625@gmail.com" },
@@ -73,6 +77,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/D5603AQHnbvEnoLj8rg/profile-displayphoto-shrink_200_200/0/1685533298044?e=1694044800&v=beta&t=FJ3ZoEx7opd71gq2LN3hRP1n2oxhQm1ewZJHeTTBldk",
 			yearsOfExperience: 4,
 			proficiencies: ["game"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ziedny-mubarok-b99466220/" },
 				{ type: "email", url: "mailto:mubarokziedny@gmail.com" },
@@ -86,6 +91,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/C5603AQENdjd61mHkpw/profile-displayphoto-shrink_200_200/0/1662975121163?e=1694044800&v=beta&t=Ndkd7SXFdCYLA5rMuI_UGHRitr_MHRJToNLHfr5Ik3Q",
 			yearsOfExperience: 4,
 			proficiencies: ["mobile", "backend"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/LeToyek" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/maulana-arif/" },
@@ -100,6 +106,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/C5603AQHLHndZL3bdXw/profile-displayphoto-shrink_200_200/0/1624317404980?e=1694044800&v=beta&t=-6D3GImwwk3wR48fyaLovCjzJBH7xylqkWLaSOZpCFw",
 			yearsOfExperience: 4,
 			proficiencies: ["mobile"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/agusprayogi02" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prayogi/" },
@@ -113,6 +120,7 @@ export const TALENT_DATA: TalentData = {
 			profileImage: "https://avatars.githubusercontent.com/u/79490122?v=4",
 			yearsOfExperience: 4,
 			proficiencies: ["frontend", "backend"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/Alivan21" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alivan21/" },
@@ -127,6 +135,7 @@ export const TALENT_DATA: TalentData = {
 				"https://media.licdn.com/dms/image/C5603AQHwKjo7RkiFUQ/profile-displayphoto-shrink_200_200/0/1646063094549?e=1694044800&v=beta&t=BGJDf8wJwIrIZ5vcMQcKD1sYZHHIf1YOI-VPffpJYpM",
 			yearsOfExperience: 4,
 			proficiencies: ["mobile", "backend"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/indmind " },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/tioirawan/" },
@@ -140,6 +149,7 @@ export const TALENT_DATA: TalentData = {
 			profileImage: "https://avatars.githubusercontent.com/u/51877647?v=4",
 			yearsOfExperience: 3,
 			proficiencies: ["backend", "frontend"],
+			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/elianiva" },
 				{ type: "linkedin", url: "https://linkedin.com/in/dichaa" },

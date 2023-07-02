@@ -20,9 +20,6 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^4.0.0
     version: 4.0.0(astro@2.7.2)(tailwindcss@3.3.2)
-  '@formkit/auto-animate':
-    specifier: ^0.7.0
-    version: 0.7.0
   '@iconify/iconify':
     specifier: ^3.1.1
     version: 3.1.1
@@ -656,10 +653,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@formkit/auto-animate@0.7.0:
-    resolution: {integrity: sha512-RczHUr0AhRPssREoNdRjLfk2b/id9/DFnbIq18QM8L7E4zNV3XH+WO480EZ46BQHDEsv76YPJ0JbG2Y2i3GfXw==}
-    dev: false
 
   /@iconify-json/ph@1.1.5:
     resolution: {integrity: sha512-iLXq3nohfGge22gL2tZmQ2WHBKkKkIbGWrkuyC8arckS4PWaONyh4A+uDPtSek9QbYDvi9AE2+NxWkNZhANotA==}

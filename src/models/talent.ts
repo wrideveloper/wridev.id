@@ -5,6 +5,8 @@ export type TalentContact = {
 
 export type Proficiency = "backend" | "frontend" | "mobile" | "game" | "ui/ux";
 
+export type Availability = "fulltime" | "part-time" | "freelance" | "contract";
+
 export type Talent = {
 	name: string;
 	position: string;
@@ -13,4 +15,5 @@ export type Talent = {
 	contacts: TalentContact[]; // 4 at most
 	yearsOfExperience: number;
 	proficiencies: Proficiency[];
+	availabilities: Availability[];
 };
