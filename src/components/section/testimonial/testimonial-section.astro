@@ -1,0 +1,17 @@
+---
+import { TESTIMONIAL_DATA } from "~/data/testimonial";
+import Container from "../container.astro";
+import Title from "../title.astro";
+import TestimonialStrip from "./components/testimonial-strip.svelte";
+---
+
+<div class="py-12">
+	<Container>
+		<Title
+			title={TESTIMONIAL_DATA.title}
+			subtitle={TESTIMONIAL_DATA.subtitle}
+			miniTitle={TESTIMONIAL_DATA.miniTitle}
+		/>
+		<TestimonialStrip client:visible />
+	</Container>
+</div>
