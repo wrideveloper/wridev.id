@@ -3,6 +3,8 @@
 	import Hamburger from "~/components/button/hamburger.svelte";
 	import NavbarItem from "./navbar-item.svelte";
 
+	export let path: string;
+
 	type NavigationItem = {
 		href: string;
 		text: string;
@@ -38,7 +40,7 @@
 		<div class="flex items-center lg:justify-end gap-x-6">
 			<div class="flex flex-col lg:flex-row items-center gap-x-6 font-heading font-medium">
 				{#each navigationItems as item}
-					<NavbarItem href={item.href} text={item.text} />
+					<NavbarItem isActive={path === item.href} href={item.href} text={item.text} />
 				{/each}
 				<!-- TODO(elianiva): fix dark theme toggler -->
 				<!-- <div class="py-3 lg:py-5">
