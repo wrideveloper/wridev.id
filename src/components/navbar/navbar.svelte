@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="flex items-center lg:justify-end gap-x-6">
-			<div class="flex flex-col lg:flex-row items-center gap-x-6">
+			<div class="flex flex-col lg:flex-row items-center gap-x-6 font-heading font-medium">
 				{#each navigationItems as item}
 					<NavbarItem href={item.href} text={item.text} />
 				{/each}
@@ -45,7 +45,7 @@
 					<ThemeToggler />
 				</div> -->
 			</div>
-			<div class="w-full md:w-auto">
+			<div class="w-full md:w-auto font-heading font-medium">
 				<Button variant="main" to="#" className="w-full md:w-[240px] lg:w-[110px]">Join</Button>
 			</div>
 		</div>

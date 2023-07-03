@@ -1,0 +1,70 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import GithubIcon from "~icons/ph/github-logo-duotone";
+import LinkedinIcon from "~icons/ph/linkedin-logo-duotone";
+import ArticleCard from "~/components/section/articles/components/article-card.astro";
+import Layout from "~/layouts/default.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry("articles", slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString("en-ID", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+// the formula to convert words to time to read is -> words / 200
+const timeToReadInMinutes = Math.ceil(entry.body.split(" ").length / 200);
+
+const { Content } = await entry.render();
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.filter((a) => a.slug !== slug);
+---
+
+<Layout title={entry.data.title}>
+	<main
+		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[80ch] mx-auto"
+	>
+		<div>
+			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
+			<h1 class="text-5xl text-center font-bold leading-tight mb-2 font-heading">{entry.data.title}</h1>
+			<span class="block font-heading text-lg text-center text-slate-700">
+				Posted in {humanisedPostedDate} by <b class="font-bold">{entry.data.author}</b> &#8212; {timeToReadInMinutes} minutes to read
+			</span>
+			<div class="flex items-center justify-center mt-2">
+				<a
+					class="p-2 rounded-full text-primary-600 hover:bg-primary-100 transition-all duration-300"
+					href={entry.data.github}
+					target="_blank"
+				>
+					<!-- @ts-ignore -->
+					<GithubIcon class="w-6 h-6" />
+				</a>
+				<a
+					class="p-2 rounded-full text-blue-600 hover:bg-blue-100 transition-all duration-300"
+					href={entry.data.github}
+					target="_blank"
+				>
+					<!-- @ts-ignore -->
+					<LinkedinIcon class="w-6 h-6" />
+				</a>
+			</div>
+		</div>
+		<Content />
+	</main>
+	<hr class="w-full bg-muted-400 h-[1px]" />
+	<div class="max-w-6xl mx-auto py-14">
+		<h1 class="text-2xl font-bold font-heading text-slate-700 py-4">Other articles you may like</h1>
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 py-18">
+			{sortedArticlesMeta.map((article) => <ArticleCard variant="small" {...article.data} slug={article.slug} />)}
+		</div>
+	</div>
+</Layout>

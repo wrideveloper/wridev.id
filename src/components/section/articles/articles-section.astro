@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import { ARTICLES_DATA } from "~/data/articles";
+import ArticleCard from "./components/article-card.astro";
+import Container from "../container.astro";
+import Title from "../title.astro";
+import Button from "~/components/button/button.svelte";
+
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<div class="py-12">
+	<Container>
+		<Title title={ARTICLES_DATA.title} subtitle={ARTICLES_DATA.subtitle} miniTitle={ARTICLES_DATA.miniTitle} />
+		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+			{sortedArticlesMeta.map((article) => <ArticleCard {...article.data} slug={article.slug} />)}
+		</div>
+		<div class="flex items-center justify-center pt-12">
+			<Button>More Articles</Button>
+		</div>
+	</Container>
+</div>
