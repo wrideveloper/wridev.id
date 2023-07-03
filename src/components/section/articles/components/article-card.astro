@@ -6,8 +6,15 @@ export type Props = {
 	author: string;
 	description: string;
 	slug: string;
+	date: Date;
 };
+
 const { variant = "regular", ...props } = Astro.props as Props;
+const humanisedPostedDate = new Date(props.date).toLocaleDateString("en-ID", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
 ---
 
 <div
@@ -24,15 +31,17 @@ const { variant = "regular", ...props } = Astro.props as Props;
 			height="667"
 			class={`${
 				variant === "regular" ? "h-64" : "h-32"
-			} w-full object-cover object-top transition duration-500 group-hover:scale-105`}
+			} w-full object-cover object-top transition duration-500 scale-105 group-hover:scale-100`}
 		/>
 	</div>
 	<div class="mt-6 relative">
 		<h3 class={`${variant === "regular" ? "text-2xl" : "text-lg"} font-semibold text-gray-800 dark:text-white`}>
 			{props.title}
 		</h3>
-		<span class="block text-sm text-muted-600 pb-2">{props.author}</span>
-		{variant === "regular" && <p class="mt-6 mb-8 text-gray-600 dark:text-gray-300">{props.description}</p>}
+		<span class="block text-sm text-muted-600 py-2">
+			Posted in {humanisedPostedDate} by <b class="font-bold">{props.author}</b>
+		</span>
+		{variant === "regular" && <p class="mt-4 mb-6 text-gray-600 dark:text-gray-300">{props.description}</p>}
 		<a class="inline-block" href={`/articles/${props.slug}`}>
 			<span class="text-primary-500 dark:text-blue-300 font-medium hover:text-primary-700">Read more</span>
 		</a>

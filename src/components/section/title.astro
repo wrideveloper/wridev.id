@@ -3,13 +3,17 @@ export type Props = {
 	class?: string;
 	title: string;
 	subtitle: string;
-	miniTitle: string;
+	miniTitle?: string;
 };
 const { class: className, title, subtitle, miniTitle } = Astro.props as Props;
 ---
 
 <div class={`text-center mx-auto w-full max-w-xl mb-14 ${className}`}>
-	<h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">{miniTitle}</h4>
+	{
+		miniTitle !== undefined && (
+			<h4 class="font-sans font-semibold text-xs tracking-widest uppercase mb-3 text-primary-500">{miniTitle}</h4>
+		)
+	}
 	<h2 class="font-sans text-4xl font-semibold mb-4 text-muted-700 dark:text-muted-100">{title}</h2>
 	<p class="text-lg text-muted-500 dark:text-muted-400">{subtitle}</p>
 </div>

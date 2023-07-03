@@ -7,12 +7,16 @@ import Title from "../title.astro";
 import Button from "~/components/button/button.svelte";
 
 const articles = await getCollection("articles");
-const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 ---
 
 <div class="py-12">
 	<Container>
-		<Title title={ARTICLES_DATA.title} subtitle={ARTICLES_DATA.subtitle} miniTitle={ARTICLES_DATA.miniTitle} />
+		<Title
+			title={ARTICLES_DATA.sectionTitle}
+			subtitle={ARTICLES_DATA.subtitle}
+			miniTitle={ARTICLES_DATA.miniTitle}
+		/>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 			{sortedArticlesMeta.map((article) => <ArticleCard {...article.data} slug={article.slug} />)}
 		</div>

@@ -29,7 +29,7 @@ const { title } = Astro.props as Props;
 		<title>WRI {"- " + title}</title>
 	</head>
 	<body>
-		<Navbar client:load />
+		<Navbar client:load path={Astro.url.pathname} />
 		<slot />
 		<Footer />
 	</body>
