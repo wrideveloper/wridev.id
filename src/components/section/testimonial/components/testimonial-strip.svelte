@@ -3,8 +3,7 @@
 	import ArrowLeft from "~icons/ph/arrow-left";
 	import ArrowRight from "~icons/ph/arrow-right";
 	import TestimonialCard from "./testimonial-card.svelte";
-	import { SwiperContainer, register } from "swiper/element/bundle";
-	register();
+	import type { SwiperContainer } from "swiper/element/bundle";
 
 	let swiperElement: SwiperContainer;
 </script>

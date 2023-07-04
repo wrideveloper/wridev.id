@@ -1,91 +1,73 @@
 ---
 import Button from "~/components/button/button.svelte";
+
+type Highlight = {
+	title: string;
+	subtitle: string;
+};
+const highlights: Highlight[] = [
+	{ title: "10+", subtitle: "years" },
+	{ title: "200+", subtitle: "members" },
+	{ title: "3", subtitle: "partners" },
+	{ title: "4", subtitle: "miniclasses" },
+];
+
+const images = [
+	"https://i.ibb.co/PT83M2z/IMG-1914.jpg",
+	"https://i.ibb.co/sPTv3wz/IMG-1915.jpg",
+	"https://i.ibb.co/crt0tk2/DSC00329.jpg",
+	"https://i.ibb.co/G9J7744/DSC00342.jpg",
+	"https://i.ibb.co/Dt0xvRW/DSC09915.jpg",
+];
 ---
 
 <div class="min-h-screen w-full overflow-hidden bg-muted-100 dark:bg-muted-1000">
-	<div class="min-h-screen w-full max-w-7xl mx-auto flex items-center px-4">
-		<div class="w-full grid grid-cols-12">
-			<div class="col-span-12 ltablet:col-span-5 lg:col-span-5">
-				<div class="h-full flex items-center mb-8 ltablet:mb-0 lg:mb-0">
-					<div class="text-center ltablet:text-left lg:text-left font-sans space-y-4">
-						<h1 class="font-medium text-4xl lg:text-5xl text-muted-800 dark:text-white">
-							<span class="block">Learn Together,</span>
-							<span class="block">Grow Together</span>
-						</h1>
-						<p class="text-lg text-muted-500 dark:text-muted-400">
-							Bersama Workshop Riset Informatika, sudahi galaumu mari nguli ngoding bersamaku, bersama
-							tuhan mari kita kerjakan seluruh proyekan.
-						</p>
-						<div
-							class="w-full flex items-center justify-center ltablet:justify-start lg:justify-start gap-2"
-						>
-							<Button variant="main" to="/home" class="min-w-[130px]">Get Started</Button>
-							<Button variant="sub" to="/home" class="min-w-[130px]">Explore</Button>
+	<div class="min-h-screen w-full max-w-7xl mx-auto flex flex-col justify-center gap-14">
+		<div class="flex items-center px-4">
+			<div class="w-full grid grid-cols-12 gap-10">
+				<div class="col-span-12 lg:col-span-6">
+					<div class="h-full flex items-center mb-8 lg:mb-0">
+						<div class="text-center lg:text-left font-sans space-y-4">
+							<h1 class="font-heading font-bold text-6xl text-muted-800 dark:text-white">
+								<span class="block">Learn Together,</span>
+								<span class="block">Grow Together</span>
+							</h1>
+							<p class="text-lg text-muted-500 dark:text-muted-400 py-4">
+								Bersama Workshop Riset Informatika, sudahi galaumu mari nguli ngoding bersamaku, bersama
+								tuhan mari kita kerjakan seluruh proyekan.
+							</p>
+							<div class="w-full flex items-center justify-center lg:justify-start gap-2">
+								<Button variant="main" to="/home" class="min-w-[130px]">Know More</Button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="relative col-span-12 ltablet:col-span-7 lg:col-span-7">
-				<!-- Decoration -->
-				<div
-					class="absolute top-6 left-0 h-14 w-14 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-				>
-					💊
-				</div>
-				<div
-					class="absolute top-24 left-24 h-10 w-10 hidden md:flex items-center justify-center rounded-full text-2xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-				>
-					⚕️
-				</div>
-				<div
-					class="absolute -bottom-10 right-0 h-16 w-16 hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-				>
-					💉
-				</div>
-				<div
-					class="absolute -top-12 left-1/3 h-16 w-16 hidden md:flex items-center justify-center rounded-full text-4xl bg-white dark:bg-muted-800 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/50"
-				>
-					🦠
-				</div>
-				<div
-					class="hidden md:block absolute -bottom-12 left-8 bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 rounded-xl p-5 shadow-xl shadow-muted-400/10 dark:shadow-muted-800/10"
-				>
-					<div class="flex justify-between mb-4">
-						<h3 class="font-heading font-medium text-muted-800 dark:text-muted-100">Miniclass</h3>
-						<span class="font-sans text-sm text-muted-400">4 New</span>
-					</div>
-					<div class="flex justify-between items-center gap-4">
-						<img
-							class="object-cover w-12 h-12 mask mask-blob"
-							src="https://media.cssninja.io/shuriken/avatars/2.svg"
-							alt="Avatar"
-							width="48"
-							height="48"
-						/>
-						<img
-							class="object-cover w-12 h-12 mask mask-blob"
-							src="https://media.cssninja.io/shuriken/avatars/4.svg"
-							alt="Avatar"
-							width="48"
-							height="48"
-						/>
-						<img
-							class="object-cover w-12 h-12 mask mask-blob"
-							src="https://media.cssninja.io/shuriken/avatars/3.svg"
-							alt="Avatar"
-							width="48"
-							height="48"
-						/>
-						<img
-							class="object-cover w-12 h-12 mask mask-blob"
-							src="https://media.cssninja.io/shuriken/avatars/6.svg"
-							alt="Avatar"
-							width="48"
-							height="48"
-						/>
-					</div>
+				<div class="relative col-span-12 lg:col-span-6">
+					<swiper-container loop={true} effect="fade">
+						{
+							images.map((image, index) => (
+								<swiper-slide>
+									<img
+										src={image}
+										class="rounded-lg w-full h-[32rem] object-cover mx-auto shadow-lg"
+										alt={`Hero ${index}`}
+									/>
+								</swiper-slide>
+							))
+						}
+					</swiper-container>
 				</div>
 			</div>
+		</div>
+		<div class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl">
+			{
+				highlights.map((highlight, index) => (
+					<div class={`${index !== highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}>
+						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
+						<span class="block text-lg text-slate-600">{highlight.subtitle}</span>
+					</div>
+				))
+			}
 		</div>
 	</div>
 </div>
