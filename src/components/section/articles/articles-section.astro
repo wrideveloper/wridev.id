@@ -21,7 +21,7 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
 			{sortedArticlesMeta.map((article) => <ArticleCard {...article.data} slug={article.slug} />)}
 		</div>
 		<div class="flex items-center justify-center pt-12">
-			<Button>More Articles</Button>
+			<Button>{ARTICLES_DATA.buttonText}</Button>
 		</div>
 	</Container>
 </div>
