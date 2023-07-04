@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Talent } from "~/models/talent";
+	import type { Availability, Talent } from "~/models/talent";
 	import { activeProficiencyFilter, sortByFilter, experienceFilter, availabilityFilter } from "../stores/filter";
 	import Card from "./talent-card.svelte";
 
@@ -37,7 +37,7 @@
 	});
 	$: filteredByAvailability = filteredByExperience.filter((talent) => {
 		if ($availabilityFilter === "-") return true;
-		return talent.availabilities.includes($availabilityFilter);
+		return talent.availabilities.includes($availabilityFilter as Availability);
 	});
 	$: visibleTalents = filteredByAvailability.slice(0, limit);
 </script>
