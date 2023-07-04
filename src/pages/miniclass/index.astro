@@ -1,9 +1,26 @@
 ---
+import { getCollection } from "astro:content";
+import Container from "~/components/section/container.astro";
+import MiniclassCard from "~/components/section/miniclass/components/miniclass-card.astro";
+import Title from "~/components/section/title.astro";
+import { MINICLASS_DATA } from "~/data/miniclass";
 import Layout from "~/layouts/default.astro";
+
+const miniclass = await getCollection("miniclass");
+const sortedArticlesMeta = miniclass.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<Layout>
-	<div class="h-screen w-full flex items-center justify-center">
-		<h1 class="text-4xl text-slate-800">Work In Progress</h1>
+<Layout title="Home">
+	<div class="py-24">
+		<Container>
+			<Title title={MINICLASS_DATA.title} subtitle={MINICLASS_DATA.description} miniTitle="" />
+			<div class="grid gap-8 md:grid-cols-2">
+				{
+					sortedArticlesMeta.map((article) => (
+						<MiniclassCard {...article.data} href={`/miniclass/${article.slug}`} />
+					))
+				}
+			</div>
+		</Container>
 	</div>
 </Layout>

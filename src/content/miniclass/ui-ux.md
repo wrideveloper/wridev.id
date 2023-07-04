@@ -1,5 +1,7 @@
 ---
-title: UI/UX Design Miniclass
+title: UI/UX Design
+icon: /assets/miniclass/ui-ux.png
+description: Miniclass yang berfokus dengan UI/UX design
 image: https://i.ibb.co/7pVxrBq/joshua-aragon-FGXqbqb-Gt5o-unsplash.jpg
 day: rabu
 time:
