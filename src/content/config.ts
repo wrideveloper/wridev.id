@@ -13,6 +13,16 @@ const articlesCollection = defineCollection({
 	}),
 });
 
+const miniclassCollection = defineCollection({
+	schema: z.object({
+		title: z.string().min(1),
+		image: z.string().url(),
+		day: z.enum(["senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"]),
+		time: z.tuple([z.string().min(1), z.string().min(1)]),
+	}),
+});
+
 export const collections = {
 	articles: articlesCollection,
+	miniclass: miniclassCollection,
 };
