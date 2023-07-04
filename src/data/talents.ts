@@ -5,12 +5,14 @@ type TalentData = {
 	subtitle: string;
 	miniTitle: string;
 	talents: Talent[];
+	buttonText: string;
 };
 
 export const TALENT_DATA: TalentData = {
 	title: "Talent Pool",
 	subtitle: "These are the people from Workshop Riset Informatika who are ready to work professionally",
 	miniTitle: "Talents from Workshop Riset Informatika",
+	buttonText: "View All Talents",
 	talents: [
 		{
 			name: "Muhammad Ilzam Mulkhaq",
