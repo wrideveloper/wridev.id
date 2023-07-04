@@ -20,7 +20,7 @@ type FooterData = {
 export const FOOTER_DATA: FooterData = {
 	logo: "https://elianiva.my.id/wri/light.png",
 	description:
-		"Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi",
+		"Komunitas sebagai tempat belajar bersama mengembangkan kreativitas dan inovasi di bidang ilmu pengetahuan dan teknologi",
 	navigationList: [
 		{
 			title: "Miniclass",

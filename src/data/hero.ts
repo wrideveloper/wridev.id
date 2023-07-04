@@ -17,8 +17,8 @@ export const HERO_DATA: HeroData = {
 		bottom: "Grow Together",
 	},
 	shortText:
-		"Bersama Workshop Riset Informatika, sudahi galaumu mari nguli ngoding bersamaku, bersama tuhan mari kita kerjakan seluruh proyekan.",
-	buttonText: "Know More",
+		"Saling berbagi, belajar, dan bangun koneksi yang berharga dengan sesama tech-enthusiast. Dapatkan wawasan terbaru tentang perkembangan teknologi dan temukan kesempatan kolaborasi yang tak ternilai harganya.",
+	buttonText: "Let's Xplore 🚀",
 	highlights: [
 		{ title: "10+", subtitle: "years" },
 		{ title: "200+", subtitle: "members" },

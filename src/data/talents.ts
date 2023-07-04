@@ -9,10 +9,10 @@ type TalentData = {
 };
 
 export const TALENT_DATA: TalentData = {
-	title: "Talent Pool",
-	subtitle: "These are the people from Workshop Riset Informatika who are ready to work professionally",
+	title: "Memiliki Pengetahuan dan Pengalaman yang Mumpuni",
+	subtitle: "Kami memiliki individu terampil dari berbagai divisi, bersatu padu menciptakan kekuatan kolaboratif dalam dunia kerja IT",
 	miniTitle: "Talents from Workshop Riset Informatika",
-	buttonText: "View All Talents",
+	buttonText: "Jelajahi Talent Berbakat",
 	talents: [
 		{
 			name: "Muhammad Ilzam Mulkhaq",
