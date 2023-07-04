@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from "~/components/button/button.svelte";
 	import Hamburger from "~/components/button/hamburger.svelte";
 	import NavbarItem from "./navbar-item.svelte";
 
@@ -47,9 +46,9 @@
 					<ThemeToggler />
 				</div> -->
 			</div>
-			<div class="w-full md:w-auto font-heading font-medium">
+			<!-- <div class="w-full md:w-auto font-heading font-medium">
 				<Button variant="main" to="#" className="w-full md:w-[240px] lg:w-[110px]">Join</Button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>
