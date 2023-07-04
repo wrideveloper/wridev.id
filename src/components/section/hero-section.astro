@@ -9,7 +9,7 @@ const highlights: Highlight[] = [
 	{ title: "10+", subtitle: "years" },
 	{ title: "200+", subtitle: "members" },
 	{ title: "3", subtitle: "partners" },
-	{ title: "4", subtitle: "miniclasses" },
+	{ title: "4", subtitle: "miniclass" },
 ];
 
 const images = [
@@ -64,7 +64,7 @@ const images = [
 				highlights.map((highlight, index) => (
 					<div class={`${index !== highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}>
 						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
-						<span class="block text-lg text-slate-600">{highlight.subtitle}</span>
+						<span class="block text-lg text-slate-600 capitalize">{highlight.subtitle}</span>
 					</div>
 				))
 			}

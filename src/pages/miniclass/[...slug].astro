@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Layout from "~/layouts/default.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry("miniclass", slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString("en-ID", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+
+const [startTime, endTime] = entry.data.time;
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+	<main
+		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[80ch] mx-auto"
+	>
+		<div class="mb-12">
+			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
+			<h1 class="text-5xl text-center font-bold leading-tight mb-2 font-heading">{entry.data.title}</h1>
+			<span class="block font-heading text-lg text-center text-slate-700">
+				Setiap hari <b class="capitalize font-bold">{entry.data.day}</b>
+				pukul <b class="font-bold">{startTime}</b> - <b class="font-bold">{endTime}</b>
+			</span>
+		</div>
+		<Content />
+	</main>
+</Layout>
