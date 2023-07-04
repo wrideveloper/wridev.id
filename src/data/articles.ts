@@ -8,8 +8,8 @@ export type ArticlesData = {
 
 export const ARTICLES_DATA: ArticlesData = {
 	title: "Articles",
-	sectionTitle: "Jelajahi Lebih Banyak Informasi tentang Dunia Teknologi",
-	subtitle: "Temukan Informasi Terbaru di Industri IT untuk Mengasah Kecerdasan Teknologi Anda",
-	miniTitle: "",
-	buttonText: "Lebih Banyak Artikel",
+	sectionTitle: "Explore Lebih Banyak Informasi Seputar Dunia Teknologi Yuk!",
+	subtitle: "Kamu akan menemukan informasi terupdate di industri IT untuk mengasah kemampuan teknologi-mu!",
+	miniTitle: "Read Some of the Articles Written by the Member",
+	buttonText: "Lebih Banyak",
 };
