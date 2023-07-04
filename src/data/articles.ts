@@ -3,6 +3,7 @@ export type ArticlesData = {
 	sectionTitle: string;
 	subtitle: string;
 	miniTitle: string;
+	buttonText: string;
 };
 
 export const ARTICLES_DATA: ArticlesData = {
@@ -10,4 +11,5 @@ export const ARTICLES_DATA: ArticlesData = {
 	sectionTitle: "Latest Articles",
 	subtitle: "Read some of the articles written by the member of Workshop Riset Informatika",
 	miniTitle: "",
+	buttonText: "More Articles",
 };

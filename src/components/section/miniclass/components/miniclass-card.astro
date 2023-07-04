@@ -1,10 +1,5 @@
 ---
-export type Miniclass = {
-	icon: string;
-	title: string;
-	description: string;
-	href: string;
-};
+import type { Miniclass } from "~/models/miniclass";
 export type Props = Miniclass;
 const { icon, title, description, href } = Astro.props as Props;
 ---

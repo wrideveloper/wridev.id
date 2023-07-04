@@ -1,33 +1,7 @@
 ---
-import MiniclassCard, { type Miniclass } from "./components/miniclass-card.astro";
+import MiniclassCard from "./components/miniclass-card.astro";
 import Container from "../container.astro";
-
-const miniclasses: Miniclass[] = [
-	{
-		icon: "/assets/miniclass/web.png",
-		title: "Web Development",
-		description: "Miniclass yang berfokus dengan web app development",
-		href: "/miniclass/web",
-	},
-	{
-		icon: "/assets/miniclass/mobile.png",
-		title: "Mobile Development",
-		description: "Miniclass yang berfokus dengan mobile app development",
-		href: "/miniclass/mobile",
-	},
-	{
-		icon: "/assets/miniclass/game.png",
-		title: "Game Development",
-		description: "Miniclass yang berfokus dengan game development",
-		href: "/miniclass/game",
-	},
-	{
-		icon: "/assets/miniclass/ui-ux.png",
-		title: "UI/UX Design",
-		description: "Miniclass yang berfokus dengan ui/ux design",
-		href: "/miniclass/ui-ux",
-	},
-];
+import { MINICLASS_DATA } from "~/data/miniclass";
 ---
 
 <div class="py-12">
@@ -46,17 +20,16 @@ const miniclasses: Miniclass[] = [
 			</svg>
 
 			<h2 class="my-8 text-2xl font-bold text-gray-700 dark:text-white md:text-4xl">
-				Workshop Riset Informatika
+				{MINICLASS_DATA.title}
 			</h2>
 			<p class="text-gray-600 dark:text-gray-300">
-				Suatu komunitas mahasiswa IT Polinema dengan tujuan membina serta mengembangkan kreativitas mahasiswa di
-				bidang Ilmu Pengetahuan dan Teknologi.
+				{MINICLASS_DATA.description}
 			</p>
 		</div>
 		<div
 			class="mt-16 grid divide-x divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden rounded-3xl border border-gray-100 text-gray-600 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4"
 		>
-			{miniclasses.map((miniclass) => <MiniclassCard {...miniclass} />)}
+			{MINICLASS_DATA.miniclasses.map((miniclass) => <MiniclassCard {...miniclass} />)}
 		</div>
 	</Container>
 </div>

@@ -1,24 +1,6 @@
 ---
 import Button from "~/components/button/button.svelte";
-
-type Highlight = {
-	title: string;
-	subtitle: string;
-};
-const highlights: Highlight[] = [
-	{ title: "10+", subtitle: "years" },
-	{ title: "200+", subtitle: "members" },
-	{ title: "3", subtitle: "partners" },
-	{ title: "4", subtitle: "miniclass" },
-];
-
-const images = [
-	"https://i.ibb.co/PT83M2z/IMG-1914.jpg",
-	"https://i.ibb.co/sPTv3wz/IMG-1915.jpg",
-	"https://i.ibb.co/crt0tk2/DSC00329.jpg",
-	"https://i.ibb.co/G9J7744/DSC00342.jpg",
-	"https://i.ibb.co/Dt0xvRW/DSC09915.jpg",
-];
+import { HERO_DATA } from "~/data/hero";
 ---
 
 <div class="min-h-screen w-full overflow-hidden bg-muted-100 dark:bg-muted-1000">
@@ -29,15 +11,16 @@ const images = [
 					<div class="h-full flex items-center mb-8 lg:mb-0">
 						<div class="text-center lg:text-left font-sans space-y-4">
 							<h1 class="font-heading font-bold text-6xl text-muted-800 dark:text-white">
-								<span class="block">Learn Together,</span>
-								<span class="block">Grow Together</span>
+								<span class="block">{HERO_DATA.headline.top},</span>
+								<span class="block">{HERO_DATA.headline.bottom}</span>
 							</h1>
 							<p class="text-lg text-muted-500 dark:text-muted-400 py-4">
-								Bersama Workshop Riset Informatika, sudahi galaumu mari nguli ngoding bersamaku, bersama
-								tuhan mari kita kerjakan seluruh proyekan.
+								{HERO_DATA.shortText}
 							</p>
 							<div class="w-full flex items-center justify-center lg:justify-start gap-2">
-								<Button variant="main" to="/home" class="min-w-[130px]">Know More</Button>
+								<Button variant="main" to="#technology" class="min-w-[130px]">
+									{HERO_DATA.buttonText}
+								</Button>
 							</div>
 						</div>
 					</div>
@@ -45,7 +28,7 @@ const images = [
 				<div class="relative col-span-12 lg:col-span-6">
 					<swiper-container loop={true} effect="fade">
 						{
-							images.map((image, index) => (
+							HERO_DATA.images.map((image, index) => (
 								<swiper-slide>
 									<img
 										src={image}
@@ -61,8 +44,10 @@ const images = [
 		</div>
 		<div class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl">
 			{
-				highlights.map((highlight, index) => (
-					<div class={`${index !== highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}>
+				HERO_DATA.highlights.map((highlight, index) => (
+					<div
+						class={`${index !== HERO_DATA.highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}
+					>
 						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
 						<span class="block text-lg text-slate-600 capitalize">{highlight.subtitle}</span>
 					</div>
