@@ -20,7 +20,7 @@ const humanisedPostedDate = new Date(props.date).toLocaleDateString("en-ID", {
 <div
 	class={`group ${
 		variant === "regular" ? "p-6" : "p-4"
-	} rounded-2xl bg-white border border-muted-200 dark:shadow-none dark:border-gray-700 dark:bg-gray-800 bg-opacity-50 shadow-xl shadow-gray-600/10`}
+	} rounded-2xl bg-white border border-slate-200 bg-opacity-50 shadow-xl shadow-gray-600/10`}
 >
 	<div class="relative overflow-hidden rounded-xl">
 		<img
@@ -35,15 +35,15 @@ const humanisedPostedDate = new Date(props.date).toLocaleDateString("en-ID", {
 		/>
 	</div>
 	<div class="mt-6 relative">
-		<h3 class={`${variant === "regular" ? "text-2xl" : "text-lg"} font-semibold text-gray-800 dark:text-white`}>
+		<h3 class={`${variant === "regular" ? "text-2xl" : "text-lg"} font-semibold text-gray-800`}>
 			{props.title}
 		</h3>
-		<span class="block text-sm text-muted-600 py-2">
+		<span class="block text-sm text-slate-600 py-2">
 			Posted in {humanisedPostedDate} by <b class="font-bold">{props.author}</b>
 		</span>
-		{variant === "regular" && <p class="mt-4 mb-6 text-gray-600 dark:text-gray-300">{props.description}</p>}
+		{variant === "regular" && <p class="mt-4 mb-6 text-gray-600">{props.description}</p>}
 		<a class="inline-block" href={`/articles/${props.slug}`}>
-			<span class="text-primary-500 dark:text-blue-300 font-medium hover:text-primary-700">Read more</span>
+			<span class="text-primary-500 font-medium hover:text-primary-700">Read more</span>
 		</a>
 	</div>
 </div>

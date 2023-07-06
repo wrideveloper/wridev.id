@@ -3,18 +3,18 @@ import Button from "~/components/button/button.svelte";
 import { HERO_DATA } from "~/data/hero";
 ---
 
-<div class="min-h-screen w-full overflow-hidden bg-muted-100 dark:bg-muted-1000">
+<div class="min-h-screen w-full overflow-hidden bg-slate-100">
 	<div class="min-h-screen w-full max-w-7xl mx-auto flex flex-col justify-center gap-14">
 		<div class="flex items-center px-4">
 			<div class="w-full grid grid-cols-12 gap-10">
 				<div class="col-span-12 lg:col-span-6">
 					<div class="h-full flex items-center mb-8 lg:mb-0">
 						<div class="text-center lg:text-left font-sans space-y-4">
-							<h1 class="font-heading font-bold text-6xl text-muted-800 dark:text-white">
+							<h1 class="font-heading font-bold text-6xl text-slate-800">
 								<span class="block">{HERO_DATA.headline.top},</span>
 								<span class="block">{HERO_DATA.headline.bottom}</span>
 							</h1>
-							<p class="text-lg text-muted-500 dark:text-muted-400 py-4">
+							<p class="text-lg text-slate-500 py-4">
 								{HERO_DATA.shortText}
 							</p>
 							<div class="w-full flex items-center justify-center lg:justify-start gap-2">
@@ -42,14 +42,22 @@ import { HERO_DATA } from "~/data/hero";
 				</div>
 			</div>
 		</div>
-		<div class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl">
+		<div
+			class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl"
+		>
 			{
 				HERO_DATA.highlights.map((highlight, index) => (
 					<div
-						class={`${index !== HERO_DATA.highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}
+						class={`${
+							index !== HERO_DATA.highlights.length - 1 ? "border-r" : ""
+						} border-slate-300 px-12`}
 					>
-						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
-						<span class="block text-lg text-slate-600 capitalize">{highlight.subtitle}</span>
+						<span class="block text-3xl font-bold text-slate-800">
+							{highlight.title}
+						</span>
+						<span class="block text-lg text-slate-600 capitalize">
+							{highlight.subtitle}
+						</span>
 					</div>
 				))
 			}

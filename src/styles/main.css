@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 html {
-	@apply scroll-pt-20 scroll-smooth;
+	@apply scroll-pt-20 scroll-smooth transition-colors ease-out duration-100;
 }

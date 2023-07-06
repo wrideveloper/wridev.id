@@ -12,14 +12,14 @@
 	<div class="carousel-container">
 		<div class="carousel-controls flex items-center justify-end mb-4">
 			<button
-				class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
+				class="w-10 h-10 flex items-center justify-center rounded-xl text-slate-600 hover:text-primary-600 hover:bg-slate-200 transition-colors duration-300"
 				on:click={() => swiperElement.swiper.slidePrev()}
 			>
 				<ArrowLeft />
 			</button>
 
 			<button
-				class="w-10 h-10 flex items-center justify-center rounded-xl text-muted-600 hover:text-primary-600 dark:text-muted-300 dark:hover:text-muted-100 hover:bg-muted-200 dark:hover:bg-muted-900 transition-colors duration-300"
+				class="w-10 h-10 flex items-center justify-center rounded-xl text-slate-600 hover:text-primary-600 hover:bg-slate-200 transition-colors duration-300"
 				on:click={() => swiperElement.swiper.slideNext()}
 			>
 				<ArrowRight />

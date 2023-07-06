@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { themeStore } from "~/stores/theme";
+	import { theme } from "~/stores/theme";
 
 	function handleToggleTheme() {
-		themeStore.set($themeStore === "dark" ? "light" : "dark");
+		theme.set($theme === "dark" ? "light" : "dark");
 	}
 </script>
 
@@ -13,13 +13,16 @@
 		on:change={handleToggleTheme}
 	/>
 	<span
-		class="block relative w-9 h-9 bg-white dark:bg-muted-800 rounded-full border border-muted-300 dark:border-muted-700"
+		class="block relative w-9 h-9 bg-white rounded-full border border-slate-300"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
 			aria-hidden="true"
 			role="img"
-			class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
+			class="{$theme === 'dark'
+				? 'opacity-0  -translate-x-[50%] -translate-y-[150%]'
+				: 'opacity-100 -translate-x-[50%] -translate-y-1/2'} block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
 			width="32"
 			height="32"
 			preserveAspectRatio="xMidYMid meet"
@@ -39,9 +42,12 @@
 		</svg>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
 			aria-hidden="true"
 			role="img"
-			class="block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
+			class="{$theme === 'dark'
+				? 'opacity-100 -translate-x-[45%] -translate-y-1/2'
+				: 'opacity-0 -translate-x-[45%] -translate-y-[150%]'} block absolute top-1/2 left-1/2 w-5 h-5 text-yellow-400 transition-all duration-300 pointer-events-none"
 			width="32"
 			height="32"
 			preserveAspectRatio="xMidYMid meet"

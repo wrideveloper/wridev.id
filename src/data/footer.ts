@@ -10,7 +10,10 @@ type SiteNavigationList = {
 
 type FooterData = {
 	/** the logo source url */
-	logo: string;
+	logo: {
+		dark: string;
+		light: string;
+	};
 	/** used for the description below the logo on the footer */
 	description: string;
 	/** used for the navigation list on the footer */
@@ -18,7 +21,10 @@ type FooterData = {
 };
 
 export const FOOTER_DATA: FooterData = {
-	logo: "https://elianiva.my.id/wri/light.png",
+	logo: {
+		dark: "https://elianiva.my.id/wri/light.png",
+		light: "https://elianiva.my.id/wri/light.png",
+	},
 	description:
 		"Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi",
 	navigationList: [

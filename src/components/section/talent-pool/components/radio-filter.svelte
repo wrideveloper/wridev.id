@@ -10,19 +10,19 @@
 	export let onSelect: (selected: string) => void = () => {};
 </script>
 
-<div class="pt-6 pb-10 border-b border-muted-200 dark:border-muted-800">
-	<h3 class="font-sans font-light text-lg mb-6 text-muted-800 dark:text-muted-100">{title}</h3>
+<div class="pt-6 pb-10 border-b border-slate-200">
+	<h3 class="font-sans font-light text-lg mb-6 text-slate-800">{title}</h3>
 	<div class="space-y-4">
 		{#each options as option}
 			<div class="flex items-center gap-3 cursor-pointer">
 				<div
-					class="bg-white dark:bg-muted-900 rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative"
+					class="bg-white rounded-full w-4 h-4 flex flex-shrink-0 justify-center items-center relative"
 				>
 					<input
 						id="radio-{option.value}"
 						type="radio"
 						{name}
-						class="peer appearance-none ring-offset-white dark:ring-offset-muted-900 focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 focus:outline-none border rounded-full border-muted-400 absolute cursor-pointer w-full h-full checked:border-none"
+						class="peer appearance-none ring-offset-white focus:opacity-100 focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 focus:outline-none border rounded-full border-slate-400 absolute cursor-pointer w-full h-full checked:border-none"
 						value={option.value}
 						on:change={() => {
 							selected = option.value;
@@ -34,7 +34,7 @@
 				</div>
 				<label
 					for="radio-{option.value}"
-					class="cursor-pointer ml-2 text-sm leading-4 font-normal text-muted-800 dark:text-muted-400"
+					class="cursor-pointer ml-2 text-sm leading-4 font-normal text-slate-800"
 				>
 					{option.text}
 				</label>

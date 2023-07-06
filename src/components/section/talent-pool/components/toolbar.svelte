@@ -33,23 +33,25 @@
 </script>
 
 <div
-	class="sticky top-24 md:top-20 w-full flex bg-white dark:bg-muted-800 border border-muted-200 dark:border-muted-700 rounded divide-x divide-muted-200 dark:divide-muted-700 shadow-xl shadow-muted-300/30 dark:shadow-muted-900/30 overflow-x-auto z-30"
+	class="sticky top-28 w-full flex bg-white border border-slate-200 rounded divide-x divide-slate-200 shadow-xl shadow-slate-300/30 overflow-x-auto z-30"
 >
 	{#each categories as category}
 		<button
 			class="{$activeProficiencyFilter === category.id
-				? 'bg-muted-50 dark:bg-muted-700'
-				: ''} group flex-1 flex items-center px-5 py-3 whitespace-nowrap font-sans text-muted-800 dark:text-muted-100 hover:bg-muted-50 dark:hover:bg-muted-700 transition-colors duration-300"
+				? 'bg-slate-50'
+				: ''} group flex-1 flex items-center px-5 py-3 whitespace-nowrap font-sans text-slate-800 hover:bg-slate-50 transition-colors duration-300"
 			on:click={handleChangeCategory(category.id)}
 		>
 			<span
 				class="flex items-center justify-center h-10 w-10 {$activeProficiencyFilter === category.id
 					? 'text-rose-500'
-					: 'text-muted-400 group-hover:text-primary-500'}"
+					: 'text-slate-400 group-hover:text-primary-500'}"
 			>
 				<svelte:component this={category.icon} class="w-6 h-6" />
 			</span>
-			<span>{category.name}</span>
+			<span class={$activeProficiencyFilter === category.id ? "text-slate-800" : "text-slate-600"}>
+				{category.name}
+			</span>
 		</button>
 	{/each}
 </div>
