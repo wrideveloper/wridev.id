@@ -26,10 +26,6 @@ module.exports = {
 				success: colors.teal,
 				warning: colors.amber,
 				danger: colors.rose,
-				muted: {
-					...colors.slate,
-					1000: "#0a101f",
-				},
 				slate: {
 					1000: "#0a101f",
 				},

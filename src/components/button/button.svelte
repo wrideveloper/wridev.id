@@ -9,7 +9,7 @@
 	const variantClassName =
 		variant === "main"
 			? "leading-5 no-underline space-x-1 text-white bg-primary-600 rounded-xl hover:bg-primary-700 hover:shadow-xl hover:shadow-primary-600/20"
-			: "gap-x-1 rounded-xl leading-5 no-underline text-slate-700 bg-white border dark:text-white dark:bg-slate-700 dark:border-slate-600 hover:enabled:bg-slate-50 dark:hover:enabled:bg-slate-600 active:enabled:bg-slate-200 dark:active:enabled:bg-slate-700";
+			: "gap-x-1 rounded-xl leading-5 no-underline text-slate-700 bg-white border hover:enabled:bg-slate-50 active:enabled:bg-slate-200";
 	const selectedClassName = baseClasses + " " + variantClassName + " " + className;
 </script>
 

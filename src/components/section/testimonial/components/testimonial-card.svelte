@@ -8,24 +8,24 @@
 </script>
 
 <div
-	class="relative rounded-lg border border-muted-200 dark:border-muted-800 bg-white dark:bg-muted-900 transition-all duration-300 p-6"
+	class="relative rounded-lg border border-slate-200 bg-white transition-all duration-300 p-6"
 >
 	<div class="w-full flex flex-col gap-8 font-sans">
-		<QuoteIcon class="w-8 h-8 text-rose-500 dark:text-primary-500" />
-		<p class="text-muted-500 dark:text-muted-300">
+		<QuoteIcon class="w-8 h-8 text-rose-500" />
+		<p class="text-slate-500">
 			{testimony}
 		</p>
 		<div class="w-full flex items-center gap-3">
 			<div class="shrink-0 inline-flex relative w-10 h-10">
 				<img
 					src={profileImage}
-					class="object-cover max-w-full rounded-full dark:border-transparent shadow-sm"
+					class="object-cover max-w-full rounded-full shadow-sm"
 					alt={name}
 				/>
 			</div>
 			<div>
-				<h4 class="font-medium text-sm text-muted-800 dark:text-muted-100">{name}</h4>
-				<p class="text-xs text-muted-400">{position}</p>
+				<h4 class="font-medium text-sm text-slate-800">{name}</h4>
+				<p class="text-xs text-slate-400">{position}</p>
 			</div>
 		</div>
 	</div>
