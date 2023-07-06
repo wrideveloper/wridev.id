@@ -1,35 +1,38 @@
 {
-  "name": "wri-dev",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@alpinejs/collapse": "^3.12.2",
-    "@alpinejs/intersect": "^3.12.2",
-    "@alpinejs/persist": "^3.12.2",
-    "@astrojs/svelte": "^3.1.0",
-    "@astrojs/tailwind": "^4.0.0",
-    "@fontsource/inter": "^5.0.3",
-    "@fontsource/urbanist": "^5.0.3",
-    "@iconify/iconify": "^3.1.1",
-    "alpinejs": "^3.12.2",
-    "astro": "^2.7.2",
-    "prettier-plugin-astro": "^0.10.0",
-    "svelte": "^4.0.0",
-    "swiper": "^9.4.1",
-    "tailwindcss": "^3.0.24",
-    "unplugin-icons": "^0.16.3"
-  },
-  "devDependencies": {
-    "@iconify-json/ph": "^1.1.5",
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.9",
-    "prettier-plugin-svelte": "^2.10.1"
-  }
+	"name": "wri-dev",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"fmt:check": "prettier --check .",
+		"fmt:write": "prettier --write .",
+		"lint:check": "eslint src",
+		"lint:fix": "eslint --fix src"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^3.1.0",
+		"@astrojs/tailwind": "^4.0.0",
+		"@fontsource/inter": "^5.0.3",
+		"@fontsource/urbanist": "^5.0.3",
+		"astro": "^2.7.2",
+		"svelte": "^4.0.0",
+		"swiper": "^9.4.1",
+		"tailwindcss": "^3.0.24",
+		"unplugin-icons": "^0.16.3"
+	},
+	"devDependencies": {
+		"@iconify-json/ph": "^1.1.5",
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.9",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
+		"eslint": "^8.44.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-astro": "^0.10.0",
+		"prettier-plugin-svelte": "^2.10.1"
+	}
 }
