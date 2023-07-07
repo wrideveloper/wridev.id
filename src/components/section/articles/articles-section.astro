@@ -10,7 +10,7 @@ const articles = await getCollection("articles");
 const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 ---
 
-<div class="py-12">
+<div class="py-12 px-4">
 	<Container>
 		<Title
 			title={ARTICLES_DATA.sectionTitle}

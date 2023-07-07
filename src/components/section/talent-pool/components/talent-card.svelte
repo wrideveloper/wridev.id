@@ -21,14 +21,8 @@
 <div
 	class="relative grid grid-rows-[15rem,3.5rem,4rem,3rem] rounded-lg border border-slate-200 bg-white transition-all duration-300 p-4"
 >
-	<div
-		class="relative w-full h-60 rounded-lg bg-slate-200 border border-slate-200 overflow-hidden"
-	>
-		<img
-			class="absolute bottom-0 inset-x-0 mx-auto w-full object-cover"
-			src={profileImage}
-			alt="Doctor"
-		/>
+	<div class="relative w-full h-60 rounded-lg bg-slate-200 border border-slate-200 overflow-hidden">
+		<img class="absolute bottom-0 inset-x-0 mx-auto w-full object-cover" src={profileImage} alt="Doctor" />
 	</div>
 	<div class="font-sans mt-3">
 		<h4 class="font-semibold text-slate-800">{name}</h4>

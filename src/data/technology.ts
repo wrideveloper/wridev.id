@@ -1,4 +1,10 @@
 import type { Technology } from "~/models/technology";
+import LaravelLogo from "~/assets/technology/laravel.png";
+import SvelteLogo from "~/assets/technology/svelte.png";
+import FlutterLogo from "~/assets/technology/flutter.png";
+import FigmaLogo from "~/assets/technology/figma.png";
+import UnityLogo from "~/assets/technology/unity.png";
+import NodeLogo from "~/assets/technology/node.png";
 
 type TechnologyData = {
 	technologies: Technology[];
@@ -6,11 +12,11 @@ type TechnologyData = {
 
 export const TECHNOLOGY_DATA: TechnologyData = {
 	technologies: [
-		{ icon: "/assets/technology/laravel.png", name: "Laravel" },
-		{ icon: "/assets/technology/figma.png", name: "Figma" },
-		{ icon: "/assets/technology/svelte.png", name: "Svelte" },
-		{ icon: "/assets/technology/flutter.png", name: "Flutter" },
-		{ icon: "/assets/technology/unity.png", name: "Unity" },
-		{ icon: "/assets/technology/node.png", name: "NodeJS" },
+		{ icon: LaravelLogo, name: "Laravel" },
+		{ icon: FlutterLogo, name: "Flutter" },
+		{ icon: NodeLogo, name: "NodeJS" },
+		{ icon: SvelteLogo, name: "Svelte" },
+		{ icon: FigmaLogo, name: "Figma" },
+		{ icon: UnityLogo, name: "Unity" },
 	],
 };

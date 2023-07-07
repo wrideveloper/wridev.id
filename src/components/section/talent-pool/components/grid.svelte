@@ -42,7 +42,7 @@
 	$: visibleTalents = filteredByAvailability.slice(0, limit);
 </script>
 
-<div class="grid md:grid-cols-3 ltablet:grid-cols-3 lg:grid-cols-3 gap-x-6 ptablet:gap-x-4 gap-y-16 pt-10">
+<div class="grid md:grid-cols-3 lg:grid-cols-3 gap-6">
 	{#each visibleTalents as { availabilities: _, proficiencies: __, ...talent }}
 		<Card {...talent} />
 	{/each}

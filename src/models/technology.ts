@@ -1,4 +1,4 @@
 export type Technology = {
-	icon: string;
+	icon: ImageMetadata;
 	name: string;
 };
