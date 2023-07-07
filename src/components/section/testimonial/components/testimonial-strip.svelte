@@ -4,8 +4,32 @@
 	import ArrowRight from "~icons/ph/arrow-right";
 	import TestimonialCard from "./testimonial-card.svelte";
 	import type { SwiperContainer } from "swiper/element/bundle";
+	import { onMount } from "svelte";
+	import type { SwiperOptions } from "swiper/types";
 
 	let swiperElement: SwiperContainer;
+
+	onMount(() => {
+		const swiperParams: SwiperOptions = {
+			slidesPerView: 1,
+			slidesPerGroup: 2,
+			loop: true,
+			spaceBetween: 28,
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+				},
+				860: {
+					slidesPerView: 3,
+				},
+				1200: {
+					slidesPerView: 4,
+				},
+			},
+		};
+		Object.assign(swiperElement, swiperParams);
+		swiperElement.initialize();
+	});
 </script>
 
 <div class="relative overflow-hidden">
@@ -25,7 +49,7 @@
 				<ArrowRight />
 			</button>
 		</div>
-		<swiper-container bind:this={swiperElement} slides-per-view={4} slides-per-group={2} loop={true} space-between={28}>
+		<swiper-container bind:this={swiperElement} init={false}>
 			{#each TESTIMONIAL_DATA.testimonials as testimonial}
 				<swiper-slide>
 					<TestimonialCard {...testimonial} />

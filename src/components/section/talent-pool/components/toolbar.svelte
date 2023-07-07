@@ -33,7 +33,7 @@
 </script>
 
 <div
-	class="sticky top-28 w-full flex bg-white border border-slate-200 rounded divide-x divide-slate-200 shadow-xl shadow-slate-300/30 overflow-x-auto z-30"
+	class="sticky top-24 w-full flex bg-white border border-slate-200 rounded divide-x divide-slate-200 shadow-xl shadow-slate-300/30 overflow-x-auto z-30"
 >
 	{#each categories as category}
 		<button

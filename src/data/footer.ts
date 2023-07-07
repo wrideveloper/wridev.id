@@ -1,3 +1,6 @@
+import LogoDark from "~/assets/logo/wri-dark-512.png";
+import LogoLight from "~/assets/logo/wri-light-512.png";
+
 type NavigationItem = {
 	href: string;
 	text: string;
@@ -9,21 +12,18 @@ type SiteNavigationList = {
 };
 
 type FooterData = {
-	/** the logo source url */
 	logo: {
-		dark: string;
-		light: string;
+		dark: ImageMetadata;
+		light: ImageMetadata;
 	};
-	/** used for the description below the logo on the footer */
 	description: string;
-	/** used for the navigation list on the footer */
 	navigationList: SiteNavigationList[];
 };
 
 export const FOOTER_DATA: FooterData = {
 	logo: {
-		dark: "https://elianiva.my.id/wri/light.png",
-		light: "https://elianiva.my.id/wri/light.png",
+		dark: LogoDark,
+		light: LogoLight,
 	},
 	description:
 		"Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi",

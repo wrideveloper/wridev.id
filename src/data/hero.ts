@@ -1,4 +1,9 @@
 import type { Highlight } from "~/models/hero";
+import HeroImage1 from "~/assets/hero/hero-1.jpg";
+import HeroImage2 from "~/assets/hero/hero-2.jpg";
+import HeroImage3 from "~/assets/hero/hero-3.jpg";
+import HeroImage4 from "~/assets/hero/hero-4.jpg";
+import HeroImage5 from "~/assets/hero/hero-5.jpg";
 
 type HeroData = {
 	headline: {
@@ -8,7 +13,7 @@ type HeroData = {
 	shortText: string;
 	buttonText: string;
 	highlights: Highlight[];
-	images: string[];
+	images: ImageMetadata[];
 };
 
 export const HERO_DATA: HeroData = {
@@ -25,11 +30,5 @@ export const HERO_DATA: HeroData = {
 		{ title: "3", subtitle: "partners" },
 		{ title: "4", subtitle: "miniclass" },
 	],
-	images: [
-		"https://i.ibb.co/PT83M2z/IMG-1914.jpg",
-		"https://i.ibb.co/sPTv3wz/IMG-1915.jpg",
-		"https://i.ibb.co/crt0tk2/DSC00329.jpg",
-		"https://i.ibb.co/G9J7744/DSC00342.jpg",
-		"https://i.ibb.co/Dt0xvRW/DSC09915.jpg",
-	],
+	images: [HeroImage1, HeroImage2, HeroImage3, HeroImage4, HeroImage5],
 };

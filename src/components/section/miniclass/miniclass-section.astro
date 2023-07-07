@@ -8,7 +8,7 @@ const miniclass = await getCollection("miniclass");
 const sortedMiniclassMeta = miniclass.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
-<div class="py-12">
+<div class="py-12 px-4">
 	<Container>
 		<div class="md:w-2/3 lg:w-1/2">
 			<svg
@@ -31,7 +31,7 @@ const sortedMiniclassMeta = miniclass.sort((a, b) => a.data.title.localeCompare(
 			</p>
 		</div>
 		<div
-			class="mt-16 grid divide-x divide-y divide-slate-100 overflow-hidden rounded-3xl border border-slate-100 text-slate-600 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4"
+			class="mt-16 grid divide-x divide-y divide-slate-200 overflow-hidden rounded-3xl border border-slate-200 text-slate-600 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4"
 		>
 			{
 				sortedMiniclassMeta.map((miniclass) => (
