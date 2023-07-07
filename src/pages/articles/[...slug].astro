@@ -29,7 +29,7 @@ const sortedArticlesMeta = articles
 	.filter((a) => a.slug !== slug);
 ---
 
-<Layout title={entry.data.title}>
+<Layout title={entry.data.title} description={entry.data.description}>
 	<main
 		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[80ch] mx-auto"
 	>
@@ -37,7 +37,9 @@ const sortedArticlesMeta = articles
 			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
 			<h1 class="text-5xl text-center font-bold leading-tight mb-2 font-heading">{entry.data.title}</h1>
 			<span class="block font-heading text-lg text-center text-slate-700">
-				Posted in {humanisedPostedDate} by <b class="font-bold">{entry.data.author}</b> &#8212; {timeToReadInMinutes} minutes to read
+				Posted in {humanisedPostedDate} by <b class="font-bold">{entry.data.author}</b> &#8212; {
+					timeToReadInMinutes
+				} minutes to read
 			</span>
 			<div class="flex items-center justify-center mt-2">
 				<a

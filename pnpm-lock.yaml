@@ -20,6 +20,9 @@ dependencies:
   astro:
     specifier: ^2.7.2
     version: 2.7.2(sharp@0.32.1)
+  astro-seo:
+    specifier: ^0.7.4
+    version: 0.7.4
   sharp:
     specifier: ^0.32.1
     version: 0.32.1
@@ -1176,6 +1179,10 @@ packages:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
     dev: true
+
+  /astro-seo@0.7.4:
+    resolution: {integrity: sha512-E+wJmxOnvBRjgzVctdGk/VdwoEqeQ6Q/KgVW2wRBXZWJVDgOweB32Da/UiH0/FpGncPzo2daOrc08DNn5wTanw==}
+    dev: false
 
   /astro@2.7.2(sharp@0.32.1):
     resolution: {integrity: sha512-2+vjXeVGU04aecs0mm93Qx9KdeVDw4OTeBIijs2Z+QLoe4RUYZnkqx5gR70VNfnoMdXoPp7+wB+ARcb0+ee/yg==}
