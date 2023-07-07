@@ -25,14 +25,14 @@ import { HERO_DATA } from "~/data/hero";
 						</div>
 					</div>
 				</div>
-				<div class="relative col-span-12 lg:col-span-6">
+				<div class="relative col-span-12 lg:col-span-6 h-[32rem] overflow-hidden rounded-lg bg-slate-300">
 					<swiper-container loop={true} effect="fade">
 						{
 							HERO_DATA.images.map((image, index) => (
 								<swiper-slide>
 									<img
 										src={image}
-										class="rounded-lg w-full h-[32rem] object-cover mx-auto shadow-lg"
+										class="w-full h-[32rem] object-cover mx-auto shadow-lg"
 										alt={`Hero ${index}`}
 									/>
 								</swiper-slide>
@@ -42,22 +42,14 @@ import { HERO_DATA } from "~/data/hero";
 				</div>
 			</div>
 		</div>
-		<div
-			class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl"
-		>
+		<div class="grid grid-cols-4 p-6 border border-slate-300 bg-white shadow-lg max-w-fit rounded-xl">
 			{
 				HERO_DATA.highlights.map((highlight, index) => (
 					<div
-						class={`${
-							index !== HERO_DATA.highlights.length - 1 ? "border-r" : ""
-						} border-slate-300 px-12`}
+						class={`${index !== HERO_DATA.highlights.length - 1 ? "border-r" : ""} border-slate-300 px-12`}
 					>
-						<span class="block text-3xl font-bold text-slate-800">
-							{highlight.title}
-						</span>
-						<span class="block text-lg text-slate-600 capitalize">
-							{highlight.subtitle}
-						</span>
+						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
+						<span class="block text-lg text-slate-600 capitalize">{highlight.subtitle}</span>
 					</div>
 				))
 			}

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Hamburger from "~/components/button/hamburger.svelte";
 	import NavbarItem from "./navbar-item.svelte";
-	import ThemeToggle from "../button/theme-toggle.svelte";
 	import { NAVBAR_DATA } from "~/data/navbar";
 
 	export let path: string;
@@ -32,9 +31,6 @@
 				{#each NAVBAR_DATA.navigationItems as item}
 					<NavbarItem isActive={path === item.href} href={item.href} text={item.text} />
 				{/each}
-				<div class="py-3 lg:py-5">
-					<ThemeToggle />
-				</div>
 			</div>
 			<!-- <div class="w-full md:w-auto font-heading font-medium">
 				<Button variant="main" to="#" className="w-full md:w-[240px] lg:w-[110px]">Join</Button>

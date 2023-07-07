@@ -26,10 +26,10 @@ export const HERO_DATA: HeroData = {
 		{ title: "4", subtitle: "miniclass" },
 	],
 	images: [
-		"https://i.ibb.co/PT83M2z/IMG-1914.jpg",
-		"https://i.ibb.co/sPTv3wz/IMG-1915.jpg",
-		"https://i.ibb.co/crt0tk2/DSC00329.jpg",
-		"https://i.ibb.co/G9J7744/DSC00342.jpg",
-		"https://i.ibb.co/Dt0xvRW/DSC09915.jpg",
+		"/assets/hero/hero-1.jpg",
+		"/assets/hero/hero-2.jpg",
+		"/assets/hero/hero-3.jpg",
+		"/assets/hero/hero-4.jpg",
+		"/assets/hero/hero-5.jpg",
 	],
 };

@@ -13,8 +13,8 @@ type NavbarData = {
 
 export const NAVBAR_DATA: NavbarData = {
 	logo: {
-		dark: "https://elianiva.my.id/wri/dark.png",
-		light: "https://elianiva.my.id/wri/light.png",
+		dark: "/assets/logo/wri-dark-512.png",
+		light: "/assets/logo/wri-light-512.png",
 	},
 	navigationItems: [
 		{ href: "/miniclass", text: "Miniclass" },
