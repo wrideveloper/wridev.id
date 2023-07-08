@@ -32,7 +32,7 @@ const { title, description = SEO_DATA.description! } = Astro.props as Props;
 		<meta name="generator" content={Astro.generator} />
 		<SEO {...SEO_DATA} title={title} description={description} />
 	</head>
-	<body class="bg-white">
+	<body class="bg-white bg-paper">
 		<SwiperInit client:load />
 		<Navbar client:load path={Astro.url.pathname} />
 		<slot />
