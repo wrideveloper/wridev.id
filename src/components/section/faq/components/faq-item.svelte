@@ -8,7 +8,7 @@
 	let isOpen = false;
 </script>
 
-<button class="w-full rounded-md border border-slate-200" on:click={() => (isOpen = !isOpen)}>
+<button class="w-full rounded-md border border-slate-200 bg-white" on:click={() => (isOpen = !isOpen)}>
 	<div class="flex items-center justify-between p-4 text-lg text-slate-700">
 		<span>{question}</span>
 		<ChevronRightIcon class="w-4 h-4" />
