@@ -1,9 +1,4 @@
-export type Testimonial = {
-	name: string;
-	profileImage?: string;
-	position: string;
-	testimony: string;
-};
+import type { Testimonial } from "~/models/testimonial";
 
 export type TestimonialData = {
 	title: string;

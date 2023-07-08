@@ -1,16 +1,10 @@
 import LogoDark from "~/assets/logo/wri-dark-512.png";
 import LogoLight from "~/assets/logo/wri-light-512.png";
-
-type NavigationItem = {
-	href: string;
-	text: string;
-};
+import type { Logo } from "~/models/logo";
+import type { NavigationItem } from "~/models/navigation";
 
 type NavbarData = {
-	logo: {
-		light: ImageMetadata;
-		dark: ImageMetadata;
-	};
+	logo: Logo;
 	navigationItems: NavigationItem[];
 };
 

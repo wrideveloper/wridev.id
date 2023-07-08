@@ -1,21 +1,10 @@
 import LogoDark from "~/assets/logo/wri-dark-512.png";
 import LogoLight from "~/assets/logo/wri-light-512.png";
-
-type NavigationItem = {
-	href: string;
-	text: string;
-};
-
-type SiteNavigationList = {
-	title: string;
-	items: NavigationItem[];
-};
+import type { SiteNavigationList } from "~/models/navigation";
+import type { Logo } from "~/models/logo";
 
 type FooterData = {
-	logo: {
-		dark: ImageMetadata;
-		light: ImageMetadata;
-	};
+	logo: Logo;
 	description: string;
 	navigationList: SiteNavigationList[];
 };
