@@ -1,6 +1,6 @@
 # Website Workshop Riset Informatika
 
-![image](https://github.com/wrideveloper/wri-dev/assets/51877647/263cbeeb-193b-4b15-b8c7-f4fd8338ee57)
+![image](https://github.com/wrideveloper/wri-dev/assets/51877647/edf3ed19-cfa2-4525-a8ed-94898d6ae6f4)
 
 ## Ini Apa?
 
