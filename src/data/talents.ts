@@ -10,7 +10,8 @@ type TalentData = {
 
 export const TALENT_DATA: TalentData = {
 	title: "Memiliki Pengetahuan dan Pengalaman yang Mumpuni",
-	subtitle: "Kami memiliki individu terampil dari berbagai divisi, bersatu padu menciptakan kekuatan kolaboratif dalam dunia kerja IT",
+	subtitle:
+		"Kami memiliki individu terampil dari berbagai divisi, bersatu padu menciptakan kekuatan kolaboratif dalam dunia kerja IT",
 	miniTitle: "Talents from Workshop Riset Informatika",
 	buttonText: "Jelajahi Talent Berbakat",
 	talents: [
