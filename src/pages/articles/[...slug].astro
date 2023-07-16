@@ -29,7 +29,30 @@ const sortedArticlesMeta = articles
 	.filter((a) => a.slug !== slug);
 ---
 
-<Layout title={entry.data.title} description={entry.data.description}>
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	openGraph={{
+		basic: {
+			image: entry.data.image,
+			title: entry.data.title,
+			type: "article",
+			url: `https://wri-dev.id/articles/${slug}`,
+		},
+		article: {
+			authors: [entry.data.author],
+			publishedTime: entry.data.date.toISOString(),
+			tags: entry.data.tags,
+			section: "Technology",
+		},
+		image: {
+			url: entry.data.image,
+			alt: entry.data.title,
+			height: 630,
+			width: 1200,
+		},
+	}}
+>
 	<main
 		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[80ch] mx-auto"
 	>
