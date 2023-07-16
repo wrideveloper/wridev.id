@@ -25,12 +25,13 @@ Kamu pengen belajar bikin web nih? Kuy ikutan `Web Development` miniclass! Well,
 ## Goals
 
 Goals di sini apa sih? Apa yang bakal kamu dapetin?
+
 1. Strong web fundamental knowledge
 2. Explore and High Curiosity at Web Development Technology
 3. Build tons of web app project for your portfolio
 4. Networking with other web developer
 
-Gila, banyak banget ya benefitnya? Gimana, tertarik? 
+Gila, banyak banget ya benefitnya? Gimana, tertarik?
 
 ## Learning Phase
 
@@ -50,9 +51,10 @@ Jadi, miniclass ini memiliki sebuah `framework` berpikir dalam belajar, yaitu `W
 Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yaitu:
 
 # Fundamental Phase
+
 - Learning how to learn
 - Behind the scenes of Web Development
-- HTML, CSS, and JavaScript 
+- HTML, CSS, and JavaScript
 - Git and GitHub
 - Mini Project 01
 
@@ -65,7 +67,9 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 </div>
 
 # Advanced Phase
+
 ## Front-end Concentration
+
 - Fast Review HTML, CSS, and JavaScript
 - JavaScript ES6
 - Tailwind CSS
@@ -81,6 +85,7 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 </div>
 
 ## Back-end Concentration
+
 - Fast Review HTML, CSS, and JavaScript
 - Node.js
 - Express.js
@@ -93,8 +98,8 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
 </div>
 
-
 # Final Project
+
 - Build your own Web App Project
 - Explore! Explore! Explore!
 
@@ -104,9 +109,8 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 
 _Meet the team_
 
-
-| Name | Roles |                       LinkedIn                       |                      Github                      |
-| :---: |:-----:|:----------------------------------------------------:|:------------------------------------------------:|
+|       Name       | Roles |                       LinkedIn                       |                  Github                   |
+| :--------------: | :---: | :--------------------------------------------------: | :---------------------------------------: |
 | **Ali Zulfikar** | Lead  | [LinkedIn](https://www.linkedin.com/in/alizulfikar/) | [Github](https://www.github.com/alizul01) |
 
 We are waiting for you to join us!
