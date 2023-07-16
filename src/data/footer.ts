@@ -15,7 +15,7 @@ export const FOOTER_DATA: FooterData = {
 		light: LogoLight,
 	},
 	description:
-		"Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi",
+		"Komunitas sebagai tempat belajar bersama mengembangkan kreativitas dan inovasi di bidang ilmu pengetahuan dan teknologi",
 	navigationList: [
 		{
 			title: "Miniclass",
