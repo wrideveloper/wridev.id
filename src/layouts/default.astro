@@ -1,4 +1,5 @@
 ---
+import type { Props as SeoData } from "astro-seo";
 import Navbar from "~/components/navbar/navbar.svelte";
 import Footer from "~/components/footer/footer.astro";
 import "../styles/main.css";
@@ -18,8 +19,9 @@ import { SEO_DATA } from "~/data/seo";
 type Props = {
 	title: string;
 	description?: string;
+	openGraph?: SeoData["openGraph"];
 };
-const { title, description = SEO_DATA.description! } = Astro.props as Props;
+const { title, description = SEO_DATA.description!, openGraph = SEO_DATA.openGraph! } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@ const { title, description = SEO_DATA.description! } = Astro.props as Props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<meta name="generator" content={Astro.generator} />
-		<SEO {...SEO_DATA} title={title} description={description} />
+		<SEO {...SEO_DATA} title={title} description={description} openGraph={openGraph} />
 	</head>
 	<body class="bg-white bg-paper">
 		<SwiperInit client:load />
