@@ -4,7 +4,7 @@ import FooterList from "./footer-list.astro";
 import { FOOTER_DATA } from "~/data/footer";
 ---
 
-<footer class="font-sans bg-white dark:bg-muted-900 border-t border-slate-200">
+<footer class="font-sans bg-white border-t border-slate-200">
 	<Container>
 		<div class="px-5 py-24 mx-auto">
 			<div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
@@ -12,10 +12,19 @@ import { FOOTER_DATA } from "~/data/footer";
 					<div class="max-w-[280px] mx-auto md:mx-0">
 						<a href="/" class="flex items-center justify-center md:justify-start gap-3 mb-4">
 							<div class="text-primary-600 transition-all duration-300">
-								<img src={FOOTER_DATA.logo} class="w-auto h-16" />
+								<img
+									alt="WRI Logo Light"
+									src={FOOTER_DATA.logo.light.src}
+									class="block w-auto h-16"
+								/>
+								<img
+									alt="WRI Logo Dark"
+									src={FOOTER_DATA.logo.dark.src}
+									class="hidden w-auto h-16"
+								/>
 							</div>
 						</a>
-						<p class="text-sm text-muted-500 dark:text-muted-400 mb-10 md:mb-0">
+						<p class="text-sm text-slate-500 mb-10 md:mb-0">
 							{FOOTER_DATA.description}
 						</p>
 					</div>
@@ -24,10 +33,10 @@ import { FOOTER_DATA } from "~/data/footer";
 			</div>
 		</div>
 	</Container>
-	<div class="bg-muted-100 dark:bg-muted-800">
+	<div class="bg-slate-100">
 		<Container>
 			<div class="py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-				<p class="text-muted-500 dark:text-muted-400 text-sm text-center sm:text-left">
+				<p class="text-slate-500 text-sm text-center sm:text-left">
 					© 2023 - {new Date().getFullYear()} All Rights Reserved —
 					<a
 						href="https://github.com/wrideveloper"
@@ -39,7 +48,7 @@ import { FOOTER_DATA } from "~/data/footer";
 					</a>
 				</p>
 				<span
-					class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-muted-500 dark:text-muted-400 text-sm"
+					class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-slate-500 text-sm"
 				>
 					Built with <a href="https://astro.build" class="hover:text-primary-500">Astro</a>
 					and <a href="https://svelte.dev" class="hover:text-primary-500"> Svelte</a>

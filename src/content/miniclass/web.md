@@ -1,6 +1,6 @@
 ---
 title: Web Development
-icon: /assets/miniclass/web.png
+icon: ../../assets/miniclass/web.png
 description: Miniclass yang berfokus dengan web app development
 image: https://i.ibb.co/7pVxrBq/joshua-aragon-FGXqbqb-Gt5o-unsplash.jpg
 day: rabu
@@ -9,46 +9,108 @@ time:
   - "21.00"
 ---
 
-# Pengenalan Singkat
-Program miniclass Web Development dirancang khusus untuk membekali peserta agar memiliki keterampilan website yang kuat. Baik kamu adalah pemula yang penasaran atau sudah memiliki sedikit pengalaman, program ini akan membawa kemampuanmu ke level berikutnya. Jadi, tidak perlu khawatir jika kamu tidak memiliki latar belakang teknis yang kuat. Kami ada di sini untuk membantumu!
+## Pengenalan Singkat
 
-Selama belajar di Miniclass, kamu akan mempelajari dasar-dasar penting dalam pembuatan website. Kita terlebih dahulu berkenalan dengan HTML yang merupakan tulang punggung dari setiap halaman website. Di sini kita akan belajar cara menata dan membangun struktur website yang solid. Kemudian, kita akan terjun ke dunia CSS, di mana akan belajar cara memberikan tampilan yang keren dan menarik pada website-mu. 
+```typescript jsx
+import { WebDevelopment } from "@miniclass/web";
 
-Program miniclass website juga akan membawa kamu ke tingkat berikutnya dengan memperkenalkanmu pada JavaScript. Dengan JavaScript, kamu akan mampu menambahkan interaktivitas pada website-mu. Dari animasi yang keren hingga validasi form, kamu akan belajar cara membuat website yang hidup dan responsif.
+const web = new WebDevelopment();
 
-Tunggu dulu, kita belum selesai! Jika tingkat basic sudah kamu lewati secara keseluruhan, kamu berkesempatan mendapatkan lebih banyak pengetahuan dengan mencoba berbagai macam framework yang ada. Mulai dari framework untuk Front-End ataupun Back-End, atau bahkan keduanya. 
+web.learn();
+web.enjoy();
+```
 
-Diskusi, latihan praktis, dan proyek-proyek menarik akan mengisi hari-harimu.
+Kamu pengen belajar bikin web nih? Kuy ikutan `Web Development` miniclass! Well, miniclass ini akan membahas tentang web development secara umum, mulai dari basic skills yang harus kamu kuasai, sampai peminatan bidang! So, tunggu apa lagi? Ayo join miniclass web!
 
-&nbsp;
-# Sibalus
-Berikut merupakan materi yang akan dipelajari di Miniclass Web Development.
+## Goals
 
-### Materi Web Dasar
- 1. **Pengenalan Pemrograman Web**
- 2. **HTML**
- 3. **CSS**
- 4. **JavaScript**
- 5. **Node.js**
- 6. **Express.js**
+Goals di sini apa sih? Apa yang bakal kamu dapetin?
 
-### Materi Frontend
- 1. **Modern Frontend Development**
- 2. **React Fundamental**
- 3. **React State Management**
- 4. **React Performance**
- 5. **React Testing**
+1. Strong web fundamental knowledge
+2. Explore and High Curiosity at Web Development Technology
+3. Build tons of web app project for your portfolio
+4. Networking with other web developer
 
-### Materi Frontend
- 1. **Object Relational Mapping**
- 2. **Document Oriented Database**
- 3. **Web Service**
- 4. **Autentikasi**
- 5. **Microservices**
- 6. **Searching**
- 7. **Caching**
+Gila, banyak banget ya benefitnya? Gimana, tertarik?
 
-&nbsp;
-# Mentor
+## Learning Phase
 
-Siapa aja
+<img src="../../assets/miniclass/web/web-dev-learning-phase.png" alt="web-dev">
+
+Jadi, miniclass ini memiliki sebuah `framework` berpikir dalam belajar, yaitu `Web Development Learning Phase` yang terdiri dari 5 tahap, yaitu:
+
+1. Learning how to learn Effectively
+2. Get to Know: Behind the scene of Web Development
+3. Learn HTML, CSS, and Javascript `also learn about Git and Github`
+4. Front-end or Back-end Concentration `choose by yourself`
+5. Build your own Web App Project
+6. Explore! Explore! Explore!
+
+## Materi
+
+Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yaitu:
+
+# Fundamental Phase
+
+- Learning how to learn
+- Behind the scenes of Web Development
+- HTML, CSS, and JavaScript
+- Git and GitHub
+- Mini Project 01
+
+<div style="display: flex; gap: 3px;">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge">
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+</div>
+
+# Advanced Phase
+
+## Front-end Concentration
+
+- Fast Review HTML, CSS, and JavaScript
+- JavaScript ES6
+- Tailwind CSS
+- Pick a Front-end Framework (React, Vue, Angular)
+- Mini Project 02
+
+<div style="display: flex; gap: 3px;">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge">
+  <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue.js Badge">
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular Badge">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS Badge">
+  <img src="https://img.shields.io/badge/ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="ES6 Badge">
+</div>
+
+## Back-end Concentration
+
+- Fast Review HTML, CSS, and JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Mini Project 02
+
+<div style="display: flex; gap: 3px;">
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js Badge">
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js Badge">
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
+</div>
+
+# Final Project
+
+- Build your own Web App Project
+- Explore! Explore! Explore!
+
+## Mentor
+
+**Our Web Development Fellows!**
+
+_Meet the team_
+
+|       Name       | Roles |                       LinkedIn                       |                  Github                   |
+| :--------------: | :---: | :--------------------------------------------------: | :---------------------------------------: |
+| **Ali Zulfikar** | Lead  | [LinkedIn](https://www.linkedin.com/in/alizulfikar/) | [Github](https://www.github.com/alizul01) |
+
+We are waiting for you to join us!

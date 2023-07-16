@@ -6,6 +6,10 @@ module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
+			backgroundImage: {
+				topography: "url('/patterns/topography.svg')",
+				paper: "url('/patterns/graph-paper.svg')",
+			},
 			screens: {
 				xs: { max: "639px" },
 				sm: "640px",
@@ -13,12 +17,6 @@ module.exports = {
 				lg: "1025px",
 				xl: "1280px",
 				xxl: "1536px",
-				ptablet: {
-					raw: "(min-width: 768px) and (max-width: 1024px) and (orientation: portrait)",
-				},
-				ltablet: {
-					raw: "(min-width: 768px) and (max-width: 1024px) and (orientation: landscape)",
-				},
 			},
 			colors: {
 				primary: colors.indigo,
@@ -26,10 +24,6 @@ module.exports = {
 				success: colors.teal,
 				warning: colors.amber,
 				danger: colors.rose,
-				muted: {
-					...colors.slate,
-					1000: "#0a101f",
-				},
 				slate: {
 					1000: "#0a101f",
 				},

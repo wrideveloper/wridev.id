@@ -1,5 +1,7 @@
 # Website Workshop Riset Informatika
 
+![image](https://github.com/wrideveloper/wri-dev/assets/51877647/edf3ed19-cfa2-4525-a8ed-94898d6ae6f4)
+
 ## Ini Apa?
 
 Seperti yang udah tertera di judulnya, ini repository dari source code website Workshop Riset Informatika. Seluruh source code yang ada di repository ini memiliki lisensi GNU GPL v3 seperti yang sudah tertera di dalam file [LICENSE.GPL-3.0](./LICENSE.GPL-3.0). Konten lainnya seperti artikel memiliki lisensi Creative Commons Attribution 4.0 International (CC BY 4.0) yang ada di dalam file [LICENSE.CC-BY-4.0](./LICENSE.CC-BY-4.0).

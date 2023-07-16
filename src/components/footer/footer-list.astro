@@ -13,7 +13,7 @@ const { title, items } = Astro.props as Props;
 ---
 
 <div class="lg:w-1/6 ltablet:w-1/6 md:w-1/2 w-full px-4">
-	<h2 class="font-medium tracking-widest text-sm mb-5 text-muted-800 dark:text-muted-100">
+	<h2 class="font-medium tracking-widest text-sm mb-5 text-slate-800">
 		{title}
 	</h2>
 	<ul class="list-none space-y-3 mb-10">
@@ -22,7 +22,7 @@ const { title, items } = Astro.props as Props;
 				<li>
 					<a
 						href={item.href}
-						class="text-sm text-muted-500 hover:underline dark:text-muted-400 hover:text-primary-500 dark:hover:text-primary-500 transition-colors duration-300 cursor-pointer"
+						class="text-sm text-slate-500 hover:underline hover:text-primary-500 transition-colors duration-300 cursor-pointer"
 					>
 						{item.text}
 					</a>

@@ -1,26 +1,21 @@
-type NavigationItem = {
-	href: string;
-	text: string;
-};
-
-type SiteNavigationList = {
-	title: string;
-	items: NavigationItem[];
-};
+import LogoDark from "~/assets/logo/wri-dark-512.png";
+import LogoLight from "~/assets/logo/wri-light-512.png";
+import type { SiteNavigationList } from "~/models/navigation";
+import type { Logo } from "~/models/logo";
 
 type FooterData = {
-	/** the logo source url */
-	logo: string;
-	/** used for the description below the logo on the footer */
+	logo: Logo;
 	description: string;
-	/** used for the navigation list on the footer */
 	navigationList: SiteNavigationList[];
 };
 
 export const FOOTER_DATA: FooterData = {
-	logo: "https://elianiva.my.id/wri/light.png",
+	logo: {
+		dark: LogoDark,
+		light: LogoLight,
+	},
 	description:
-		"Komunitas yang bertujuan untuk membina dan mengembangkan kreativitas mahasiswa di bidang ilmu pengetahuan dan teknologi",
+		"Komunitas sebagai tempat belajar bersama mengembangkan kreativitas dan inovasi di bidang ilmu pengetahuan dan teknologi",
 	navigationList: [
 		{
 			title: "Miniclass",
