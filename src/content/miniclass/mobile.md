@@ -19,7 +19,7 @@ Buat kamu yang masih pemula, jangan khawatir! Miniclass mobile dirancang untuk s
 Nah, yang seru lagi, di miniclass mobile ini kamu juga bakal diajak untuk berkolaborasi dengan sesama peserta. Kamu akan bekerja sebagai tim untuk membuat aplikasi mobile yang keren dan fungsional. Selain mendapatkan pengalaman berharga tentang kerjasama tim, kamu juga akan belajar bagaimana menghadapi tantangan-tantangan dalam pengembangan aplikasi.
 
 &nbsp;
-# Sibalus
+# Silabus
 Berikut merupakan materi yang akan dipelajari di Miniclass Mobile.
 
 ### Persiapan Android

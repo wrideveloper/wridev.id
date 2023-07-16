@@ -21,7 +21,7 @@ Yang seru lagi, di miniclass game kita juga mengedepankan kerjasama tim. Kamu ak
 Jadi, tunggu apa lagi? Bergabunglah dengan miniclass game dan jadilah bagian dari komunitas penggemar game yang kreatif dan seru.
 
 &nbsp;
-# Sibalus
+# Silabus
 Berikut merupakan materi yang akan dipelajari di Miniclass Game.
 
 ### Pengenalan Game Development
