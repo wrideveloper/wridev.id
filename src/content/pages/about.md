@@ -19,4 +19,3 @@ Workshop Riset Informatika memiliki 4 bidang miniclass yang dapat diikuti oleh s
 2. [Mobile App Development](/miniclass/mobile)
 3. [Game Development](/miniclass/game)
 4. [UI/UX Design](/miniclass/ui-ux)
-

@@ -10,6 +10,7 @@ time:
 ---
 
 # Pengenalan Singkat
+
 Di miniclass game, kita bakal memberikanmu pengalaman seru dan mendalam tentang bagaimana menciptakan game. Kita fokus menggunakan Unity, platform game development yang populer dan kuat. Jadi, kamu bakal belajar dengan alat yang sering digunakan oleh para developer profesional!
 
 Materi pelatihannya nggak cuma teori-teori membosankan. Kita mengutamakan pendekatan praktis dengan sesi-sesi hands-on yang bikin kamu langsung terjun ke dalam praktik. Mulai dari konsep dasar game design, coding game mechanics, hingga penggunaan animasi dan efek visual, semuanya bakal kita bahas secara menyeluruh.
@@ -21,62 +22,73 @@ Yang seru lagi, di miniclass game kita juga mengedepankan kerjasama tim. Kamu ak
 Jadi, tunggu apa lagi? Bergabunglah dengan miniclass game dan jadilah bagian dari komunitas penggemar game yang kreatif dan seru.
 
 &nbsp;
+
 # Silabus
+
 Berikut merupakan materi yang akan dipelajari di Miniclass Game.
 
 ### Pengenalan Game Development
- 1. **Tahapan Pembuatan Game**
- 2. **Game Design Document**
- 3. **Story Board**
+
+1.  **Tahapan Pembuatan Game**
+2.  **Game Design Document**
+3.  **Story Board**
 
 ### Pengenalan Unity
- 1. **Penjelasan Unity**
- 2. **Pengenalan Interface Unity**
- 3. **Game Object Component**
- 4. **Physic Component**
+
+1.  **Penjelasan Unity**
+2.  **Pengenalan Interface Unity**
+3.  **Game Object Component**
+4.  **Physic Component**
 
 ### Pengenalan Bahasa Pemrograman C#
- 1. **Pengenalan C#**
- 2. **Fungsi**
- 3. **Dasar OOP Pada C#**
- 4. **Constructor**
- 5. **Inheritance**
- 6. **Getter dan Setter**
- 7. **Object Attribute**
 
- ### Penerapan C# pada Unity
- 1. **Transform**
- 2. **Delta Time**
- 3. **Input**
- 4. **GetComponent**
- 5. **Velocity**
- 6. **Add Force**
- 7. **Collider Trigger**
- 8. **Membuat Game 2D Sederhana**
+1.  **Pengenalan C#**
+2.  **Fungsi**
+3.  **Dasar OOP Pada C#**
+4.  **Constructor**
+5.  **Inheritance**
+6.  **Getter dan Setter**
+7.  **Object Attribute**
+
+### Penerapan C# pada Unity
+
+1.  **Transform**
+2.  **Delta Time**
+3.  **Input**
+4.  **GetComponent**
+5.  **Velocity**
+6.  **Add Force**
+7.  **Collider Trigger**
+8.  **Membuat Game 2D Sederhana**
 
 ### Teknik Pembuatan Game
- 1. **Inventory System**
- 2. **Jump Through Platform**
- 3. **Moving Platform**
- 4. **Spawning Object**
- 5. **Infinite Scrolling**
- 6. **Add Force**
- 7. **Collider Trigger**
+
+1.  **Inventory System**
+2.  **Jump Through Platform**
+3.  **Moving Platform**
+4.  **Spawning Object**
+5.  **Infinite Scrolling**
+6.  **Add Force**
+7.  **Collider Trigger**
 
 ### Efek pada Unity
- 1. **Animation**
- 2. **Audio**
- 3. **Lighting**
+
+1.  **Animation**
+2.  **Audio**
+3.  **Lighting**
 
 ### User Interface
- 1. **User Interface**
- 2. **Membuat Game 2D dengan Efek dan Menu**
+
+1.  **User Interface**
+2.  **Membuat Game 2D dengan Efek dan Menu**
 
 ### Penyimpanan Eksternal
- 1. **Binary File**
- 2. **SQLite**
+
+1.  **Binary File**
+2.  **SQLite**
 
 &nbsp;
+
 # Mentor
 
 Siapa aja
