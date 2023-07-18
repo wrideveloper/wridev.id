@@ -7,6 +7,9 @@ day: rabu
 time:
   - "19.00"
   - "21.00"
+mentors:
+  - Ahmad Shodikin
+  - Fitrah Rahmadhani Ahmad
 ---
 
 # Pengenalan Singkat
@@ -21,7 +24,7 @@ Tentu saja, miniclass ini tidak akan lengkap tanpa challenge yang menarik. Kami 
 
 &nbsp;
 
-# Sibalus
+# Silabus
 
 Berikut merupakan materi yang akan dipelajari di Miniclass UI/UX Design.
 
@@ -47,7 +50,3 @@ Berikut merupakan materi yang akan dipelajari di Miniclass UI/UX Design.
 6.  **Fase Testing**
 
 &nbsp;
-
-# Mentor
-
-Siapa aja

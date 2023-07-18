@@ -7,6 +7,11 @@ day: rabu
 time:
   - "19.00"
   - "21.00"
+mentors:
+  - Muhammad Ali Zulfikar
+  - Alfan (Alivan) Olivan
+  - Muhammad Ilzam Mulkhaq
+  - Dicha Zelianivan Arkana
 ---
 
 ## Pengenalan Singkat
@@ -58,12 +63,12 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 - Git and GitHub
 - Mini Project 01
 
-<div style="display: flex; gap: 3px;">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge">
-  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge">
-  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
+<div style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
+  <img style="margin: 0;" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
 </div>
 
 ### Advanced Phase
@@ -76,12 +81,12 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 - Pick a Front-end Framework (React, Vue, Angular)
 - Mini Project 02
 
-<div style="display: flex; gap: 3px;">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge">
-  <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue.js Badge">
-  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular Badge">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS Badge">
-  <img src="https://img.shields.io/badge/ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="ES6 Badge">
+<div style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
+  <img style="margin: 0;" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D" alt="Vue.js Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="ES6 Badge">
 </div>
 
 #### Back-end Concentration
@@ -92,25 +97,13 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
 - MongoDB
 - Mini Project 02
 
-<div style="display: flex; gap: 3px;">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js Badge">
-  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js Badge">
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
+<div style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="Express.js Badge">
+  <img style="margin: 0;" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
 </div>
 
 ### Final Project
 
 - Build your own Web App Project
 - Explore! Explore! Explore!
-
-## Mentor
-
-**Our Web Development Fellows!**
-
-_Meet the team_
-
-|       Name       | Roles |                       LinkedIn                       |                  Github                   |
-| :--------------: | :---: | :--------------------------------------------------: | :---------------------------------------: |
-| **Ali Zulfikar** | Lead  | [LinkedIn](https://www.linkedin.com/in/alizulfikar/) | [Github](https://www.github.com/alizul01) |
-
-We are waiting for you to join us!

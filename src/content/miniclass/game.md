@@ -7,6 +7,8 @@ day: kamis
 time:
   - "19.00"
   - "21.00"
+mentors:
+  - Ziedny Mubarok
 ---
 
 # Pengenalan Singkat
@@ -88,7 +90,3 @@ Berikut merupakan materi yang akan dipelajari di Miniclass Game.
 2.  **SQLite**
 
 &nbsp;
-
-# Mentor
-
-Siapa aja

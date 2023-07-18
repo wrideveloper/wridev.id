@@ -60,7 +60,7 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Fitrah Rahmadhani Ahmad",
-			about: "Saya seorang mahasiswa yang tengah mempelajari dunia informatika, tertarik dengan desain, programming, serta teknologi.",
+			about: "Head of Information Media Division at Workshop Riset Informatika",
 			position: "UI/UX Designer",
 			profileImage:
 				"https://media.licdn.com/dms/image/D5603AQH03DfNua6WrQ/profile-displayphoto-shrink_200_200/0/1671933716567?e=1694044800&v=beta&t=sP3LRo8dw_tYqTWXo2lnYgF2kYkanjcfcIPDlYB7veI",
@@ -91,7 +91,7 @@ export const TALENT_DATA: TalentData = {
 			about: "I'm a fast learner and have a high curiosity about programming.",
 			position: "Mobile and Web Developer",
 			profileImage:
-				"https://media.licdn.com/dms/image/C5603AQENdjd61mHkpw/profile-displayphoto-shrink_200_200/0/1662975121163?e=1694044800&v=beta&t=Ndkd7SXFdCYLA5rMuI_UGHRitr_MHRJToNLHfr5Ik3Q",
+				"https://media.licdn.com/dms/image/D5603AQGjgQPzKhx-Wg/profile-displayphoto-shrink_200_200/0/1688747714927?e=1695254400&v=beta&t=4WVDyjaPVdX1WcbpB4OE5xKiSSKAquj9ZB6BxTWZfWY",
 			yearsOfExperience: 4,
 			proficiencies: ["mobile", "backend"],
 			availabilities: ["freelance"],

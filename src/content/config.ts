@@ -22,6 +22,7 @@ const miniclassCollection = defineCollection({
 			image: z.string().url(),
 			day: z.enum(["senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"]),
 			time: z.tuple([z.string().min(1), z.string().min(1)]),
+			mentors: z.array(z.string()),
 		}),
 });
 
