@@ -6,8 +6,8 @@ import { HERO_DATA } from "~/data/hero";
 <div class="relative min-h-screen w-full overflow-hidden bg-slate-100 bg-topography pt-32 lg:pt-0 pb-12">
 	<div class="relative min-h-screen w-full max-w-7xl mx-auto flex flex-col justify-center gap-14 px-4 z-20">
 		<div class="flex items-center">
-			<div class="w-full grid grid-cols-12 gap-10">
-				<div class="col-span-10 lg:col-span-6">
+			<div class="w-full lg:grid grid-cols-12 gap-10">
+				<div class="col-span-6">
 					<div class="h-full flex items-center mb-8 lg:mb-0">
 						<div class="text-center lg:text-left font-sans space-y-4">
 							<h1 class="font-heading font-bold text-4xl lg:text-6xl text-slate-800">
@@ -25,7 +25,7 @@ import { HERO_DATA } from "~/data/hero";
 						</div>
 					</div>
 				</div>
-				<div class="relative col-span-10 lg:col-span-6 h-[32rem] overflow-hidden rounded-lg bg-slate-300">
+				<div class="relative col-span-6 h-[32rem] overflow-hidden rounded-lg bg-slate-300">
 					<swiper-container loop={true} effect="fade" autoplay={true}>
 						{
 							HERO_DATA.images.map((image, index) => (
