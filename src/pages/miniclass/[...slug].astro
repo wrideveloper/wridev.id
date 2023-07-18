@@ -1,5 +1,5 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import Layout from "~/layouts/default.astro";
 
 const { slug } = Astro.params;
@@ -13,6 +13,11 @@ if (entry === undefined) {
 
 const [startTime, endTime] = entry.data.time;
 const { Content } = await entry.render();
+
+export async function getStaticPaths() {
+	const entries = await getCollection("miniclass");
+	return entries.map((entry) => ({ params: { slug: entry.slug } }));
+}
 ---
 
 <Layout

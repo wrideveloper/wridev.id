@@ -35,7 +35,7 @@ Gila, banyak banget ya benefitnya? Gimana, tertarik?
 
 ## Learning Phase
 
-<img src="../../assets/miniclass/web/web-dev-learning-phase.png" alt="web-dev">
+<img src="/_astro/miniclass/web/web-dev-learning-phase.hash.png" alt="web-dev">
 
 Jadi, miniclass ini memiliki sebuah `framework` berpikir dalam belajar, yaitu `Web Development Learning Phase` yang terdiri dari 5 tahap, yaitu:
 
@@ -50,7 +50,7 @@ Jadi, miniclass ini memiliki sebuah `framework` berpikir dalam belajar, yaitu `W
 
 Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yaitu:
 
-# Fundamental Phase
+### Fundamental Phase
 
 - Learning how to learn
 - Behind the scenes of Web Development
@@ -66,9 +66,9 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge">
 </div>
 
-# Advanced Phase
+### Advanced Phase
 
-## Front-end Concentration
+#### Front-end Concentration
 
 - Fast Review HTML, CSS, and JavaScript
 - JavaScript ES6
@@ -84,7 +84,7 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
   <img src="https://img.shields.io/badge/ES6-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="ES6 Badge">
 </div>
 
-## Back-end Concentration
+#### Back-end Concentration
 
 - Fast Review HTML, CSS, and JavaScript
 - Node.js
@@ -98,7 +98,7 @@ Apa aja nih yang bakal dipelajarin? Ok kita bakal bagi jadi beberapa bagian, yai
   <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
 </div>
 
-# Final Project
+### Final Project
 
 - Build your own Web App Project
 - Explore! Explore! Explore!
