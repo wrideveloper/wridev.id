@@ -35,7 +35,7 @@ Gila, banyak banget ya benefitnya? Gimana, tertarik?
 
 ## Learning Phase
 
-<img src="/_astro/miniclass/web/web-dev-learning-phase.hash.png" alt="web-dev">
+![web-dev-learning-phase](https://i.ibb.co/3Sgq7mc/web-dev-learning-phase.png)
 
 Jadi, miniclass ini memiliki sebuah `framework` berpikir dalam belajar, yaitu `Web Development Learning Phase` yang terdiri dari 5 tahap, yaitu:
 
