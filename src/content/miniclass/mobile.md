@@ -7,6 +7,11 @@ day: senin
 time:
   - "19.00"
   - "21.00"
+mentors:
+  - Muhammad Ilzam Mulkhaq
+  - Tio Irawan
+  - Agus Prayogi
+  - Maulana Arif
 ---
 
 # Pengenalan Singkat
@@ -56,7 +61,3 @@ Berikut merupakan materi yang akan dipelajari di Miniclass Mobile.
 2.  **Praktik Model List pada RecycleView**
 
 &nbsp;
-
-# Mentor
-
-Siapa aja

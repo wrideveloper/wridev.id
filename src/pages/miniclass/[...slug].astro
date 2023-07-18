@@ -1,6 +1,8 @@
 ---
 import { getCollection, getEntry } from "astro:content";
 import Layout from "~/layouts/default.astro";
+import { TALENT_DATA } from "~/data/talents";
+import TalentCard from "~/components/section/talent-pool/components/talent-card.svelte";
 
 const { slug } = Astro.params;
 if (slug === undefined) {
@@ -13,6 +15,9 @@ if (entry === undefined) {
 
 const [startTime, endTime] = entry.data.time;
 const { Content } = await entry.render();
+const mentors = await Promise.all(
+	entry.data.mentors.map((mentor) => TALENT_DATA.talents.find((talent) => talent.name === mentor)),
+);
 
 export async function getStaticPaths() {
 	const entries = await getCollection("miniclass");
@@ -39,7 +44,7 @@ export async function getStaticPaths() {
 	}}
 >
 	<main
-		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:bg-white prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[80ch] mx-auto"
+		class="px-4 prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:bg-white prose-img:rounded-lg prose-img:shadow-lg pt-24 pb-8 max-w-[80ch] mx-auto"
 	>
 		<div class="mb-12">
 			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
@@ -51,4 +56,10 @@ export async function getStaticPaths() {
 		</div>
 		<Content />
 	</main>
+	<div class="max-w-[80ch] mx-auto px-4 py-8">
+		<h2 class="font-bold text-slate-800 text-2xl font-heading mb-4">Mentor</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+			{mentors.map((mentor) => <TalentCard smallerImage {...mentor} />)}
+		</div>
+	</div>
 </Layout>
