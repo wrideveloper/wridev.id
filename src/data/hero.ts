@@ -25,9 +25,8 @@ export const HERO_DATA: HeroData = {
 		"Saling berbagi, belajar, dan bangun koneksi yang berharga dengan sesama tech-enthusiast. Dapatkan wawasan terbaru tentang perkembangan teknologi dan temukan kesempatan kolaborasi yang tak ternilai harganya.",
 	buttonText: "Let's Xplore 🚀",
 	highlights: [
-		{ title: "10+", subtitle: "years" },
-		{ title: "200+", subtitle: "members" },
-		{ title: "3", subtitle: "partners" },
+		{ title: "10+", subtitle: "years of activities" },
+		{ title: "100+", subtitle: "active members" },
 		{ title: "4", subtitle: "miniclass" },
 	],
 	images: [HeroImage1, HeroImage2, HeroImage3, HeroImage4, HeroImage5],

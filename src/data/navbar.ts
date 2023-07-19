@@ -16,7 +16,6 @@ export const NAVBAR_DATA: NavbarData = {
 	navigationItems: [
 		{ href: "/miniclass", text: "Miniclass" },
 		{ href: "/articles", text: "Articles" },
-		{ href: "/projects", text: "Projects" },
 		{ href: "/talents", text: "Talents" },
 		{ href: "/about", text: "About" },
 	],

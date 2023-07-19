@@ -20,35 +20,19 @@ export const FOOTER_DATA: FooterData = {
 		{
 			title: "Miniclass",
 			items: [
-				{ href: "/", text: "Mobile Development" },
-				{ href: "/", text: "Web Development" },
-				{ href: "/", text: "Game Development" },
-				{ href: "/", text: "UI/UX Design" },
-			],
-		},
-		{
-			title: "Activities",
-			items: [
-				{ href: "/", text: "Open Talk" },
-				{ href: "/", text: "WRI OOT" },
-				{ href: "/", text: "Workshop" },
+				{ href: "/miniclass/mobile", text: "Mobile Development" },
+				{ href: "/miniclass/web", text: "Web Development" },
+				{ href: "/miniclass/game", text: "Game Development" },
+				{ href: "/miniclass/ui-ux", text: "UI/UX Design" },
 			],
 		},
 		{
 			title: "Contact Us",
 			items: [
-				{ href: "/", text: "Instagram" },
-				{ href: "/", text: "Facebook" },
-				{ href: "/", text: "Github" },
-				{ href: "/", text: "LinkedIn" },
-				{ href: "/", text: "Medium" },
-			],
-		},
-		{
-			title: "Talents",
-			items: [
-				{ href: "/", text: "Talent Pool" },
-				{ href: "/", text: "Recruitment" },
+				{ href: "https://www.instagram.com/wri_polinema/", text: "Instagram" },
+				{ href: "https://github.com/wrideveloper", text: "Github" },
+				{ href: "https://www.linkedin.com/company/wripolinema", text: "LinkedIn" },
+				{ href: "https://medium.com/wripolinema", text: "Medium" },
 			],
 		},
 	],

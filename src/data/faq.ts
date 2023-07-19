@@ -23,11 +23,11 @@ export const FAQ_DATA: FaqData = {
 		},
 		{
 			question: "Acara yang ada di WRI itu apa aja?",
-			answer: "Di WRI banyak acara seru yang bisa kamu ikutan, guys! Ada miniclass yang lebih santai daripada kelas kampus, ada 4 pilihan topik: web development, mobile app development, game development, dan ui/ux design. Selain itu, ada juga acara open talks mirip seminar, dan acara WRI OOT yang santai banget buat ngobrol-ngobrol tentang hal-hal random seputar IT, seru banget deh!",
+			answer: "Di WRI banyak acara yang bisa kamu ikutin! Ada miniclass yg isinya ada 4 topik: web development, mobile app development, game development, dan ui/ux design. Selain itu, ada juga acara open talks mirip seminar, dan acara WRI OOT yang santai banget buat ngobrol-ngobrol tentang hal-hal random seputar IT.",
 		},
 		{
 			question: "Siapa yg bakal ngajar di miniclass?",
-			answer: "Di tiap miniclass bakal ada mentornya sendiri-sendiri, guys. Nah, mentornya ini sebenarnya mahasiswa yang udah punya pengalaman di bidang itu, jadi belajarnya lebih asik dan santai. Kalo kamu juga punya keahlian di bidang IT tertentu dan pengen jadi mentor, boleh banget lho kasih tau kita! Kami selalu terbuka buat orang-orang berbakat kayak kamu.",
+			answer: "Tiap miniclass bakal ada mentornya sendiri-sendiri. Nah, mentornya ini mahasiswa yang udah punya pengalaman di bidangnya masing masing. Kalo kamu juga punya keahlian di bidang IT tertentu dan pengen jadi mentor, boleh banget lho kasih tau kita! Kami selalu terbuka buat orang-orang berbakat kaya kamu.",
 		},
 	],
 };
