@@ -5,7 +5,7 @@
 	export let faqs: Faq[] = [];
 </script>
 
-<div class="w-3/4 flex flex-col gap-4">
+<div class="flex flex-col gap-4 w-full">
 	{#each faqs as faq}
 		<FaqItem {...faq} />
 	{/each}

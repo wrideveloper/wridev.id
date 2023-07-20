@@ -23,9 +23,7 @@ import Title from "../title.astro";
 			miniTitle={FAQ_DATA.miniTitle}
 			class="mx-auto text-center"
 		/>
-		<div
-			class="tech-grid grid lg:flex grid-cols-2 lg:grid-cols-6 grid-flow-row items-center justify-center lg:gap-x-16 gap-8"
-		>
+		<div class="tech-grid grid grid-flow-row items-center lg:gap-x-16 gap-8 px-4 max-w-screen-md mx-auto">
 			<FaqAccordion client:visible faqs={FAQ_DATA.faqs} />
 		</div>
 	</Container>
