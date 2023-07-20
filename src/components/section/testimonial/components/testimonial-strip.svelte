@@ -12,18 +12,21 @@
 	onMount(() => {
 		const swiperParams: SwiperOptions = {
 			slidesPerView: 1,
-			slidesPerGroup: 2,
+			slidesPerGroup: 1,
 			loop: true,
 			spaceBetween: 28,
 			breakpoints: {
 				640: {
 					slidesPerView: 2,
+					slidesPerGroup: 1,
 				},
 				860: {
 					slidesPerView: 3,
+					slidesPerGroup: 1,
 				},
 				1200: {
 					slidesPerView: 4,
+					slidesPerGroup: 2,
 				},
 			},
 		};
