@@ -106,7 +106,7 @@ export const TALENT_DATA: TalentData = {
 			about: "I like new things | I like to share and problem solving",
 			position: "Mobile App Developer",
 			profileImage:
-				"https://media.licdn.com/dms/image/C5603AQHLHndZL3bdXw/profile-displayphoto-shrink_200_200/0/1624317404980?e=1694044800&v=beta&t=-6D3GImwwk3wR48fyaLovCjzJBH7xylqkWLaSOZpCFw",
+				"https://media.licdn.com/dms/image/D5603AQFfdNv0SNOExQ/profile-displayphoto-shrink_200_200/0/1697002723428?e=1703116800&v=beta&t=jfTtMC6k3CONumyYWSXoNbrTWYOms-4bHU9Mt0yoJyE",
 			yearsOfExperience: 4,
 			proficiencies: ["mobile"],
 			availabilities: ["freelance"],
