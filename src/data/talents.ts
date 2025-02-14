@@ -274,6 +274,20 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "email", url: "adamnuralifi11@gmail.com" }
 			]
+		},
+		{
+			name: "Fikri Muhammad Abdillah",
+			about: "Cyber Security Enthusiast, especially in reverse engineering. and developers using Typescript and PHP",
+			position: "Cyber Security Analyst, Backend Dev",
+			profileImage: "/talents/fikri-muhammad-abdillah.jpg",
+			yearsOfExperience: 4,
+			proficiencies: ["cyber-security"],
+			availabilities: ["part-time", "freelance"],
+			contacts: [
+				{ type: "github", url: "https://github.com/FlaBBB" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/fikri-muhammad-abdillah-33a794275" },
+				{ type: "email", url: "12345ff67@gmail.com" },
+			]
 		}
 	],
 };
