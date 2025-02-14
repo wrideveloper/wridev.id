@@ -152,5 +152,128 @@ export const TALENT_DATA: TalentData = {
 				{ type: "email", url: "mailto:contact@elianiva.my.id" },
 			],
 		},
+		{
+			name: "Muhammmad Hamdan Ubaidillah",
+			about: "Pernah ngoding web fullstack, bot discord, scrapper",
+			position: "Full-stack Web Developer",
+			profileImage: "https://avatars.githubusercontent.com/u/68896885?v=4",
+			yearsOfExperience: 2,
+			proficiencies: ["backend", "frontend"],
+			availabilities: ["part-time"],
+			contacts: [
+				{ type: "github", url: "https://github.com/hmdnu" }
+			]
+		},
+		{
+			name: "Rensi Meila Yulvinata",
+			about: "U/UX Designer with 2+ years of experience in designing user-friendly and engaging interfaces for web and mobile applications.",
+			position: "UI/UX Designer",
+			profileImage: "/talents/rensi-meila-yulvinata.jpg",
+			yearsOfExperience: 2,
+			proficiencies: ["ui/ux"],
+			availabilities: ["part-time"],
+			contacts: [
+				{ type: "dribbble", url: "https://dribbble.com/rensimeila" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/rensi-meila-yulvinata-34b21a193/" },
+				{ type: "email", url: "rensimeila8@gmail.com" },
+			]
+		},
+		{
+			name: "Muhammad Khalid Atthoriq",
+			about: "I focus on front-end development and UI/UX design, currently working on a website for Dinas Ketahanan Pangan and previously delivered one for IsFor. I also handle videography, photography, and video editing, with a portfolio of diverse projects. Expanding my skills into data analytics and AI, I’m fluent in English and building my French.",
+			position: "Frontend, UI/UX, and Creative",
+			profileImage: "/talents/muhammad-khalid-atthoriq.webp",
+			yearsOfExperience: 4,
+			proficiencies: ["creative", "ui/ux", "frontend"],
+			availabilities: ["freelance"],
+			contacts: [
+				{ type: "github", url: "https://github.com/KhalidFinny" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/khalid-atthoriq-2a8a06253" },
+				{ type: "email", url: "katthoriq@gmail.com"},
+			]
+		},
+		{
+			name: "Moch. Naufal Ardian Ramadhan",
+			about: "Halo, saya Naufal seorang Desainer UI/UX dengan pengalaman lebih dari 2 tahun dalam membuat antarmuka pengguna dan pengalaman pengguna untuk aplikasi seluler, situs web, dan perangkat lunak. Untuk Project yang saya sedang kerjakan sekarang adalah gurustudios.id yang dimana mereka melakukan rebranding product mereka yang sebelumnya hanya platform game sekarang ekspansi ke pengajaran offline, nah dengan adanya platform website untuk pengajaran offline gurustudios.id provide pemesanan secara online dengan sistem subscribe, jadi mereka bisa mengikuti kelas dengan mendaftar melalui website tersebut. nah tugas saya di project ini, yang pertama karena ini sudah menjadi solusi yang harus saya develop atau saya deliver menjadi sebuah visual nah dari brief teman teman gurustudios.id itu meminta ada beberapa fitur untuk ada didalam website tersebut, lalu saya juga melakukan deliver visual design yang sudah saya kerjakan ke developer, untuk memastikan dan mengkomunikasikan apakah design saya ini bisa di develop oleh mereka.",
+			position: "UI/UX Designer",
+			profileImage: "/talents/moch-naufal-ardian-ramadhan.png",
+			yearsOfExperience: 2,
+			proficiencies: ["ui/ux"],
+			availabilities: ["freelance"],
+			contacts: [
+				{ type: "dribbble", url: "https://dribbble.com/NaufalAR" },
+				{ type: "linkedin", url: "http://www.linkedin.com/in/naufalardianr/" },
+				{ type: "github", url: "https://github.com/NaufalArdian12" },
+			]
+		},
+		{
+			name: "Aqsa Herry Prastyo",
+			about: "Saya adalah seorang Graphic Designer dengan pengalaman lebih dari 2 tahun dan UI/UX Designer selama 1 tahun. Saya memiliki keahlian dalam menciptakan desain visual yang menarik serta merancang pengalaman pengguna yang intuitif untuk aplikasi mobile dan desktop.Saya juga memilik keahlian dalam membuat logo dan branding perusahaan",
+			position: "UI/UX Designer and Creative",
+			profileImage: "/talents/aqsa-herry-prastyo.jpeg",
+			yearsOfExperience: 2,
+			proficiencies: ["ui/ux", "creative"],
+			availabilities: ["fulltime", "freelance", "part-time", "contract"],
+			contacts: [
+				{ type: "dribbble", url: "https://dribbble.com/Herry-Prastya" },
+				{ type: "linkedin", url: "https://linkedin.com/in/Aqsa%20Herry%20Prastyo" },
+				{ type: "github", url: "https://github.com/AqsaPrastyo" },
+				{ type: "email", url: "aqsaherryprasetya@gmail.com" },
+			]
+		},
+		{
+			name: "Lavina",
+			about: "Anak SMK jurusan RPL yang lanjut kuliah IT 👍🏻",
+			position: "Full-stack Developers",
+			profileImage: "https://avatars.githubusercontent.com/u/113479861?v=4",
+			yearsOfExperience: 3,
+			proficiencies: ["frontend", "backend", "general"],
+			availabilities: ["part-time", "freelance", "contract"],
+			contacts: [
+				{ type: "github", url: "https://github.com/Lavina-23" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a"},
+				{ type: "email", url: "lavina8000@gmail.com" },
+			]
+		},
+		{
+			name: "Riovaldo Alfiyan Fahmi Rahman",
+			about: "Web development enthusiast",
+			position: "Frontend Developer",
+			profileImage: "/talents/riovaldo-alfiyan-fahmi-rahman.jpg",
+			yearsOfExperience: 1,
+			proficiencies: ["frontend"],
+			availabilities: ["freelance"],
+			contacts: [
+				{ type: "github", url: "github.com/ckckckcz" },
+				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
+				{ type: "email", url: "rriovld@gmail.com" },
+			]
+		},
+		{
+			name: "Rakai Seto Sembodo",
+			about: "Passionate fullstack developer with 2 years of working experience. Specializing in Go, PostgreSQL, Redis, Laravel, and RabbitMQ. Driven to continuously learning new skills and technologies",
+			position: "Full-stack Developer",
+			profileImage: "/talents/rakai-seto-sembodo.png",
+			yearsOfExperience: 3,
+			proficiencies: ["frontend", "backend"],
+			availabilities: ["contract", "freelance", "fulltime", "part-time"],
+			contacts: [
+				{ type: "github", url: "https://github.com/rakaiseto" },
+				{ type: "linkedin", url: "linkedin.com/in/rakaiseto" },
+				{ type: "email", url: "mamangrakai@gmail.com" },
+			]
+		},
+		{
+			name: "Adam Nur Alifi",
+			about: "Suka design yang keren keren",
+			position: "UI/UX Designer and Creative",
+			profileImage: "/talents/adam-nur-alifi.png",
+			yearsOfExperience: 3,
+			proficiencies: ["ui/ux", "creative"],
+			availabilities: ["part-time", "freelance", "contract"],
+			contacts: [
+				{ type: "email", url: "adamnuralifi11@gmail.com" }
+			]
+		}
 	],
 };
