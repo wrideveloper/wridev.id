@@ -163,16 +163,15 @@ export const TALENT_DATA: TalentData = {
 			isVerified: true,
 		},
 		{
-			name: "Muhammmad Hamdan Ubaidillah",
-			about: "Pernah ngoding web fullstack, bot discord, scrapper",
+			name: "Hamdan Ubaidillah",
+			about: "Fullstack web developer. I like working with Typescript, Go and PHP",
 			position: "Full-stack Web Developer",
 			profileImage: "https://avatars.githubusercontent.com/u/68896885?v=4",
 			yearsOfExperience: 2,
 			proficiencies: ["backend", "frontend"],
-			availabilities: ["part-time"],
-			contacts: [
-				{ type: "github", url: "https://github.com/hmdnu" }
-			]
+			availabilities: ["part-time", "freelance"],
+			contacts: [{ type: "github", url: "https://github.com/hmdnu" }],
+			isVerified: false,
 		},
 		{
 			name: "Rensi Meila Yulvinata",
@@ -186,7 +185,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "dribbble", url: "https://dribbble.com/rensimeila" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/rensi-meila-yulvinata-34b21a193/" },
 				{ type: "email", url: "rensimeila8@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Muhammad Khalid Atthoriq",
@@ -199,8 +199,9 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/KhalidFinny" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/khalid-atthoriq-2a8a06253" },
-				{ type: "email", url: "katthoriq@gmail.com"},
-			]
+				{ type: "email", url: "katthoriq@gmail.com" },
+			],
+			isVerified: false,
 		},
 		{
 			name: "Moch. Naufal Ardian Ramadhan",
@@ -214,7 +215,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "dribbble", url: "https://dribbble.com/NaufalAR" },
 				{ type: "linkedin", url: "http://www.linkedin.com/in/naufalardianr/" },
 				{ type: "github", url: "https://github.com/NaufalArdian12" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Aqsa Herry Prastyo",
@@ -229,7 +231,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://linkedin.com/in/Aqsa%20Herry%20Prastyo" },
 				{ type: "github", url: "https://github.com/AqsaPrastyo" },
 				{ type: "email", url: "aqsaherryprasetya@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Lavina",
@@ -241,9 +244,10 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["part-time", "freelance", "contract"],
 			contacts: [
 				{ type: "github", url: "https://github.com/Lavina-23" },
-				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a"},
+				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a" },
 				{ type: "email", url: "lavina8000@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Riovaldo Alfiyan Fahmi Rahman",
@@ -255,9 +259,10 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "github.com/ckckckcz" },
-				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
+				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman" },
 				{ type: "email", url: "rriovld@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Rakai Seto Sembodo",
@@ -271,7 +276,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/rakaiseto" },
 				{ type: "linkedin", url: "linkedin.com/in/rakaiseto" },
 				{ type: "email", url: "mamangrakai@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Adam Nur Alifi",
@@ -281,9 +287,8 @@ export const TALENT_DATA: TalentData = {
 			yearsOfExperience: 3,
 			proficiencies: ["ui/ux", "creative"],
 			availabilities: ["part-time", "freelance", "contract"],
-			contacts: [
-				{ type: "email", url: "adamnuralifi11@gmail.com" }
-			]
-		}
+			contacts: [{ type: "email", url: "adamnuralifi11@gmail.com" }],
+			isVerified: false,
+		},
 	],
 };
