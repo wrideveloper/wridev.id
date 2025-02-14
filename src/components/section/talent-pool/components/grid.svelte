@@ -9,7 +9,8 @@
 	$: filteredTalents = talents.filter((talent) =>
 		$activeProficiencyFilter === null ? true : talent.proficiencies.includes($activeProficiencyFilter),
 	);
-	$: sortedTalents = filteredTalents.sort((a, b) => {
+	$: reversedTalents = filteredTalents.slice().reverse();
+	$: sortedTalents = reversedTalents.sort((a, b) => {
 		switch ($sortByFilter) {
 			case "name":
 				return a.name.localeCompare(b.name);
