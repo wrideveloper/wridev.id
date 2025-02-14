@@ -5,6 +5,9 @@
 	import MobileIcon from "~icons/ph/device-mobile-duotone";
 	import GameIcon from "~icons/ph/game-controller-duotone";
 	import PaletteIcon from "~icons/ph/palette-duotone";
+	import PhCamera from '~icons/ph/camera';
+	import PhBugBeetle from '~icons/ph/bug-beetle';
+	import PhNotepad from '~icons/ph/notepad';
 	import type { SvelteComponent } from "svelte";
 	import type { Proficiency } from "~/models/talent";
 	import { activeProficiencyFilter } from "../stores/filter";
@@ -23,6 +26,9 @@
 		{ id: "mobile", name: "Mobile", icon: MobileIcon as unknown as IconComponent },
 		{ id: "game", name: "Game", icon: GameIcon as unknown as IconComponent },
 		{ id: "ui/ux", name: "UI/UX", icon: PaletteIcon as unknown as IconComponent },
+		{ id: "creative", name: "Creative", icon: PhCamera as unknown as IconComponent },
+		{ id: "cyber-security", name: "Cyber Security", icon: PhBugBeetle as unknown as IconComponent },
+		{ id: "general", name: "General", icon: PhNotepad as unknown as IconComponent },
 	];
 
 	function handleChangeCategory(category: Proficiency | null) {

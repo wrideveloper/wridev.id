@@ -3,7 +3,7 @@ export type TalentContact = {
 	url: string;
 };
 
-export type Proficiency = "backend" | "frontend" | "mobile" | "game" | "ui/ux";
+export type Proficiency = "backend" | "frontend" | "mobile" | "game" | "ui/ux" | "creative" | "cyber-security" | "general";
 
 export type Availability = "fulltime" | "part-time" | "freelance" | "contract";
 
