@@ -16,4 +16,5 @@ export type Talent = {
 	yearsOfExperience: number;
 	proficiencies: Proficiency[];
 	availabilities: Availability[];
+	isVerified: boolean;
 };
