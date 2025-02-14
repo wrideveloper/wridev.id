@@ -28,6 +28,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ilzam-mulkhaq-309709189/" },
 				{ type: "email", url: "mailto:ilzammulkhaq85@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Muhammad Ali Zulfikar",
@@ -42,6 +43,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alizulfikar/" },
 				{ type: "email", url: "mailto:alizulfikar032@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Ahmad Shodikin",
@@ -55,6 +57,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ahmadshodikin/" },
 				{ type: "email", url: "mailto:dikiahmad05@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Fitrah Rahmadhani Ahmad",
@@ -68,6 +71,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/fitrahrahmadhani/" },
 				{ type: "email", url: "mailto:fitrahrahmadani625@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Ziedny Mubarok",
@@ -81,6 +85,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ziedny-mubarok-b99466220/" },
 				{ type: "email", url: "mailto:mubarokziedny@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Maulana Arif",
@@ -95,6 +100,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/maulana-arif/" },
 				{ type: "email", url: "mailto:maulanatoyek@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Agus Prayogi",
@@ -109,6 +115,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prayogi/" },
 				{ type: "email", url: "mailto:agus21apy@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Alfan Olivan",
@@ -123,6 +130,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alivan21/" },
 				{ type: "email", url: "mailto:alfanalivan@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Tio Irawan",
@@ -137,6 +145,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/tioirawan/" },
 				{ type: "email", url: "mailto:tioirawan063@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Dicha Zelianivan Arkana",
@@ -151,6 +160,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://linkedin.com/in/dichaa" },
 				{ type: "email", url: "mailto:contact@elianiva.my.id" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Muhammmad Hamdan Ubaidillah",
