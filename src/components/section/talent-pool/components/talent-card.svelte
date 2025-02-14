@@ -45,7 +45,7 @@
     <div
             class="col-start-2 col-end-3 md:col-start-1 md:col-end-2 row-start-2 row-end-3 md:row-start-3 md:row-end-4 md:mt-2 flex-1"
     >
-        <p class="text-sm text-slate-500">
+        <p class="text-sm text-slate-500 truncate line-clamp-3 text-wrap">
             {about}
         </p>
     </div>
