@@ -4,6 +4,7 @@
 	import EmailIcon from "~icons/ph/envelope-duotone";
 	import DribbbleIcon from "~icons/ph/dribbble-logo-duotone";
 	import StarIcon from "~icons/ph/shooting-star-duotone";
+	import PhSealCheckFill from "~icons/ph/seal-check-fill";
 
 	export let name: string;
 	export let position: string;
@@ -71,28 +72,14 @@
 		</div>
 		<div class="flex items-center justify-end gap-2">
 			{#if isVerified}
-				<div class="group relative">
+				<div class="group relative overflow-visible">
 					<span
-						class="opacity-0 group-hover:opacity-100 absolute bg-gray-800 text-white cursor-default px-2 py-1 rounded-md transition-opacity duration-300 delay-200 group-hover:delay-700 -top-8"
+						class="opacity-0 group-hover:opacity-100 absolute bg-gray-500 text-sm text-white cursor-default px-2 py-1 rounded-md transition-opacity -left-2 -top-8 max-w-[15rem] z-50 whitespace-nowrap overflow-hidden pointer-events-none"
 					>
-						verified!
+						WRI Verified
 					</span>
 
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0,0,256,256">
-						<g fill="none">
-							<g transform="scale(5.33333,5.33333)">
-								<circle cx="24" cy="24" r="20" fill="#4287f5"></circle>
-								<path
-									d="M22.491,30.69c-0.576,0 -1.152,-0.22 -1.591,-0.659l-6.083,-6.084c-0.879,-0.878 -0.879,-2.303 0,-3.182c0.878,-0.879 2.304,-0.879 3.182,0l6.083,6.084c0.879,0.878 0.879,2.303 0,3.182c-0.439,0.439 -1.015,0.659 -1.591,0.659z"
-									fill="#ffffff"
-								></path>
-								<path
-									d="M22.491,30.69c-0.576,0 -1.152,-0.22 -1.591,-0.659c-0.879,-0.878 -0.879,-2.303 0,-3.182l9.539,-9.539c0.878,-0.879 2.304,-0.879 3.182,0c0.879,0.878 0.879,2.303 0,3.182l-9.539,9.539c-0.439,0.439 -1.015,0.659 -1.591,0.659z"
-									fill="#ffffff"
-								></path>
-							</g>
-						</g>
-					</svg>
+					<PhSealCheckFill class="w-4 h-4 text-blue-500 hover:text-blue-800" />
 				</div>
 			{/if}
 			<StarIcon class="w-4 h-4 text-amber-600" />
