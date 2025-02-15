@@ -175,7 +175,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "dribbble", url: "https://dribbble.com/rensimeila" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/rensi-meila-yulvinata-34b21a193/" },
-				{ type: "email", url: "rensimeila8@gmail.com" },
+				{ type: "email", url: "mailto:rensimeila8@gmail.com" },
 			]
 		},
 		{
@@ -189,7 +189,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/KhalidFinny" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/khalid-atthoriq-2a8a06253" },
-				{ type: "email", url: "katthoriq@gmail.com"},
+				{ type: "email", url: "mailto:katthoriq@gmail.com"},
 			]
 		},
 		{
@@ -218,7 +218,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "dribbble", url: "https://dribbble.com/Herry-Prastya" },
 				{ type: "linkedin", url: "https://linkedin.com/in/Aqsa%20Herry%20Prastyo" },
 				{ type: "github", url: "https://github.com/AqsaPrastyo" },
-				{ type: "email", url: "aqsaherryprasetya@gmail.com" },
+				{ type: "email", url: "mailto:aqsaherryprasetya@gmail.com" },
 			]
 		},
 		{
@@ -232,7 +232,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/Lavina-23" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a"},
-				{ type: "email", url: "lavina8000@gmail.com" },
+				{ type: "email", url: "mailto:lavina8000@gmail.com" },
 			]
 		},
 		{
@@ -244,9 +244,9 @@ export const TALENT_DATA: TalentData = {
 			proficiencies: ["frontend"],
 			availabilities: ["freelance"],
 			contacts: [
-				{ type: "github", url: "github.com/ckckckcz" },
+				{ type: "github", url: "https://github.com/ckckckcz" },
 				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
-				{ type: "email", url: "rriovld@gmail.com" },
+				{ type: "email", url: "mailto:rriovld@gmail.com" },
 			]
 		},
 		{
@@ -259,8 +259,8 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["contract", "freelance", "fulltime", "part-time"],
 			contacts: [
 				{ type: "github", url: "https://github.com/rakaiseto" },
-				{ type: "linkedin", url: "linkedin.com/in/rakaiseto" },
-				{ type: "email", url: "mamangrakai@gmail.com" },
+				{ type: "linkedin", url: "https://linkedin.com/in/rakaiseto" },
+				{ type: "email", url: "mailto:mamangrakai@gmail.com" },
 			]
 		},
 		{
@@ -272,12 +272,12 @@ export const TALENT_DATA: TalentData = {
 			proficiencies: ["ui/ux", "creative"],
 			availabilities: ["part-time", "freelance", "contract"],
 			contacts: [
-				{ type: "email", url: "adamnuralifi11@gmail.com" }
+				{ type: "email", url: "mailto:adamnuralifi11@gmail.com" }
 			]
 		},
 		{
 			name: "Fikri Muhammad Abdillah",
-			about: "Cyber Security Enthusiast, especially in reverse engineering. and developers using Typescript and PHP",
+			about: "Cyber Security Enthusiast, especially in reverse engineering. and web-dev using Typescript and PHP",
 			position: "Cyber Security Analyst, Backend Dev",
 			profileImage: "/talents/fikri-muhammad-abdillah.jpg",
 			yearsOfExperience: 4,
@@ -286,7 +286,62 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/FlaBBB" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/fikri-muhammad-abdillah-33a794275" },
-				{ type: "email", url: "12345ff67@gmail.com" },
+				{ type: "email", url: "mailto:12345ff67@gmail.com" },
+			]
+		},
+		{
+			name: "Rafi Abiyyu Airlangga",
+			about: "Hai, kenalin aku Rafi (Abiyyu). Berbicara tentang diriku, aku seorang pengembang web yang pernah terjun ke proyek dan lomba. Proyek yang berkesan bagiku adalah Mindsea, dimana aku sama tim pergi ke Semarang sebagai finalis lomba dan teknologi yang kami pakai adalah Laravel 11 + MySQL. Selain itu, belakangan ini aku belajar tentang dunia Game Development, karena pengen eksplor ilmu pengetahuan!",
+			position: "Full-stack and Game Devloper",
+			profileImage: "/talents/rafi-abiyyu-airlangga.jpg",
+			yearsOfExperience: 2,
+			proficiencies: ["backend", "frontend", "game"],
+			availabilities: ["fulltime", "part-time", "freelance"],
+			contacts: [
+				{ type: "github", url: "https://github.com/a6iyyu" },
+				{ type: "linkedin", url: "https://linkedin.com/in/rafiabiyyuairlangga" },
+				{ type: "email", url: "mailto:mizukinako7@gmail.com" },
+			]
+		},
+		{
+			name: "Alexander Agung Raya",
+			about: "Nama saya Alex saya pernah mengerjakan Proyek game selain membuat game saya juga memiliki skill di bidang lain yaitu backend, fronted, dan Networking. Selain itu saya juga pernah menjadi content creator di youtube di bidang Gaming",
+			position: "Full-stack and Game Devloper",
+			profileImage: "/talents/alexander-agung-raya.jpeg",
+			yearsOfExperience: 4,
+			proficiencies: ["frontend", "backend", "game"],
+			availabilities: ["fulltime", "part-time", "freelance"],
+			contacts: [
+				{ type: "github", url: "https://github.com/AlexanderDev2004" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/alexanderagungraya/" },
+				{ type: "email", url: "mailto:alexgaming2120@gmail.com" }
+			]
+		},
+		{
+			name: "Muhammad Erril Putra Pratidina",
+			about: "Halo, saya Erril. Saya adalah mahasiswa teknik informatika yang menyukai pengembangan video game. Saya berkesempatan untuk mengikuti beberapa perlombaan 'pengembangan perangkat lunak permainan' dan 'game jam' sebagai programmer. Saya juga memiliki Unity Associate Game Developer yang digelar atas kerjasama Google Play dan Unity.",
+			position: "Backend and Game Developer",
+			profileImage: "/talents/muhammad_erril.jpg",
+			yearsOfExperience: 2,
+			proficiencies: ["backend", "game"],
+			availabilities: ["part-time"],
+			contacts: [
+				{ type: "github", url: "https://github.com/VozSoldat" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/muhammad-erril" },
+				{ type: "email", url: "mailto:errilputra@gmail.com" }
+			]
+		},
+		{
+			name: "Agus Prasetyo",
+			about: "Saya mulai terjun ke dunia keamanan siber saat duduk di bangku kelas 12 SMK, ketika saya berlatih intensif untuk lomba LKS di bidang keamanan siber. Demi memperdalam keahlian saya, saya mengikuti dua bootcamp keamanan siber, di mana pada bootcamp terakhir, saya mengambil peran sebagai anggota Red Team, fokus pada strategi ofensif dan penetration testing.\n\nSaya telah meraih beberapa gelar juara dalam kompetisi Capture The Flag (CTF) di tingkat provinsi maupun nasional, membuktikan kemampuan saya dalam eksploitasi sistem dan analisis keamanan. Selain itu, saya secara aktif mengasah keterampilan penetration testing melalui platform HackTheBox, memungkinkan saya untuk terus berkembang dalam menghadapi tantangan dunia nyata di bidang keamanan siber.",
+			position: "Cyber Security Analyst",
+			profileImage: "/talents/agus_prasetyo.jpeg",
+			yearsOfExperience: 3,
+			proficiencies: ["cyber-security"],
+			availabilities: ["freelance"],
+			contacts: [
+				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prasetyo-6005a9231/" },
+				{ type: "email", url: "mailto:desyo651@gmail.com" }
 			]
 		}
 	],
