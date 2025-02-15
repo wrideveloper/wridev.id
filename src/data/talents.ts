@@ -28,6 +28,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ilzam-mulkhaq-309709189/" },
 				{ type: "email", url: "mailto:ilzammulkhaq85@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Muhammad Ali Zulfikar",
@@ -42,6 +43,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alizulfikar/" },
 				{ type: "email", url: "mailto:alizulfikar032@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Ahmad Shodikin",
@@ -55,6 +57,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ahmadshodikin/" },
 				{ type: "email", url: "mailto:dikiahmad05@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Fitrah Rahmadhani Ahmad",
@@ -68,6 +71,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/fitrahrahmadhani/" },
 				{ type: "email", url: "mailto:fitrahrahmadani625@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Ziedny Mubarok",
@@ -81,6 +85,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/ziedny-mubarok-b99466220/" },
 				{ type: "email", url: "mailto:mubarokziedny@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Maulana Arif",
@@ -95,6 +100,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/maulana-arif/" },
 				{ type: "email", url: "mailto:maulanatoyek@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Agus Prayogi",
@@ -109,6 +115,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prayogi/" },
 				{ type: "email", url: "mailto:agus21apy@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Alfan Olivan",
@@ -123,6 +130,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alivan21/" },
 				{ type: "email", url: "mailto:alfanalivan@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Tio Irawan",
@@ -137,6 +145,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/tioirawan/" },
 				{ type: "email", url: "mailto:tioirawan063@gmail.com" },
 			],
+			isVerified: true,
 		},
 		{
 			name: "Dicha Zelianivan Arkana",
@@ -151,18 +160,18 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://linkedin.com/in/dichaa" },
 				{ type: "email", url: "mailto:contact@elianiva.my.id" },
 			],
+			isVerified: true,
 		},
 		{
-			name: "Muhammmad Hamdan Ubaidillah",
-			about: "Pernah ngoding web fullstack, bot discord, scrapper",
+			name: "Hamdan Ubaidillah",
+			about: "Fullstack web developer. I like working with Typescript, Go and PHP",
 			position: "Full-stack Web Developer",
 			profileImage: "https://avatars.githubusercontent.com/u/68896885?v=4",
 			yearsOfExperience: 2,
 			proficiencies: ["backend", "frontend"],
-			availabilities: ["part-time"],
-			contacts: [
-				{ type: "github", url: "https://github.com/hmdnu" }
-			]
+			availabilities: ["part-time", "freelance"],
+			contacts: [{ type: "github", url: "https://github.com/hmdnu" }],
+			isVerified: false,
 		},
 		{
 			name: "Rensi Meila Yulvinata",
@@ -176,7 +185,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "dribbble", url: "https://dribbble.com/rensimeila" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/rensi-meila-yulvinata-34b21a193/" },
 				{ type: "email", url: "mailto:rensimeila8@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Muhammad Khalid Atthoriq",
@@ -190,7 +200,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/KhalidFinny" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/khalid-atthoriq-2a8a06253" },
 				{ type: "email", url: "mailto:katthoriq@gmail.com"},
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Moch. Naufal Ardian Ramadhan",
@@ -204,7 +215,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "dribbble", url: "https://dribbble.com/NaufalAR" },
 				{ type: "linkedin", url: "http://www.linkedin.com/in/naufalardianr/" },
 				{ type: "github", url: "https://github.com/NaufalArdian12" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Aqsa Herry Prastyo",
@@ -219,7 +231,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://linkedin.com/in/Aqsa%20Herry%20Prastyo" },
 				{ type: "github", url: "https://github.com/AqsaPrastyo" },
 				{ type: "email", url: "mailto:aqsaherryprasetya@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Lavina",
@@ -233,7 +246,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/Lavina-23" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a"},
 				{ type: "email", url: "mailto:lavina8000@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Riovaldo Alfiyan Fahmi Rahman",
@@ -247,7 +261,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/ckckckcz" },
 				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
 				{ type: "email", url: "mailto:rriovld@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Rakai Seto Sembodo",
@@ -261,7 +276,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/rakaiseto" },
 				{ type: "linkedin", url: "https://linkedin.com/in/rakaiseto" },
 				{ type: "email", url: "mailto:mamangrakai@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Adam Nur Alifi",
@@ -271,9 +287,8 @@ export const TALENT_DATA: TalentData = {
 			yearsOfExperience: 3,
 			proficiencies: ["ui/ux", "creative"],
 			availabilities: ["part-time", "freelance", "contract"],
-			contacts: [
-				{ type: "email", url: "mailto:adamnuralifi11@gmail.com" }
-			]
+			contacts: [{ type: "email", url: "mailto:adamnuralifi11@gmail.com" }],
+			isVerified: false,
 		},
 		{
 			name: "Fikri Muhammad Abdillah",
@@ -287,7 +302,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/FlaBBB" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/fikri-muhammad-abdillah-33a794275" },
 				{ type: "email", url: "mailto:12345ff67@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Rafi Abiyyu Airlangga",
@@ -301,7 +317,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/a6iyyu" },
 				{ type: "linkedin", url: "https://linkedin.com/in/rafiabiyyuairlangga" },
 				{ type: "email", url: "mailto:mizukinako7@gmail.com" },
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Alexander Agung Raya",
@@ -315,7 +332,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/AlexanderDev2004" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alexanderagungraya/" },
 				{ type: "email", url: "mailto:alexgaming2120@gmail.com" }
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Muhammad Erril Putra Pratidina",
@@ -329,7 +347,8 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/VozSoldat" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/muhammad-erril" },
 				{ type: "email", url: "mailto:errilputra@gmail.com" }
-			]
+			],
+			isVerified: false,
 		},
 		{
 			name: "Agus Prasetyo",
@@ -342,7 +361,8 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prasetyo-6005a9231/" },
 				{ type: "email", url: "mailto:desyo651@gmail.com" }
-			]
+			],
+			isVerified: false,
 		}
 	],
 };
