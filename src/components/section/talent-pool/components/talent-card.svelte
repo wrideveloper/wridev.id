@@ -5,6 +5,7 @@
 	import DribbbleIcon from "~icons/ph/dribbble-logo-duotone";
 	import StarIcon from "~icons/ph/shooting-star-duotone";
 	import PhSealCheckFill from "~icons/ph/seal-check-fill";
+	import WebIcon from "~icons/ph/globe-duotone";
 
 	export let name: string;
 	export let position: string;
@@ -15,7 +16,7 @@
 	export let isVerified: boolean;
 
 	type Contact = {
-		type: "github" | "email" | "dribbble" | "linkedin";
+		type: "github" | "email" | "dribbble" | "linkedin" | "web";
 		url: string;
 	};
 	export let contacts: Contact[] = [];
@@ -66,6 +67,8 @@
 						<DribbbleIcon class="w-4 h-4" />
 					{:else if contact.type === "email"}
 						<EmailIcon class="w-4 h-4" />
+					{:else if contact.type === "web"}
+						<WebIcon class="w-4 h-4" />
 					{/if}
 				</a>
 			{/each}

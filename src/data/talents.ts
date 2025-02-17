@@ -276,6 +276,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/rakaiseto" },
 				{ type: "linkedin", url: "https://linkedin.com/in/rakaiseto" },
 				{ type: "email", url: "mailto:mamangrakai@gmail.com" },
+				{ type: "web", url: "https://rakaiseto.com" },
 			],
 			isVerified: false,
 		},

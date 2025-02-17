@@ -1,5 +1,5 @@
 export type TalentContact = {
-	type: "github" | "email" | "dribbble" | "linkedin";
+	type: "github" | "email" | "dribbble" | "linkedin" | "web";
 	url: string;
 };
 
