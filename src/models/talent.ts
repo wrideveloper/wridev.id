@@ -18,3 +18,11 @@ export type Talent = {
 	availabilities: Availability[];
 	isVerified: boolean;
 };
+
+export const CONTACT_PRIORITY_ORDER = {
+	"email": 1,
+	"web": 2,
+	"linkedin": 3,
+	"github": 3,
+	"dribbble": 3,
+}

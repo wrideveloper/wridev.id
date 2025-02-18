@@ -6,7 +6,8 @@
 	import StarIcon from "~icons/ph/shooting-star-duotone";
 	import PhSealCheckFill from "~icons/ph/seal-check-fill";
 	import WebIcon from "~icons/ph/globe-duotone";
-
+	import { CONTACT_PRIORITY_ORDER } from "~/models/talent.ts";
+	
 	export let name: string;
 	export let position: string;
 	export let about: string;
@@ -20,6 +21,8 @@
 		url: string;
 	};
 	export let contacts: Contact[] = [];
+
+	let sortedContacts = contacts.sort((a, b) => CONTACT_PRIORITY_ORDER[b.type] - CONTACT_PRIORITY_ORDER[a.type]);
 </script>
 
 <div
@@ -52,7 +55,7 @@
 		class="col-start-2 col-end-3 md:col-start-1 md:col-end-2 row-start-3 row-end-4 md:row-start-4 md:row-end-5 flex items-start md:items-center justify-between font-sans mt-2"
 	>
 		<div class="flex items-center md:gap-0 gap-2">
-			{#each contacts.sort() as contact}
+			{#each sortedContacts as contact}
 				<a
 					aria-label="Contact"
 					href={contact.url}
