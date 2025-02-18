@@ -170,7 +170,11 @@ export const TALENT_DATA: TalentData = {
 			yearsOfExperience: 2,
 			proficiencies: ["backend", "frontend"],
 			availabilities: ["part-time", "freelance"],
-			contacts: [{ type: "github", url: "https://github.com/hmdnu" }],
+			contacts: [
+				{ type: "github", url: "https://github.com/hmdnu" },
+				{ type: "web", url: "https://hmdnu.my.id" },
+				{ type: "email", url: "mailto:hamdanubaidillah0306@gmail.com" },
+			],
 			isVerified: false,
 		},
 		{
@@ -199,7 +203,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/KhalidFinny" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/khalid-atthoriq-2a8a06253" },
-				{ type: "email", url: "mailto:katthoriq@gmail.com"},
+				{ type: "email", url: "mailto:katthoriq@gmail.com" },
 			],
 			isVerified: false,
 		},
@@ -244,7 +248,7 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["part-time", "freelance", "contract"],
 			contacts: [
 				{ type: "github", url: "https://github.com/Lavina-23" },
-				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a"},
+				{ type: "linkedin", url: "https://www.linkedin.com/in/lavina-a3151327a" },
 				{ type: "email", url: "mailto:lavina8000@gmail.com" },
 			],
 			isVerified: false,
@@ -259,8 +263,9 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/ckckckcz" },
-				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
+				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman" },
 				{ type: "email", url: "mailto:rriovld@gmail.com" },
+				{ type: "web", url: "https://kazeworks.vercel.app" },
 			],
 			isVerified: false,
 		},
@@ -288,7 +293,10 @@ export const TALENT_DATA: TalentData = {
 			yearsOfExperience: 3,
 			proficiencies: ["ui/ux", "creative"],
 			availabilities: ["part-time", "freelance", "contract"],
-			contacts: [{ type: "email", url: "mailto:adamnuralifi11@gmail.com" }],
+			contacts: [
+				{ type: "email", url: "mailto:adamnuralifi11@gmail.com" },
+				{ type: "dribbble", url: "https://dribbble.com/adamna31" },
+			],
 			isVerified: false,
 		},
 		{
@@ -318,6 +326,7 @@ export const TALENT_DATA: TalentData = {
 				{ type: "github", url: "https://github.com/a6iyyu" },
 				{ type: "linkedin", url: "https://linkedin.com/in/rafiabiyyuairlangga" },
 				{ type: "email", url: "mailto:mizukinako7@gmail.com" },
+				{ type: "web", url: "https://a6iyyu.vercel.app" },
 			],
 			isVerified: false,
 		},
@@ -332,7 +341,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/AlexanderDev2004" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/alexanderagungraya/" },
-				{ type: "email", url: "mailto:alexgaming2120@gmail.com" }
+				{ type: "email", url: "mailto:alexgaming2120@gmail.com" },
 			],
 			isVerified: false,
 		},
@@ -347,7 +356,7 @@ export const TALENT_DATA: TalentData = {
 			contacts: [
 				{ type: "github", url: "https://github.com/VozSoldat" },
 				{ type: "linkedin", url: "https://www.linkedin.com/in/muhammad-erril" },
-				{ type: "email", url: "mailto:errilputra@gmail.com" }
+				{ type: "email", url: "mailto:errilputra@gmail.com" },
 			],
 			isVerified: false,
 		},
@@ -361,9 +370,9 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["freelance"],
 			contacts: [
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prasetyo-6005a9231/" },
-				{ type: "email", url: "mailto:desyo651@gmail.com" }
+				{ type: "email", url: "mailto:desyo651@gmail.com" },
 			],
 			isVerified: false,
-		}
+		},
 	],
 };
