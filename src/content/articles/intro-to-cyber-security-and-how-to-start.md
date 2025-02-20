@@ -180,7 +180,7 @@ CTF Jeopardy ini memiliki beberapa kategory challenge, diantaranya:
 - Miscellaneous: Tantangan dengan tema unik seperti OSINT (Open Source Intelligence) atau trivia teknis.
 
 Untuk awal mula belajar dengan CTF-Jeopardy, bisa mulai dari platform [PicoCTF](https://play.picoctf.org/practice),
-Untuk awal mula bisa belajar di PicoCTF, dan lihat video ini: https://www.youtube.com/watch?v=8ev9ZX9J45A&pp=ygUQY3RmIGludHJvZHVjdGlvbg%3D%3D
+Untuk awal mula bisa belajar di PicoCTF, dan lihat video ini: [LiveOverflow - What is CTF?](https://www.youtube.com/watch?v=8ev9ZX9J45A&pp=ygUQY3RmIGludHJvZHVjdGlvbg%3D%3D)
 
 Untuk platform belajarnya:
 - [PicoCTF](https://play.picoctf.org/practice)
