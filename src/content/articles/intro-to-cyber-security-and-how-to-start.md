@@ -1,6 +1,6 @@
 ---
 title: Intro to Cybersecurity and How to Start
-description: Astro itu makhluk apa sih? Metaframework itu apa? dan gimana caranya Astro bisa kenceng?
+description: Gimana sih cara belajar cybersecurity? Artikel ini akan membahas cara belajar cybersecurity, mulai dari pengenalan, pre-requisite, starting point, dan motivasi.
 image: https://i.ibb.co/cQS5KBV/vincenzo-malagoli-flfh-Al-Ew-Dq4-unsplash.jpg
 author: Fikri Muhammad Abdillah
 github: https://github.com/FlaBBB
