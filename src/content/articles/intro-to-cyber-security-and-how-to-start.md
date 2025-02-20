@@ -1,7 +1,7 @@
 ---
 title: Intro to Cybersecurity and How to Start
 description: Gimana sih cara belajar cybersecurity? Artikel ini akan membahas cara belajar cybersecurity, mulai dari pengenalan, pre-requisite, starting point, dan motivasi.
-image: https://i.ibb.co/cQS5KBV/vincenzo-malagoli-flfh-Al-Ew-Dq4-unsplash.jpg
+image: https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3
 author: Fikri Muhammad Abdillah
 github: https://github.com/FlaBBB
 linkedin: https://www.linkedin.com/in/fikri-muhammad-abdillah-33a794275/
