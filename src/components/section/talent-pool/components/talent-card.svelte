@@ -22,7 +22,7 @@
 	};
 	export let contacts: Contact[] = [];
 
-	let sortedContacts = contacts.sort((a, b) => CONTACT_PRIORITY_ORDER[b.type] - CONTACT_PRIORITY_ORDER[a.type]);
+	$: sortedContacts = contacts.sort((a, b) => CONTACT_PRIORITY_ORDER[b.type] - CONTACT_PRIORITY_ORDER[a.type]);
 </script>
 
 <div
