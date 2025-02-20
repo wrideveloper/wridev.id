@@ -11,7 +11,7 @@ tags:
   - backend
 ---
 
-Halo all! Pernah ngga sih kamu udah pernah punya database ‘exist’ dan kamu pengen data-data itu otomatis terpanggil di seeder ke depan? Instead of kamu bikin manual _yang pastinya males banget kalo tabelnya banyal_, kamu bisa nih pakai beberapa third-party library yang bisa membuatkan migrasi dan seeder secara otomatis! Lets jump right into it~
+Halo all! Pernah ngga sih kamu udah pernah punya database ‘exist’ dan kamu pengen data-data itu otomatis terpanggil di seeder ke depan? Instead of kamu bikin manual _yang pastinya males banget kalo tabelnya banyak_, kamu bisa nih pakai beberapa third-party library yang bisa membuatkan migrasi dan seeder secara otomatis! Lets jump right into it~
 
 # Library Package
 
