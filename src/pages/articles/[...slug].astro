@@ -59,7 +59,7 @@ export async function getStaticPaths() {
 	}}
 >
 	<main
-		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[90ch] mx-auto px-6"
+		class="prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:rounded-lg prose-img:shadow-lg py-24 max-w-[90ch] mx-auto px-4"
 	>
 		<div>
 			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
@@ -91,7 +91,7 @@ export async function getStaticPaths() {
 		<Content />
 	</main>
 	<hr class="w-full bg-slate-400 h-[1px]" />
-	<div class="max-w-6xl mx-auto py-14">
+	<div class="max-w-6xl mx-auto py-14 px-4">
 		<h1 class="text-2xl font-bold font-heading text-slate-700 py-4">Other articles you may like</h1>
 		<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 py-18">
 			{sortedArticlesMeta.map((article) => <ArticleCard variant="small" {...article.data} slug={article.slug} />)}
