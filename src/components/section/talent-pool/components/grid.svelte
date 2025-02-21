@@ -2,6 +2,14 @@
 	import type { Availability, Talent } from "~/models/talent";
 	import { activeProficiencyFilter, sortByFilter, experienceFilter, availabilityFilter } from "../stores/filter";
 	import Card from "./talent-card.svelte";
+	import TalentDetail from "./talent-detail.svelte";
+	import StarIcon from "~icons/ph/shooting-star-duotone";
+	import PhSealCheckFill from "~icons/ph/seal-check-fill";
+	import WebIcon from "~icons/ph/globe-duotone";
+	// import LinkedInIcon from "~icons/ph/linkedin-logo-duotone";
+	// import GithubIcon from "~icons/ph/github-logo-duotone";
+	// import EmailIcon from "~icons/ph/envelope-duotone";
+	// import DribbbleIcon from "~icons/ph/dribbble-logo-duotone";
 
 	export let talents: Talent[] = [];
 	export let limit = Infinity;
@@ -48,3 +56,5 @@
 		<Card {...talent} />
 	{/each}
 </div>
+
+<TalentDetail />

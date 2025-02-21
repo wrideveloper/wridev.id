@@ -21,3 +21,6 @@ pnpm-debug.log*
 .DS_Store
 
 .idea
+
+#lock
+pnpm-lock.yaml

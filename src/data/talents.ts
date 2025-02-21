@@ -259,10 +259,10 @@ export const TALENT_DATA: TalentData = {
 			availabilities: ["freelance"],
 			contacts: [
 				{ type: "github", url: "https://github.com/ckckckcz" },
-				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman"},
+				{ type: "linkedin", url: "https://linkedin.com/in/riovaldorahman" },
 				{ type: "email", url: "mailto:rriovld@gmail.com" },
 			],
-			isVerified: false,
+			isVerified: false
 		},
 		{
 			name: "Rakai Seto Sembodo",

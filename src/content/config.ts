@@ -13,6 +13,20 @@ const articlesCollection = defineCollection({
 	}),
 });
 
+const talentsCollection = defineCollection({
+	schema: z.object({
+		name: z.string().min(1),
+		about: z.string().min(1),
+		position: z.string().min(1),
+		profileImage: z.string().url(),
+		contacts: z.array(z.object({ platform: z.string(), link: z.string().url() })),
+		yearsOfExperience: z.number(),
+		proficiencies: z.array(z.string()),
+		availabilities: z.array(z.string()),
+		isVerified: z.boolean(),
+	})
+})
+
 const miniclassCollection = defineCollection({
 	schema: ({ image }) =>
 		z.object({
@@ -29,4 +43,5 @@ const miniclassCollection = defineCollection({
 export const collections = {
 	articles: articlesCollection,
 	miniclass: miniclassCollection,
+	talents: talentsCollection,
 };

@@ -7,6 +7,8 @@
 	import PhSealCheckFill from "~icons/ph/seal-check-fill";
 	import WebIcon from "~icons/ph/globe-duotone";
 
+	import { TALENT_DATA as talentData } from "~/data/talents";
+
 	export let name: string;
 	export let position: string;
 	export let about: string;
@@ -20,6 +22,33 @@
 		url: string;
 	};
 	export let contacts: Contact[] = [];
+
+	import { selectedTalent } from "../stores/selected-talent.ts";
+
+	function talentDetail(talentName) {
+		const entry = talentData.talents.find((talent: { name: string }) => talent.name === talentName);
+		if (entry === undefined) {
+			return alert.error("Talent not found");
+		}
+
+		selectedTalent.set(entry);
+
+		const modal = document.getElementById("modal-talent-detail");
+		if (modal) {
+			modal.style.display = "block";
+			// Add entering animation classes
+			const backdrop = modal.querySelector(".bg-gray-500\\/75");
+			const panel = modal.querySelector(".transform");
+
+			backdrop.classList.add("ease-out", "duration-300", "opacity-100");
+			panel.classList.add("ease-out", "duration-300", "opacity-100", "translate-y-0", "sm:scale-100");
+
+			// Remove initial opacity-0 classes
+			backdrop.classList.remove("opacity-0");
+			panel.classList.remove("opacity-0", "translate-y-4", "sm:translate-y-0", "sm:scale-95");
+		}
+		return;
+	}
 </script>
 
 <div
@@ -34,6 +63,13 @@
 		{smallerImage ? 'w-[8rem] h-[8rem] md:w-[13rem] md:h-[13rem]' : 'w-[9.8rem] h-[9.8rem] md:w-[15rem] md:h-[15rem]'}"
 	>
 		<img class="absolute bottom-0 inset-x-0 mx-auto w-full object-cover" src={profileImage} alt={name} />
+	</div>
+	<div>
+		<div
+			class="cursor-pointer absolute inset-0 bg-black bg-opacity-10 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+			on:click={() => talentDetail(name)}
+			aria-hidden="true"
+		></div>
 	</div>
 	<div
 		class="col-start-2 col-end-3 md:col-start-1 md:col-end-2 row-start-1 row-end-2 md:row-start-2 md:row-end-3 self-start font-sans md:mt-3"
@@ -51,7 +87,7 @@
 	<div
 		class="col-start-2 col-end-3 md:col-start-1 md:col-end-2 row-start-3 row-end-4 md:row-start-4 md:row-end-5 flex items-start md:items-center justify-between font-sans mt-2"
 	>
-		<div class="flex items-center gap-2">
+		<div class="flex items-center gap-2" style="z-index: 100;">
 			{#each contacts as contact}
 				<a
 					aria-label="Contact"
@@ -59,12 +95,12 @@
 					target="_blank"
 					class="h-4 w-4 md:w-8 md:h-8 rounded-full text-slate-400 hover:text-primary-500 hover:enabled:bg-slate-100 flex items-center justify-center tw-accessiblity transition-colors duration-300"
 				>
-					{#if contact.type === "linkedin"}
-						<LinkedInIcon class="w-4 h-4" />
+					{#if contact.type === "dribbble"}
+						<DribbbleIcon class="w-4 h-4" />
 					{:else if contact.type === "github"}
 						<GithubIcon class="w-4 h-4" />
-					{:else if contact.type === "dribbble"}
-						<DribbbleIcon class="w-4 h-4" />
+					{:else if contact.type === "linkedin"}
+						<LinkedInIcon class="w-4 h-4" />
 					{:else if contact.type === "email"}
 						<EmailIcon class="w-4 h-4" />
 					{:else if contact.type === "web"}
