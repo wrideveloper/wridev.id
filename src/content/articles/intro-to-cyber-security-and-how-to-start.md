@@ -12,7 +12,7 @@ tags:
 
 Beberapa temen tanya "bg gimana awal-awal belajar cybersecurity?", "Awal-awal belajar cybersecurity mulai dr mana?", dan banyak lagi. Daripada jawab satu-satu, dan jawabannya engga konsisten, jadi mending ditulis jadi artikel, berhubung juga WRI mau ada club/unit cybersecurity, jadi mungkin artikel ini bisa jadi referensi awal buat temen-temen yang mau belajar cybersecurity.
 
-Sebelumnya aku mau mention [Agus Prasetyo](https://www.linkedin.com/in/agus-prasetyo-6005a9231/) dan [Singgih Wahyu Permana](https://github.com/eeswepe) yang udah ikut bikin artikel ini.
+Sebelumnya aku mau mention dan berterimakasih sama [Agus Prasetyo](https://www.linkedin.com/in/agus-prasetyo-6005a9231/) dan juga [Singgih Wahyu Permana](https://github.com/eeswepe) yang udah ikut bikin artikel ini.
 
 *Disclaimer: artikel ini bertujuan untuk tujuan belajar, jadi kami tidak bertanggung jawab atas tindakan kriminal yang terjadi*
 
