@@ -48,7 +48,8 @@ Kalau mau tahu lebih detail tentang tiap role, skill yang perlu dikuasai, dan se
 Nah, setelah tahu ada banyak role dalam cybersecurity, mungkin muncul pertanyaan: gimana sih cara kerja mereka di dunia nyata? Soalnya, keamanan itu bukan cuma tanggung jawab satu orang atau satu role aja—harus ada tim yang saling mendukung.
 
 Karena cakupannya yang luas, cybersecurity dibagi ke dalam beberapa tim dengan tugas masing-masing. Merujuk pada [The Infosec Colour Wheel](https://hackernoon.com/introducing-the-infosec-colour-wheel-blending-developers-with-red-and-blue-security-teams-6437c1a07700), ada 7 jenis tim dalam dunia cybersecurity:, terdapat 7 tim pada bidang cybersecurity
-![infosec colour wheel](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2Fce%2Ffb%2Fb2%2Fcefbb22ceb12b7ace8997560f6efa17d.png&f=1&nofb=1&ipt=6ee04604c904a2863c129bcee8e40104b6a5859a6a5222850b1310b549855433&ipo=images)
+
+<img class="max-w-[50ch]" src="/articles/96827e5c-c799-42fe-abe0-eb7397734280.webp" alt="infosec colour wheel" />
 
 Dari 7 tim di atas, ada 3 team utama yaitu : **Red Team**, **Blue Team**, dan **Yellow Team**.
 ![main team](https://miro.medium.com/v2/resize:fit:720/format:webp/1*floZveKhNz7EVpCHitGuuA.png)
