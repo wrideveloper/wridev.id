@@ -49,7 +49,7 @@ Nah, setelah tahu ada banyak role dalam cybersecurity, mungkin muncul pertanyaan
 
 Karena cakupannya yang luas, cybersecurity dibagi ke dalam beberapa tim dengan tugas masing-masing. Merujuk pada [The Infosec Colour Wheel](https://hackernoon.com/introducing-the-infosec-colour-wheel-blending-developers-with-red-and-blue-security-teams-6437c1a07700), ada 7 jenis tim dalam dunia cybersecurity:, terdapat 7 tim pada bidang cybersecurity
 
-<img class="max-w-[50ch]" src="/articles/96827e5c-c799-42fe-abe0-eb7397734280.webp" alt="infosec colour wheel" />
+<img class="max-w-[65%]" src="/articles/96827e5c-c799-42fe-abe0-eb7397734280.webp" alt="infosec colour wheel" />
 
 Dari 7 tim di atas, ada 3 team utama yaitu : **Red Team**, **Blue Team**, dan **Yellow Team**.
 ![main team](https://miro.medium.com/v2/resize:fit:720/format:webp/1*floZveKhNz7EVpCHitGuuA.png)
