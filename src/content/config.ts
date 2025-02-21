@@ -8,7 +8,7 @@ const articlesCollection = defineCollection({
 		github: z.string().optional(),
 		linkedin: z.string().optional(),
 		tags: z.array(z.string().min(1)),
-		image: z.string().url(),
+		image: z.string(),
 		date: z.coerce.date(),
 	}),
 });
