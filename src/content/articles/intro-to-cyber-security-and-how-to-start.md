@@ -107,7 +107,6 @@ WSL ini sedikit mirip dengan yang diatas, namun bedanya wsl ini tidak memakai so
 **Kelebihan**:
 - Lebih ringan dibanding virtual box, karena jika pake wsl tidak perlu memakai GUI, cukup terminal nya saja cukup, itu yang membuat lebih ringan. selain itu WSL itu tidak benar2 menjalankan sistem operasi secara penuh.
 - Sudah terintegrasi dengan windows, jadi tidak perlu susah-susah setup untuk integrasi ke windows.
-Serangan cyber bisa kena ke siapa aja—bukan cuma perusahaan besar, tapi juga orang biasa. Dengan belajar cybersecurity, kamu nggak cuma bisa melindungi dirimu sendiri dari serangan seperti phishing atau malware, tapi juga bisa bantu orang lain supaya nggak jadi korban kejahatan digital.
 
 **Kekurangan**:
 - Hanya support Windows, dengan minimal Windows 10 version 2004.
@@ -124,7 +123,7 @@ Yang terakhir ada Dual Boot, Dual Boot ini jadi ada beberapa OS yang terinstall 
 
 **Kekurangan**: 
 - Instalasi lebih rumit
-- Tidak se-fleksibel virtual machine maupun WSL.Serangan cyber bisa kena ke siapa aja—bukan cuma perusahaan besar, tapi juga orang biasa. Dengan belajar cybersecurity, kamu nggak cuma bisa melindungi dirimu sendiri dari serangan seperti phishing atau malware, tapi juga bisa bantu orang lain supaya nggak jadi korban kejahatan digital.
+- Tidak se-fleksibel virtual machine maupun WSL.
 
 **Tutorial**: https://www.youtube.com/watch?v=2vTVA-Nq0bw
 
@@ -138,13 +137,6 @@ Untuk belajar cybersecurity sendiri dapat dimulai dengan berbagai macam cara, ku
 ### Ikut Tutorial
 
 Langkah ini merupakan cara yang paling mudah bagi beginner untuk mulai terjun pada bidang cybersecurity. Tutorial dari channel youtube The Cyber Mentor terutama playlist [The-Cyber-Mentor: Full-Length Hacking Courses](https://www.youtube.com/playlist?list=PLLKT__MCUeixqHJ1TRqrHsEd6_EdEvo47) cukup untuk menjadi starting point. Dalam playlist itu sudah ada penjelasan tentang linux, command dalam linux, dan banyak lagi. Hal yang penting yang jadi catatan yaitu pastikan melihat video disertai dengan praktik, karena cysec sendiri butuh banyak parktik.
-
-### Artikel / Wiki
-
-Bagi yang lebih suka membaca, dapat membaca artikel / wiki tentang cybersecurity. Berikut beberapa list artikel yang dapat kalian jadikan sumber bacaan: 
-- [CTF Wiki - Mahaloz](https://ctf-wiki.mahaloz.re/reverse/introduction/)
-- [CTF 101](https://ctf101.org/)
-- [Hacktricks](https://book.hacktricks.wiki/en/index.html)
 
 ### Hands-On Lab
 
@@ -200,6 +192,13 @@ Untuk sumber belajarnya:
 - [Hacktricks](https://book.hacktricks.wiki/en/index.html)
 - [Vulnhub](https://www.vulnhub.com/)
 - [OverTheWire](https://overthewire.org/wargames/)
+
+### Artikel / Wiki
+
+Sambil ikut kompetisi CTF, anda bisa membaca artikel/wiki yang bisa dijadikan referensi. Berikut beberapa list artikel yang dapat kalian jadikan sumber bacaan: 
+- [CTF Wiki - Mahaloz](https://ctf-wiki.mahaloz.re/reverse/introduction/)
+- [CTF 101](https://ctf101.org/)
+- [Hacktricks](https://book.hacktricks.wiki/en/index.html)
 
 ## Motivasi
 
