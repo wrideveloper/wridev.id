@@ -11,6 +11,7 @@ tags:
   - bitcoin
   - web3
   - smart-contract
+  - cyber-security
 ---
 
 Di balik setiap transaksi Bitcoin yang aman, terdapat sebuah proses kriptografi intensif yang disebut Proof-of-Work (PoW). Proses inilah yang memastikan setiap blok transaksi merupakan hasil kerja nyata dan sulit untuk dimanipulasi. Artikel ini akan mengupas secara mendalam tentang bagaimana PoW bekerja, manfaatnya, tantangan yang dihadapi, serta beberapa tambahan informasi valid yang relevan dengan perkembangan teknologi saat ini.
