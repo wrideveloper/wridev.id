@@ -11,7 +11,6 @@ tags:
   - cryptography
 ---
 
-# Memahami SHA256: Dasar-dasar Hashing untuk Keamanan Data Digital
 Dalam kehidupan digital kita, keamanan data itu sangat penting. Mungkin Anda pernah mendengar istilah "SHA256", tapi apa sebenarnya maksudnya? Artikel ini akan mengupas secara mendalam tentang SHA256 dengan bahasa yang mudah dipahami, seperti ngobrol santai, agar Anda bisa mengerti bagaimana algoritma ini bekerja dan kenapa ia sangat penting dalam menjaga keamanan data.
 
 ## Apa Itu Fungsi Hash?
