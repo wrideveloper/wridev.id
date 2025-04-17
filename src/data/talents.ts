@@ -134,7 +134,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Tio Irawan",
-			about: "I'm fast in learning new technologies, especially in the programming field, and have a high curiosity about it.",
+			about:
+				"I'm fast in learning new technologies, especially in the programming field, and have a high curiosity about it.",
 			position: "Mobile and Web Developer",
 			profileImage: "/talents/tio-irawan.png",
 			yearsOfExperience: 4,
@@ -179,7 +180,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Rensi Meila Yulvinata",
-			about: "U/UX Designer with 2+ years of experience in designing user-friendly and engaging interfaces for web and mobile applications.",
+			about:
+				"U/UX Designer with 2+ years of experience in designing user-friendly and engaging interfaces for web and mobile applications.",
 			position: "UI/UX Designer",
 			profileImage: "/talents/rensi-meila-yulvinata.jpg",
 			yearsOfExperience: 2,
@@ -194,7 +196,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Muhammad Khalid Atthoriq",
-			about: "I focus on front-end development and UI/UX design, currently working on a website for Dinas Ketahanan Pangan and previously delivered one for IsFor. I also handle videography, photography, and video editing, with a portfolio of diverse projects. Expanding my skills into data analytics and AI, I’m fluent in English and building my French.",
+			about:
+				"I focus on front-end development and UI/UX design, currently working on a website for Dinas Ketahanan Pangan and previously delivered one for IsFor. I also handle videography, photography, and video editing, with a portfolio of diverse projects. Expanding my skills into data analytics and AI, I’m fluent in English and building my French.",
 			position: "Frontend, UI/UX, and Creative",
 			profileImage: "/talents/muhammad-khalid-atthoriq.webp",
 			yearsOfExperience: 4,
@@ -209,7 +212,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Moch. Naufal Ardian Ramadhan",
-			about: "Halo, saya Naufal seorang Desainer UI/UX dengan pengalaman lebih dari 2 tahun dalam membuat antarmuka pengguna dan pengalaman pengguna untuk aplikasi seluler, situs web, dan perangkat lunak. Untuk Project yang saya sedang kerjakan sekarang adalah gurustudios.id yang dimana mereka melakukan rebranding product mereka yang sebelumnya hanya platform game sekarang ekspansi ke pengajaran offline, nah dengan adanya platform website untuk pengajaran offline gurustudios.id provide pemesanan secara online dengan sistem subscribe, jadi mereka bisa mengikuti kelas dengan mendaftar melalui website tersebut. nah tugas saya di project ini, yang pertama karena ini sudah menjadi solusi yang harus saya develop atau saya deliver menjadi sebuah visual nah dari brief teman teman gurustudios.id itu meminta ada beberapa fitur untuk ada didalam website tersebut, lalu saya juga melakukan deliver visual design yang sudah saya kerjakan ke developer, untuk memastikan dan mengkomunikasikan apakah design saya ini bisa di develop oleh mereka.",
+			about:
+				"Halo, saya Naufal seorang Desainer UI/UX dengan pengalaman lebih dari 2 tahun dalam membuat antarmuka pengguna dan pengalaman pengguna untuk aplikasi seluler, situs web, dan perangkat lunak. Untuk Project yang saya sedang kerjakan sekarang adalah gurustudios.id yang dimana mereka melakukan rebranding product mereka yang sebelumnya hanya platform game sekarang ekspansi ke pengajaran offline, nah dengan adanya platform website untuk pengajaran offline gurustudios.id provide pemesanan secara online dengan sistem subscribe, jadi mereka bisa mengikuti kelas dengan mendaftar melalui website tersebut. nah tugas saya di project ini, yang pertama karena ini sudah menjadi solusi yang harus saya develop atau saya deliver menjadi sebuah visual nah dari brief teman teman gurustudios.id itu meminta ada beberapa fitur untuk ada didalam website tersebut, lalu saya juga melakukan deliver visual design yang sudah saya kerjakan ke developer, untuk memastikan dan mengkomunikasikan apakah design saya ini bisa di develop oleh mereka.",
 			position: "UI/UX Designer",
 			profileImage: "/talents/moch-naufal-ardian-ramadhan.jpg",
 			yearsOfExperience: 2,
@@ -224,7 +228,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Aqsa Herry Prastyo",
-			about: "Saya adalah seorang Graphic Designer dengan pengalaman lebih dari 2 tahun dan UI/UX Designer selama 1 tahun. Saya memiliki keahlian dalam menciptakan desain visual yang menarik serta merancang pengalaman pengguna yang intuitif untuk aplikasi mobile dan desktop.Saya juga memilik keahlian dalam membuat logo dan branding perusahaan",
+			about:
+				"Saya adalah seorang Graphic Designer dengan pengalaman lebih dari 2 tahun dan UI/UX Designer selama 1 tahun. Saya memiliki keahlian dalam menciptakan desain visual yang menarik serta merancang pengalaman pengguna yang intuitif untuk aplikasi mobile dan desktop.Saya juga memilik keahlian dalam membuat logo dan branding perusahaan",
 			position: "UI/UX Designer and Creative",
 			profileImage: "/talents/aqsa-herry-prastyo.jpeg",
 			yearsOfExperience: 2,
@@ -271,7 +276,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Rakai Seto Sembodo",
-			about: "Passionate fullstack developer with 2 years of working experience. Specializing in Go, PostgreSQL, Redis, Laravel, and RabbitMQ. Driven to continuously learning new skills and technologies",
+			about:
+				"Passionate fullstack developer with 2 years of working experience. Specializing in Go, PostgreSQL, Redis, Laravel, and RabbitMQ. Driven to continuously learning new skills and technologies",
 			position: "Full-stack Developer",
 			profileImage: "/talents/rakai-seto-sembodo.jpg",
 			yearsOfExperience: 3,
@@ -316,7 +322,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Rafi Abiyyu Airlangga",
-			about: "Hai, kenalin aku Rafi (Abiyyu). Berbicara tentang diriku, aku seorang pengembang web yang pernah terjun ke proyek dan lomba. Proyek yang berkesan bagiku adalah Mindsea, dimana aku sama tim pergi ke Semarang sebagai finalis lomba dan teknologi yang kami pakai adalah Laravel 11 + MySQL. Selain itu, belakangan ini aku belajar tentang dunia Game Development, karena pengen eksplor ilmu pengetahuan!",
+			about:
+				"Hai, kenalin aku Rafi (Abiyyu). Berbicara tentang diriku, aku seorang pengembang web yang pernah terjun ke proyek dan lomba. Proyek yang berkesan bagiku adalah Mindsea, dimana aku sama tim pergi ke Semarang sebagai finalis lomba dan teknologi yang kami pakai adalah Laravel 11 + MySQL. Selain itu, belakangan ini aku belajar tentang dunia Game Development, karena pengen eksplor ilmu pengetahuan!",
 			position: "Full-stack and Game Devloper",
 			profileImage: "/talents/rafi-abiyyu-airlangga.jpg",
 			yearsOfExperience: 2,
@@ -332,7 +339,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Alexander Agung Raya",
-			about: "Nama saya Alex saya pernah mengerjakan Proyek game selain membuat game saya juga memiliki skill di bidang lain yaitu backend, fronted, dan Networking. Selain itu saya juga pernah menjadi content creator di youtube di bidang Gaming",
+			about:
+				"Nama saya Alex saya pernah mengerjakan Proyek game selain membuat game saya juga memiliki skill di bidang lain yaitu backend, fronted, dan Networking. Selain itu saya juga pernah menjadi content creator di youtube di bidang Gaming",
 			position: "Full-stack and Game Devloper",
 			profileImage: "/talents/alexander-agung-raya.jpeg",
 			yearsOfExperience: 4,
@@ -347,7 +355,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Muhammad Erril Putra Pratidina",
-			about: "Halo, saya Erril. Saya adalah mahasiswa teknik informatika yang menyukai pengembangan video game. Saya berkesempatan untuk mengikuti beberapa perlombaan 'pengembangan perangkat lunak permainan' dan 'game jam' sebagai programmer. Saya juga memiliki Unity Associate Game Developer yang digelar atas kerjasama Google Play dan Unity.",
+			about:
+				"Halo, saya Erril. Saya adalah mahasiswa teknik informatika yang menyukai pengembangan video game. Saya berkesempatan untuk mengikuti beberapa perlombaan 'pengembangan perangkat lunak permainan' dan 'game jam' sebagai programmer. Saya juga memiliki Unity Associate Game Developer yang digelar atas kerjasama Google Play dan Unity.",
 			position: "Backend and Game Developer",
 			profileImage: "/talents/muhammad_erril.jpg",
 			yearsOfExperience: 2,
@@ -362,7 +371,8 @@ export const TALENT_DATA: TalentData = {
 		},
 		{
 			name: "Agus Prasetyo",
-			about: "Saya mulai terjun ke dunia keamanan siber saat duduk di bangku kelas 12 SMK, ketika saya berlatih intensif untuk lomba LKS di bidang keamanan siber. Demi memperdalam keahlian saya, saya mengikuti dua bootcamp keamanan siber, di mana pada bootcamp terakhir, saya mengambil peran sebagai anggota Red Team, fokus pada strategi ofensif dan penetration testing.\n\nSaya telah meraih beberapa gelar juara dalam kompetisi Capture The Flag (CTF) di tingkat provinsi maupun nasional, membuktikan kemampuan saya dalam eksploitasi sistem dan analisis keamanan. Selain itu, saya secara aktif mengasah keterampilan penetration testing melalui platform HackTheBox, memungkinkan saya untuk terus berkembang dalam menghadapi tantangan dunia nyata di bidang keamanan siber.",
+			about:
+				"Saya mulai terjun ke dunia keamanan siber saat duduk di bangku kelas 12 SMK, ketika saya berlatih intensif untuk lomba LKS di bidang keamanan siber. Demi memperdalam keahlian saya, saya mengikuti dua bootcamp keamanan siber, di mana pada bootcamp terakhir, saya mengambil peran sebagai anggota Red Team, fokus pada strategi ofensif dan penetration testing.\n\nSaya telah meraih beberapa gelar juara dalam kompetisi Capture The Flag (CTF) di tingkat provinsi maupun nasional, membuktikan kemampuan saya dalam eksploitasi sistem dan analisis keamanan. Selain itu, saya secara aktif mengasah keterampilan penetration testing melalui platform HackTheBox, memungkinkan saya untuk terus berkembang dalam menghadapi tantangan dunia nyata di bidang keamanan siber.",
 			position: "Cyber Security Analyst",
 			profileImage: "/talents/agus_prasetyo.jpeg",
 			yearsOfExperience: 3,
@@ -372,6 +382,53 @@ export const TALENT_DATA: TalentData = {
 				{ type: "linkedin", url: "https://www.linkedin.com/in/agus-prasetyo-6005a9231/" },
 				{ type: "email", url: "mailto:desyo651@gmail.com" },
 			],
+			isVerified: false,
+		},
+		{
+			name: "Tri Aldy Kurniawan",
+			position: "Full-stack and Game Developer",
+			about:
+				"aku pernah magang 1 tahun + kerja 6 bulan dengan techstack laravel + vue.js techstackku laravel , vue js & nuxt js ( yang pede bgt ) react, golang bisa dikit dikit game dev juga masih basic aku pernah mengerjakan website ujian onlinewebsite try out cpns website manajemen sekolah lengkap ( LMS , ujian online, e rapor , absensi rfid , kurikulum , pembayaran spp dll ... ) website tracking alumni sekolah dll...",
+			profileImage: "/talents/tri-aldy-kurniawan.jpg",
+			contacts: [
+				{ type: "github", url: "https://github.com/trialdyk" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/tri-aldy-kurniawan-0a6660313/" },
+				{ type: "email", url: "mailto:trialdykk@gmail.com" },
+				{ type: "web", url: "http://trialdyk.my.id" },
+			],
+			yearsOfExperience: 3,
+			proficiencies: ["backend", "frontend", "game"],
+			availabilities: ["freelance"],
+			isVerified: false,
+		},
+		{
+			name: "Qulbi Khutsi Azzumi",
+			position: "UI/UX Designer and Creative",
+			about:
+				"Mahasiswa jurusan Teknik Informatika Politeknik Negeri Malang dengan minat karir di bidang industri kreatif dan pemrograman web. Saya memiliki lebih dari 2 tahun pengalaman kerja di Desain UI/UX. Tools utama saya untuk desain UI/UX adalah Figma dan Adobe Illustrator, dengan CorelDraw sebagai tools pendukungnya. Selain itu, saya memiliki pengetahuan dasar tentang HTML dan CSS. Saya juga terampil bekerja dalam tim dalam pengembangan proyek, berkomunikasi secara aktif, dan mendengarkan umpan balik dengan cermat untuk memastikan bahwa kebutuhan terpenuhi.",
+			profileImage: "/talents/qulbi-khutsi-azzumi.jpg",
+			contacts: [
+				{ type: "email", url: "mailto:qulbiazzumi29@gmail.com" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/qulbi-khutsi-azzumi-0a0870281/" },
+			],
+			yearsOfExperience: 2,
+			proficiencies: ["ui/ux", "creative"],
+			availabilities: ["part-time", "freelance", "contract"],
+			isVerified: false,
+		},
+		{
+			name: "Laksamana Arya Putra",
+			position: "Frontend Developer",
+			about: "i love Front-End things",
+			profileImage: "/talents/laksamana-arya-putra.jpg",
+			contacts: [
+				{ type: "email", url: "mailto:laksamana.arya1412@gmail.com" },
+				{ type: "github", url: "https://github.com/laksamanaap" },
+				{ type: "linkedin", url: "https://www.linkedin.com/in/laksamana-aryaputra/" },
+			],
+			yearsOfExperience: 1.5,
+			proficiencies: ["frontend"],
+			availabilities: ["freelance"],
 			isVerified: false,
 		},
 	],
