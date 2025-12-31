@@ -1,0 +1,39 @@
+---
+import Container from "../container.astro";
+import PillsText from "../../text/pills.astro";
+import InlineIcon from "../../text/inline-icon.astro";
+import StatsPool from "./components/stats-pool.svelte";
+
+---
+
+<Container>
+    <PillsText>FEATURES</PillsText>
+    <div class="flex flex-col gap-16 mt-2">
+        <div>
+            <div
+                class="relative flex justify-center items-end text-6xl font-medium"
+            >
+                From
+                <span class="wri-italic from-wri-blue to-wri-blue/45"
+                    >&nbsp;Learners</span
+                >
+                <InlineIcon name="ph:student" color="wri-blue" rotation={3} />
+                to
+            </div>
+            <div
+                class="relative flex justify-center items-end text-6xl font-medium"
+            >
+                <span class="wri-italic from-wri-yellow to-wri-yellow/45"
+                    >Leaders</span
+                >
+                <InlineIcon
+                    name="ph:crown-simple-fill"
+                    color="wri-yellow"
+                    rotation={-2}
+                />
+                Together
+            </div>
+        </div>
+        <StatsPool/>
+    </div>
+</Container>
