@@ -1,21 +1,11 @@
 ---
-import Layout from "~/layouts/default.astro";
-import HeroSection from "~/components/section/hero-section.astro";
-import MiniclassSection from "~/components/section/miniclass/miniclass-section.astro";
-import TechnologySection from "~/components/section/technology-section.astro";
-// disable for now until we have the content ready
-// import ArticlesSection from "~/components/section/articles/articles-section.astro";
-import TalentPoolSection from "~/components/section/talent-pool/talent-pool-section.astro";
-import TestimonialSection from "~/components/section/testimonial/testimonial-section.astro";
-import FaqSection from "~/components/section/faq/faq-section.astro";
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Home">
-	<HeroSection/>
-	<TechnologySection/>
-	<MiniclassSection/>
-	<TalentPoolSection/>
-	<hr class="w-full border-slate-200 border-t"/>
-	<TestimonialSection/>
-	<FaqSection/>
+<Layout>
+	<Welcome />
 </Layout>
