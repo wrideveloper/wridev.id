@@ -1,0 +1,30 @@
+---
+import { FAQ_DATA } from "~/data/faq";
+import FaqAccordion from "./components/faq-accordion.svelte";
+import Container from "../container.astro";
+import Title from "../title.astro";
+---
+
+<style lang="postcss">
+	.tech-grid > div {
+		@apply justify-self-end lg:justify-self-center;
+	}
+
+	.tech-grid > div:nth-of-type(2n) {
+		@apply justify-self-start lg:justify-self-center;
+	}
+</style>
+
+<div class="py-12" id="technology">
+	<Container>
+		<Title
+			title={FAQ_DATA.title}
+			subtitle={FAQ_DATA.subtitle}
+			miniTitle={FAQ_DATA.miniTitle}
+			class="mx-auto text-center"
+		/>
+		<div class="tech-grid grid grid-flow-row items-center lg:gap-x-16 gap-8 px-4 max-w-screen-md mx-auto">
+			<FaqAccordion client:visible faqs={FAQ_DATA.faqs} />
+		</div>
+	</Container>
+</div>

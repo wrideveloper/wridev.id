@@ -1,0 +1,44 @@
+---
+import type { Props as SeoData } from "astro-seo";
+import Navbar from "~/components/navbar/navbar.svelte";
+import Footer from "~/components/footer/footer.astro";
+import "../styles/main.css";
+
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/urbanist/400.css";
+import "@fontsource/urbanist/500.css";
+import "@fontsource/urbanist/600.css";
+import "@fontsource/urbanist/700.css";
+import SwiperInit from "~/components/swiper-init.svelte";
+import { SEO } from "astro-seo";
+import { SEO_DATA } from "~/data/seo";
+import { ViewTransitions } from "astro:transitions";
+
+type Props = {
+	title: string;
+	description?: string;
+	openGraph?: SeoData["openGraph"];
+};
+const { title, description = SEO_DATA.description!, openGraph = SEO_DATA.openGraph! } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="generator" content={Astro.generator} />
+		<SEO {...SEO_DATA} title={title} description={description} openGraph={openGraph} />
+		<ViewTransitions />
+	</head>
+	<body class="bg-white bg-paper">
+		<SwiperInit client:load />
+		<Navbar client:load path={Astro.url.pathname} />
+		<slot />
+		<Footer />
+	</body>
+</html>

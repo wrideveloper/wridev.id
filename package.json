@@ -1,14 +1,40 @@
 {
-  "name": "wridev",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.16.6"
-  }
+	"name": "wri-dev",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"fmt:check": "prettier --check .",
+		"fmt:write": "prettier --write .",
+		"lint:check": "eslint src",
+		"lint:fix": "eslint --fix src"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^5.7.0",
+		"@astrojs/tailwind": "^5.1.0",
+		"@fontsource/inter": "^5.0.20",
+		"@fontsource/urbanist": "^5.0.21",
+		"astro": "^4.15.1",
+		"astro-seo": "^0.8.4",
+		"svelte": "^4.2.19",
+		"swiper": "^11.1.11",
+		"tailwindcss": "^3.4.10",
+		"unplugin-icons": "^0.19.2"
+	},
+	"devDependencies": {
+		"@iconify-json/ph": "^1.1.14",
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/typography": "^0.5.15",
+		"@typescript-eslint/eslint-plugin": "^8.3.0",
+		"@typescript-eslint/parser": "^8.3.0",
+		"eslint": "^8.57.0",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-svelte": "^3.2.6",
+		"typescript": "^5.5.4"
+	}
 }

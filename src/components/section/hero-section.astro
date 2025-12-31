@@ -1,0 +1,62 @@
+---
+import Button from "~/components/button/button.svelte";
+import { HERO_DATA } from "~/data/hero";
+---
+
+<div class="relative min-h-screen w-full overflow-hidden bg-slate-100 bg-topography pt-32 lg:pt-20 pb-12">
+	<div class="relative min-h-screen w-full max-w-7xl mx-auto flex flex-col justify-center gap-14 px-4 z-20 md:items-center">
+		<div class="flex items-center">
+			<div class="w-full lg:grid grid-cols-12 gap-10">
+				<div class="col-span-6">
+					<div class="h-full flex items-center mb-8 lg:mb-0">
+						<div class="text-center lg:text-left font-sans space-y-4">
+							<h1 class="font-heading font-bold text-4xl lg:text-6xl text-slate-800">
+								<span class="block">{HERO_DATA.headline.top},</span>
+								<span class="block">{HERO_DATA.headline.bottom}</span>
+							</h1>
+							<p class="text-lg text-slate-500 py-4">
+								{HERO_DATA.shortText}
+							</p>
+							<div class="w-full flex items-center justify-center lg:justify-start gap-2">
+								<Button variant="main" to="#technology" class="min-w-[130px]">
+									{HERO_DATA.buttonText}
+								</Button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="relative col-span-6 h-[32rem] overflow-hidden rounded-lg bg-slate-300">
+					<swiper-container loop={true} effect="fade" autoplay={true}>
+						{
+							HERO_DATA.images.map((image, index) => (
+								<swiper-slide>
+									<img
+										src={image.src}
+										class="w-full h-[32rem] object-cover mx-auto shadow-lg"
+										alt={`Hero ${index}`}
+									/>
+								</swiper-slide>
+							))
+						}
+					</swiper-container>
+				</div>
+			</div>
+		</div>
+		<div
+			class="grid grid-rows-3 lg:grid-rows-1 grid-cols-1 lg:grid-cols-3 p-6 border border-slate-300 bg-white shadow-lg lg:max-w-fit rounded-xl"
+		>
+			{
+				HERO_DATA.highlights.map((highlight, index) => (
+					<div
+						class={`${
+							index !== HERO_DATA.highlights.length - 1 ? "border-b lg:border-b-0 lg:border-r" : ""
+						} border-slate-300 py-4 lg:px-12 text-center lg:text-left`}
+					>
+						<span class="block text-3xl font-bold text-slate-800">{highlight.title}</span>
+						<span class="block text-lg text-slate-600 capitalize">{highlight.subtitle}</span>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>

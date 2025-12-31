@@ -1,0 +1,65 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Layout from "~/layouts/default.astro";
+import { TALENT_DATA } from "~/data/talents";
+import TalentCard from "~/components/section/talent-pool/components/talent-card.svelte";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry("miniclass", slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const [startTime, endTime] = entry.data.time;
+const { Content } = await entry.render();
+const mentors = await Promise.all(
+	entry.data.mentors.map((mentor) => TALENT_DATA.talents.find((talent) => talent.name === mentor)),
+);
+
+export async function getStaticPaths() {
+	const entries = await getCollection("miniclass");
+	return entries.map((entry) => ({ params: { slug: entry.slug } }));
+}
+---
+
+<Layout
+	title={entry.data.title}
+	description={entry.data.description}
+	openGraph={{
+		basic: {
+			image: entry.data.image,
+			title: entry.data.title,
+			type: "article",
+			url: `https://wri-dev.id/miniclass/${slug}`,
+		},
+		image: {
+			url: entry.data.image,
+			alt: entry.data.title,
+			height: 630,
+			width: 1200,
+		},
+	}}
+>
+	<main
+		class="px-4 prose prose-slate prose-headings:text-slate-800 prose-headings:font-heading prose-img:mx-auto prose-img:bg-white prose-img:rounded-lg prose-img:shadow-lg pt-24 pb-8 max-w-[80ch] mx-auto"
+	>
+		<div class="mb-12">
+			<img class="rounded-lg w-full h-64 object-cover" src={entry.data.image} alt="Cover" />
+			<h1 class="text-5xl text-center font-bold leading-tight mb-2 font-heading">{entry.data.title}</h1>
+			<span class="block font-heading text-lg text-center text-slate-700">
+				Setiap hari <b class="capitalize font-bold">{entry.data.day}</b>
+				pukul <b class="font-bold">{startTime}</b> - <b class="font-bold">{endTime}</b>
+			</span>
+		</div>
+		<Content />
+	</main>
+	<div class="max-w-[80ch] mx-auto px-4 py-8">
+		<h2 class="font-bold text-slate-800 text-2xl font-heading mb-4">Mentor</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+			{mentors.map((mentor) => <TalentCard smallerImage {...mentor} />)}
+		</div>
+	</div>
+</Layout>

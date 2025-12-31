@@ -1,46 +1,13 @@
-# Astro Starter Kit: Basics
+# Website Workshop Riset Informatika
 
-```sh
-bun create astro@latest -- --template basics
-```
+![image](https://github.com/wrideveloper/wri-dev/assets/51877647/edf3ed19-cfa2-4525-a8ed-94898d6ae6f4)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Ini Apa?
 
-## 🚀 Project Structure
+Seperti yang udah tertera di judulnya, ini repository dari source code website Workshop Riset Informatika. Seluruh source code yang ada di repository ini memiliki lisensi GNU GPL v3 seperti yang sudah tertera di dalam file [LICENSE.GPL-3.0](./LICENSE.GPL-3.0). Konten lainnya seperti artikel memiliki lisensi Creative Commons Attribution 4.0 International (CC BY 4.0) yang ada di dalam file [LICENSE.CC-BY-4.0](./LICENSE.CC-BY-4.0).
 
-Inside of your Astro project, you'll see the following folders and files:
+Website yang ada di dalam repository ini merupakan update dari website lama WRI yang ada di repository [wrideveloper/web-wri](https://github.com/wrideveloper/web-wri). Seluruh development website Workshop Riset Informatika akan dilanjutkan di repository ini.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Cara Kontribusi
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Untuk informasi lebih lengkap, kamu bisa lihat [CONTRIBUTING.md](./CONTRIBUTING.md).

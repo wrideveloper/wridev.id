@@ -1,0 +1,9 @@
+@import "./modules/tooltip.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	@apply scroll-pt-20 scroll-smooth transition-colors ease-out duration-100;
+}
