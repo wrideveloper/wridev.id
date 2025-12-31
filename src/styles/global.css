@@ -4,11 +4,16 @@
 
 @theme {
     --color-wri-white: #fafafa;
+    --color-wri-lighterblue: #cfdff5;
     --color-wri-lightblue: #c8dff9;
     --color-wri-blue: #0b79ff;
     --color-wri-darkerblue: #3c74bf;
     --color-wri-yellow: #ffb12b;
     --color-wri-grey-600: #535862;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .wri-italic {
