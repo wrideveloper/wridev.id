@@ -1,1 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import "tailwindcss";
+
+@theme {
+    --color-wri-white: #fafafa;
+    --color-wri-lightblue: #c8dff9;
+    --color-wri-blue: #0b79ff;
+    --color-wri-yellow: #ffb12b;
+    --color-wri-grey-600: #535862;
+}
+
+body {
+    font-family: "SF Pro Display", sans-serif;
+}
+
+span {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+}
