@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { name, color, rotation } = Astro.props;
+
+let rotationClass = '';
+if (rotation >= 0) {
+  rotationClass = `rotate-${rotation}`;
+} else {
+    rotationClass = `-rotate-${Math.abs(rotation)}`;
+}
+---
+<div
+    class={`size-17 flex justify-center items-center bg-${color}/12 rounded-2xl ${rotationClass} mx-3 border-white border-5 shadow-md shadow-neutral-500/15`}
+>
+    <Icon
+        name={name}
+        class={`w-8 h-8 text-${color}`}
+    />
+</div>
