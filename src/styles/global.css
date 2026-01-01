@@ -30,27 +30,29 @@ body {
 @layer utilities {
   @keyframes walk-left {
     from {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 
   @keyframes walk-right {
     from {
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 0, 0);
     }
     to {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
   .animate-walk-left {
+    will-change: transform;
     animation: walk-left 20s linear infinite;
   }
 
   .animate-walk-right {
+    will-change: transform;
     animation: walk-right 20s linear infinite;
   }
 }
