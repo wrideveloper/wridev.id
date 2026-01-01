@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import NavbarSection from "../components/sections/navbar/navbar-section.astro";
 ---
 
 <!doctype html>
@@ -9,8 +10,9 @@ import "../styles/global.css";
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro Basics</title>
+        <title>WRI Dev</title>
     </head>
+    <NavbarSection />
     <body>
         <div class="flex flex-col gap-8">
             <slot />
