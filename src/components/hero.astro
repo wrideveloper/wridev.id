@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import HeadIcon from "../components/header/HeaderIcon.astro";
-import HeroCard from "../components/header/HeroCard.astro";
+import InlineIcon from "../components/text/inline-icon.astro";
+import HeroCard from "../components/header/hero-card.astro";
 ---
 
 <div
@@ -10,10 +10,11 @@ import HeroCard from "../components/header/HeroCard.astro";
     <div class="flex flex-col justify-center items-center mt-60 font-medium">
         <div class="relative flex justify-center items-end text-7xl">
             Explore
-            <HeadIcon
-                icon="ph:book-open-text-fill"
-                color="blue"
-                rotate="left"
+            <InlineIcon
+                name="ph:book-open-text-fill"
+                color="wri-blue"
+                rotate={-2}
+                }
             />
             <span class="wri-italic from-wri-blue to-wri-blue/45">
                 Knowledge</span
@@ -23,7 +24,12 @@ import HeroCard from "../components/header/HeroCard.astro";
             Unlock<span class="wri-italic from-wri-yellow to-wri-yellow/45"
                 >&nbsp;Potential</span
             >
-            <HeadIcon icon="ph:sparkle-fill" color="yellow" rotate="right" />
+            <InlineIcon
+                name="ph:sparkle-fill"
+                color="wri-yellow"
+                rotate={2}
+                }
+            />
             Shine
         </div>
         <div class="text-xl w-4/7 mt-5 text-wri-grey-600 font-normal">
