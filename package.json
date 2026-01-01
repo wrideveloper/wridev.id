@@ -1,23 +1,25 @@
 {
   "name": "wridev",
-  "type": "module",
   "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
   "dependencies": {
     "@astrojs/svelte": "^7.2.4",
     "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/ph": "^1.2.2",
+    "@iconify/json": "^2.2.424",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
     "astro-icon": "^1.1.5",
     "gsap": "^3.14.2",
     "svelte": "^5.46.1",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3"
-  }
+    "typescript": "^5.9.3",
+    "unplugin-icons": "^22.5.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "type": "module"
 }

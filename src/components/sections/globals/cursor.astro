@@ -75,7 +75,7 @@ import { Icon } from "astro-icon/components";
             yTo(e.clientY);
 
             const target = (e.target as HTMLElement).closest(
-                "a, button, .miniclass",
+                ".miniclass",
             );
 
             if (target && !isHovering) {
