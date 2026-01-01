@@ -16,7 +16,7 @@
   testimonials = testimonials.sort(() => Math.random() - 0.5);
 </script>
 
-<div class="w-full overflow-hidden bg-white">
+<div class="w-full overflow-hidden">
   <div
       class={`flex w-max animate-walk-${direction}`}
       style="animation-duration: 60s;"

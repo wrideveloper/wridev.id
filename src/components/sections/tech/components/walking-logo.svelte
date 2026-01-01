@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="w-full overflow-hidden bg-white
+  class="w-full overflow-hidden
   [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
 >
   <div class="flex w-max animate-walk-left">
