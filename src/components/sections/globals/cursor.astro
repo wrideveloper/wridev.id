@@ -23,10 +23,15 @@ import { Icon } from "astro-icon/components";
 <script>
     import gsap from "gsap";
 
-    const text = "See m ore   See m ore  ";
-    const container = document.getElementById("circle-text");
+    const cursor = document.getElementById("cursor");
+    const cursorIcon = document.getElementById("cursor-icon");
+    const cursorTextContainer = document.getElementById(
+        "cursor-text-container",
+    );
+    const circleText = document.getElementById("circle-text");
 
-    if (container) {
+    if (circleText) {
+        const text = "See m ore   See m ore  ";
         const chars = text.split("");
         const deg = 360 / chars.length;
         const radius = 23;
@@ -34,21 +39,12 @@ import { Icon } from "astro-icon/components";
         chars.forEach((char, i) => {
             const span = document.createElement("span");
             span.innerText = char;
-
             span.className =
-                "absolute top-1/2 left-1/2 origin-[0_0] text-[9px] font-bold wri-italic from-wri-blue to-wri-blue/45 select-none";
-
+                "absolute top-1/2 left-1/2 origin-[0_0] text-[9px] font-medium  wri-italic from-wri-blue to-wri-blue/45 select-none";
             span.style.transform = `rotate(${i * deg}deg) translate(0, -${radius}px)`;
-
-            container.appendChild(span);
+            circleText.appendChild(span);
         });
     }
-
-    const cursor = document.getElementById("cursor");
-    const cursorIcon = document.getElementById("cursor-icon");
-    const cursorTextContainer = document.getElementById(
-        "cursor-text-container",
-    );
 
     if (cursorTextContainer) {
         gsap.to(cursorTextContainer, {
@@ -71,24 +67,28 @@ import { Icon } from "astro-icon/components";
             ease: "power2.out",
         });
 
+        let isHovering = false;
+
         window.addEventListener("mousemove", (e) => {
             gsap.to(cursor, { opacity: 1, duration: 0.5 });
             xTo(e.clientX);
             yTo(e.clientY);
-        });
 
-        const hoverables = document.querySelectorAll("a, button");
-        hoverables.forEach((el) => {
-            el.addEventListener("mouseenter", () => {
+            const target = (e.target as HTMLElement).closest(
+                "a, button, .miniclass",
+            );
+
+            if (target && !isHovering) {
+                isHovering = true;
                 gsap.to(cursor, { scale: 3, duration: 0.3 });
                 gsap.to(cursorIcon, { opacity: 1, duration: 0.3 });
                 gsap.to(cursorTextContainer, { opacity: 1, duration: 0.3 });
-            });
-            el.addEventListener("mouseleave", () => {
+            } else if (!target && isHovering) {
+                isHovering = false;
                 gsap.to(cursor, { scale: 1, duration: 0.3 });
                 gsap.to(cursorIcon, { opacity: 0, duration: 0.3 });
                 gsap.to(cursorTextContainer, { opacity: 0, duration: 0.3 });
-            });
+            }
         });
     }
 </script>
