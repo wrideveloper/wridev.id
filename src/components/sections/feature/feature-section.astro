@@ -17,7 +17,12 @@ import StatsPool from "./components/stats-pool.svelte";
                 <span class="wri-italic from-wri-blue to-wri-blue/45"
                     >&nbsp;Learners</span
                 >
-                <InlineIcon name="ph:student" color="wri-blue" rotation={3} />
+                <InlineIcon
+                    name="ph:student-fill"
+                    color="wri-blue"
+                    rotate={3}
+                    className="translate-y-3"
+                />
                 to
             </div>
             <div
@@ -29,7 +34,8 @@ import StatsPool from "./components/stats-pool.svelte";
                 <InlineIcon
                     name="ph:crown-simple-fill"
                     color="wri-yellow"
-                    rotation={-2}
+                    rotate={-2}
+                    className="translate-y-2"
                 />
                 Together
             </div>
