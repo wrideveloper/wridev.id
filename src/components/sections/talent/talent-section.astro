@@ -1,0 +1,56 @@
+---
+import Container from "../container.astro";
+import PillsText from "../../text/pills.astro";
+// import InlineIcon from "../../text/inline-icon.astro";
+import Ourstoryimg from "../../../assets/Our-story.svg";
+const { className } = Astro.props;
+---
+
+<Container className={className}>
+  
+  <div class="flex flex-col items-center justify-center text-center">
+    
+    <PillsText>WRI MEET THE BRIGHT MINDS OF WRI</PillsText>
+
+    <div class="mt-8 flex flex-col items-center font-medium text-gray-900 text-5xl md:text-7xl tracking-tight">
+      
+      <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        
+        <span class="whitespace-nowrap">
+          <span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">
+            Skilled
+          </span>
+          Minds
+        </span>
+
+        <div class="shrink-0 flex items-center justify-center px-2">
+           <img 
+            src={Ourstoryimg.src} 
+            alt="Our Story" 
+            class="h-16 w-auto object-contain md:h-20" 
+           />
+        </div>
+
+        <span class="whitespace-nowrap">
+          Real 
+          <span class="bg-linear-to-b from-wri-yellow to-wri-yellow/45 bg-clip-text text-transparent pl-2 wri-italic">
+            Experience
+          </span>
+        </span>
+
+      </div>
+
+      <div class="mt-2 md:mt-4">
+        Endless <span class="from-wri-blue to-wri-blue/45 wri-italic">Possibilities</span>
+      </div>
+
+    </div>
+
+    <div class="mt-8 max-w-2xl text-lg text-wri-grey-600 leading-relaxed">
+      <p>
+        We bring together passionate individuals from diverse divisions, uniting skills and creativity to build a powerful force in the IT world.
+      </p>
+    </div>
+
+  </div>
+</Container>
