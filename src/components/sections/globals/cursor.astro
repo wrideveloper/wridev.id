@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+    id="cursor"
+    class="fixed top-0 left-0 w-7 h-7 bg-wri-blue/20 backdrop-blur-[2px] rounded-full pointer-events-none z-100 opacity-0 flex justify-center items-center overflow-visible"
+>
+    <Icon
+        id="cursor-icon"
+        name="ph:arrow-up-right-bold"
+        class="w-3 h-3 text-wri-blue opacity-0 absolute z-10"
+    />
+
+    <div
+        id="cursor-text-container"
+        class="absolute w-[200%] h-[200%] -left-1/2 -top-1/2 rounded-full opacity-0"
+    >
+        <div id="circle-text" class="w-full h-full relative"></div>
+    </div>
+</div>
+
+<script>
+    import gsap from "gsap";
+
+    const text = "See m ore   See m ore  ";
+    const container = document.getElementById("circle-text");
+
+    if (container) {
+        const chars = text.split("");
+        const deg = 360 / chars.length;
+        const radius = 23;
+
+        chars.forEach((char, i) => {
+            const span = document.createElement("span");
+            span.innerText = char;
+
+            span.className =
+                "absolute top-1/2 left-1/2 origin-[0_0] text-[9px] font-bold wri-italic from-wri-blue to-wri-blue/45 select-none";
+
+            span.style.transform = `rotate(${i * deg}deg) translate(0, -${radius}px)`;
+
+            container.appendChild(span);
+        });
+    }
+
+    const cursor = document.getElementById("cursor");
+    const cursorIcon = document.getElementById("cursor-icon");
+    const cursorTextContainer = document.getElementById(
+        "cursor-text-container",
+    );
+
+    if (cursorTextContainer) {
+        gsap.to(cursorTextContainer, {
+            rotation: 360,
+            duration: 8,
+            repeat: -1,
+            ease: "linear",
+        });
+    }
+
+    if (cursor && cursorIcon && cursorTextContainer) {
+        gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+
+        const xTo = gsap.quickTo(cursor, "x", {
+            duration: 0.35,
+            ease: "power2.out",
+        });
+        const yTo = gsap.quickTo(cursor, "y", {
+            duration: 0.35,
+            ease: "power2.out",
+        });
+
+        window.addEventListener("mousemove", (e) => {
+            gsap.to(cursor, { opacity: 1, duration: 0.5 });
+            xTo(e.clientX);
+            yTo(e.clientY);
+        });
+
+        const hoverables = document.querySelectorAll("a, button");
+        hoverables.forEach((el) => {
+            el.addEventListener("mouseenter", () => {
+                gsap.to(cursor, { scale: 3, duration: 0.3 });
+                gsap.to(cursorIcon, { opacity: 1, duration: 0.3 });
+                gsap.to(cursorTextContainer, { opacity: 1, duration: 0.3 });
+            });
+            el.addEventListener("mouseleave", () => {
+                gsap.to(cursor, { scale: 1, duration: 0.3 });
+                gsap.to(cursorIcon, { opacity: 0, duration: 0.3 });
+                gsap.to(cursorTextContainer, { opacity: 0, duration: 0.3 });
+            });
+        });
+    }
+</script>
