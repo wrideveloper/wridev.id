@@ -1,12 +1,4 @@
 <script lang="ts">
-    // D:\smth\WRI\wridev.id\src\assets\technology\blender.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\figma.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\laravel.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\svelte.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\flutter.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\aseprite.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\nodejs.webp
-    // D:\smth\WRI\wridev.id\src\assets\technology\unity.webp
   const logos = [
     '/assets/technology/blender.webp',
     '/assets/technology/figma.webp',
