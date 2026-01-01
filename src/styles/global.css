@@ -24,19 +24,33 @@
 
 body {
     font-family: "SF Pro Display", sans-serif;
+    background-color: var(--color-wri-white);
 }
 
 @layer utilities {
-  @keyframes walk {
-    0% {
+  @keyframes walk-left {
+    from {
       transform: translateX(0);
     }
-    100% {
+    to {
       transform: translateX(-50%);
     }
   }
 
-  .animate-walk {
-    animation: walk 20s linear infinite;
+  @keyframes walk-right {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-walk-left {
+    animation: walk-left 20s linear infinite;
+  }
+
+  .animate-walk-right {
+    animation: walk-right 20s linear infinite;
   }
 }
