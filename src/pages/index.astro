@@ -1,11 +1,12 @@
 ---
 import Hero from "../components/hero.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import FeatureSection from "../components/sections/feature/feature-section.astro";
+import TechSection from "../components/sections/tech/tech-section.astro";
 ---
 
 <Layout>
     <Hero />
+    <FeatureSection className="mt-24" />
+    <TechSection className="mt-18" />
 </Layout>

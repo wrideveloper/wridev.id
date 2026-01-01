@@ -25,3 +25,18 @@
 body {
     font-family: "SF Pro Display", sans-serif;
 }
+
+@layer utilities {
+  @keyframes walk {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-walk {
+    animation: walk 20s linear infinite;
+  }
+}
