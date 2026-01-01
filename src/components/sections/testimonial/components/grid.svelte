@@ -9,7 +9,7 @@
     }[];
 </script>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col gap-5">
     <WalkingCardStrip testimonials={testimonials} />
     <WalkingCardStrip testimonials={testimonials} direction="right" />
 </div>
