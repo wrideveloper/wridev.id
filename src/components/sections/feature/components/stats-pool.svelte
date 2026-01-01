@@ -13,7 +13,7 @@
             desc: "100+ curious minds exploring everything from mobiel apps to game worlds united by creativity and tech passiion.",
         },
         {
-            title: "Miniclass",
+            title: "Miniclasses",
             value: "4",
             desc: "Four epic miniclasses: Frontend, Backend, UI/UX, and Game Development. Choose your path, learn your craft and level up together!",
         },
