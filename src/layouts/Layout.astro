@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import NavbarSection from "../components/sections/navbar/navbar-section.astro";
+import Cursor from "../components/sections/globals/cursor.astro";
+import NavbarSection from "../components/sections/globals/navbar-section.astro";
 ---
 
 <!doctype html>
@@ -12,6 +13,7 @@ import NavbarSection from "../components/sections/navbar/navbar-section.astro";
         <meta name="generator" content={Astro.generator} />
         <title>WRI Dev</title>
     </head>
+    <Cursor />
     <NavbarSection />
     <body>
         <div class="flex flex-col gap-8">
