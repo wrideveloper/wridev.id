@@ -1,8 +1,8 @@
 ---
-
+const { className } = Astro.props;
 ---
 
-<div class="flex flex-col w-full px-30 py-29 gap-10">
+<footer class={`flex flex-col w-full px-28 py-16 gap-10 ${className}`}>
     <div class="flex">
         <div class="max-w-[20rem]">
             <img src="/assets/wri-logo.webp" alt="WRI Dev Logo" class="h-14" />
@@ -36,4 +36,4 @@
         <div>©2025 All Rights Reserved — Workshop Riset Informatika</div>
         <div class="ml-auto">Built with Astro and Svelte</div>
     </div>
-</div>
+</footer>
