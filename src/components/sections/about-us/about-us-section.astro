@@ -6,7 +6,7 @@ import MiniClassCard from "./components/miniclasses.astro";
 const { className } = Astro.props;
 ---
 
-<Container className={`px-30 ${className}`}>
+<Container className={`${className}`}>
     <div class="w-full flex justify-between items-end">
         <div>
             <PillsText>ABOUT US</PillsText>
@@ -16,16 +16,17 @@ const { className } = Astro.props;
                 > Riset Informatika
             </h1>
         </div>
-        <h5 class="text-right text-lg w-1/3">
-            An <b>inspiring community</b> of IT students at Polinema, where <b
+        <h5 class="text-right text-lg w-1/3 text-wri-gray-600">
+            An <b class="text-wri-gray-900">inspiring community</b> of IT students at Polinema, where <b class="text-wri-gray-900"
                 >creativity comes alive, knowledge is shared, and innovation</b
-            > in <b>Science and Technology</b>
+            > in <b class="text-wri-gray-900">Science and Technology</b>
             continues to grow
         </h5>
     </div>
     <div class="w-full grid grid-cols-2 gap-4 mt-16">
         <MiniClassCard
             titleIcon="ph:game-controller-fill"
+            color="text-wri-yellow"
             title="Game Development"
             description="Dive into game design, coding, and storytelling to craft immersive gaming experiences from concept to launch."
             image="/assets/miniclasses/game.webp"
@@ -46,6 +47,7 @@ const { className } = Astro.props;
         />
         <MiniClassCard
             titleIcon="ph:browsers-fill"
+            color="text-wri-yellow"
             title="Web Development"
             description="Learn to build responsive websites, mastering front-end and back-end skills for impactful digital presence and user engagement."
             image="/assets/miniclasses/web.webp"

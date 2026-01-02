@@ -20,12 +20,12 @@
 </script>
 
 <div
-    class="inline-flex items-center gap-1 rounded-2xl bg-gray-100 p-1.5 overflow-x-auto no-scrollbar"
+    class="inline-flex items-center gap-1 rounded-lg bg-gray-100 p-0.5 overflow-x-auto no-scrollbar"
 >
     {#each categories as category}
         <button
             on:click={() => ($selectedCategory = category.name)}
-            class="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition-all whitespace-nowrap
+            class="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all whitespace-nowrap
       {$selectedCategory === category.name
                 ? 'bg-white text-blue-600 shadow-sm font-semibold'
                 : 'text-gray-500 hover:bg-white/50 hover:text-gray-900'}"
