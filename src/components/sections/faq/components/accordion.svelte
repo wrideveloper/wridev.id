@@ -9,9 +9,9 @@
     export let onToggle: () => void;
 </script>
 
-<div class="flex flex-col w-full border-b border-wri-grey-200">
+<div class="flex flex-col w-full">
     <button
-        class="flex items-center justify-between w-full py-3 sm:py-4 px-4 sm:px-6 text-left text-wri-grey-900 hover:text-wri-grey-700 transition-colors duration-200 gap-4"
+        class="flex items-center justify-between w-full py-3 sm:py-4 px-4 sm:px-6 text-left text-wri-gray-900 hover:text-wri-gray-700 transition-colors duration-200 gap-4"
         on:click={onToggle}
     >
         <span class="text-base sm:text-lg lg:text-xl font-medium flex-1 pr-2">{question}</span>
@@ -25,7 +25,7 @@
 
     {#if isOpen}
         <div
-            class="px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-wri-grey-600"
+            class="px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-wri-gray-600"
             transition:slide={{ duration: 300, easing: quintOut }}
         >
             {answer}
