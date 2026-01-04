@@ -1,30 +1,20 @@
 <script lang="ts">
     import Filters from "./filters.svelte";
+    import AdvancedFilter from "./advanced-filter.svelte";
     import { searchQuery } from "../stores/filter";
+    import SearchIcon from "~icons/ph/magnifying-glass";
+    
+    let showAdvancedFilters = false;
 </script>
 
-<div
-    class="flex w-full flex-col gap-5 md:flex-row md:items-center md:justify-between mb-12"
->
+<div class="flex w-full flex-col gap-5 md:flex-row md:items-center md:justify-between mb-12">
     <Filters />
 
-    <div class="flex w-full items-center gap-4 md:w-auto">
+    <div class="flex w-full items-center gap-4 md:w-auto relative">
         <div class="relative w-full md:w-80">
-            <div
-                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
-            >
-                <svg
-                    class="size-5 text-gray-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    ><path
-                        fill-rule="evenodd"
-                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clip-rule="evenodd"
-                    /></svg
-                >
+            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <svelte:component this={SearchIcon} class="w-4 h-4" />
             </div>
-
             <input
                 type="text"
                 placeholder="Search"
@@ -33,22 +23,27 @@
             />
         </div>
 
-        <button
-            class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-        >
-            <svg
-                class="size-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                ><path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
-                ></path></svg
+        <div class="relative">
+            <button
+                on:click={() => showAdvancedFilters = !showAdvancedFilters}
+                class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
             >
-            Filter
-        </button>
+                <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                </svg>
+                Filter
+            </button>
+
+            {#if showAdvancedFilters}
+                <AdvancedFilter />
+                <button 
+                    class="fixed inset-0 z-40 w-full h-full cursor-default focus:outline-none" 
+                    on:click={() => showAdvancedFilters = false}
+                    on:keydown={(e) => e.key === 'Escape' && (showAdvancedFilters = false)}
+                    tabindex="-1"
+                    aria-label="Close filters"
+                ></button>
+            {/if}
+        </div>
     </div>
 </div>
