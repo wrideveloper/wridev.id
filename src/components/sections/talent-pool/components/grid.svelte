@@ -30,7 +30,10 @@
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
 >
     {#each filteredTalents as talent (talent.name)}
-        <TalentCard {...talent} />
+        <div class="contents" data-namecursor={talent.name}>
+            
+        <TalentCard {...talent}  />
+        </div>
     {/each}
 
     {#if filteredTalents.length === 0}
