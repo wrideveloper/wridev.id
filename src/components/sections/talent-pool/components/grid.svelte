@@ -50,21 +50,25 @@
   $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
 </script>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-  {#each displayedTalents as talent (talent.name)}
-    <TalentCard 
-      name={talent.name}
-      image={talent.profileImage}      
-      description={talent.about}       
-      tags={talent.proficiencies}      
-    />
-  {/each}
-  
-  {#if filteredTalents.length === 0}
-    <div class="col-span-full py-20 text-center text-gray-500">
-        No talents found. Try clearing your filters.
-    </div>
-  {/if}
+<div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
+>
+    {#each filteredTalents as talent (talent.name)}
+        <div class="contents" data-namecursor={talent.name}>
+            <TalentCard 
+              name={talent.name}
+              image={talent.profileImage}      
+              description={talent.about}       
+              tags={talent.proficiencies}      
+            />
+        </div>
+    {/each}
+
+    {#if filteredTalents.length === 0}
+        <div class="col-span-full py-20 text-center text-gray-500">
+            No talents found matching your criteria.
+        </div>
+    {/if}
 </div>
 
 {#if hasMoreItems && !isExpanded}
