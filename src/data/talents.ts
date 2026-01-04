@@ -335,7 +335,7 @@ export const TALENT_DATA: TalentData = {
       position: "Cyber Security Analyst, Backend Dev",
       profileImage: "/assets/talents/fikri-muhammad-abdillah.webp",
       yearsOfExperience: 4,
-      proficiencies: ["cyber-security"],
+      proficiencies: ["cyber-security", "backend"],
       availabilities: ["part-time", "freelance"],
       contacts: [
         { type: "github", url: "https://github.com/FlaBBB" },

@@ -1,41 +1,35 @@
 ---
-// src/talent-pool/talent-pool-section.astro
-import Toolbar from "./components/toolbar.svelte";
-import Grid from "./components/grid.svelte";
+import Toolbar from './components/toolbar.svelte';
+import Grid from './components/grid.svelte';
+import { TALENT_DATA } from "../../../data/talents.ts";
+import { Icon } from "astro-icon/components";
 
-// MOCK DATA
-const talentsData = [
-    {
-        name: "Laksamana Arya",
-        image: "/images/laksa.jpg",
-        tags: ["Frontend", "Web Dev"],
-        description: "Passionate dev...",
-    },
-    {
-        name: "John Doe",
-        image: "/images/john.jpg",
-        tags: ["Backend", "Cyber"],
-        description: "Security expert...",
-    },
-    {
-        name: "Jane Smith",
-        image: "/images/jane.jpg",
-        tags: ["UI/UX", "Creative"],
-        description: "Designer...",
-    },
-];
 ---
-
 <section class="w-full max-w-300 mx-auto px-4 py-12">
-    <Toolbar client:load />
-
-    <Grid talents={talentsData} client:load />
-
-    <div class="mt-12 flex justify-center">
-        <button
-            class="flex items-center gap-2 rounded-lg bg-blue-500 px-6 py-3 text-white font-semibold hover:bg-blue-600 transition-colors shadow-md"
-        >
-            See More
-        </button>
-    </div>
+  <Toolbar client:load />
+  <Grid talents={TALENT_DATA.talents} client:load />
+  <div class="mt-12 flex justify-center">
+    <button 
+      class="
+        group
+        flex items-center gap-2 rounded-lg px-6 py-3 
+        text-white font-semibold shadow-sm transition-all duration-200
+        
+        /* Gradient & Border */
+        bg-linear-to-b from-wri-blue to-wri-blue/56
+        border border-wri-darkerblue
+        ring-4 ring-[#DFEDFF]
+        
+        /* Hover */
+        hover:to-wri-blue hover:shadow-md hover:scale-[1.02]
+      "
+    >
+      <Icon 
+        name="ph:sparkle-fill" 
+        class="w-5 h-5 text-white rotate-12" 
+      />
+      
+      {TALENT_DATA.buttonText}
+    </button>
+  </div>
 </section>

@@ -9,29 +9,27 @@
     import CyberIcon from "~icons/ph/bug";
 
     const categories = [
-        { name: "All", icon: AllIcon },
-        { name: "Backend", icon: DatabaseIcon },
-        { name: "Frontend", icon: CodeIcon },
-        { name: "Mobile", icon: MobileIcon },
-        { name: "UI/UX", icon: PaletteIcon },
-        { name: "Creative", icon: CreativeIcon },
-        { name: "Cyber", icon: CyberIcon },
+        { name: "All",      value: "All",            icon: AllIcon },
+        { name: "Backend",  value: "backend",        icon: DatabaseIcon },
+        { name: "Frontend", value: "frontend",       icon: CodeIcon },
+        { name: "Mobile",   value: "mobile",         icon: MobileIcon },
+        { name: "UI/UX",    value: "ui/ux",          icon: PaletteIcon },
+        { name: "Creative", value: "creative",       icon: CreativeIcon },
+        { name: "Cyber",    value: "cyber-security", icon: CyberIcon }, 
     ];
 </script>
 
-<div
-    class="inline-flex items-center gap-1 rounded-lg bg-gray-100 p-0.5 overflow-x-auto no-scrollbar"
->
+<div class="inline-flex items-center gap-1 rounded-lg bg-gray-100 p-0.5 overflow-x-auto no-scrollbar">
     {#each categories as category}
         <button
-            on:click={() => ($selectedCategory = category.name)}
+            on:click={() => ($selectedCategory = category.value)}
             class="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all whitespace-nowrap
-      {$selectedCategory === category.name
+            
+            {$selectedCategory === category.value
                 ? 'bg-white text-blue-600 shadow-sm font-semibold'
                 : 'text-gray-500 hover:bg-white/50 hover:text-gray-900'}"
         >
             <svelte:component this={category.icon} class="w-4 h-4" />
-
             {category.name}
         </button>
     {/each}
