@@ -3,7 +3,7 @@
     import AdvancedFilter from "./advanced-filter.svelte";
     import { searchQuery } from "../stores/filter";
     import SearchIcon from "~icons/ph/magnifying-glass";
-    
+
     let showAdvancedFilters = false;
 </script>
 
@@ -36,8 +36,8 @@
 
             {#if showAdvancedFilters}
                 <AdvancedFilter />
-                <button 
-                    class="fixed inset-0 z-40 w-full h-full cursor-default focus:outline-none" 
+                <button
+                    class="fixed inset-0 z-40 w-full h-full cursor-default focus:outline-none"
                     on:click={() => showAdvancedFilters = false}
                     on:keydown={(e) => e.key === 'Escape' && (showAdvancedFilters = false)}
                     tabindex="-1"
