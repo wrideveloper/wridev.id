@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Accordion from "./accordion.svelte";
+    import Accordion from "~/components/sections/faq/components/accordion.svelte";
 
     interface Faq {
         question: string;

@@ -1,16 +1,16 @@
 ---
-import Toolbar from './components/toolbar.svelte';
-import Grid from './components/grid.svelte';
-import { TALENT_DATA } from "../../../data/talents.ts";
+import Toolbar from '~/components/sections/talent-pool/components/toolbar.svelte';
+import Grid from '~/components/sections/talent-pool/components/grid.svelte';
+import { TALENT_DATA } from "~/data/talents.ts";
 ---
 
 <section class="w-full max-w-300 mx-auto px-4 py-12">
   <Toolbar client:load />
-  
-  <Grid 
-    talents={TALENT_DATA.talents} 
-    buttonText={TALENT_DATA.buttonText} 
-    client:load 
+
+  <Grid
+    talents={TALENT_DATA.talents}
+    buttonText={TALENT_DATA.buttonText}
+    client:load
   />
 
 </section>

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { derived } from "svelte/store";
-    import WalkingCardStrip from "./walking-card.svelte";
+    import WalkingCardStrip from "~/components/sections/testimonial/components/walking-card.svelte";
 
     export let testimonials: {
       name: string;

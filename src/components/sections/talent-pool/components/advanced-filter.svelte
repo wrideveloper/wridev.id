@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { selectedAvailability, selectedExperience } from '../stores/filter';
+  import { selectedAvailability, selectedExperience } from '~/components/sections/talent-pool/stores/filter';
   
   function toggleAvailability(val: string) {
     $selectedAvailability = $selectedAvailability === val ? null : val;

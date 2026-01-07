@@ -1,7 +1,7 @@
 <script lang="ts">
-  import TalentCard from './talent-card.svelte';
-  import { searchQuery, selectedCategory, selectedAvailability, selectedExperience } from '../stores/filter';
-  import type { Talent } from '../../../../models/talent';
+  import TalentCard from '~/components/sections/talent-pool/components/talent-card.svelte';
+  import { searchQuery, selectedCategory, selectedAvailability, selectedExperience } from '~/components/sections/talent-pool/stores/filter';
+  import type { Talent } from '~/models/talent';
 
   import SparkleIcon from '~icons/ph/sparkle-fill';
 

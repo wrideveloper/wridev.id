@@ -1,4 +1,4 @@
-import type { Talent } from "../models/talent.ts";
+import type { Talent } from "~/models/talent.ts";
 
 type TalentData = {
   title: string;

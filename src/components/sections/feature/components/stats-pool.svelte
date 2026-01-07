@@ -1,5 +1,5 @@
 <script lang="ts">
-    import PillsBlueText from "./blue-pills-text.svelte";
+    import PillsBlueText from "~/components/sections/feature/components/blue-pills-text.svelte";
 
     export let stats: {
         title: string;

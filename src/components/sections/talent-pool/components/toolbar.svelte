@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Filters from "./filters.svelte";
-    import AdvancedFilter from "./advanced-filter.svelte";
-    import { searchQuery } from "../stores/filter";
+    import Filters from "~/components/sections/talent-pool/components/filters.svelte";
+    import AdvancedFilter from "~/components/sections/talent-pool/components/advanced-filter.svelte";
+    import { searchQuery } from "~/components/sections/talent-pool/stores/filter";
     import SearchIcon from "~icons/ph/magnifying-glass";
 
     let showAdvancedFilters = false;

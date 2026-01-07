@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { selectedCategory } from "../stores/filter";
+    import { selectedCategory } from "~/components/sections/talent-pool/stores/filter";
     import AllIcon from "~icons/ph/squares-four-fill";
     import DatabaseIcon from "~icons/ph/database-duotone";
     import CodeIcon from "~icons/ph/code-duotone";

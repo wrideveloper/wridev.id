@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { searchQuery } from "../stores/filter";
+    import { searchQuery } from "~/components/sections/articles/stores/filter";
 </script>
 
 <div>
