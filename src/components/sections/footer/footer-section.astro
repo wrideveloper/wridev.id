@@ -1,20 +1,20 @@
 ---
-
+const { className } = Astro.props;
 ---
 
-<div class="flex flex-col w-full px-30 py-29 gap-10">
+<footer class={`flex flex-col w-full px-28 py-16 gap-10 ${className}`}>
     <div class="flex">
         <div class="max-w-[20rem]">
             <img src="/assets/wri-logo.webp" alt="WRI Dev Logo" class="h-14" />
-            <p class="mt-4 text-wri-grey-600">
+            <p class="mt-4 text-wri-gray-600">
                 A creative community where learning together sparks fresh ideas,
                 innovation, and growth in science and technology
             </p>
         </div>
         <div class="ml-auto flex gap-10">
             <div>
-                <p class="text-xl text-semibold">Miniclass</p>
-                <div class="mt-4 flex flex-col gap-2 text-wri-grey-600">
+                <p class="text-xl text-semibold text-wri-gray-800">Miniclass</p>
+                <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
                     <p><a href="#">Frontend Development</a></p>
                     <p><a href="#">Backend Development</a></p>
                     <p><a href="#">UI/UX Design</a></p>
@@ -22,8 +22,8 @@
                 </div>
             </div>
             <div>
-                <p class="text-xl text-semibold">Contact Us</p>
-                <div class="mt-4 flex flex-col gap-2 text-wri-grey-600">
+                <p class="text-xl text-semibold text-wri-gray-800">Contact Us</p>
+                <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
                     <p><a href="https://www.instagram.com/wri_polinema">Instagram</a></p>
                     <p><a href="https://github.com/wrideveloper">Github</a></p>
                     <p><a href="https://id.linkedin.com/company/wripolinema">LinkedIn</a></p>
@@ -32,8 +32,8 @@
             </div>
         </div>
     </div>
-    <div class="flex text-wri-grey-600">
+    <div class="flex text-wri-gray-600">
         <div>©2025 All Rights Reserved — Workshop Riset Informatika</div>
         <div class="ml-auto">Built with Astro and Svelte</div>
     </div>
-</div>
+</footer>

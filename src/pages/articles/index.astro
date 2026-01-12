@@ -1,0 +1,48 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+import InlineIcon from "~/components/text/inline-icon.astro";
+import Grid from "~/components/sections/articles/components/grid.svelte";
+---
+
+<Layout>
+    <div class="pt-32">
+        <div class="my-8 flex justify-center items-center">
+            <InlineIcon
+                name="ph:sparkle-fill"
+                color="wri-yellow"
+                rotate={-4}
+                className="-translate-y-14"
+            />
+
+            <div class="text-center">
+                <div class="text-6xl font-medium">
+                    Knowledge Hub
+                </div>
+
+                <div class="text-6xl font-medium">
+                    <span class="wri-italic from-wri-blue to-wri-blue/45">
+                        Articles&nbsp;
+                    </span>
+                    and
+                    <span class="wri-italic from-wri-yellow to-wri-yellow/45">
+                        &nbsp;Analysis
+                    </span>
+                </div>
+
+                <p class="mx-auto mt-4 max-w-[42ch] text-wri-gray-600">
+                    Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.
+                </p>
+            </div>
+
+            <InlineIcon
+                name="ph:book-open-text-fill"
+                color="wri-blue"
+                rotate={6}
+                className="translate-y-4"
+            />
+        </div>
+        <Grid />
+        <FooterSection />
+    </div>
+</Layout>

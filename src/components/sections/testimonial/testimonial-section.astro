@@ -1,7 +1,7 @@
 ---
-import Container from "../container.astro";
-import PillsText from "../../text/pills.astro";
-import Grid from "./components/grid.svelte";
+import Container from "~/components/sections/container.astro";
+import PillsText from "~/components/text/pills.astro";
+import Grid from "~/components/sections/testimonial/components/grid.svelte";
 
 const { className } = Astro.props;
 
@@ -100,7 +100,7 @@ const testimonials = [
                 >
             </div>
         </div>
-        <div class="flex flex-col items-center text-wri-grey-600">
+        <div class="flex flex-col items-center text-wri-gray-600">
             <p>
                 At WRI, we believe in the power of shared experiences to ignite
                 innovation and unlock

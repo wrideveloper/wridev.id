@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from "./card.svelte";
+  import Card from "~/components/sections/testimonial/components/card.svelte";
 
   export let testimonials: {
     name: string;

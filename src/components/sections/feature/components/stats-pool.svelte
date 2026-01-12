@@ -1,5 +1,5 @@
 <script lang="ts">
-    import PillsBlueText from "./blue-pills-text.svelte";
+    import PillsBlueText from "~/components/sections/feature/components/blue-pills-text.svelte";
 
     export let stats: {
         title: string;
@@ -20,7 +20,7 @@
             <div class="flex flex-col gap-2">
                 <PillsBlueText>{title}</PillsBlueText>
                 <div class="text-5xl font-bold">{value}</div>
-                <div class="text-gray-500 max-w-80">{desc}</div>
+                <div class="text-gray-600 max-w-80">{desc}</div>
             </div>
         </div>
     {/each}
