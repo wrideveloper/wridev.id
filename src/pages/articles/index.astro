@@ -46,7 +46,7 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
                 className="translate-y-4"
             />
         </div>
-        <Grid articles={sortedArticlesMeta.map(article => article.data)} client:load/>
+        <Grid articles={sortedArticlesMeta} client:load/>
         <FooterSection />
     </div>
 </Layout>

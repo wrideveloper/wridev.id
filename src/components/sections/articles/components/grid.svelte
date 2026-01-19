@@ -13,12 +13,13 @@
     export let articles = [];
 
     articles = articles.map((article) => ({
-        ...article,
-        date: new Date(article.date).toLocaleDateString("en-ID", {
+        ...article.data,
+        date: new Date(article.data.date).toLocaleDateString("en-ID", {
             year: "numeric",
             month: "long",
             day: "numeric",
         }),
+        slug: article.slug,
     }));
 
     let filteredArticles = articles;

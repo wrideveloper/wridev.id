@@ -1,0 +1,40 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import GithubIcon from "~icons/ph/github-logo-duotone";
+import LinkedinIcon from "~icons/ph/linkedin-logo-duotone";
+import ArticleCard from "~/components/sections/articles/components/article-card.svelte";
+import Layout from "~/layouts/Layout.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry("articles", slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString("en-ID", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+// the formula to convert words to time to read is -> words / 200
+const timeToReadInMinutes = Math.ceil(entry.body.split(" ").length / 200);
+
+const { Content } = await entry.render();
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.filter((a) => a.slug !== slug);
+
+export async function getStaticPaths() {
+	const entries = await getCollection("articles");
+	return entries.map((entry) => ({ params: { slug: entry.slug } }));
+}
+---
+
+<Layout>
+    <FooterSection className="mt-32" />
+</Layout>
