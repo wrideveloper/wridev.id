@@ -27,18 +27,18 @@
     const avail = $selectedAvailability;
     const exp = $selectedExperience;
 
-    const matchesSearch = 
-      talent.name.toLowerCase().includes(query) || 
+    const matchesSearch =
+      talent.name.toLowerCase().includes(query) ||
       talent.position.toLowerCase().includes(query) ||
       talent.proficiencies.some(p => p.toLowerCase().includes(query));
-    
-    const matchesCategory = 
-      cat === 'All' || 
+
+    const matchesCategory =
+      cat === 'All' ||
       talent.proficiencies.some(p => p.toLowerCase() === cat.toLowerCase());
 
-    const matchesAvailability = 
-        !avail || 
-        talent.availabilities.some(a => a.toLowerCase() === avail.toLowerCase().replace(" ", "-")); 
+    const matchesAvailability =
+        !avail ||
+        talent.availabilities.some(a => a.toLowerCase() === avail.toLowerCase().replace(" ", "-"));
 
     let matchesExperience = true;
     if (exp) {
@@ -54,8 +54,8 @@
 
   const INITIAL_LIMIT = 8;
 
-  $: displayedTalents = isExpanded 
-      ? filteredTalents 
+  $: displayedTalents = isExpanded
+      ? filteredTalents
       : filteredTalents.slice(0, INITIAL_LIMIT);
 
   $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
@@ -74,7 +74,7 @@
 >
     {#each displayedTalents as talent (talent.name)}
         <div class="contents" data-namecursor={talent.name}>
-            <TalentCard 
+            <TalentCard
               name={talent.name}
               image={talent.profileImage}      
               description={talent.about}        
@@ -96,7 +96,7 @@
       on:click={handleButtonClick}
       class="
         group
-        flex items-center gap-2 rounded-lg px-6 py-3 
+        flex items-center gap-2 rounded-lg px-6 py-3
         text-white font-semibold shadow-sm transition-all duration-200
         bg-linear-to-b from-wri-blue to-wri-blue/56
         border border-wri-darkerblue

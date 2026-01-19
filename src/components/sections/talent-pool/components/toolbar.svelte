@@ -11,8 +11,10 @@
     <Filters />
 
     <div class="flex w-full items-center gap-4 md:w-auto relative">
-        <div class="relative w-full md:w-80">
-            <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <div class="relative w-full md:w-80">
+            <div
+                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+            >
                 <svelte:component this={SearchIcon} class="w-4 h-4" />
             </div>
             <input
@@ -28,8 +30,18 @@
                 on:click={() => showAdvancedFilters = !showAdvancedFilters}
                 class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors text-xl"
             >
-                <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                <svg
+                    class="size-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
+                    ></path>
                 </svg>
                 Filter
             </button>
@@ -38,8 +50,9 @@
                 <AdvancedFilter />
                 <button
                     class="fixed inset-0 z-40 w-full h-full cursor-default focus:outline-none"
-                    on:click={() => showAdvancedFilters = false}
-                    on:keydown={(e) => e.key === 'Escape' && (showAdvancedFilters = false)}
+                    on:click={() => (showAdvancedFilters = false)}
+                    on:keydown={(e) =>
+                        e.key === "Escape" && (showAdvancedFilters = false)}
                     tabindex="-1"
                     aria-label="Close filters"
                 ></button>

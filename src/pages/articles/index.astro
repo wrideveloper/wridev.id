@@ -1,8 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
 import FooterSection from "~/components/sections/footer/footer-section.astro";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import Grid from "~/components/sections/articles/components/grid.svelte";
+
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout>
@@ -42,7 +46,7 @@ import Grid from "~/components/sections/articles/components/grid.svelte";
                 className="translate-y-4"
             />
         </div>
-        <Grid />
+        <Grid articles={sortedArticlesMeta} client:load/>
         <FooterSection />
     </div>
 </Layout>
