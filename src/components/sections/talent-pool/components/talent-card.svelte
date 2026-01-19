@@ -1,8 +1,10 @@
 <script lang="ts">
   export let name: string;
   export let image: string;
-  export let tags: string[]; // These are the raw values (e.g., "cyber-security", "frontend")
+  export let tags: string[]; 
   export let description: string;
+
+  $: profileUrl = `/talents/${name.toLowerCase().replace(/\s+/g, '-')}`;
 
   $: displayTags = (() => {
     let processed = [...tags];
@@ -14,7 +16,6 @@
     }
 
     return processed.map((tag) => {
-      // Handle special cases first
       if (tag === "cyber-security") return "Cyber Security";
       if (tag === "ui/ux") return "UI/UX";
       if (tag === "Web Dev") return "Web Dev";
@@ -23,14 +24,14 @@
     });
   })();
 
-  // Description truncation logic
   $: shortDescription = description.includes(".")
     ? description.slice(0, description.indexOf(".") + 1)
     : description;
 </script>
 
-<div
-  class="group relative w-full aspect-[282/332] overflow-hidden rounded-xl bg-gray-200 cursor-pointer"
+<a
+  href={profileUrl}
+  class="block group relative w-full aspect-[282/332] overflow-hidden rounded-xl bg-gray-200 cursor-pointer"
 >
   <img
     src={image}
@@ -63,4 +64,4 @@
       </p>
     </div>
   </div>
-</div>
+</a>

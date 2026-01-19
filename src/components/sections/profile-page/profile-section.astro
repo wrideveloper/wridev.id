@@ -1,0 +1,24 @@
+---
+import Container from "~/components/sections/container.astro";
+import ProfileDesc from "./components/profile-desc.astro";
+import ProfileStat from "./components/stat/profile-stat.astro"; 
+import ProjectPool from "./components/project-pool.astro";
+
+const { talent } = Astro.props;
+---
+
+<Container className="py-20">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+    
+    <div class="lg:col-span-5 xl:col-span-4">
+      <ProfileDesc talent={talent} />
+    </div>
+
+    <div class="lg:col-span-7 xl:col-span-8 flex flex-col pt-12 lg:pt-0">
+       <ProfileStat talent={talent} />
+       
+       <ProjectPool projects={talent.projects} />
+    </div>
+
+  </div>
+</Container>

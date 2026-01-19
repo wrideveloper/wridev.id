@@ -1,0 +1,22 @@
+---
+import GithubStat from './github-stat.astro';
+import type { Talent } from "~/models/talent";
+
+interface Props {
+  talent: Talent;
+}
+
+const { talent } = Astro.props; 
+
+const hasGithub = talent?.contacts?.some(c => c.type === 'github');
+---
+
+<div class="flex flex-col gap-6 w-full mb-12">
+  
+  {hasGithub && <GithubStat talent={talent} />}
+  
+  <div class="bg-white p-6 rounded-3xl border border-wri-gray-200 min-h-[200px] flex items-center justify-center text-wri-gray-400 border-dashed">
+      Other Stat Coming Soon
+  </div>
+
+</div>
