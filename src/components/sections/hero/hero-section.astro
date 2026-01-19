@@ -5,52 +5,49 @@ import HeroCard from "~/components/sections/hero/components/hero-card.astro";
 ---
 
 <div
-    class="w-screen bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center rounded-3xl px-30"
+  class="w-screen bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center rounded-3xl px-30"
 >
-    <div class="flex flex-col justify-center items-center mt-60 font-medium">
-        <div class="relative flex justify-center items-end text-7xl">
-            Explore
-            <InlineIcon
-                name="ph:book-open-text-fill"
-                color="wri-blue"
-                rotate={-2}
-                }
-            />
-            <span class="wri-italic from-wri-blue to-wri-blue/45">
-                Knowledge</span
-            >
-        </div>
-        <div class="relative flex justify-center items-end text-7xl">
-            Unlock<span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                >&nbsp;Potential</span
-            >
-            <InlineIcon
-                name="ph:sparkle-fill"
-                color="wri-yellow"
-                rotate={2}
-                }
-            />
-            Shine
-        </div>
-        <div class="text-xl w-4/7 mt-5 text-wri-gray-600 font-normal">
-            Learn, share, and connect with fellow tech enthusiasts. Get the
-            latest tech insights and unlock exciting collaboration opportunities
-            all in one place
-        </div>
-        <a href="#">
-            <div
-                class="flex justify-center items-center bg-wri-lighterblue mt-10 text-wri-white p-1.5 rounded-2xl"
-            >
-                <div
-                    class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-5 py-3 rounded-xl border border-wri-darkerblue text-lg"
-                >
-                    <Icon
-                        name="ph:magnifying-glass-bold"
-                        class="w-6 h-6 text-wri-white mr-2"
-                    /> Search Talent
-                </div>
-            </div>
-        </a>
+  <div
+    class="flex flex-col justify-center items-center mt-60 font-medium tracking-tight"
+  >
+    <div class="relative flex justify-center items-end text-7xl">
+      Explore
+      <InlineIcon
+        name="ph:book-open-text-fill"
+        color="wri-blue"
+        rotate={-2}
+        }
+      />
+      <span class="wri-italic from-wri-blue to-wri-blue/45"> Knowledge</span>
     </div>
+    <div class="relative flex justify-center items-end text-7xl">
+      Unlock<span class="wri-italic from-wri-yellow to-wri-yellow/45"
+        >&nbsp;Potential</span
+      >
+      <InlineIcon name="ph:sparkle-fill" color="wri-yellow" rotate={2} } />
+      Shine
+    </div>
+    <div class="text-xl w-4/7 mt-5 text-wri-gray-600 font-normal">
+      Learn, share, and connect with fellow tech enthusiasts. Get the latest
+      tech insights and unlock exciting collaboration opportunities all in one
+      place
+    </div>
+    <a href="#">
+      <div
+        class="flex justify-center items-center bg-wri-lighterblue mt-10 text-wri-white p-1.5 rounded-2xl"
+      >
+        <div
+          class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-5 py-3 rounded-xl border border-wri-darkerblue text-lg"
+        >
+          <Icon
+            name="ph:magnifying-glass-bold"
+            class="w-6 h-6 text-wri-white mr-2"
+          /> Search Talent
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="w-full">
     <HeroCard />
+  </div>
 </div>

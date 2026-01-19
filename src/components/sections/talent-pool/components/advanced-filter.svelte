@@ -25,7 +25,7 @@
         <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0
           {$selectedAvailability === item ? 'border-blue-500' : 'border-gray-200 group-hover:border-blue-300'}">
           {#if $selectedAvailability === item}
-            <div class="w-2.5 h-2.5 bg-blue-500 rounded-full" />
+            <div class="w-2.5 h-2.5 bg-blue-500 rounded-full" ></div>
           {/if}
         </div>
         <span class="text-base {$selectedAvailability === item ? 'font-medium text-black' : 'font-normal text-gray-900'}">
@@ -47,7 +47,7 @@
         <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0
           {$selectedExperience === item ? 'border-blue-500' : 'border-gray-200 group-hover:border-blue-300'}">
           {#if $selectedExperience === item}
-            <div class="w-2.5 h-2.5 bg-blue-500 rounded-full" />
+            <div class="w-2.5 h-2.5 bg-blue-500 rounded-full" ></div>
           {/if}
         </div>
         <span class="text-base {$selectedExperience === item ? 'font-medium text-black' : 'font-normal text-gray-900'}">

@@ -50,7 +50,7 @@ export const TALENT_DATA: TalentData = {
     },
     {
       name: "Ahmad Shodikin",
-      about: "Head of UI/UX Division at Workshop Riset Informatika",
+      about: "Head of UI/UX Division at Workshop Riset Informatika (2023)",
       position: "UI/UX Designer",
       profileImage: "/assets/talents/ahmad-shodikin.webp",
       yearsOfExperience: 4,
@@ -64,7 +64,7 @@ export const TALENT_DATA: TalentData = {
     },
     {
       name: "Fitrah Rahmadhani Ahmad",
-      about: "Head of Information Media Division at Workshop Riset Informatika",
+      about: "Head of Information Media Division at Workshop Riset Informatika (2023)",
       position: "UI/UX Designer",
       profileImage: "/assets/talents/fitrah-rahmadhani.webp",
       yearsOfExperience: 4,
@@ -192,7 +192,7 @@ export const TALENT_DATA: TalentData = {
     {
       name: "Rensi Meila Yulvinata",
       about:
-        "U/UX Designer with 2+ years of experience in designing user-friendly and engaging interfaces for web and mobile applications.",
+        "U/UX Designer with 2+ years of experience in designing user-friendly and engaging interfaces.",
       position: "UI/UX Designer",
       profileImage: "/assets/talents/rensi-meila-yulvinata.webp",
       yearsOfExperience: 2,
@@ -211,7 +211,7 @@ export const TALENT_DATA: TalentData = {
     {
       name: "Muhammad Khalid Atthoriq",
       about:
-        "I focus on front-end development and UI/UX design, currently working on a website for Dinas Ketahanan Pangan and previously delivered one for IsFor. I also handle videography, photography, and video editing, with a portfolio of diverse projects. Expanding my skills into data analytics and AI, I’m fluent in English and building my French.",
+        "I focus on front-end development and UI/UX design.",
       position: "Frontend, UI/UX, and Creative",
       profileImage: "/assets/talents/muhammad-khalid-atthoriq.webp",
       yearsOfExperience: 4,
@@ -228,9 +228,9 @@ export const TALENT_DATA: TalentData = {
       isVerified: false,
     },
     {
-      name: "Moch. Naufal Ardian Ramadhan",
+      name: "Naufal Ardian",
       about:
-        "Halo, saya Naufal seorang Desainer UI/UX dengan pengalaman lebih dari 2 tahun dalam membuat antarmuka pengguna dan pengalaman pengguna untuk aplikasi seluler, situs web, dan perangkat lunak. Untuk Project yang saya sedang kerjakan sekarang adalah gurustudios.id yang dimana mereka melakukan rebranding product mereka yang sebelumnya hanya platform game sekarang ekspansi ke pengajaran offline, nah dengan adanya platform website untuk pengajaran offline gurustudios.id provide pemesanan secara online dengan sistem subscribe, jadi mereka bisa mengikuti kelas dengan mendaftar melalui website tersebut. nah tugas saya di project ini, yang pertama karena ini sudah menjadi solusi yang harus saya develop atau saya deliver menjadi sebuah visual nah dari brief teman teman gurustudios.id itu meminta ada beberapa fitur untuk ada didalam website tersebut, lalu saya juga melakukan deliver visual design yang sudah saya kerjakan ke developer, untuk memastikan dan mengkomunikasikan apakah design saya ini bisa di develop oleh mereka.",
+        "I am a UI/UX Designer with over 2 years of experience.",
       position: "UI/UX Designer",
       profileImage: "/assets/talents/moch-naufal-ardian-ramadhan.webp",
       yearsOfExperience: 2,
@@ -246,7 +246,7 @@ export const TALENT_DATA: TalentData = {
     {
       name: "Aqsa Herry Prastyo",
       about:
-        "Saya adalah seorang Graphic Designer dengan pengalaman lebih dari 2 tahun dan UI/UX Designer selama 1 tahun. Saya memiliki keahlian dalam menciptakan desain visual yang menarik serta merancang pengalaman pengguna yang intuitif untuk aplikasi mobile dan desktop.Saya juga memilik keahlian dalam membuat logo dan branding perusahaan",
+        "I am a Graphic Designer with over 2 years of experience and a UI/UX Designer for 1 year.",
       position: "UI/UX Designer and Creative",
       profileImage: "/assets/talents/aqsa-herry-prastyo.webp",
       yearsOfExperience: 2,
@@ -438,24 +438,6 @@ export const TALENT_DATA: TalentData = {
       yearsOfExperience: 3,
       proficiencies: ["backend", "frontend", "game"],
       availabilities: ["freelance"],
-      isVerified: false,
-    },
-    {
-      name: "Qulbi Khutsi Azzumi",
-      position: "UI/UX Designer and Creative",
-      about:
-        "Mahasiswa jurusan Teknik Informatika Politeknik Negeri Malang dengan minat karir di bidang industri kreatif dan pemrograman web. Saya memiliki lebih dari 2 tahun pengalaman kerja di Desain UI/UX. Tools utama saya untuk desain UI/UX adalah Figma dan Adobe Illustrator, dengan CorelDraw sebagai tools pendukungnya. Selain itu, saya memiliki pengetahuan dasar tentang HTML dan CSS. Saya juga terampil bekerja dalam tim dalam pengembangan proyek, berkomunikasi secara aktif, dan mendengarkan umpan balik dengan cermat untuk memastikan bahwa kebutuhan terpenuhi.",
-      profileImage: "/assets/talents/qulbi-khutsi-azzumi.webp",
-      contacts: [
-        { type: "email", url: "mailto:qulbiazzumi29@gmail.com" },
-        {
-          type: "linkedin",
-          url: "https://www.linkedin.com/in/qulbi-khutsi-azzumi-0a0870281/",
-        },
-      ],
-      yearsOfExperience: 2,
-      proficiencies: ["ui/ux", "creative"],
-      availabilities: ["part-time", "freelance", "contract"],
       isVerified: false,
     },
     {

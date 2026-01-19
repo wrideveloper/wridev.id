@@ -17,40 +17,45 @@ const { className } = Astro.props;
             </h1>
         </div>
         <h5 class="text-right text-lg w-1/3 text-wri-gray-600">
-            An <b class="text-wri-gray-900">inspiring community</b> of IT students at Polinema, where <b class="text-wri-gray-900"
+            An <b class="text-wri-gray-900">inspiring community</b> of IT students
+            at Polinema, where <b class="text-wri-gray-900"
                 >creativity comes alive, knowledge is shared, and innovation</b
             > in <b class="text-wri-gray-900">Science and Technology</b>
             continues to grow
         </h5>
     </div>
-    <div class="w-full grid grid-cols-2 gap-4 mt-16">
+    <div class="w-full grid grid-cols-2 gap-8 mt-16">
         <MiniClassCard
             titleIcon="ph:game-controller-fill"
-            color="text-wri-yellow"
+            color="wri-yellow"
             title="Game Development"
             description="Dive into game design, coding, and storytelling to craft immersive gaming experiences from concept to launch."
             image="/assets/miniclasses/game.webp"
+            imageHeight="h-30"
         />
         <MiniClassCard
             titleIcon="ph:android-logo-fill"
-            color="text-wri-blue"
-            title="Mobile Development"
+            color="wri-blue"
+            title="Back End Development"
             description="Master mobile app development, creating intuitive interfaces and seamless user experiences for today's dynamic devices."
-            image="/assets/miniclasses/mobile.webp"
+            image="/assets/miniclasses/backend.webp"
+            imageHeight="h-25"
         />
         <MiniClassCard
             titleIcon="ph:palette-fill"
-            color="text-wri-blue"
+            color="wri-blue"
             title="UI/UX Design"
             description="Elevate user experiences with thoughtful design, creating interfaces that are both visually appealing and functionally intuitive for users."
             image="/assets/miniclasses/ui-ux.webp"
+            imageHeight="h-30"
         />
         <MiniClassCard
             titleIcon="ph:browsers-fill"
-            color="text-wri-yellow"
-            title="Web Development"
-            description="Learn to build responsive websites, mastering front-end and back-end skills for impactful digital presence and user engagement."
-            image="/assets/miniclasses/web.webp"
+            color="wri-yellow"
+            title="Front End Development"
+            description="Craft stunning web and mobile interfaces with responsive design and Flutter for seamless, cutting-edge user experiences on any device."
+            image="/assets/miniclasses/frontend.webp"
+            imageHeight="h-35"
         />
     </div>
 </Container>
