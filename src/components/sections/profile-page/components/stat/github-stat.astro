@@ -79,7 +79,7 @@ const getColor = (level: number) => {
              <div 
                class="w-3 h-3 rounded-xs" 
                style={`background-color: ${getColor(day.level)};`}
-               title={`${day.count} contributions on ${day.date}`}
+               title={day.count > 0 ? `${day.count} contributions on ${day.date}` : `Activity level: ${day.level}`}
              ></div>
           ))}
         </div>
