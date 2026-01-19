@@ -7,7 +7,6 @@ import Grid from "~/components/sections/articles/components/grid.svelte";
 
 const articles = await getCollection("articles");
 const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
-console.log(sortedArticlesMeta);
 ---
 
 <Layout>
@@ -47,7 +46,7 @@ console.log(sortedArticlesMeta);
                 className="translate-y-4"
             />
         </div>
-        <Grid client:load articles={sortedArticlesMeta} />
+        <Grid client:load articles={sortedArticlesMeta.map(article => article.data)} />
         <FooterSection />
     </div>
 </Layout>

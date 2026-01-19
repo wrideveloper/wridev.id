@@ -1,7 +1,7 @@
 ---
 title: "Kebijakan Moneter Bitcoin dan Implikasinya"
 description: Artikel ini membahas kebijakan moneter unik Bitcoin (batas pasokan, halving), membandingkannya dengan sistem fiat, dan menyoroti tantangan seperti volatilitas dan transisi biaya transaksi.
-image: "/articles/59f3f1c8-4dc0-4f3c-bd17-3b703c01a6ab.jpeg"
+image: "/assets/articles/59f3f1c8-4dc0-4f3c-bd17-3b703c01a6ab.jpeg"
 author: Petrus Tyang Agung Rosario
 github: https://github.com/petrusthelastking
 linkedin: https://www.linkedin.com/in/petrus-rosario-69b149260/

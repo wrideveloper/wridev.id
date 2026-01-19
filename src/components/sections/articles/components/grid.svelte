@@ -10,114 +10,32 @@
     import NextIcon from "~icons/ph/caret-right";
     import LastIcon from "~icons/ph/caret-double-right";
 
-    // export let articles = [
-    //   {
-    //     title: "Bitcoin Monetary Policy and Its Implications",
-    //     description: "This article explores the monetary policy of Bitcoin and its implications on the cryptocurrency market.",
-    //     date: "April 1, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "John Doe",
-    //   },
-    //   {
-    //     title: "The Impact of Cryptocurrency on Traditional Finance",
-    //     description: "This article discusses the impact of cryptocurrency on traditional finance and the potential for disruption.",
-    //     date: "April 15, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Jane Smith",
-    //   },
-    //   {
-    //     title: "Blockchain Technology and Its Applications",
-    //     description: "This article explores the potential applications of blockchain technology in various industries.",
-    //     date: "April 20, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Alice Johnson",
-    //   },
-    //   {
-    //     title: "The Future of Cryptocurrency and Its Regulatory Challenges",
-    //     description: "This article discusses the future of cryptocurrency and the regulatory challenges that come with it.",
-    //     date: "April 25, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Bob Brown",
-    //   },
-    //   {
-    //     title: "The Impact of Cryptocurrency on Traditional Finance",
-    //     description: "This article discusses the impact of cryptocurrency on traditional finance and the potential for disruption.",
-    //     date: "April 15, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Jane Smith",
-    //   },
-    //   {
-    //     title: "Blockchain Technology and Its Applications",
-    //     description: "This article explores the potential applications of blockchain technology in various industries.",
-    //     date: "April 20, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Alice Johnson",
-    //   },
-    //   {
-    //     title: "The Rise of Decentralized Finance (DeFi)",
-    //     description: "This article discusses the rise of decentralized finance (DeFi) and its potential impact on traditional finance.",
-    //     date: "April 25, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "John Doe",
-    //   },
-    //   {
-    //     title: "The Future of Cryptocurrency Regulation",
-    //     description: "This article discusses the future of cryptocurrency regulation and the potential impact on the industry.",
-    //     date: "May 5, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Emily Brown",
-    //   },
-    //   {
-    //     title: "The Impact of Blockchain on Supply Chain Management",
-    //     description: "This article explores the impact of blockchain on supply chain management and its potential benefits.",
-    //     date: "May 10, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Michael Smith",
-    //   },
-    //   {
-    //     title: "The Role of AI in Financial Services",
-    //     description: "This article discusses the role of artificial intelligence (AI) in financial services and its potential impact on the industry.",
-    //     date: "May 15, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Sarah Johnson",
-    //   },
-    //   {
-    //     title: "The Benefits of Decentralized Finance",
-    //     description: "This article explores the benefits of decentralized finance (DeFi) and its potential impact on the financial industry.",
-    //     date: "May 20, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Emily Brown",
-    //   },
-    //   {
-    //     title: "The Future of Cryptocurrency",
-    //     description: "This article explores the future of cryptocurrency and its potential impact on the financial industry.",
-    //     date: "May 25, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "John Doe",
-    //   },
-    //   {
-    //     title: "The Role of Blockchain in Supply Chain Management",
-    //     description: "This article discusses the role of blockchain in supply chain management and its potential impact on the industry.",
-    //     date: "May 30, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Michael Smith",
-    //   },
-    //   {
-    //     title: "The Impact of Artificial Intelligence on Finance",
-    //     description: "This article explores the impact of artificial intelligence on finance and its potential impact on the industry.",
-    //     date: "June 5, 2023",
-    //     image: "https://s1infpro.istts.ac.id/wp-content/uploads/2023/04/blockchain-1024x614.webp",
-    //     author: "Emily Brown",
-    //   },
-    // ];
+    // type Article = {
+    //     id: string;
+    //     title: string;
+    //     description: string;
+    //     image: string;
+    //     author: string;
+    //     date: string;
+    //     tags: string[];
+    //     slug: string;
+    // };
 
     export let articles = [];
+    articles = articles.map(article => ({
+        ...article,
+        date: new Intl.DateTimeFormat("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        }).format(article.date).replace(" ", " ")
+    }));
 
     const limit = 9;
 
     let page = 1;
 
-    let filteredTalents = articles.map(article => article.data);
+    console.log(articles);
 
     // Scroll to the top of the page
     function scrollToTop() {
@@ -129,10 +47,10 @@
     }
 
     // Calculate the total number of pages
-    $: totalPages = Math.ceil(filteredTalents.length / limit);
+    $: totalPages = Math.ceil(articles.length / limit);
 
     // Slice the filtered articles to display only the current page
-    $: paginatedArticles = filteredTalents.slice((page - 1) * limit, page * limit);
+    $: paginatedArticles = articles.slice((page - 1) * limit, page * limit);
 
     // Go to the first page
     function goToFirstPage() {
