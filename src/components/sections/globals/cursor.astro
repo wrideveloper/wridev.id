@@ -86,10 +86,11 @@ import { Icon } from "astro-icon/components";
 
             const target = e.target as HTMLElement;
             const miniclass = target.closest(".miniclass");
+            const articles = target.closest(".articles");
             const nameTarget = target.closest("[data-namecursor]");
 
-            if (miniclass) {
-                hoverState = "miniclass";
+            if (miniclass || articles) {
+                hoverState = "readmore";
 
                 gsap.to(cursor, { scale: 3, duration: 0.3 });
                 gsap.to(cursorIcon, { opacity: 1, duration: 0.3 });
