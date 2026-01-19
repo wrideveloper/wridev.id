@@ -1,14 +1,24 @@
 ---
 import { Icon } from "astro-icon/components";
-import type { Talent } from "~/models/talent";
 
-interface Props {
-  talent: Talent;
+interface TalentProfile {
+  name: string;
+  position: string;
+  about: string;
+  profileImage: string;
+  contacts: {
+    type: string;
+    url: string;
+  }[];
+  [key: string]: any; 
 }
 
-const { talent } = Astro.props;
+interface Props {
+  talent_data: TalentProfile;
+}
 
-// Map contact types to Iconify names
+const { talent_data } = Astro.props;
+
 const iconMap: Record<string, string> = {
   github: "ph:github-logo-fill",
   linkedin: "ph:linkedin-logo-fill",
@@ -17,7 +27,6 @@ const iconMap: Record<string, string> = {
   web: "ph:globe",
 };
 
-// Map types to specific colors if we want them styled differently
 const colorMap: Record<string, string> = {
   github: "bg-black text-white",
   linkedin: "bg-[#0077b5] text-white",
@@ -39,28 +48,29 @@ const colorMap: Record<string, string> = {
 
   <div class="relative w-56 h-56 rounded-full bg-[#EA0B0B] overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
     <img 
-      src={talent.profileImage} 
-      alt={talent.name} 
+      src={talent_data.profileImage} 
+      alt={talent_data.name} 
       class="w-full h-full object-cover object-top translate-y-0.15" 
     />
   </div>
 
   <div class="flex flex-col mt-4">
-    <h1 class="text-6xl font-bold tracking-tight text-wri-text leading-[1] mb-2">
-      {talent.name}
+    <h1 class="text-6xl font-bold tracking-tight text-wri-text leading-none mb-2">
+      {talent_data.name}
     </h1>
     
     <div class="text-4xl text-wri-text font-serif italic">
-       {talent.position}
+       {talent_data.position}
     </div>
   </div>
 
   <p class="text-lg leading-relaxed text-wri-gray-600 max-w-md">
-    {talent.about}
+    {talent_data.about}
   </p>
 
   <div class="flex items-center gap-3 mt-4 flex-wrap">
-    {talent.contacts.map((contact) => {
+    {/* Safe check to ensure contacts is an array before mapping */}
+    {Array.isArray(talent_data.contacts) && talent_data.contacts.map((contact) => {
       const iconName = iconMap[contact.type] || "ph:link";
       const colorClass = colorMap[contact.type] || "bg-black text-white";
       

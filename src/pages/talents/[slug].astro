@@ -1,22 +1,29 @@
 ---
+export const prerender = false
 import Layout from "~/layouts/Layout.astro"
 import ProfileSection from "~/components/sections/profile-page/profile-section.astro";
-import { TALENT_DATA } from "~/data/talents";
+import {fetchWithCache} from "../../utils/cache"
 
-export async function getStaticPaths() {
-  const talents = TALENT_DATA.talents;
+const {slug} = Astro.params;
 
-  return talents.map((talent) => {
-    const slug = talent.name.toLowerCase().replace(/\s+/g, '-');
+// default ttl will be using the ttl from .env
+const response = await fetchWithCache(`${import.meta.env.WORKER_URL}/talent/${slug}`, import.meta.env.TTL);
+// const response = await fetch(`${import.meta.env.WORKER_URL}/talent/${slug}`);
 
-    return {
-      params: { slug }, // This matches the filename [slug].astro
-      props: { talent }, // Pass the entire talent object as a prop to the page
-    };
-  });
+if (!response.ok) {
+return Astro.redirect('../404');
 }
 
-const { talent } = Astro.props;
+const rawData = await response.json();
+
+const talent_data = {
+  ...rawData,
+  contacts: typeof rawData.contacts === 'string' ? JSON.parse(rawData.contacts) : rawData.contacts,
+  proficiencies: typeof rawData.proficiencies === 'string' ? JSON.parse(rawData.proficiencies) : rawData.proficiencies,
+  availabilities: typeof rawData.availabilities === 'string' ? JSON.parse(rawData.availabilities) : rawData.availabilities,
+  metrics: rawData.metrics || { github: null, figma: null }
+};
+
 ---
 
 <Layout>
@@ -26,6 +33,6 @@ const { talent } = Astro.props;
     }
   </style>
   <main class="pt-16 w-full min-h-screen">
-    <ProfileSection talent={talent} />
+    <ProfileSection talent_data={talent_data} />
   </main>
 </Layout>
