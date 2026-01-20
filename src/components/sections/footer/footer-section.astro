@@ -2,8 +2,8 @@
 const { className } = Astro.props;
 ---
 
-<footer class={`flex flex-col w-full px-28 py-16 gap-10 ${className}`}>
-    <div class="flex">
+<footer class={`flex flex-col w-full px-6 md:px-28 py-16 gap-8 md:gap-10 ${className}`}>
+    <div class="flex flex-col md:flex-row gap-8 md:gap-0">
         <div class="max-w-[20rem]">
             <img src="/assets/wri-logo.webp" alt="WRI Dev Logo" class="h-14" />
             <p class="mt-4 text-wri-gray-600">
@@ -11,7 +11,7 @@ const { className } = Astro.props;
                 innovation, and growth in science and technology
             </p>
         </div>
-        <div class="ml-auto flex gap-10">
+        <div class="ml-0 md:ml-auto flex gap-10">
             <div>
                 <p class="text-xl text-semibold text-wri-gray-800">Miniclass</p>
                 <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">

@@ -18,17 +18,17 @@ const isLinkActive = (href: string) => {
 ---
 
 <nav
-    class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-10 px-30 flex justify-between items-center z-99"
+    class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-4 px-4 md:py-10 md:px-30 flex justify-between items-center z-99"
 >
     <a href="/" class="flex items-center gap-2">
         <img
             src="/assets/wri-logo.webp"
             alt="Workshop Riset Informatika Logo"
-            class="h-10"
+            class="h-8 md:h-10"
         />
     </a>
 
-    <ul class="flex">
+    <ul class="flex gap-2 md:gap-0">
         {
             navItems.map((item) => {
                 const isActive = isLinkActive(item.href);
@@ -36,7 +36,7 @@ const isLinkActive = (href: string) => {
                     <li>
                         <a
                             href={item.href}
-                            class={`font-medium transition-colors duration-200 px-6 ${
+                            class={`font-medium transition-colors duration-200 px-2 text-xs md:px-6 md:text-base ${
                                 isActive
                                     ? "text-black border-b-3 border-wri-blue pb-4"
                                     : "text-gray-500 border-b-2 border-wri-blue/50 pb-4.25 hover:text-black hover:border-b-3 hover:border-wri-blue hover:pb-4"
@@ -50,7 +50,7 @@ const isLinkActive = (href: string) => {
         }
     </ul>
 
-    <div class="flex items-center gap-2 cursor-pointer">
+    <div class="hidden md:flex items-center gap-2 cursor-pointer">
         <img
             src="/assets/navs/us-icon.webp"
             alt="English (USA)"
