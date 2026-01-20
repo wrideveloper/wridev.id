@@ -6,15 +6,18 @@ import {fetchWithCache} from "../../utils/cache"
 
 const {slug} = Astro.params;
 
+const {env} = Astro.locals.runtime;
+
+
 // default ttl will be using the ttl from .env
-const response = await fetchWithCache(`${import.meta.env.WORKER_URL}/talent/${slug}`, import.meta.env.TTL);
+const response = await fetchWithCache(`${env.WORKER_URL}/talent/${slug}`, parseInt(env.TTL));
 // const response = await fetch(`${import.meta.env.WORKER_URL}/talent/${slug}`);
 
 if (!response.ok) {
 return Astro.redirect('../404');
 }
 
-const rawData = await response.json();
+const rawData: any = await response.json();
 
 const talent_data = {
   ...rawData,
