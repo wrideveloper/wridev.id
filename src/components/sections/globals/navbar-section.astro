@@ -1,12 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Talents", href: "/talents" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Articles", href: "/articles" },
-];
+import { navItems } from "~/data/navigation";
 
 const currentPath = Astro.url.pathname;
 
