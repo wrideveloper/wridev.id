@@ -2,6 +2,7 @@
 import Container from "~/components/sections/container.svelte";
 import PillsText from "~/components/text/pills.astro";
 import MiniClassCard from "~/components/sections/about-us/components/miniclasses.astro";
+import { miniclasses } from "~/data/miniclasses";
 
 const { className } = Astro.props;
 ---
@@ -25,37 +26,17 @@ const { className } = Astro.props;
         </h5>
     </div>
     <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-        <MiniClassCard
-            titleIcon="ph:game-controller-fill"
-            color="wri-yellow"
-            title="Game Development"
-            description="Dive into game design, coding, and storytelling to craft immersive gaming experiences from concept to launch."
-            image="/assets/miniclasses/game.webp"
-            imageHeight="h-30"
-        />
-        <MiniClassCard
-            titleIcon="ph:android-logo-fill"
-            color="wri-blue"
-            title="Back End Development"
-            description="Master mobile app development, creating intuitive interfaces and seamless user experiences for today's dynamic devices."
-            image="/assets/miniclasses/backend.webp"
-            imageHeight="h-25"
-        />
-        <MiniClassCard
-            titleIcon="ph:palette-fill"
-            color="wri-blue"
-            title="UI/UX Design"
-            description="Elevate user experiences with thoughtful design, creating interfaces that are both visually appealing and functionally intuitive for users."
-            image="/assets/miniclasses/ui-ux.webp"
-            imageHeight="h-30"
-        />
-        <MiniClassCard
-            titleIcon="ph:browsers-fill"
-            color="wri-yellow"
-            title="Front End Development"
-            description="Craft stunning web and mobile interfaces with responsive design and Flutter for seamless, cutting-edge user experiences on any device."
-            image="/assets/miniclasses/frontend.webp"
-            imageHeight="h-35"
-        />
+        {
+            miniclasses.map((miniclass) => (
+                <MiniClassCard
+                    titleIcon={miniclass.titleIcon}
+                    color={miniclass.color}
+                    title={miniclass.title}
+                    description={miniclass.description}
+                    image={miniclass.image}
+                    imageHeight={miniclass.imageHeight}
+                />
+            ))
+        }
     </div>
 </Container>

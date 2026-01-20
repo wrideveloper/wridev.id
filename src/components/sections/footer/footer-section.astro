@@ -1,5 +1,6 @@
 ---
 const { className } = Astro.props;
+import { footerSections } from "~/data/footer";
 ---
 
 <footer class={`flex flex-col w-full px-6 md:px-28 py-16 gap-8 md:gap-10 ${className}`}>
@@ -12,24 +13,18 @@ const { className } = Astro.props;
             </p>
         </div>
         <div class="ml-0 md:ml-auto flex gap-10">
-            <div>
-                <p class="text-xl text-semibold text-wri-gray-800">Miniclass</p>
-                <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
-                    <p><a href="#">Frontend Development</a></p>
-                    <p><a href="#">Backend Development</a></p>
-                    <p><a href="#">UI/UX Design</a></p>
-                    <p><a href="#">Game Development</a></p>
-                </div>
-            </div>
-            <div>
-                <p class="text-xl text-semibold text-wri-gray-800">Contact Us</p>
-                <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
-                    <p><a href="https://www.instagram.com/wri_polinema">Instagram</a></p>
-                    <p><a href="https://github.com/wrideveloper">Github</a></p>
-                    <p><a href="https://id.linkedin.com/company/wripolinema">LinkedIn</a></p>
-                    <p><a href="https://medium.com/wripolinema">Medium</a></p>
-                </div>
-            </div>
+            {
+                footerSections.map((section) => (
+                    <div>
+                        <p class="text-xl text-semibold text-wri-gray-800">{section.title}</p>
+                        <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
+                            {section.links.map((link) => (
+                                <p><a href={link.href}>{link.name}</a></p>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     </div>
     <div class="flex text-wri-gray-600">

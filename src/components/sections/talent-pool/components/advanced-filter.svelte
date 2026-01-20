@@ -9,8 +9,7 @@
     $selectedExperience = $selectedExperience === val ? null : val;
   }
 
-  const availabilities = ["Freelance", "Fulltime", "Contract", "Part Time"];
-  const experiences = ["0-1 Years", "1-3 Years", "3-5 Years", "5+ Years"];
+  import { availabilities, experiences } from '~/data/filters';
 </script>
 
 <div class="absolute top-12 right-0 z-50 w-[200px] flex flex-col gap-4 p-4 bg-wri-white border border-gray-100 rounded-lg shadow-xl">

@@ -1,4 +1,6 @@
-export const stats = [
+import type { Stat } from "~/models/feature";
+
+export const stats: Stat[] = [
     {
         title: "Years Of Actvities",
         value: "10yrs+",
