@@ -7,7 +7,11 @@ import uicons from "unplugin-icons/vite";
 import cloudflare from "@astrojs/cloudflare";
 
 export default defineConfig({
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
 
   integrations: [svelte(), icon()],
 
