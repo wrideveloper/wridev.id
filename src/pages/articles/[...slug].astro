@@ -29,6 +29,9 @@ const sortedArticlesMeta = articles
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 	.filter((a) => a.slug !== slug);
 
+import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
+import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
+
 export async function getStaticPaths() {
 	const entries = await getCollection("articles");
 	return entries.map((entry) => ({ params: { slug: entry.slug } }));
@@ -36,6 +39,8 @@ export async function getStaticPaths() {
 ---
 
 <Layout>
+    <ScrollProgress client:load />
+    <ScrollToTop client:load />
     <div class="w-full max-w-4xl mx-auto px-4 pt-32 pb-20">
         <!-- Breadcrumbs -->
         <div class="flex items-center gap-2 text-wri-gray-500 text-sm mb-8">
