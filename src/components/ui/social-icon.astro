@@ -1,0 +1,27 @@
+---
+import GithubIcon from "~icons/ph/github-logo-duotone";
+import LinkedinIcon from "~icons/ph/linkedin-logo-duotone";
+import InstagramIcon from "~icons/ph/instagram-logo-duotone";
+import GlobeIcon from "~icons/ph/globe-duotone";
+
+const { platform, url, className = "" } = Astro.props;
+
+const icons = {
+    github: GithubIcon,
+    linkedin: LinkedinIcon,
+    instagram: InstagramIcon,
+    website: GlobeIcon,
+};
+
+const IconComponent = icons[platform.toLowerCase()] || GlobeIcon;
+---
+
+<a
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class={`hover:text-wri-text transition-colors ${className}`}
+    aria-label={platform}
+>
+    <IconComponent class="w-5 h-5" />
+</a>

@@ -1,7 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import GithubIcon from "~icons/ph/github-logo-duotone";
-import LinkedinIcon from "~icons/ph/linkedin-logo-duotone";
+import SocialIcon from "~/components/ui/social-icon.astro";
 import ArticleCard from "~/components/sections/articles/components/article-card.svelte";
 import Layout from "~/layouts/Layout.astro";
 import FooterSection from "~/components/sections/footer/footer-section.astro";
@@ -72,14 +71,10 @@ export async function getStaticPaths() {
                     <span class="font-medium text-wri-text text-lg">{entry.data.author}</span>
                     <div class="flex gap-2 text-wri-gray-500">
                         {entry.data.github && (
-                            <a href={entry.data.github} target="_blank" rel="noopener noreferrer" class="hover:text-wri-text transition-colors">
-                                <GithubIcon class="w-5 h-5" />
-                            </a>
+                            <SocialIcon platform="github" url={entry.data.github} />
                         )}
                         {entry.data.linkedin && (
-                            <a href={entry.data.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-wri-text transition-colors">
-                                <LinkedinIcon class="w-5 h-5" />
-                            </a>
+                            <SocialIcon platform="linkedin" url={entry.data.linkedin} />
                         )}
                     </div>
                 </div>
