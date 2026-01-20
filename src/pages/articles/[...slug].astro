@@ -1,0 +1,141 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import GithubIcon from "~icons/ph/github-logo-duotone";
+import LinkedinIcon from "~icons/ph/linkedin-logo-duotone";
+import ArticleCard from "~/components/sections/articles/components/article-card.svelte";
+import Layout from "~/layouts/Layout.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const entry = await getEntry("articles", slug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString("en-ID", {
+	year: "numeric",
+	month: "long",
+	day: "numeric",
+});
+// the formula to convert words to time to read is -> words / 200
+const timeToReadInMinutes = Math.ceil(entry.body.split(" ").length / 200);
+
+const { Content } = await entry.render();
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles
+	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+	.filter((a) => a.slug !== slug);
+
+import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
+import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
+
+export async function getStaticPaths() {
+	const entries = await getCollection("articles");
+	return entries.map((entry) => ({ params: { slug: entry.slug } }));
+}
+---
+
+<Layout>
+    <ScrollProgress client:load />
+    <ScrollToTop client:load />
+    <div class="w-full max-w-4xl mx-auto px-4 pt-32 pb-20">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-2 text-wri-gray-500 text-sm mb-8">
+            <a href="/" class="hover:text-wri-text transition-colors">Home</a>
+            <span>/</span>
+            <a href="/articles" class="hover:text-wri-text transition-colors">Articles</a>
+            <span>/</span>
+            <span class="text-wri-text truncate max-w-[200px]">{entry.data.title}</span>
+        </div>
+
+        <!-- Header -->
+        <div class="flex flex-col gap-6 mb-12">
+            <div class="flex flex-wrap gap-2">
+                {entry.data.tags.map((tag) => (
+                    <div class="shadow-[0_1px_6px_rgba(0,0,0,0.12)] border border-0.5 border-wri-gray-100 rounded-lg px-3 py-1 w-fit text-[#5B5B5B] capitalize text-sm">
+                        {tag.replace(/-/g, " ")}
+                    </div>
+                ))}
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-serif italic text-wri-text leading-tight">
+                {entry.data.title}
+            </h1>
+
+            <div class="flex items-center justify-between border-y border-wri-gray-200 py-6 mt-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex flex-col">
+                        <span class="font-medium text-wri-text">{entry.data.author}</span>
+                        <div class="flex gap-3 text-wri-gray-500 mt-1">
+                            {entry.data.github && (
+                                <a href={entry.data.github} target="_blank" rel="noopener noreferrer" class="hover:text-wri-text transition-colors">
+                                    <GithubIcon class="w-5 h-5" />
+                                </a>
+                            )}
+                            {entry.data.linkedin && (
+                                <a href={entry.data.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-wri-text transition-colors">
+                                    <LinkedinIcon class="w-5 h-5" />
+                                </a>
+                            )}
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end text-sm text-wri-gray-500">
+                    <span>{humanisedPostedDate}</span>
+                    <span>{timeToReadInMinutes} min read</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="w-full aspect-video rounded-2xl overflow-hidden mb-16 shadow-lg">
+            <img 
+                src={entry.data.image} 
+                alt={entry.data.title}
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <!-- Content -->
+        <article class="prose prose-lg max-w-none 
+            prose-headings:font-serif prose-headings:italic prose-headings:font-normal prose-headings:text-wri-text
+            prose-p:text-wri-gray-600 prose-p:leading-relaxed
+            prose-a:text-wri-blue prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-wri-text prose-strong:font-medium
+            prose-code:text-wri-blue prose-code:bg-wri-blue/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+            prose-pre:bg-wri-gray-900 prose-pre:text-wri-gray-50
+            prose-blockquote:border-l-wri-blue prose-blockquote:text-wri-gray-600 prose-blockquote:bg-wri-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
+            prose-img:rounded-xl prose-img:shadow-md
+            prose-li:text-wri-gray-600
+            mb-24">
+            <Content />
+        </article>
+
+        <!-- Related Articles -->
+        {sortedArticlesMeta.length > 0 && (
+            <div class="border-t border-wri-gray-200 pt-16">
+                <h2 class="text-3xl font-serif italic text-wri-text mb-8">Related Articles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {sortedArticlesMeta.slice(0, 2).map((article) => (
+                        <ArticleCard 
+                            title={article.data.title}
+                            description={article.data.description}
+                            slug={article.slug}
+                            tags={article.data.tags}
+                            date={new Date(article.data.date).toLocaleDateString("en-ID", {
+                                year: "numeric",
+                                month: "long",
+                                day: "numeric",
+                            })}
+                            image={article.data.image}
+                        />
+                    ))}
+                </div>
+            </div>
+        )}
+    </div>
+    <FooterSection className="mt-0" />
+</Layout>

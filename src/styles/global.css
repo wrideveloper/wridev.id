@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
 @import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
     --color-wri-white: #fafafa;

@@ -1,0 +1,10 @@
+---
+import ProjectGrid from './project-pool/project-grid.svelte';
+
+const { projects } = Astro.props;
+---
+
+<section class="w-full">
+  <h2 class="text-3xl font-bold mb-8 text-wri-text">Selected Works</h2>
+  <ProjectGrid projects={projects} client:visible />
+</section>

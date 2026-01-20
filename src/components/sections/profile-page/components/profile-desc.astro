@@ -1,0 +1,90 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface TalentProfile {
+  name: string;
+  position: string;
+  about: string;
+  profileImage: string;
+  contacts: {
+    type: string;
+    url: string;
+  }[];
+  [key: string]: any; 
+}
+
+interface Props {
+  talent_data: TalentProfile;
+}
+
+const { talent_data } = Astro.props;
+
+const iconMap: Record<string, string> = {
+  github: "ph:github-logo-fill",
+  linkedin: "ph:linkedin-logo-fill",
+  email: "ph:envelope-simple-fill",
+  dribbble: "ph:dribbble-logo-fill",
+  web: "ph:globe",
+};
+
+const colorMap: Record<string, string> = {
+  github: "bg-black text-white",
+  linkedin: "bg-[#0077b5] text-white",
+  dribbble: "bg-[#ea4c89] text-white",
+  email: "bg-red-500 text-white",
+  web: "bg-gray-700 text-white",
+};
+---
+
+<div class="flex flex-col items-start gap-6 sticky top-32">
+  
+  <a 
+    href="/" 
+    class="fixed top-8 left-8 z-50 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition shadow-lg"
+  >
+    <Icon name="ph:arrow-left" class="w-4 h-4" />
+    Back to website
+  </a>
+
+  <div class="relative w-56 h-56 rounded-full bg-[#EA0B0B] overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
+    <img 
+      src={talent_data.profileImage} 
+      alt={talent_data.name} 
+      class="w-full h-full object-cover object-top translate-y-0.15" 
+    />
+  </div>
+
+  <div class="flex flex-col mt-4">
+    <h1 class="text-6xl font-bold tracking-tight text-wri-text leading-none mb-2">
+      {talent_data.name}
+    </h1>
+    
+    <div class="text-4xl text-wri-text font-serif italic">
+       {talent_data.position}
+    </div>
+  </div>
+
+  <p class="text-lg leading-relaxed text-wri-gray-600 max-w-md">
+    {talent_data.about}
+  </p>
+
+  <div class="flex items-center gap-3 mt-4 flex-wrap">
+    {/* Safe check to ensure contacts is an array before mapping */}
+    {Array.isArray(talent_data.contacts) && talent_data.contacts.map((contact) => {
+      const iconName = iconMap[contact.type] || "ph:link";
+      const colorClass = colorMap[contact.type] || "bg-black text-white";
+      
+      return (
+        <a 
+          href={contact.url} 
+          target="_blank" 
+          class={`w-12 h-12 flex items-center justify-center rounded-xl hover:scale-110 transition-transform shadow-sm ${colorClass}`}
+          aria-label={contact.type}
+        >
+          <Icon name={iconName} class="w-6 h-6" />
+        </a>
+      );
+    })}
+  </div>
+
+</div>

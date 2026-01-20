@@ -1,5 +1,5 @@
 ---
-import Container from "~/components/sections/container.astro";
+import Container from "~/components/sections/container.svelte";
 import PillsText from "~/components/text/pills.astro";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import StatsPool from "~/components/sections/feature/components/stats-pool.svelte";
@@ -27,7 +27,7 @@ const stats = [
 
 <Container className={className}>
     <PillsText>FEATURES</PillsText>
-    <div class="flex flex-col gap-16">
+    <div class="flex flex-col gap-14 items-center w-full mt-10 mb-20">
         <div>
             <div
                 class="relative flex justify-center items-end text-6xl font-medium"

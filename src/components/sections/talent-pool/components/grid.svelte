@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import TalentCard from '~/components/sections/talent-pool/components/talent-card.svelte';
   import { searchQuery, selectedCategory, selectedAvailability, selectedExperience } from '~/components/sections/talent-pool/stores/filter';
   import type { Talent } from '~/models/talent';
@@ -9,6 +10,16 @@
   export let buttonText: string = "See More";
 
   let isExpanded = false;
+  let currentPath = '';
+
+  onMount(() => {
+    currentPath = window.location.pathname;
+
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('expand') === 'true') {
+      isExpanded = true;
+    }
+  });
 
   $: filteredTalents = talents.filter(talent => {
     const query = $searchQuery.toLowerCase();
@@ -16,18 +27,18 @@
     const avail = $selectedAvailability;
     const exp = $selectedExperience;
 
-    const matchesSearch = 
-      talent.name.toLowerCase().includes(query) || 
+    const matchesSearch =
+      talent.name.toLowerCase().includes(query) ||
       talent.position.toLowerCase().includes(query) ||
       talent.proficiencies.some(p => p.toLowerCase().includes(query));
-    
-    const matchesCategory = 
-      cat === 'All' || 
+
+    const matchesCategory =
+      cat === 'All' ||
       talent.proficiencies.some(p => p.toLowerCase() === cat.toLowerCase());
 
-    const matchesAvailability = 
-        !avail || 
-        talent.availabilities.some(a => a.toLowerCase() === avail.toLowerCase().replace(" ", "-")); 
+    const matchesAvailability =
+        !avail ||
+        talent.availabilities.some(a => a.toLowerCase() === avail.toLowerCase().replace(" ", "-"));
 
     let matchesExperience = true;
     if (exp) {
@@ -43,23 +54,31 @@
 
   const INITIAL_LIMIT = 8;
 
-  $: displayedTalents = isExpanded 
-      ? filteredTalents 
+  $: displayedTalents = isExpanded
+      ? filteredTalents
       : filteredTalents.slice(0, INITIAL_LIMIT);
 
   $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
+
+  function handleButtonClick() {
+    if (currentPath === '/') {
+      window.location.href = '/talents?expand=true';
+    } else {
+      isExpanded = true;
+    }
+  }
 </script>
 
 <div
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
 >
-    {#each filteredTalents as talent (talent.name)}
+    {#each displayedTalents as talent (talent.name)}
         <div class="contents" data-namecursor={talent.name}>
-            <TalentCard 
+            <TalentCard
               name={talent.name}
               image={talent.profileImage}      
-              description={talent.about}       
-              tags={talent.proficiencies}      
+              description={talent.about}        
+              tags={talent.proficiencies}       
             />
         </div>
     {/each}
@@ -74,10 +93,10 @@
 {#if hasMoreItems && !isExpanded}
   <div class="mt-12 flex justify-center">
     <button 
-      on:click={() => isExpanded = true}
+      on:click={handleButtonClick}
       class="
         group
-        flex items-center gap-2 rounded-lg px-6 py-3 
+        flex items-center gap-2 rounded-lg px-6 py-3
         text-white font-semibold shadow-sm transition-all duration-200
         bg-linear-to-b from-wri-blue to-wri-blue/56
         border border-wri-darkerblue
