@@ -1,8 +1,8 @@
 import type { NavItem } from "~/models/navigation";
 
 export const navItems: NavItem[] = [
-    { name: "Home", href: "/" },
-    { name: "Talents", href: "/talents" },
-    { name: "About Us", href: "/about-us" },
-    { name: "Articles", href: "/articles" },
+  { name: "nav.home", href: "/" },
+  { name: "nav.talents", href: "/talents" },
+  { name: "nav.about", href: "/about-us" },
+  { name: "nav.articles", href: "/articles" },
 ];

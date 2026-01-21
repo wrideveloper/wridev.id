@@ -3,13 +3,26 @@ import { Icon } from "astro-icon/components";
 
 import { navItems } from "~/data/navigation";
 
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLangFromUrl, useTranslations, languages } from "~/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentPath = Astro.url.pathname;
 
 const isLinkActive = (href: string) => {
-    if (href === "/" && currentPath === "/") return true;
-    if (href !== "/" && currentPath.startsWith(href)) return true;
+    const localeHref = getRelativeLocaleUrl(lang, href);
+    if (localeHref === "/" && currentPath === "/") return true;
+    if (localeHref !== "/" && currentPath.startsWith(localeHref)) return true;
     return false;
 };
+
+function toggleLanguage(currentLang: string) {
+  return currentLang === "en" ? "id" : "en";
+}
+
+const nextLang = toggleLanguage(lang);
+const nextLangUrl = getRelativeLocaleUrl(nextLang, currentPath.replace(`/${lang}`, "") || "/");
 ---
 
 <nav
@@ -27,17 +40,18 @@ const isLinkActive = (href: string) => {
         {
             navItems.map((item) => {
                 const isActive = isLinkActive(item.href);
+                const href = getRelativeLocaleUrl(lang, item.href);
                 return (
                     <li>
                         <a
-                            href={item.href}
+                            href={href}
                             class={`font-medium transition-colors duration-200 px-2 text-xs md:px-6 md:text-base ${
                                 isActive
                                     ? "text-black border-b-3 border-wri-blue pb-4"
                                     : "text-gray-500 border-b-2 border-wri-blue/50 pb-4.25 hover:text-black hover:border-b-3 hover:border-wri-blue hover:pb-4"
                             }`}
                         >
-                            {item.name}
+                            {t(item.name as any)}
                         </a>
                     </li>
                 );
@@ -45,12 +59,13 @@ const isLinkActive = (href: string) => {
         }
     </ul>
 
-    <div class="hidden md:flex items-center gap-2 cursor-pointer">
+    <a href={nextLangUrl} class="hidden md:flex items-center gap-2 cursor-pointer">
         <img
-            src="/assets/navs/us-icon.webp"
-            alt="English (USA)"
-            class="h-7 w-7 rounded-full"
+            src={lang === "en" ? "/assets/navs/us-icon.webp" : "/assets/navs/id-icon.webp"}
+            alt={languages[lang]}
+            class="h-7 w-7 rounded-full object-cover"
         />
+        <span class="text-sm font-medium text-gray-700">{languages[lang]}</span>
         <Icon name="ph:caret-down" class="h-5 w-5 text-gray-500" />
-    </div>
+    </a>
 </nav>

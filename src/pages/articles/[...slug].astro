@@ -4,6 +4,8 @@ import SocialIcon from "~/components/ui/social-icon.astro";
 import ArticleCard from "~/components/sections/articles/components/article-card.svelte";
 import Layout from "~/layouts/Layout.astro";
 import FooterSection from "~/components/sections/footer/footer-section.astro";
+import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
+import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
 
 const { slug } = Astro.params;
 if (slug === undefined) {
@@ -27,9 +29,6 @@ const articles = await getCollection("articles");
 const sortedArticlesMeta = articles
 	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
 	.filter((a) => a.slug !== slug);
-
-import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
-import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
 
 export async function getStaticPaths() {
 	const entries = await getCollection("articles");
