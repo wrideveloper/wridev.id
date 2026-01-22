@@ -1,6 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 ---
 
 <div
@@ -19,7 +21,7 @@ import { Image } from "astro:assets";
       <Icon name="ph:device-rotate" class="w-7 h-7" />
       <Icon name="ph:export" class="w-7 h-7" />
       <h5 class="text-lg border border-wri-gray-600/50 px-2 py-1 rounded-xl">
-        Open with Preview
+        {tr.hero.openWithPreview}
       </h5>
     </div>
   </div>

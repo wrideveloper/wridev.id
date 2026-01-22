@@ -6,8 +6,13 @@
 
   import SparkleIcon from '~icons/ph/sparkle-fill';
 
+  import { t } from "~/i18n";
+  import { getLocalizedPath } from "~/utils/i18n";
+
   export let talents: Talent[] = [];
   export let buttonText: string = "See More";
+  export let tr: ReturnType<typeof t>;
+  export let locale: string = "en";
 
   let isExpanded = false;
   let currentPath = '';
@@ -61,8 +66,8 @@
   $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
 
   function handleButtonClick() {
-    if (currentPath === '/') {
-      window.location.href = '/talents?expand=true';
+    if (currentPath === '/' || currentPath === '/id') {
+      window.location.href = getLocalizedPath('/talents', locale) + '?expand=true';
     } else {
       isExpanded = true;
     }
@@ -85,7 +90,7 @@
 
     {#if filteredTalents.length === 0}
         <div class="col-span-full py-20 text-center text-gray-500">
-            No talents found matching your criteria.
+            {tr.talent.noResults}
         </div>
     {/if}
 </div>

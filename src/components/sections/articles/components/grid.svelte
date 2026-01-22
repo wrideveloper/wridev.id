@@ -10,6 +10,10 @@
     import NextIcon from "~icons/ph/caret-right";
     import LastIcon from "~icons/ph/caret-double-right";
 
+    import { t } from "~/i18n";
+
+    export let tr: ReturnType<typeof t>;
+    export let locale: string;
     export let articles = [];
 
     articles = articles.map((article) => ({
@@ -119,7 +123,7 @@
             </div>
             <input
                 type="text"
-                placeholder="Search news"
+                placeholder={tr.articles.searchPlaceholder}
                 bind:value={$searchQuery}
                 class="block w-full rounded-lg border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 on:keydown={(e) => e.key === "Enter" && handleSearch()}
@@ -137,7 +141,7 @@
                         this={BoldSearchIcon}
                         class="w-4 h-4 text-wri-white md:mr-2"
                     />
-                    <span class="hidden md:inline">Search</span>
+                    <span class="hidden md:inline">{tr.articles.search}</span>
                 </button>
             </div>
         </div>
@@ -151,6 +155,8 @@
                 image={article.image}
                 author={article.author}
                 slug={article.slug}
+                tr={tr}
+                locale={locale}
             />
         {/each}
     </Container>

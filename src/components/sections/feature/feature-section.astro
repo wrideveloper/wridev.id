@@ -4,21 +4,41 @@ import PillsText from "~/components/text/pills.astro";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import StatsPool from "~/components/sections/feature/components/stats-pool.svelte";
 
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+
 const { className } = Astro.props;
 
-import { stats } from "~/data/features";
+const stats = [
+    {
+        title: tr.feature.stat1.title,
+        value: tr.feature.stat1.value,
+        desc: tr.feature.stat1.desc,
+    },
+    {
+        title: tr.feature.stat2.title,
+        value: tr.feature.stat2.value,
+        desc: tr.feature.stat2.desc,
+    },
+    {
+        title: tr.feature.stat3.title,
+        value: tr.feature.stat3.value,
+        desc: tr.feature.stat3.desc,
+    },
+];
 ---
 
 <Container className={className}>
-    <PillsText>FEATURES</PillsText>
+    <PillsText>{tr.feature.pills}</PillsText>
     <div class="flex flex-col gap-8 md:gap-14 items-center w-full mt-10 mb-20">
         <div>
             <div
                 class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
             >
-                From
+                {tr.feature.from}
                 <span class="wri-italic from-wri-blue to-wri-blue/45"
-                    >&nbsp;Learners</span
+                    >&nbsp;{tr.feature.learners}</span
                 >
                 <InlineIcon
                     name="ph:student-fill"
@@ -26,13 +46,13 @@ import { stats } from "~/data/features";
                     rotate={3}
                     className="translate-y-3"
                 />
-                to
+                {tr.feature.to}
             </div>
             <div
                 class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
             >
                 <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                    >Leaders</span
+                    >{tr.feature.leaders}</span
                 >
                 <InlineIcon
                     name="ph:crown-simple-fill"
@@ -40,7 +60,7 @@ import { stats } from "~/data/features";
                     rotate={-2}
                     className="translate-y-2"
                 />
-                Together
+                {tr.feature.together}
             </div>
         </div>
         <StatsPool stats={stats} />

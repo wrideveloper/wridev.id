@@ -7,6 +7,9 @@
     import PaletteIcon from "~icons/ph/palette-duotone";
     import CreativeIcon from "~icons/ph/aperture";
     import CyberIcon from "~icons/ph/bug";
+    import { t } from "~/i18n";
+
+    export let tr: ReturnType<typeof t>;
 
     const categories = [
         { name: "All",      value: "All",            icon: AllIcon },
@@ -30,7 +33,7 @@
                 : 'text-gray-500 hover:bg-white/50 hover:text-gray-900 text-xl'}"
         >
             <svelte:component this={category.icon} class="w-4 h-4" />
-            {category.name}
+            {tr.filters.categories[category.name]}
         </button>
     {/each}
 </div>

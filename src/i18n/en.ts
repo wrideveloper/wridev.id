@@ -14,6 +14,7 @@ export const en = {
     description:
       "Learn, share, and connect with fellow tech enthusiasts. Get the latest tech insights and unlock exciting collaboration opportunities all in one place",
     searchTalent: "Search Talent",
+    openWithPreview: "Open with Preview",
   },
   feature: {
     pills: "FEATURES",
@@ -30,7 +31,7 @@ export const en = {
     stat2: {
       title: "Active Members",
       value: "100+",
-      desc: "100+ curious minds exploring everything from mobiel apps to game worlds united by creativity and tech passiion.",
+      desc: "100+ curious minds exploring everything from mobiel apps to game worlds united by creativity and tech passion.",
     },
     stat3: {
       title: "Miniclass",
@@ -98,38 +99,6 @@ export const en = {
     possibilities: "Possibilities",
     description:
       "At WRI, we believe in the power of shared experiences to ignite innovation and unlock new horizons. Hear from our members as they share their journeys of growth, discovery, and collaboration.",
-    "1": {
-      title: "Transforming Lives",
-      desc: "WRI's support has been instrumental in my career growth. Their resources and community have been invaluable.",
-    },
-    "2": {
-      title: "Empowering Innovation",
-      desc: "Working with WRI has been a game-changer. Their platform has helped us bring our ideas to life.",
-    },
-    "3": {
-      title: "Building Confidence",
-      desc: "The mentorship and guidance I received through WRI gave me the confidence to take the next big step in my career.",
-    },
-    "4": {
-      title: "A Supportive Community",
-      desc: "What stands out most about WRI is the community. Everyone is supportive, encouraging, and willing to help.",
-    },
-    "5": {
-      title: "Real-World Impact",
-      desc: "WRI focuses on practical, real-world solutions. The experience I gained here directly impacted my professional growth.",
-    },
-    "6": {
-      title: "Learning Without Limits",
-      desc: "The learning resources provided by WRI are clear, structured, and easy to follow. It made complex topics approachable.",
-    },
-    "7": {
-      title: "Career Acceleration",
-      desc: "Thanks to WRI, I was able to accelerate my career and connect with professionals I would have never met otherwise.",
-    },
-    "8": {
-      title: "Inspiring Growth",
-      desc: "WRI constantly pushes you to grow and think differently. It’s an inspiring environment to be part of.",
-    },
   },
   faq: {
     pills: "FAQs",
@@ -139,21 +108,6 @@ export const en = {
     answers: "Answers!",
     description:
       "Below are questions that might answer your questions to learn more about our community.",
-    "1": {
-      question: "What is Lorem Ipsum?",
-      answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry...",
-    },
-    "2": {
-      question: "Why do we use it?",
-      answer:
-        "It is a long established fact that a reader will be distracted...",
-    },
-    "3": {
-      question: "Where does it come from?",
-      answer:
-        "Contrary to popular belief, Lorem Ipsum is not simply random text...",
-    },
   },
   footer: {
     description:
@@ -172,6 +126,53 @@ export const en = {
     articles: "Articles",
     and: "and",
     analysis: "Analysis",
-    description: "Dive into our curated collection of articles and analyses...",
+    description: "Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.",
+    searchPlaceholder: "Search articles",
+    search: "Search",
+  },
+  filters: {
+    search: "Search",
+    filter: "Filter",
+    categories: {
+      All: "All",
+      Backend: "Backend",
+      Frontend: "Frontend",
+      Mobile: "Mobile",
+      "UI/UX": "UI/UX",
+      Creative: "Creative",
+      Cyber: "Cyber",
+    },
+    advanced: "Advanced Filter",
+    availability: "Availability",
+    experience: "Experience",
+    availabilityOptions: {
+      Freelance: "Freelance",
+      Fulltime: "Fulltime",
+      Contract: "Contract",
+      "Part Time": "Part Time",
+    },
+    experienceOptions: {
+      "0-1 Years": "0-1 Years",
+      "1-3 Years": "1-3 Years",
+      "3-5 Years": "3-5 Years",
+      "5+ Years": "5+ Years",
+    },
+  },
+  notFound: {
+    title: "Oops! Page Not Found",
+    description: "The page you're looking for doesn't exist or has been moved. Let's get you back on track!",
+    backHome: "Return to Home",
+  },
+  articleDetails: {
+    home: "Home",
+    articles: "Articles",
+    minRead: "min read",
+    relatedArticles: "Related Articles",
+    by: "by",
+  },
+  profile: {
+    back: "Back to website",
+    projects: "Projects",
+    selectedWorks: "Selected Works",
   },
 };

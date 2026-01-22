@@ -1,6 +1,10 @@
 ---
 import WalkingLogo from '~/components/sections/tech/components/walking-logo.svelte';
 
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+
 const { className } = Astro.props;
 
 import { logos } from "~/data/tech";
@@ -8,7 +12,7 @@ import { logos } from "~/data/tech";
 <div class={`flex flex-col gap-6 md:gap-10 ${className}`}>
     <WalkingLogo logos={logos} />
     <div class="flex flex-col items-center text-wri-grey-600">
-        <p>We use industry-standard tools to explore the latest tech</p>
-        <p>and design innovations together as a community.</p>
+        <p>{tr.tech.description1}</p>
+        <p>{tr.tech.description2}</p>
     </div>
 </div>

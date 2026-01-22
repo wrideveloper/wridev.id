@@ -2,6 +2,19 @@
 import { Icon } from "astro-icon/components";
 
 import { navItems } from "~/data/navigation";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+import LanguageSwitcher from "~/components/sections/globals/components/language-switcher.svelte";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
+
+const translatedNavItems = [
+    { name: tr.nav.home, href: "/" },
+    { name: tr.nav.talents, href: "/talents" },
+    { name: tr.nav.about, href: "/about-us" },
+    { name: tr.nav.articles, href: "/articles" },
+];
 
 const currentPath = Astro.url.pathname;
 
@@ -15,7 +28,7 @@ const isLinkActive = (href: string) => {
 <nav
     class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-4 px-4 md:py-10 md:px-30 flex justify-between items-center z-99"
 >
-    <a href="/" class="flex items-center gap-2">
+    <a href={getLocalizedPath("/", currentLocale)} class="flex items-center gap-2">
         <img
             src="/assets/wri-logo.webp"
             alt="Workshop Riset Informatika Logo"
@@ -25,12 +38,13 @@ const isLinkActive = (href: string) => {
 
     <ul class="flex gap-2 md:gap-0">
         {
-            navItems.map((item) => {
-                const isActive = isLinkActive(item.href);
+            translatedNavItems.map((item) => {
+                const localizedHref = getLocalizedPath(item.href, currentLocale);
+                const isActive = isLinkActive(localizedHref);
                 return (
                     <li>
                         <a
-                            href={item.href}
+                            href={localizedHref}
                             class={`font-medium transition-colors duration-200 px-2 text-xs md:px-6 md:text-base ${
                                 isActive
                                     ? "text-black border-b-3 border-wri-blue pb-4"
@@ -45,12 +59,13 @@ const isLinkActive = (href: string) => {
         }
     </ul>
 
-    <div class="hidden md:flex items-center gap-2 cursor-pointer">
+    <!-- <div class="hidden md:flex items-center gap-2 cursor-pointer">
         <img
             src="/assets/navs/en-icon.webp"
             alt="English"
             class="h-7 w-7 rounded-full"
         />
         <Icon name="ph:caret-down" class="h-5 w-5 text-gray-500" />
-    </div>
+    </div> -->
+    <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
 </nav>

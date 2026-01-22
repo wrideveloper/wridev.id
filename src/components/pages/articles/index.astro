@@ -4,6 +4,9 @@ import Layout from "~/layouts/Layout.astro";
 import FooterSection from "~/components/sections/footer/footer-section.astro";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import Grid from "~/components/sections/articles/components/grid.svelte";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 
 const articles = await getCollection("articles");
 const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
@@ -21,21 +24,21 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
 
             <div class="text-center">
                 <div class="text-4xl md:text-6xl font-medium">
-                    Knowledge Hub
+                    {tr.articles.hub}
                 </div>
 
                 <div class="text-4xl md:text-6xl font-medium">
                     <span class="wri-italic from-wri-blue to-wri-blue/45">
-                        Articles&nbsp;
+                        {tr.articles.articles}&nbsp;
                     </span>
-                    and
+                    {tr.articles.and}
                     <span class="wri-italic from-wri-yellow to-wri-yellow/45">
-                        &nbsp;Analysis
+                        &nbsp;{tr.articles.analysis}
                     </span>
                 </div>
 
                 <p class="mx-auto mt-4 max-w-[90%] md:max-w-[42ch] text-wri-gray-600 px-4 md:px-0">
-                    Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.
+                    {tr.articles.description}
                 </p>
             </div>
 
@@ -46,7 +49,7 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
                 className="hidden md:flex translate-y-4"
             />
         </div>
-        <Grid articles={sortedArticlesMeta} client:load/>
+        <Grid tr={tr} locale={Astro.currentLocale} articles={sortedArticlesMeta} client:load/>
         <FooterSection />
     </div>
 </Layout>

@@ -6,8 +6,14 @@ import Layout from "~/layouts/Layout.astro";
 import FooterSection from "~/components/sections/footer/footer-section.astro";
 import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
 import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
 
 const { slug } = Astro.params;
+
 if (slug === undefined) {
 	throw new Error("Slug is required");
 }
@@ -16,7 +22,7 @@ if (entry === undefined) {
 	return Astro.redirect("/404");
 }
 
-const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString("en-ID", {
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString(currentLocale === "id" ? "id-ID" : "en-US", {
 	year: "numeric",
 	month: "long",
 	day: "numeric",
@@ -42,9 +48,9 @@ export async function getStaticPaths() {
     <div class="w-full max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-20">
         <!-- Breadcrumbs -->
         <div class="flex items-center gap-2 text-wri-gray-500 text-sm mb-8">
-            <a href="/" class="hover:text-wri-text transition-colors">Home</a>
+            <a href={getLocalizedPath("/", currentLocale)} class="hover:text-wri-text transition-colors">{tr.articleDetails.home}</a>
             <span>/</span>
-            <a href="/articles" class="hover:text-wri-text transition-colors">Articles</a>
+            <a href={getLocalizedPath("/articles", currentLocale)} class="hover:text-wri-text transition-colors">{tr.articleDetails.articles}</a>
             <span>/</span>
             <span class="text-wri-text truncate max-w-[200px]">{entry.data.title}</span>
         </div>
@@ -81,7 +87,7 @@ export async function getStaticPaths() {
                 <div class="flex items-center gap-4 text-base">
                     <span>{humanisedPostedDate}</span>
                     <span class="text-wri-gray-300">&bull;</span>
-                    <span>{timeToReadInMinutes} min read</span>
+                    <span>{timeToReadInMinutes} {tr.articleDetails.minRead}</span>
                 </div>
             </div>
         </div>
@@ -115,20 +121,22 @@ export async function getStaticPaths() {
         <!-- Related Articles -->
         {sortedArticlesMeta.length > 0 && (
             <div class="border-t border-wri-gray-200 pt-16">
-                <h2 class="text-3xl font-serif italic text-wri-text mb-8">Related Articles</h2>
+                <h2 class="text-3xl font-serif italic text-wri-text mb-8">{tr.articleDetails.relatedArticles}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {sortedArticlesMeta.slice(0, 2).map((article) => (
                         <ArticleCard
                             title={article.data.title}
                             description={article.data.description}
                             slug={article.slug}
-                            date={new Date(article.data.date).toLocaleDateString("en-ID", {
+                            date={new Date(article.data.date).toLocaleDateString(currentLocale === "id" ? "id-ID" : "en-US", {
                                 year: "numeric",
                                 month: "long",
                                 day: "numeric",
                             })}
                             image={article.data.image}
                             author={article.data.author}
+                            tr={tr}
+                            locale={currentLocale}
                         />
                     ))}
                 </div>
