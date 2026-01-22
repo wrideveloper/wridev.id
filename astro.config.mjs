@@ -13,14 +13,6 @@ export default defineConfig({
     },
   }),
 
-  i18n: {
-    defaultLocale: "id",
-    locales: ["en", "id"],
-    routing: {
-      prefixDefaultLocale: true,
-    }
-  },
-
   integrations: [svelte(), icon()],
 
   vite: {
