@@ -19,8 +19,9 @@ const translatedNavItems = [
 const currentPath = Astro.url.pathname;
 
 const isLinkActive = (href: string) => {
-    if (href === "/" && currentPath === "/") return true;
-    if (href !== "/" && currentPath.startsWith(href)) return true;
+    const localizeRootPath = getLocalizedPath("/", currentLocale);
+    if (href === localizeRootPath && currentPath === localizeRootPath) return true;
+    if (href !== localizeRootPath && currentPath.startsWith(href)) return true;
     return false;
 };
 ---
@@ -28,7 +29,10 @@ const isLinkActive = (href: string) => {
 <nav
     class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-4 px-4 md:py-10 md:px-30 flex justify-between items-center z-99"
 >
-    <a href={getLocalizedPath("/", currentLocale)} class="flex items-center gap-2">
+    <a
+        href={getLocalizedPath("/", currentLocale)}
+        class="flex items-center gap-2"
+    >
         <img
             src="/assets/wri-logo.webp"
             alt="Workshop Riset Informatika Logo"
@@ -39,7 +43,10 @@ const isLinkActive = (href: string) => {
     <ul class="flex gap-2 md:gap-0">
         {
             translatedNavItems.map((item) => {
-                const localizedHref = getLocalizedPath(item.href, currentLocale);
+                const localizedHref = getLocalizedPath(
+                    item.href,
+                    currentLocale,
+                );
                 const isActive = isLinkActive(localizedHref);
                 return (
                     <li>
@@ -67,5 +74,9 @@ const isLinkActive = (href: string) => {
         />
         <Icon name="ph:caret-down" class="h-5 w-5 text-gray-500" />
     </div> -->
-    <LanguageSwitcher client:load currentLocale={currentLocale} currentPath={currentPath} />
+    <LanguageSwitcher
+        client:load
+        currentLocale={currentLocale}
+        currentPath={currentPath}
+    />
 </nav>
