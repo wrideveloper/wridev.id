@@ -2,18 +2,23 @@ import type { FAQ } from "~/models/faq";
 
 export const faqs: FAQ[] = [
   {
-    question: "What is Lorem Ipsum?",
+    question: "Kapan bakal ada open recruitment?",
     answer:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Open recruitment WRI biasanya diadakan di awal tahun ajaran baru, sekitar bulan September. Acara ini terbuka untuk siapa saja, termasuk mahasiswa baru yang belum memiliki pengalaman riset informatika sebelumnya. Jangan lupa pantau akun Instagram WRI untuk informasi terbaru dan ikuti acara 'Early Access' untuk pengenalan WRI.",
   },
   {
-    question: "Why do we use it?",
+    question: "Early Access itu acara apa sih?",
     answer:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      "Jadi Early Access tuh acara casual buat kenalan sama WRI kita. Kita bisa santai-santai ngobrol dan tanya-tanya tentang WRI, seru banget deh! Jadi jangan sampai ketinggalan!",
   },
   {
-    question: "Where does it come from?",
+    question: "Acara yang ada di WRI itu apa aja?",
     answer:
-      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+      "Di WRI banyak acara yang bisa kamu ikutin! Ada miniclass yg isinya ada 4 topik: web development, mobile app development, game development, dan ui/ux design. Selain itu, ada juga acara open talks mirip seminar, dan acara WRI OOT yang santai banget buat ngobrol-ngobrol tentang hal-hal random seputar IT.",
+  },
+  {
+    question: "Siapa yg bakal ngajar di miniclass?",
+    answer:
+      "Tiap miniclass bakal ada mentornya sendiri-sendiri. Nah, mentornya ini mahasiswa yang udah punya pengalaman di bidangnya masing masing. Kalo kamu juga punya keahlian di bidang IT tertentu dan pengen jadi mentor, boleh banget lho kasih tau kita! Kami selalu terbuka buat orang-orang berbakat kaya kamu.",
   },
 ];
