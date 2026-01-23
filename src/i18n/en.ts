@@ -11,6 +11,8 @@ export const en = {
     unlock: "Unlock",
     potential: "Potential",
     shine: "Shine",
+    headline_1: `Explore {{icon}} <span class="wri-italic from-wri-blue to-wri-blue/45">Knowledge</span>`,
+    headline_2: `Unlock<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Potential</span> {{icon}} Shine`,
     description:
       "Learn, share, and connect with fellow tech enthusiasts. Get the latest tech insights and unlock exciting collaboration opportunities all in one place",
     searchTalent: "Search Talent",
@@ -23,6 +25,8 @@ export const en = {
     to: "to",
     leaders: "Leaders",
     together: "Together",
+    headline_1: `From <span class="wri-italic from-wri-blue to-wri-blue/45">&nbsp;Learners</span> {{icon}} to`,
+    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Leaders</span> {{icon}} Together`,
     stat1: {
       title: "Years Of Actvities",
       value: "10yrs+",
@@ -76,6 +80,8 @@ export const en = {
     experience: "Experience",
     endless: "Endless",
     possibilities: "Possibilities",
+    headline_1: `<span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Skilled</span> Minds</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="/assets/talents/inline-pics.webp" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap">Real <span class="bg-linear-to-b from-wri-yellow to-wri-yellow/45 bg-clip-text text-transparent pl-2 wri-italic">Experience</span></span>`,
+    headline_2: `Endless <span class="from-wri-blue to-wri-blue/45 wri-italic">Possibilities</span>`,
     description:
       "We bring together passionate individuals from diverse divisions, uniting skills and creativity to build a powerful force in the IT world.",
     data: {
@@ -97,6 +103,8 @@ export const en = {
     ideas: "Ideas",
     and: "and",
     possibilities: "Possibilities",
+    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Experiences&nbsp;</span> That&nbsp; <img src="/assets/testimonial/inline-pics-1.webp" alt="inline-pics-1" class="translate-y-0.5" /> &nbsp;Spark`,
+    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Ideas&nbsp;</span> <img src="/assets/testimonial/inline-pics-2.webp" alt="inline-pics-2" class="translate-y-0.5" /> &nbsp;and <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Possibilities</span>`,
     description:
       "At WRI, we believe in the power of shared experiences to ignite innovation and unlock new horizons. Hear from our members as they share their journeys of growth, discovery, and collaboration.",
   },
@@ -106,6 +114,8 @@ export const en = {
     question: "Question?",
     weveGot: "We've Got",
     answers: "Answers!",
+    headline_1: `Got <span class="wri-italic from-wri-blue to-wri-blue/45">&nbsp;Question?</span>`,
+    headline_2: `We've Got <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Answers!</span>`,
     description:
       "Below are questions that might answer your questions to learn more about our community.",
   },
@@ -126,6 +136,7 @@ export const en = {
     articles: "Articles",
     and: "and",
     analysis: "Analysis",
+    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Articles&nbsp;</span> and <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Analysis</span>`,
     description: "Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.",
     searchPlaceholder: "Search articles",
     search: "Search",

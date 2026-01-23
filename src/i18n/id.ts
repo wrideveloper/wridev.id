@@ -11,6 +11,8 @@ export const id = {
     unlock: "Buka",
     potential: "Potensi",
     shine: "Bersinar",
+    headline_1: `Jelajahi {{icon}} <span class="wri-italic from-wri-blue to-wri-blue/45">Pengetahuan</span>`,
+    headline_2: `Gali<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Potensi Diri</span> {{icon}}`,
     description:
       "Belajar, berbagi, dan terhubung dengan sesama penggemar teknologi. Dapatkan wawasan teknologi terbaru dan temukan peluang kolaborasi menarik di satu tempat.",
     searchTalent: "Cari Talenta",
@@ -23,6 +25,8 @@ export const id = {
     to: "menjadi",
     leaders: "Pemimpin",
     together: "Bersama",
+    headline_1: `Berawal dari <span class="wri-italic from-wri-blue to-wri-blue/45">&nbsp;Pembelajar</span> {{icon}} Menjadi`,
+    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Pemimpin</span> {{icon}} Masa Depan`,
     stat1: {
       title: "Tahun Aktivitas",
       value: "10th+",
@@ -77,6 +81,9 @@ export const id = {
     experience: "Pengalaman",
     endless: "Tak Terbatas",
     possibilities: "Kemungkinan",
+    headline_1: `<span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Terampil</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="/assets/talents/inline-pics.webp" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pl-2 wri-italic">Pengalaman</span> Nyata</span>`,
+    headline_2:
+      '<span class="from-wri-yellow to-wri-yellow/45 wri-italic">Peluang</span> Tanpa Batas',
     description:
       "Kami mengumpulkan individu-individu yang bersemangat dari berbagai divisi, menggabungkan keterampilan dan kreativitas untuk membangun kekuatan yang tangguh di dunia IT.",
     data: {
@@ -98,6 +105,8 @@ export const id = {
     ideas: "Ide",
     and: "dan",
     possibilities: "Kemungkinan",
+    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Berbagi Pengalaman&nbsp;</span> yang&nbsp; <img src="/assets/testimonial/inline-pics-1.webp" alt="inline-pics-1" class="translate-y-0.5" /> &nbsp;Memantik`,
+    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Ide Segar&nbsp;</span> <img src="/assets/testimonial/inline-pics-2.webp" alt="inline-pics-2" class="translate-y-0.5" /> &nbsp;dan <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Peluang</span>`,
     description:
       "Di WRI, kami percaya pada kekuatan pengalaman bersama untuk memicu inovasi dan membuka cakrawala baru. Dengarkan cerita dari anggota kami saat mereka berbagi perjalanan pertumbuhan, penemuan, dan kolaborasi mereka.",
   },
@@ -107,6 +116,8 @@ export const id = {
     question: "Pertanyaan?",
     weveGot: "Kami Punya",
     answers: "Jawabannya!",
+    headline_1: `Ada <span class="wri-italic from-wri-blue to-wri-blue/45">&nbsp;Pertanyaan?</span>`,
+    headline_2: `Kami Punya <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Solusinya!</span>`,
     description:
       "Di bawah ini adalah pertanyaan yang mungkin menjawab pertanyaan Anda untuk mengetahui lebih lanjut tentang komunitas kami.",
   },
@@ -123,11 +134,13 @@ export const id = {
     game: "Pengembangan Game",
   },
   articles: {
-    hub: "Pusat Pengetahuan",
+    hub: "Kumpulan",
     articles: "Artikel",
     and: "dan",
     analysis: "Analisis",
-    description: "Telusuri koleksi artikel dan analisis yang telah kami kurasi. Jelajahi topik-topik yang beragam, dapatkan wawasan dari para ahli, dan tetap terinformasi tentang tren terbaru.",
+    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Artikel&nbsp;</span> dan <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Analisis</span>`,
+    description:
+      "Telusuri koleksi artikel dan analisis yang telah kami kurasi. Jelajahi topik-topik yang beragam, dapatkan wawasan dari para ahli, dan tetap terinformasi tentang tren terbaru.",
     searchPlaceholder: "Cari artikel",
     search: "Cari",
   },
@@ -161,7 +174,8 @@ export const id = {
   },
   notFound: {
     title: "Oops! Halaman Tidak Ditemukan",
-    description: "Halaman yang Anda cari tidak ada atau telah dipindahkan. Mari kita kembalikan Anda ke jalur yang benar!",
+    description:
+      "Halaman yang Anda cari tidak ada atau telah dipindahkan. Mari kita kembalikan Anda ke jalur yang benar!",
     backHome: "Kembali ke Beranda",
   },
   articleDetails: {

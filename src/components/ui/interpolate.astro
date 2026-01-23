@@ -1,0 +1,22 @@
+---
+const { text } = Astro.props;
+
+// Split by {{placeholder}}
+// The capturing group () in split ensures the separator is included in the result array
+const parts = text ? text.split(/(\{\{[\w-]+\}\})/g) : [];
+const renderedParts = await Promise.all(
+    parts.map(async (part: string) => {
+        const match = part.match(/^\{\{([\w-]+)\}\}$/);
+        if (match) {
+            const slotName = match[1];
+            if (Astro.slots.has(slotName)) {
+                return await Astro.slots.render(slotName);
+            }
+            return "";
+        }
+        return part;
+    })
+);
+---
+
+{renderedParts.map((part: string) => <Fragment set:html={part} />)}

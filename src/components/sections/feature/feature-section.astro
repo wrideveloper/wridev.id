@@ -3,6 +3,7 @@ import Container from "~/components/sections/container.svelte";
 import PillsText from "~/components/text/pills.astro";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import StatsPool from "~/components/sections/feature/components/stats-pool.svelte";
+import Interpolate from "~/components/ui/interpolate.astro";
 
 import { t, language } from "~/i18n";
 
@@ -36,31 +37,28 @@ const stats = [
             <div
                 class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
             >
-                {tr.feature.from}
-                <span class="wri-italic from-wri-blue to-wri-blue/45"
-                    >&nbsp;{tr.feature.learners}</span
-                >
-                <InlineIcon
-                    name="ph:student-fill"
-                    color="wri-blue"
-                    rotate={3}
-                    className="translate-y-3"
-                />
-                {tr.feature.to}
+                <Interpolate text={tr.feature.headline_1}>
+                    <InlineIcon
+                        slot="icon"
+                        name="ph:student-fill"
+                        color="wri-blue"
+                        rotate={3}
+                        className="translate-y-3"
+                    />
+                </Interpolate>
             </div>
             <div
                 class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
             >
-                <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                    >{tr.feature.leaders}</span
-                >
-                <InlineIcon
-                    name="ph:crown-simple-fill"
-                    color="wri-yellow"
-                    rotate={-2}
-                    className="translate-y-2"
-                />
-                {tr.feature.together}
+                <Interpolate text={tr.feature.headline_2}>
+                    <InlineIcon
+                        slot="icon"
+                        name="ph:crown-simple-fill"
+                        color="wri-yellow"
+                        rotate={-2}
+                        className="translate-y-2"
+                    />
+                </Interpolate>
             </div>
         </div>
         <StatsPool stats={stats} />

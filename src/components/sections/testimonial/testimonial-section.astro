@@ -17,34 +17,12 @@ const tr = t(Astro.currentLocale as keyof typeof language);
         <div>
             <div
                 class="relative flex justify-center items-end text-3xl md:text-6xl font-medium"
-            >
-                <span class="wri-italic from-wri-blue to-wri-blue/45"
-                    >{tr.testimonial.experiences}&nbsp;</span
-                >
-                {tr.testimonial.that}&nbsp;
-                <img
-                    src="/assets/testimonial/inline-pics-1.webp"
-                    alt="inline-pics-1"
-                    class="translate-y-0.5"
-                />
-                &nbsp;{tr.testimonial.spark}
-            </div>
+                set:html={tr.testimonial.headline_1}
+            />
             <div
                 class="relative flex justify-center items-end text-3xl md:text-6xl font-medium"
-            >
-                <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                    >{tr.testimonial.ideas}&nbsp;</span
-                >
-                <img
-                    src="/assets/testimonial/inline-pics-2.webp"
-                    alt="inline-pics-2"
-                    class="translate-y-0.5"
-                />
-                &nbsp;{tr.testimonial.and}
-                <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                    >&nbsp;{tr.testimonial.possibilities}</span
-                >
-            </div>
+                set:html={tr.testimonial.headline_2}
+            />
         </div>
         <div class="flex flex-col items-center text-wri-gray-600 text-center max-w-3xl mx-auto">
             <p>

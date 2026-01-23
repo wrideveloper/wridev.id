@@ -18,20 +18,12 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             <div class="flex-shrink-0 mr-16">
                 <div
                     class="relative flex items-end text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
-                >
-                    {tr.faq.got}
-                    <span class="wri-italic from-wri-blue to-wri-blue/45"
-                        >&nbsp;{tr.faq.question}</span
-                    >
-                </div>
+                    set:html={tr.faq.headline_1}
+                />
                 <div
                     class="relative flex items-end text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
-                >
-                    {tr.faq.weveGot}
-                    <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                        >&nbsp;{tr.faq.answers}</span
-                    >
-                </div>
+                    set:html={tr.faq.headline_2}
+                />
                 <p class="mt-4 max-w-full lg:max-w-[34rem] text-sm sm:text-base text-wri-gray-600">
                     {tr.faq.description}
                 </p>

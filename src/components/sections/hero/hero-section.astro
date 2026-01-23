@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import HeroCard from "~/components/sections/hero/components/hero-card.astro";
+import Interpolate from "~/components/ui/interpolate.astro";
 import { t, language } from "~/i18n";
 import { getLocalizedPath } from "~/utils/i18n";
 
@@ -18,24 +19,26 @@ const currentLocale = Astro.currentLocale || "en";
         <div
             class="relative flex justify-center items-end text-4xl md:text-7xl"
         >
-            {tr.hero.explore}
-            <InlineIcon
-                name="ph:book-open-text-fill"
-                color="wri-blue"
-                rotate={-2}
-            />
-            <span class="wri-italic from-wri-blue to-wri-blue/45"
-                >{tr.hero.knowledge}</span
-            >
+            <Interpolate text={tr.hero.headline_1}>
+                <InlineIcon
+                    slot="icon"
+                    name="ph:book-open-text-fill"
+                    color="wri-blue"
+                    rotate={-2}
+                />
+            </Interpolate>
         </div>
         <div
             class="relative flex justify-center items-end text-4xl md:text-7xl"
         >
-            {tr.hero.unlock}<span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                >&nbsp;{tr.hero.potential}</span
-            >
-            <InlineIcon name="ph:sparkle-fill" color="wri-yellow" rotate={2} />
-            {tr.hero.shine}
+            <Interpolate text={tr.hero.headline_2}>
+                <InlineIcon
+                    slot="icon"
+                    name="ph:sparkle-fill"
+                    color="wri-yellow"
+                    rotate={2}
+                />
+            </Interpolate>
         </div>
         <div
             class="text-base md:text-xl w-full md:w-4/7 mt-5 text-wri-gray-600 font-normal"
