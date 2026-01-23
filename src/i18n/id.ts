@@ -52,8 +52,7 @@ export const id = {
     pills: "TENTANG KAMI",
     workshop: "Workshop",
     risetInformatika: "Riset Informatika",
-    description:
-      "Sebuah <b class=‘text-wri-gray-900’>komunitas yang menginspirasi</b> bagi mahasiswa IT di Polinema, di mana <b class=‘text-wri-gray-900’>kreativitas berkembang, pengetahuan dibagikan, dan inovasi</b> dalam <b class=‘text-wri-gray-900’>Ilmu Pengetahuan dan Teknologi</b> terus berkembang.",
+    description: 'Sebuah <b class="text-wri-gray-900">komunitas yang menginspirasi</b> bagi mahasiswa IT di Polinema, di mana <b class="text-wri-gray-900">kreativitas berkembang, pengetahuan dibagikan, dan inovasi</b> dalam <b class="text-wri-gray-900">Ilmu Pengetahuan dan Teknologi</b> terus berkembang.',
   },
   miniclass: {
     game: {
