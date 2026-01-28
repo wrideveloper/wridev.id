@@ -2,39 +2,7 @@
 export const prerender = false;
 import Layout from "~/layouts/Layout.astro";
 import ProfileSection from "~/components/sections/profile-page/profile-section.astro";
-import { fetchWithCache } from "~/utils/cache";
-
-const { slug } = Astro.params;
-
-const { env } = Astro.locals.runtime;
-
-const response = await fetchWithCache(
-    `${env.WORKER_URL}/talent/${slug}`,
-    parseInt(env.TTL),
-);
-
-if (!response.ok) {
-    return Astro.redirect("../404");
-}
-
-const rawData: any = await response.json();
-
-const talent_data = {
-    ...rawData,
-    contacts:
-        typeof rawData.contacts === "string"
-            ? JSON.parse(rawData.contacts)
-            : rawData.contacts,
-    proficiencies:
-        typeof rawData.proficiencies === "string"
-            ? JSON.parse(rawData.proficiencies)
-            : rawData.proficiencies,
-    availabilities:
-        typeof rawData.availabilities === "string"
-            ? JSON.parse(rawData.availabilities)
-            : rawData.availabilities,
-    metrics: rawData.metrics || { github: null, figma: null },
-};
+const { talent_data } = Astro.props;
 ---
 
 <Layout>
