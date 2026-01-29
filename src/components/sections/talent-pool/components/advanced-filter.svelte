@@ -10,12 +10,15 @@
   }
 
   import { availabilities, experiences } from '~/data/filters';
+  import { t } from "~/i18n";
+
+  export let tr: ReturnType<typeof t>;
 </script>
 
 <div class="absolute top-12 right-0 z-50 w-[200px] flex flex-col gap-4 p-4 bg-wri-white border border-gray-100 rounded-lg shadow-xl">
   
   <div class="flex flex-col gap-2">
-    <h3 class="text-sm text-gray-500">By Availability</h3>
+    <h3 class="text-sm text-gray-500">{tr.filters.availability}</h3>
     {#each availabilities as item}
       <button 
         class="flex items-center gap-2 text-left group w-full"
@@ -28,7 +31,7 @@
           {/if}
         </div>
         <span class="text-base {$selectedAvailability === item ? 'font-medium text-black' : 'font-normal text-gray-900'}">
-          {item}
+          {tr.filters.availabilityOptions[item]}
         </span>
       </button>
     {/each}
@@ -37,7 +40,7 @@
   <div class="h-px bg-gray-100"></div>
 
   <div class="flex flex-col gap-2">
-    <h3 class="text-sm text-gray-500">By Experience</h3>
+    <h3 class="text-sm text-gray-500">{tr.filters.experience}</h3>
     {#each experiences as item}
       <button 
         class="flex items-center gap-2 text-left group w-full"
@@ -50,7 +53,7 @@
           {/if}
         </div>
         <span class="text-base {$selectedExperience === item ? 'font-medium text-black' : 'font-normal text-gray-900'}">
-          {item}
+          {tr.filters.experienceOptions[item]}
         </span>
       </button>
     {/each}

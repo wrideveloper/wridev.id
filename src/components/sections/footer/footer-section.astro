@@ -1,6 +1,25 @@
 ---
 const { className } = Astro.props;
 import { footerSections } from "~/data/footer";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+
+const translatedFooterSections = [
+    {
+        title: tr.footer.miniclass,
+        links: [
+            { name: tr.footer.frontend, href: "#" },
+            { name: tr.footer.backend, href: "#" },
+            { name: tr.footer.uiux, href: "#" },
+            { name: tr.footer.game, href: "#" },
+        ],
+    },
+    {
+        title: tr.footer.contact,
+        links: footerSections[1].links,
+    },
+];
 ---
 
 <footer class={`flex flex-col w-full px-6 md:px-28 py-16 gap-8 md:gap-10 ${className}`}>
@@ -8,13 +27,12 @@ import { footerSections } from "~/data/footer";
         <div class="max-w-[20rem]">
             <img src="/assets/wri-logo.webp" alt="WRI Dev Logo" class="h-14" />
             <p class="mt-4 text-wri-gray-600">
-                A creative community where learning together sparks fresh ideas,
-                innovation, and growth in science and technology
+                {tr.footer.description}
             </p>
         </div>
         <div class="ml-0 md:ml-auto flex gap-10">
             {
-                footerSections.map((section) => (
+                translatedFooterSections.map((section) => (
                     <div>
                         <p class="text-xl text-semibold text-wri-gray-800">{section.title}</p>
                         <div class="mt-4 flex flex-col gap-2 text-wri-gray-400">
@@ -28,7 +46,7 @@ import { footerSections } from "~/data/footer";
         </div>
     </div>
     <div class="flex text-wri-gray-600">
-        <div>©2025 All Rights Reserved — Workshop Riset Informatika</div>
-        <div class="ml-auto">Built with Astro and Svelte</div>
+        <div>{tr.footer.copyright}</div>
+        <div class="ml-auto">{tr.footer.builtWith}</div>
     </div>
 </footer>

@@ -1,0 +1,24 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import Hero from "~/components/sections/hero/hero-section.astro";
+import FeatureSection from "~/components/sections/feature/feature-section.astro";
+import TechSection from "~/components/sections/tech/tech-section.astro";
+import AboutUsSection from "~/components/sections/about-us/about-us-section.astro";
+import TalentSection from "~/components/sections/talent/talent-section.astro";
+import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
+import FaqSection from "~/components/sections/faq/faq-section.astro";
+import TestimonialSection from "~/components/sections/testimonial/testimonial-section.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+---
+
+<Layout>
+    <Hero />
+    <FeatureSection className="mt-16 md:mt-32" />
+    <TechSection className="mt-16 md:mt-32" />
+    <AboutUsSection className="mt-16 md:mt-32" />
+    <TalentSection className="mt-16 md:mt-32"/>
+    <TalentPool className="mt-16 md:mt-32"/>
+    <TestimonialSection className="mt-16 md:mt-32" />
+    <FaqSection className="mt-16 md:mt-32" />
+    <FooterSection />
+</Layout>

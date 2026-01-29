@@ -4,22 +4,16 @@
   export let tags: string[]; 
   export let description: string;
 
-  $: profileUrl = `/talents/${name.toLowerCase().replace(/\s+/g, '-')}`;
 
   $: displayTags = (() => {
     let processed = [...tags];
-
-    const isWebDev =
-      processed.includes("frontend") || processed.includes("backend");
-    if (isWebDev) {
-      processed.push("Web Dev");
-    }
+    const isWebDev = processed.includes("frontend") || processed.includes("backend");
+    if (isWebDev) processed.push("Web Dev");
 
     return processed.map((tag) => {
       if (tag === "cyber-security") return "Cyber Security";
       if (tag === "ui/ux") return "UI/UX";
       if (tag === "Web Dev") return "Web Dev";
-
       return tag.charAt(0).toUpperCase() + tag.slice(1);
     });
   })();
@@ -29,9 +23,8 @@
     : description;
 </script>
 
-<a
-  href={profileUrl}
-  class="block group relative w-full aspect-[282/332] overflow-hidden rounded-xl bg-gray-200 cursor-pointer"
+<div
+  class="block group relative w-full aspect-282/332 overflow-hidden rounded-xl bg-gray-200"
 >
   <img
     src={image}
@@ -64,4 +57,4 @@
       </p>
     </div>
   </div>
-</a>
+</div>

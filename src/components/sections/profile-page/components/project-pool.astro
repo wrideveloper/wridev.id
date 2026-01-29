@@ -1,10 +1,13 @@
 ---
 import ProjectGrid from './project-pool/project-grid.svelte';
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 
 const { projects } = Astro.props;
 ---
 
 <section class="w-full">
-  <h2 class="text-3xl font-bold mb-8 text-wri-text">Selected Works</h2>
+  <h2 class="text-3xl font-bold mb-8 text-wri-text">{tr.profile.selectedWorks}</h2>
   <ProjectGrid projects={projects} client:visible />
 </section>

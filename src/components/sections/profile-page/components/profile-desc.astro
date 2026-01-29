@@ -1,5 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
 
 interface TalentProfile {
   name: string;
@@ -39,11 +44,11 @@ const colorMap: Record<string, string> = {
 <div class="flex flex-col items-start gap-6 sticky top-32">
   
   <a 
-    href="/" 
+    href={getLocalizedPath("/", currentLocale)} 
     class="fixed top-8 left-8 z-50 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition shadow-lg"
   >
     <Icon name="ph:arrow-left" class="w-4 h-4" />
-    Back to website
+    {tr.profile.back}
   </a>
 
   <div class="relative w-56 h-56 rounded-full bg-[#EA0B0B] overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">

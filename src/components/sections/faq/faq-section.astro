@@ -6,31 +6,26 @@ import Grid from "~/components/sections/faq/components/grid.svelte";
 const { className } = Astro.props;
 
 import { faqs } from "~/data/faq";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 ---
 
 <Container className={`px-4 sm:px-6 lg:px-30 ${className}`}>
     <div class="w-full">
-        <PillsText>FAQs</PillsText>
+        <PillsText>{tr.faq.pills}</PillsText>
         <div class="flex flex-col lg:flex-row mt-2 gap-6 lg:gap-8">
             <div class="flex-shrink-0 mr-16">
                 <div
                     class="relative flex items-end text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
-                >
-                    Got
-                    <span class="wri-italic from-wri-blue to-wri-blue/45"
-                        >&nbsp;Question?</span
-                    >
-                </div>
+                    set:html={tr.faq.headline_1}
+                />
                 <div
                     class="relative flex items-end text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
-                >
-                    We've Got
-                    <span class="wri-italic from-wri-yellow to-wri-yellow/45"
-                        >&nbsp;Answers!</span
-                    >
-                </div>
+                    set:html={tr.faq.headline_2}
+                />
                 <p class="mt-4 max-w-full lg:max-w-[34rem] text-sm sm:text-base text-wri-gray-600">
-                    Below are questions that might answer your questions to learn more about our community.
+                    {tr.faq.description}
                 </p>
             </div>
             <div class="w-full lg:flex-1 lg:ml-auto lg:min-h-[20rem]">

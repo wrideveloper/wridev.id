@@ -3,23 +3,34 @@
   import TalentCard from '~/components/sections/talent-pool/components/talent-card.svelte';
   import { searchQuery, selectedCategory, selectedAvailability, selectedExperience } from '~/components/sections/talent-pool/stores/filter';
   import type { Talent } from '~/models/talent';
-
   import SparkleIcon from '~icons/ph/sparkle-fill';
+  import { t } from "~/i18n";
+  import { getLocalizedPath } from "~/utils/i18n";
 
   export let talents: Talent[] = [];
   export let buttonText: string = "See More";
+  export let tr: ReturnType<typeof t>;
+  export let locale: string = "en";
 
   let isExpanded = false;
   let currentPath = '';
 
   onMount(() => {
     currentPath = window.location.pathname;
-
     const searchParams = new URLSearchParams(window.location.search);
     if (searchParams.get('expand') === 'true') {
       isExpanded = true;
     }
   });
+
+  function createSlug(name: string) {
+    return name
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+  }
 
   $: filteredTalents = talents.filter(talent => {
     const query = $searchQuery.toLowerCase();
@@ -61,31 +72,33 @@
   $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
 
   function handleButtonClick() {
-    if (currentPath === '/') {
-      window.location.href = '/talents?expand=true';
+    if (currentPath === '/' || currentPath === `/${locale}`) {
+      window.location.href = getLocalizedPath('/talents', locale) + '?expand=true';
     } else {
       isExpanded = true;
     }
   }
 </script>
 
-<div
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
     {#each displayedTalents as talent (talent.name)}
-        <div class="contents" data-namecursor={talent.name}>
+        <a 
+            href={getLocalizedPath(`/talents/${createSlug(talent.name)}`, locale)}
+            class="contents group cursor-pointer" 
+            data-namecursor={talent.name}
+        >
             <TalentCard
               name={talent.name}
               image={talent.profileImage}      
               description={talent.about}        
               tags={talent.proficiencies}       
             />
-        </div>
+        </a>
     {/each}
 
     {#if filteredTalents.length === 0}
         <div class="col-span-full py-20 text-center text-gray-500">
-            No talents found matching your criteria.
+            {tr.talent.noResults}
         </div>
     {/if}
 </div>
