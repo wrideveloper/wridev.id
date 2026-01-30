@@ -1,0 +1,15 @@
+---
+import MiniclassSlugPage from "~/components/pages/miniclass/slug.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const miniclasses = await getCollection("miniclass");
+  const filteredMiniclasses = miniclasses.filter((miniclass) => miniclass.slug.startsWith("id/"));
+
+  return filteredMiniclasses.map((miniclass) => ({
+    params: { slug: miniclass.slug.replace("id/", "") },
+  }));
+}
+---
+
+<MiniclassSlugPage />

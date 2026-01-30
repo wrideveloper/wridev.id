@@ -189,4 +189,17 @@ export const id = {
     projects: "Proyek",
     selectedWorks: "Karya Pilihan",
   },
+  miniclassDetails: {
+    every: "Setiap",
+    meetMentors: "Kenali Para Mentor",
+    days: {
+      senin: "Senin",
+      selasa: "Selasa",
+      rabu: "Rabu",
+      kamis: "Kamis",
+      jumat: "Jumat",
+      sabtu: "Sabtu",
+      minggu: "Minggu",
+    },
+  },
 };

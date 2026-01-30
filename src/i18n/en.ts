@@ -186,4 +186,17 @@ export const en = {
     projects: "Projects",
     selectedWorks: "Selected Works",
   },
+  miniclassDetails: {
+    every: "Every",
+    meetMentors: "Meet the Mentors",
+    days: {
+      senin: "Monday",
+      selasa: "Tuesday",
+      rabu: "Wednesday",
+      kamis: "Thursday",
+      jumat: "Friday",
+      sabtu: "Saturday",
+      minggu: "Sunday",
+    },
+  },
 };
