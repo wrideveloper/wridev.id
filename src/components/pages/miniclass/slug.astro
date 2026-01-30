@@ -40,17 +40,17 @@ const [startTime, endTime] = entry.data.time;
             <span>/</span>
             <span class="text-wri-text">Miniclass</span>
             <span>/</span>
-            <span class="text-wri-text truncate max-w-[200px]">{entry.data.title}</span>
+            <span class="text-wri-text truncate max-w-50">{entry.data.title}</span>
         </div>
 
         <!-- Hero Image -->
-        <div class="w-full h-64 md:h-[32rem] rounded-2xl overflow-hidden mb-12 shadow-lg relative group">
+        <div class="w-full h-64 md:h-128 rounded-2xl overflow-hidden mb-12 shadow-lg relative group">
             <img
                 src={entry.data.image}
                 alt={entry.data.title}
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
         </div>
 
         <!-- Header -->
@@ -64,9 +64,9 @@ const [startTime, endTime] = entry.data.time;
                     <!-- <span class="text-wri-gray-400 font-medium tracking-wide uppercase text-sm">{tr.miniclassDetails.every}</span> -->
                     <span class="text-xl text-wri-text font-serif italic">{tr.miniclassDetails.days[entry.data.day as keyof typeof tr.miniclassDetails.days]}</span>
                 </div>
-                
+
                 <div class="hidden md:block w-1 h-1 rounded-full bg-wri-gray-300"></div>
-                
+
                 <div class="flex items-center gap-2">
                     <span class="text-xl text-wri-text font-serif italic font-variant-numeric">{startTime} - {endTime}</span>
                     <!-- <span class="text-wri-gray-400 font-medium tracking-wide uppercase text-sm">WIB</span> -->

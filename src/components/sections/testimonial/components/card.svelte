@@ -21,7 +21,7 @@
     let textClass = colorClass[color].text;
 </script>
 
-<div class={`w-100 h-50 px-6 py-3 rounded-2xl flex flex-col border-4 border-white/24 text ${divClass}`}>
+<div class={`w-[426px] min-h-[232px] px-6 py-3 rounded-2xl flex flex-col border-4 border-white/24 text ${divClass}`}>
     <div>
         <p class={`text-3xl font-semibold ${textClass}`}>{title}</p>
         <p class={`${textClass}`}>{description}</p>
