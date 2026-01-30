@@ -14,21 +14,25 @@ const translatedMiniclasses = [
         ...miniclasses[0],
         title: tr.miniclass.game.title,
         description: tr.miniclass.game.desc,
+        link: "/miniclass/game"
     },
     {
         ...miniclasses[1],
         title: tr.miniclass.backend.title,
         description: tr.miniclass.backend.desc,
+        link: "/miniclass/backend"
     },
     {
         ...miniclasses[2],
         title: tr.miniclass.uiux.title,
         description: tr.miniclass.uiux.desc,
+        link: "/miniclass/ui-ux"
     },
     {
         ...miniclasses[3],
         title: tr.miniclass.frontend.title,
         description: tr.miniclass.frontend.desc,
+        link: "/miniclass/frontend"
     },
 ];
 ---
@@ -57,6 +61,7 @@ const translatedMiniclasses = [
                     description={miniclass.description}
                     image={miniclass.image}
                     imageHeight={miniclass.imageHeight}
+                    link={miniclass.link}
                 />
             ))
         }
