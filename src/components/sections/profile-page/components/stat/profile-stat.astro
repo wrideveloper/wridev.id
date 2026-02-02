@@ -7,7 +7,7 @@ interface Props {
 
 const { talent_data } = Astro.props; 
 
-const hasGithub = talent_data?.contacts?.some(c => c.type === 'github');
+const hasGithub = talent_data?.contacts?.some((c: any) => c.type === 'github');
 ---
 
 <div class="flex flex-col gap-6 w-full mb-12">

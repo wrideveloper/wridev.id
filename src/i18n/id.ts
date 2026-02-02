@@ -52,7 +52,8 @@ export const id = {
     pills: "TENTANG KAMI",
     workshop: "Workshop",
     risetInformatika: "Riset Informatika",
-    description: 'Sebuah <b class="text-wri-gray-900">komunitas yang menginspirasi</b> bagi mahasiswa IT di Polinema, di mana <b class="text-wri-gray-900">kreativitas berkembang, pengetahuan dibagikan, dan inovasi</b> dalam <b class="text-wri-gray-900">Ilmu Pengetahuan dan Teknologi</b> terus berkembang.',
+    description:
+      'Sebuah <b class="text-wri-gray-900">komunitas yang menginspirasi</b> bagi mahasiswa IT di Polinema, di mana <b class="text-wri-gray-900">kreativitas berkembang, pengetahuan dibagikan, dan inovasi</b> dalam <b class="text-wri-gray-900">Ilmu Pengetahuan dan Teknologi</b> terus berkembang.',
     headline_1: `Membangun<span class="wri-italic from-wri-blue to-wri-blue/45">&nbsp;Masa Depan</span> {{icon}}`,
     headline_2: `dengan<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Teknologi</span>`,
     activitiesTitle: "Kegiatan Kami",
@@ -105,7 +106,7 @@ export const id = {
     experience: "Pengalaman",
     endless: "Tak Terbatas",
     possibilities: "Kemungkinan",
-    headline_1: `<span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Terampil</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="/assets/talents/inline-pics.webp" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pl-2 wri-italic">Pengalaman</span> Nyata</span>`,
+    headline_1: `<span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Terampil</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="{{inline_image}}" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pl-2 wri-italic">Pengalaman</span> Nyata</span>`,
     headline_2:
       '<span class="from-wri-yellow to-wri-yellow/45 wri-italic">Peluang</span> Tanpa Batas',
     description:
