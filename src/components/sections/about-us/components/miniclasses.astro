@@ -7,46 +7,55 @@ const {
     description,
     image,
     imageHeight,
+    link,
     alt = "Card image",
 } = Astro.props;
+
+const localizeLink = `/${Astro.currentLocale}${link}`;
+
+// ring-wri-yellow ring-wri-blue
 ---
 
-<div
-    class={`miniclass h-140 bg-white rounded-xl ring-2 ring-${color} overflow-hidden flex flex-col hover:ring-4 transition-all duration-300 group`}
->
+<a href={localizeLink}>
     <div
-        class="flex justify-center items-center h-2/3 bg-wri-gray-200 relative perspective-[1000px]"
+        class={`miniclass h-[30rem] md:h-140 bg-white rounded-xl  overflow-hidden flex flex-col ring-${color} hover:ring-4 transition-all duration-300 group`}
     >
         <div
-            class={`absolute w-35 h-30 rounded-full bg-${color} blur-2xl opacity-0 group-hover:opacity-30 transition-all duration-300`}
+            class="flex justify-center items-center h-2/3 bg-wri-gray-200 relative perspective-[1000px]"
         >
-        </div>
-        <img
-            src="../assets/dummy/dummy.webp"
-            alt="Project images"
-            class="projects aspect-video w-58 absolute right-18 rotate-4 opacity-0 translate-y-10"
-        />
-        <img
-            src="../assets/dummy/dummy.webp"
-            alt="Project images"
-            class="projects aspect-video w-58 absolute left-18 -rotate-4 opacity-0 translate-y-10"
-        />
+            <div
+                class={`absolute w-35 h-30 rounded-full bg-${color} blur-2xl opacity-0 group-hover:opacity-30 transition-all duration-300`}
+            >
+            </div>
+            <img
+                src="../assets/dummy/dummy.webp"
+                alt="Project images"
+                class="projects aspect-video w-58 absolute right-18 rotate-4 opacity-0 translate-y-10"
+            />
+            <img
+                src="../assets/dummy/dummy.webp"
+                alt="Project images"
+                class="projects aspect-video w-58 absolute left-18 -rotate-4 opacity-0 translate-y-10"
+            />
 
-        <img
-            src={image}
-            alt={alt}
-            class={`${imageHeight} object-cover relative z-10`}
-        />
-    </div>
-
-    <div class="h-1/3 p-6 flex flex-col justify-center relative z-20 bg-white">
-        <div class="flex items-center mb-2">
-            <Icon name={titleIcon} class={`w-6 h-6 mr-3 text-${color}`} />
-            <h1 class="text-2xl font-bold">{title}</h1>
+            <img
+                src={image}
+                alt={alt}
+                class={`${imageHeight} object-cover relative z-10`}
+            />
         </div>
-        <p class="text-wri-gray-600 line-clamp-3 text-lg">{description}</p>
+
+        <div
+            class="h-1/3 p-6 flex flex-col justify-center relative z-20 bg-white"
+        >
+            <div class="flex items-center mb-2">
+                <Icon name={titleIcon} class={`w-6 h-6 mr-3 text-${color}`} />
+                <h1 class="text-xl md:text-2xl font-bold">{title}</h1>
+            </div>
+            <p class="text-wri-gray-600 line-clamp-3 text-md md:text-lg">{description}</p>
+        </div>
     </div>
-</div>
+</a>
 
 <script>
     import gsap from "gsap";

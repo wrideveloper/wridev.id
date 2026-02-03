@@ -7,6 +7,9 @@
     import PaletteIcon from "~icons/ph/palette-duotone";
     import CreativeIcon from "~icons/ph/aperture";
     import CyberIcon from "~icons/ph/bug";
+    import { t } from "~/i18n";
+
+    export let tr: ReturnType<typeof t>;
 
     const categories = [
         { name: "All",      value: "All",            icon: AllIcon },
@@ -15,7 +18,7 @@
         { name: "Mobile",   value: "mobile",         icon: MobileIcon },
         { name: "UI/UX",    value: "ui/ux",          icon: PaletteIcon },
         { name: "Creative", value: "creative",       icon: CreativeIcon },
-        { name: "Cyber",    value: "cyber-security", icon: CyberIcon }, 
+        { name: "Cyber",    value: "cyber-security", icon: CyberIcon },
     ];
 </script>
 
@@ -23,14 +26,14 @@
     {#each categories as category}
         <button
             on:click={() => ($selectedCategory = category.value)}
-            class="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all whitespace-nowrap
-            
+            class="flex items-center gap-2 rounded-lg px-3 py-2 md:px-4 md:py-3 text-sm font-medium transition-all whitespace-nowrap
+
             {$selectedCategory === category.value
-                ? 'bg-white text-blue-600 shadow-sm font-medium text-xl'
-                : 'text-gray-500 hover:bg-white/50 hover:text-gray-900 text-xl'}"
+                ? 'bg-white text-blue-600 shadow-sm font-medium text-sm md:text-xl'
+                : 'text-gray-500 hover:bg-white/50 hover:text-gray-900 text-sm md:text-xl cursor-pointer'}"
         >
             <svelte:component this={category.icon} class="w-4 h-4" />
-            {category.name}
+            {tr.filters.categories[category.name]}
         </button>
     {/each}
 </div>

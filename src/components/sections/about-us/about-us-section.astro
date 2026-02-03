@@ -2,60 +2,68 @@
 import Container from "~/components/sections/container.svelte";
 import PillsText from "~/components/text/pills.astro";
 import MiniClassCard from "~/components/sections/about-us/components/miniclasses.astro";
+import { miniclasses } from "~/data/miniclasses";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 
 const { className } = Astro.props;
+
+const translatedMiniclasses = [
+    {
+        ...miniclasses[0],
+        title: tr.miniclass.game.title,
+        description: tr.miniclass.game.desc,
+        link: "/miniclass/game"
+    },
+    {
+        ...miniclasses[1],
+        title: tr.miniclass.backend.title,
+        description: tr.miniclass.backend.desc,
+        link: "/miniclass/backend"
+    },
+    {
+        ...miniclasses[2],
+        title: tr.miniclass.uiux.title,
+        description: tr.miniclass.uiux.desc,
+        link: "/miniclass/ui-ux"
+    },
+    {
+        ...miniclasses[3],
+        title: tr.miniclass.frontend.title,
+        description: tr.miniclass.frontend.desc,
+        link: "/miniclass/frontend"
+    },
+];
 ---
 
 <Container className={`${className}`}>
-    <div class="w-full flex justify-between items-end">
+    <div class="w-full flex flex-col md:flex-row md:justify-between md:items-end">
         <div>
-            <PillsText>ABOUT US</PillsText>
-            <h1 class="text-6xl font-semibold mt-5 w-2/3">
+            <PillsText className="mx-auto md:mx-0">{tr.about.pills}</PillsText>
+            <h1 class="text-center md:text-left text-4xl md:text-6xl font-semibold mt-5 w-full md:w-2/3">
                 <span class="wri-italic from-wri-blue to-wri-blue/45"
-                    >Workshop</span
-                > Riset Informatika
+                    >{tr.about.workshop}</span
+                > {tr.about.risetInformatika}
             </h1>
         </div>
-        <h5 class="text-right text-lg w-1/3 text-wri-gray-600">
-            An <b class="text-wri-gray-900">inspiring community</b> of IT students
-            at Polinema, where <b class="text-wri-gray-900"
-                >creativity comes alive, knowledge is shared, and innovation</b
-            > in <b class="text-wri-gray-900">Science and Technology</b>
-            continues to grow
+        <h5 class="text-center md:text-right text-md md:text-lg w-full md:w-1/3 text-wri-gray-600 mt-4 md:mt-0">
+            <Fragment set:html={tr.about.description}/>
         </h5>
     </div>
-    <div class="w-full grid grid-cols-2 gap-8 mt-16">
-        <MiniClassCard
-            titleIcon="ph:game-controller-fill"
-            color="wri-yellow"
-            title="Game Development"
-            description="Dive into game design, coding, and storytelling to craft immersive gaming experiences from concept to launch."
-            image="/assets/miniclasses/game.webp"
-            imageHeight="h-30"
-        />
-        <MiniClassCard
-            titleIcon="ph:android-logo-fill"
-            color="wri-blue"
-            title="Back End Development"
-            description="Master mobile app development, creating intuitive interfaces and seamless user experiences for today's dynamic devices."
-            image="/assets/miniclasses/backend.webp"
-            imageHeight="h-25"
-        />
-        <MiniClassCard
-            titleIcon="ph:palette-fill"
-            color="wri-blue"
-            title="UI/UX Design"
-            description="Elevate user experiences with thoughtful design, creating interfaces that are both visually appealing and functionally intuitive for users."
-            image="/assets/miniclasses/ui-ux.webp"
-            imageHeight="h-30"
-        />
-        <MiniClassCard
-            titleIcon="ph:browsers-fill"
-            color="wri-yellow"
-            title="Front End Development"
-            description="Craft stunning web and mobile interfaces with responsive design and Flutter for seamless, cutting-edge user experiences on any device."
-            image="/assets/miniclasses/frontend.webp"
-            imageHeight="h-35"
-        />
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16">
+        {
+            translatedMiniclasses.map((miniclass) => (
+                <MiniClassCard
+                    titleIcon={miniclass.titleIcon}
+                    color={miniclass.color}
+                    title={miniclass.title}
+                    description={miniclass.description}
+                    image={miniclass.image}
+                    imageHeight={miniclass.imageHeight}
+                    link={miniclass.link}
+                />
+            ))
+        }
     </div>
 </Container>

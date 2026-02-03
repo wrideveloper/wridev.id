@@ -5,16 +5,19 @@ import Layout from "../../layouts/Layout.astro"
 
 import TalentPool from "../../components/sections/talent-pool/talent-pool.astro";
 import FooterSection from "../../components/sections/footer/footer-section.astro";
+import TalentSection from "~/components/sections/talent/talent-section.astro";
 
 ---
 
 <Layout>
   
   <main class="pt-32 w-full">
+
+    <TalentSection/>
     
 
     <TalentPool />
-    
+
   </main>
 
         <FooterSection />

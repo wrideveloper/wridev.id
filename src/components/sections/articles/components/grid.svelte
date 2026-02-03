@@ -10,6 +10,10 @@
     import NextIcon from "~icons/ph/caret-right";
     import LastIcon from "~icons/ph/caret-double-right";
 
+    import { t } from "~/i18n";
+
+    export let tr: ReturnType<typeof t>;
+    export let locale: string;
     export let articles = [];
 
     articles = articles.map((article) => ({
@@ -110,8 +114,8 @@
 </script>
 
 <div>
-    <div class="w-full flex justify-center gap-2 items-center">
-        <div class="relative w-[30%] flex h-fit">
+    <div class="w-full flex flex-row justify-center gap-2 items-center px-4 md:px-0">
+        <div class="relative flex-1 md:flex-none md:w-[30%] flex h-fit">
             <div
                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
             >
@@ -119,7 +123,7 @@
             </div>
             <input
                 type="text"
-                placeholder="Search news"
+                placeholder={tr.articles.searchPlaceholder}
                 bind:value={$searchQuery}
                 class="block w-full rounded-lg border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 on:keydown={(e) => e.key === "Enter" && handleSearch()}
@@ -130,19 +134,19 @@
                 class="flex justify-center items-center bg-wri-lighterblue text-wri-white p-1 rounded-xl"
             >
                 <button
-                    class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-4 py-1.5 rounded-lg border border-wri-darkerblue text-center cursor-pointer"
+                    class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-3 py-2 md:px-4 md:py-1.5 rounded-lg border border-wri-darkerblue text-center cursor-pointer"
                     on:click={handleSearch}
                 >
                     <svelte:component
                         this={BoldSearchIcon}
-                        class="w-4 h-4 text-wri-white mr-2"
+                        class="w-4 h-4 text-wri-white md:mr-2"
                     />
-                    Search
+                    <span class="hidden md:inline">{tr.articles.search}</span>
                 </button>
             </div>
         </div>
     </div>
-    <Container className="mt-8 grid grid-cols-3 gap-4">
+    <Container className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {#each paginatedArticles as article}
             <Card
                 title={article.title}
@@ -151,6 +155,8 @@
                 image={article.image}
                 author={article.author}
                 slug={article.slug}
+                tr={tr}
+                locale={locale}
             />
         {/each}
     </Container>

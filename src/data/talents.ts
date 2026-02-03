@@ -1,12 +1,6 @@
 import type { Talent } from "~/models/talent.ts";
 
-type TalentData = {
-  title: string;
-  subtitle: string;
-  miniTitle: string;
-  talents: Talent[];
-  buttonText: string;
-};
+import type { TalentData } from "~/models/talent_data";
 
 export const TALENT_DATA: TalentData = {
   title: "Memiliki Pengetahuan dan Pengalaman yang Mumpuni",

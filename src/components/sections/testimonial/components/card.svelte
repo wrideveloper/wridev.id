@@ -21,10 +21,10 @@
     let textClass = colorClass[color].text;
 </script>
 
-<div class={`w-100 h-50 px-6 py-3 rounded-2xl flex flex-col border-4 border-white/24 text ${divClass}`}>
+<div class={`w-full max-w-88 md:max-w-106 min-h-35 md:min-h-58 px-6 py-3 rounded-2xl flex flex-col border-4 border-white/24 text ${divClass}`}>
     <div>
-        <p class={`text-3xl font-semibold ${textClass}`}>{title}</p>
-        <p class={`${textClass}`}>{description}</p>
+        <p class={`text-2xl md:text-3xl font-semibold ${textClass}`}>{title}</p>
+        <p class={`text-xs md:text-base ${textClass}`}>{description}</p>
     </div>
-    <p class={`mt-auto ${textClass}`}>- {name}</p>
+    <p class={`text-xs md:text-base mt-auto ${textClass}`}>- {name}</p>
 </div>

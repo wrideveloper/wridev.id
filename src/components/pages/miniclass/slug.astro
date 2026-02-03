@@ -1,0 +1,111 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "~/layouts/Layout.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+import TalentCard from "~/components/sections/talent-pool/components/talent-card.svelte";
+import { TALENT_DATA } from "~/data/talents";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const currentLocale = Astro.currentLocale || "en";
+const tr = t(currentLocale as keyof typeof language);
+
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+	throw new Error("Slug is required");
+}
+const fullSlug = `${currentLocale}/${slug}`;
+const entry = await getEntry("miniclass", fullSlug);
+if (entry === undefined) {
+	return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+
+// Map mentors to TALENT_DATA
+const mentors = entry.data.mentors.map((mentorName) => {
+    const talent = TALENT_DATA.talents.find((t) => t.name === mentorName);
+    return talent;
+}).filter((t): t is typeof TALENT_DATA.talents[0] => t !== undefined);
+
+const [startTime, endTime] = entry.data.time;
+---
+
+<Layout>
+    <div class="w-full max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-20">
+        <!-- Breadcrumbs -->
+        <div class="flex items-center gap-2 text-wri-gray-500 text-sm mb-8">
+            <a href={getLocalizedPath("/", currentLocale)} class="hover:text-wri-text transition-colors">{tr.articleDetails.home}</a>
+            <span>/</span>
+            <span class="text-wri-text">Miniclass</span>
+            <span>/</span>
+            <span class="text-wri-text truncate max-w-50">{entry.data.title}</span>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="w-full h-64 md:h-128 rounded-2xl overflow-hidden mb-12 shadow-lg relative group">
+            <img
+                src={entry.data.image}
+                alt={entry.data.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
+        </div>
+
+        <!-- Header -->
+        <div class="flex flex-col gap-4 mb-16">
+            <h1 class="text-4xl md:text-6xl font-serif italic text-wri-text leading-tight text-center">
+                {entry.data.title}
+            </h1>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 mt-2 text-wri-gray-600">
+                <div class="flex items-center gap-2">
+                    <!-- <span class="text-wri-gray-400 font-medium tracking-wide uppercase text-sm">{tr.miniclassDetails.every}</span> -->
+                    <span class="text-xl text-wri-text font-serif italic">{tr.miniclassDetails.days[entry.data.day as keyof typeof tr.miniclassDetails.days]}</span>
+                </div>
+
+                <div class="hidden md:block w-1 h-1 rounded-full bg-wri-gray-300"></div>
+
+                <div class="flex items-center gap-2">
+                    <span class="text-xl text-wri-text font-serif italic font-variant-numeric">{startTime} - {endTime}</span>
+                    <!-- <span class="text-wri-gray-400 font-medium tracking-wide uppercase text-sm">WIB</span> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <article class="prose md:prose-lg max-w-none
+            prose-headings:font-serif prose-headings:italic prose-headings:font-normal prose-headings:text-wri-text
+            prose-p:text-wri-gray-600 prose-p:leading-relaxed
+            prose-a:text-wri-blue prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-wri-text prose-strong:font-medium
+            prose-code:text-wri-blue prose-code:bg-wri-blue/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+            prose-pre:bg-wri-gray-900 prose-pre:text-wri-gray-50
+            prose-blockquote:border-l-wri-blue prose-blockquote:text-wri-gray-600 prose-blockquote:bg-wri-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg
+            prose-img:rounded-xl prose-img:shadow-md
+            prose-li:text-wri-gray-600
+            mb-24">
+            <Content />
+        </article>
+
+        <!-- Mentors -->
+        {mentors.length > 0 && (
+            <div class="border-t border-wri-gray-200 pt-16">
+                <h2 class="text-3xl font-serif italic text-wri-text mb-12 text-center">{tr.miniclassDetails.meetMentors}</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {mentors.map((mentor) => (
+                        <TalentCard
+                            name={mentor.name}
+                            image={mentor.profileImage}
+                            tags={mentor.proficiencies}
+                            description={mentor.about}
+                            client:visible
+                        />
+                    ))}
+                </div>
+            </div>
+        )}
+    </div>
+    <FooterSection className="mt-0" />
+</Layout>

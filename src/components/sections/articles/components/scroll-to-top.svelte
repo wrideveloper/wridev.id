@@ -37,7 +37,7 @@
 
 <button
     on:click={scrollToTop}
-    class="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-wri-white/80 backdrop-blur-md border border-wri-gray-200 shadow-lg text-wri-blue hover:bg-wri-blue hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
+    class="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-40 p-3 rounded-full bg-wri-white/80 backdrop-blur-md border border-wri-gray-200 shadow-lg text-wri-blue hover:bg-wri-blue hover:text-white transition-all duration-300 transform hover:scale-110 flex items-center justify-center group"
     class:opacity-0={!showButton}
     class:invisible={!showButton}
     class:opacity-100={showButton}

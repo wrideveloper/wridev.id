@@ -18,7 +18,7 @@
 
 <div class="w-full overflow-hidden">
   <div
-      class={`flex w-max animate-walk-${direction} gap-6`}
+      class={`flex w-max animate-walk-${direction} gap-6 hover:[animation-play-state:paused]`}
       style="animation-duration: 60s;"
   >
     {#each testimonials as testimonial, index}

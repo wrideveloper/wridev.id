@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "~/layouts/Layout.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+import InlineIcon from "~/components/text/inline-icon.astro";
+import Grid from "~/components/sections/articles/components/grid.svelte";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+
+const articles = await getCollection("articles");
+const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout>
+    <div class="pt-24 md:pt-32">
+        <div class="my-8 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+            <InlineIcon
+                name="ph:sparkle-fill"
+                color="wri-yellow"
+                rotate={-4}
+                className="hidden md:flex -translate-y-14"
+            />
+
+            <div class="text-center">
+                <div class="text-4xl md:text-6xl font-medium">
+                    {tr.articles.hub}
+                </div>
+
+                <div
+                    class="text-4xl md:text-6xl font-medium"
+                    set:html={tr.articles.headline_1}
+                />
+
+                <p class="mx-auto mt-4 max-w-[90%] md:max-w-[42ch] text-wri-gray-600 px-4 md:px-0">
+                    {tr.articles.description}
+                </p>
+            </div>
+
+            <InlineIcon
+                name="ph:book-open-text-fill"
+                color="wri-blue"
+                rotate={6}
+                className="hidden md:flex translate-y-4"
+            />
+        </div>
+        <Grid tr={tr} locale={Astro.currentLocale} articles={sortedArticlesMeta} client:load/>
+        <FooterSection />
+    </div>
+</Layout>

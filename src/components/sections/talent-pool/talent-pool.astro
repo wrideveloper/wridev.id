@@ -2,14 +2,20 @@
 import Toolbar from '~/components/sections/talent-pool/components/toolbar.svelte';
 import Grid from '~/components/sections/talent-pool/components/grid.svelte';
 import { TALENT_DATA } from "~/data/talents.ts";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
 ---
 
-<section class="w-full max-w-9xl mx-auto px-30 py-12">
-  <Toolbar client:load />
+<section class="w-full max-w-9xl mx-auto px-4 md:px-30 py-8 md:py-12">
+  <Toolbar client:load tr={tr} />
 
   <Grid
     talents={TALENT_DATA.talents}
-    buttonText={TALENT_DATA.buttonText}
+    buttonText={tr.talent.data.buttonText}
+    tr={tr}
+    locale={currentLocale}
     client:load
   />
 

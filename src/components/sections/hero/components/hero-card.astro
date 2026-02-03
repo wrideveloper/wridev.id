@@ -1,33 +1,35 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
 ---
 
 <div
-  class="w-full h-230 bg-[#f0f0f0]/54 mt-15 shadow-lg shadow-neutral-500/40 rounded-t-3xl rounded-tl-3xl px-2.5"
+  class="w-full h-64 md:h-230 bg-[#f0f0f0]/54 mt-15 shadow-lg shadow-neutral-500/40 rounded-t-3xl rounded-tl-3xl px-2.5"
 >
   <div
-    class="w-full h-1/12 flex justify-between items-center px-2 my-2 text-wri-gray-600"
+    class="w-full h-auto md:h-1/12 flex justify-between items-center px-2 my-2 text-wri-gray-600"
   >
-    <div class="flex gap-4 items-center">
-      <Icon name="ph:x-circle-fill" class="w-7 h-7" />
-      <Icon name="ph:caret-circle-up-down-fill" class="w-7 h-7" />
-      <h5 class="text-lg font-semibold">WRI 2025/2026</h5>
+    <div class="flex gap-2 md:gap-4 items-center">
+      <Icon name="ph:x-circle-fill" class="w-5 h-5 md:w-7 md:h-7" />
+      <Icon name="ph:caret-circle-up-down-fill" class="w-5 h-5 md:w-7 md:h-7" />
+      <h5 class="text-sm md:text-lg font-semibold">WRI 2025/2026</h5>
     </div>
-    <div class="flex gap-10 items-center">
+    <div class="hidden md:flex gap-10 items-center">
       <Icon name="ph:marker-circle" class="w-7 h-7" />
       <Icon name="ph:device-rotate" class="w-7 h-7" />
       <Icon name="ph:export" class="w-7 h-7" />
       <h5 class="text-lg border border-wri-gray-600/50 px-2 py-1 rounded-xl">
-        Open with Preview
+        {tr.hero.openWithPreview}
       </h5>
     </div>
   </div>
   <div class="w-full h-full bg-wri-gray-600 rounded-t-2xl rounded-tl-2xl">
     <img
-      src="/assets/hero/hero-card-image.JPG"
+      src="/assets/hero/hero-card-image.webp"
       alt="Hero Card Image"
       class="w-full h-full object-cover rounded-t-2xl rounded-tl-2xl"
     />
-  </div>    
+  </div>
 </div>

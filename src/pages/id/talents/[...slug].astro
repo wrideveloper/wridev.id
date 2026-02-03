@@ -1,0 +1,15 @@
+---
+import TalentsSlugPage from "~/components/pages/talents/slug.astro";
+import { loadTalentData } from "~/utils/load-talent";
+
+export const prerender = false;
+
+const { slug } = Astro.params;
+const talentData = await loadTalentData(Astro, slug);
+
+if (!talentData) {
+    return Astro.redirect("/id/404"); 
+}
+---
+
+<TalentsSlugPage talent_data={talentData} />
