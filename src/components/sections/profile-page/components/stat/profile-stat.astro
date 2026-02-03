@@ -7,19 +7,17 @@ interface Props {
 
 const { talent_data } = Astro.props; 
 
-const githubMetrics = talent_data?.metrics?.github;
 const hasGithubContact = talent_data?.contacts?.some((c: any) => c.type === 'github');
-
-const showGithub = hasGithubContact && githubMetrics;
 ---
 
 <div class="flex flex-col gap-6 w-full">
   
-  {showGithub && <GithubStat talent_data={talent_data} />}
-  
-  {!showGithub && (
+  {hasGithubContact ? (
+     <GithubStat talent_data={talent_data} />
+  ) : (
+     /* Only show placeholder if there is NO Github contact at all */
      <div class="bg-white p-6 rounded-3xl border border-wri-gray-200 min-h-32 flex items-center justify-center text-wri-gray-400 border-dashed">   
-       No metrics available yet
+       No metrics available
      </div>
   )}
 

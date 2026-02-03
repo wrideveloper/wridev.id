@@ -28,9 +28,19 @@ const { talent_data } = Astro.props;
 const githubContact = talent_data.contacts.find(c => c.type === 'github');
 const githubUrl = githubContact?.url;
 
-const username = githubUrl 
-  ? new URL(githubUrl).pathname.split('/').filter(Boolean).pop() 
-  : null;
+let username = null;
+if (githubUrl) {
+    try {
+        if (githubUrl.startsWith('http')) {
+             username = new URL(githubUrl).pathname.split('/').filter(Boolean).pop();
+        } else {
+             const parts = githubUrl.split('/');
+             username = parts.pop() || parts[0];
+        }
+    } catch (e) {
+        console.warn('Invalid GitHub URL:', githubUrl);
+    }
+}
 
 const githubMetrics = talent_data.metrics?.github;
 const isAvailable = githubMetrics?.available && Array.isArray(githubMetrics.contributions);
@@ -48,16 +58,16 @@ const getColor = (level: number) => {
 ---
 
 {username && (
-  <div class="w-full bg-white p-6 rounded-3xl border border-wri-gray-200 flex flex-col sm:flex-row items-center gap-8 shadow-sm">
+  <div class="w-full bg-white p-6 rounded-3xl border border-wri-gray-200 flex flex-col xl:flex-row items-center gap-8 shadow-sm">
     
-    <div class="flex flex-col items-center sm:items-start gap-4 shrink-0 min-w-30">
-      <a href={githubUrl}>      
+    <div class="flex flex-col items-center xl:items-start gap-4 shrink-0 min-w-32">
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">      
         <div class="p-3 bg-black rounded-2xl inline-block">
           <Icon name="ph:github-logo-fill" class="w-8 h-8 text-white" />
         </div>
       </a>
 
-      <div class="text-center sm:text-left">
+      <div class="text-center xl:text-left">
           <div class="font-bold text-lg leading-tight">
               {username}
               <br/><span class="font-normal text-wri-gray-500 text-sm">GitHub</span>
@@ -66,26 +76,27 @@ const getColor = (level: number) => {
       <a 
         href={githubUrl} 
         target="_blank"
-        class="mt-1 px-6 py-2 bg-wri-white border border-wri-gray-200 rounded-lg text-sm font-medium text-wri-gray-700 hover:bg-wri-gray-100 transition-colors"      
+        rel="noopener noreferrer"
+        class="mt-1 px-6 py-2 bg-wri-white border border-wri-gray-200 rounded-lg text-sm font-medium text-wri-gray-700 hover:bg-wri-gray-100 transition-colors"       
       >
         Follow
       </a>
     </div>
 
-    <div class="flex-1 overflow-hidden flex items-center justify-center sm:justify-end w-full">
+    <div class="flex-1 overflow-hidden flex items-center justify-center xl:justify-end w-full">
       {isAvailable && githubMetrics ? ( 
-        <div class="grid grid-rows-7 grid-flow-col gap-0.75 opacity-90 overflow-x-auto no-scrollbar mask-gradient">
+        <div class="grid grid-rows-7 grid-flow-col gap-0.5 md:gap-1 opacity-90 overflow-x-auto no-scrollbar mask-gradient py-2">
           {githubMetrics.contributions.slice(-(18 * 7)).map((day) => (
              <div 
-               class="w-3 h-3 rounded-xs" 
+               class="w-2.5 h-2.5 md:w-3 md:h-3 rounded-xs" 
                style={`background-color: ${getColor(day.level)};`}
-               title={day.count > 0 ? `${day.count} contributions on ${day.date}` : `Activity level: ${day.level}`}
+               title={`${day.count} contributions on ${day.date}`}
              ></div>
           ))}
         </div>
       ) : (
-         <div class="text-sm text-wri-gray-400 italic">
-            Stats not available
+         <div class="text-sm text-wri-gray-400 italic py-4">
+            Statistics not available
          </div>
       )}
     </div>
