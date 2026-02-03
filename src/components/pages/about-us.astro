@@ -1,0 +1,219 @@
+---
+import { getEntry } from "astro:content";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/sections/container.svelte";
+import { Icon } from "astro-icon/components";
+import Interpolate from "~/components/ui/interpolate.astro";
+import InlineIcon from "~/components/text/inline-icon.astro";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
+
+const aboutEntry = await getEntry("pages", `${currentLocale}/about`);
+const { Content } = await aboutEntry!.render();
+
+const contentData = {
+    activities: [
+        {
+            title: tr.about.activities.miniclass.title,
+            desc: tr.about.activities.miniclass.desc,
+            icon: "ph:chalkboard-teacher-fill",
+            color: "bg-blue-100 text-blue-600",
+        },
+        {
+            title: tr.about.activities.opentalk.title,
+            desc: tr.about.activities.opentalk.desc,
+            icon: "ph:microphone-stage-fill",
+            color: "bg-purple-100 text-purple-600",
+        },
+        {
+            title: tr.about.activities.wrioot.title,
+            desc: tr.about.activities.wrioot.desc,
+            icon: "ph:coffee-fill",
+            color: "bg-amber-100 text-amber-600",
+        },
+    ],
+    miniclasses: [
+        {
+            name: tr.about.miniclassesList.frontend,
+            icon: "ph:browsers-fill",
+            color: "text-blue-500",
+            link: "/miniclass/frontend",
+        },
+        {
+            name: tr.about.miniclassesList.backend,
+            icon: "ph:database-fill",
+            color: "text-green-500",
+            link: "/miniclass/backend",
+        },
+        {
+            name: tr.about.miniclassesList.game,
+            icon: "ph:game-controller-fill",
+            color: "text-purple-500",
+            link: "/miniclass/game",
+        },
+        {
+            name: tr.about.miniclassesList.uiux,
+            icon: "ph:palette-fill",
+            color: "text-pink-500",
+            link: "/miniclass/ui-ux",
+        },
+    ],
+};
+
+const { activities, miniclasses } = contentData;
+---
+
+<Layout title={aboutEntry!.data.title}>
+    <div
+        class="relative overflow-hidden w-full min-h-screen bg-slate-50/50 mt-16"
+    >
+        {/* Decorative Background Elements - Gradient from Bottom */}
+        <div
+            class="absolute bottom-0 left-0 w-full h-[600px] bg-gradient-to-t from-wri-blue/5 to-transparent pointer-events-none z-0"
+        >
+        </div>
+
+        <Container className="pt-20 pb-24 relative z-10">
+            {/* Hero Section */}
+            <div class="text-center w-full mb-8 animate-fade-in-up">
+                <div
+                    class="flex flex-col justify-center items-center font-medium tracking-tight mb-6"
+                >
+                    <div
+                        class="relative flex justify-center items-end text-4xl md:text-7xl"
+                    >
+                        <Interpolate text={tr.about.headline_1}>
+                            <InlineIcon
+                                slot="icon"
+                                name="ph:rocket-launch-fill"
+                                color="wri-blue"
+                                rotate={-6}
+                            />
+                        </Interpolate>
+                    </div>
+                    <div
+                        class="relative flex justify-center items-end text-4xl md:text-7xl"
+                    >
+                        <Interpolate text={tr.about.headline_2} />
+                    </div>
+                </div>
+            </div>
+
+            {/* Main Content */}
+            <div
+                class="max-w-4xl mx-auto prose prose-lg prose-slate prose-headings:font-bold prose-headings:text-slate-900 prose-p:text-slate-600 prose-a:text-wri-blue mb-24"
+            >
+                <div
+                    class="bg-white/50 backdrop-blur-sm px-8 py-4 md:px-12 md:py-8 rounded-3xl border border-slate-100 shadow-sm"
+                >
+                    <Content />
+                </div>
+            </div>
+
+            {/* Activities Section */}
+            <div class="mb-16">
+                <div class="text-center mb-16">
+                    <h2
+                        class="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+                    >
+                        {tr.about.activitiesTitle}
+                    </h2>
+                    <div class="w-24 h-1 bg-wri-blue/20 mx-auto rounded-full">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {
+                        activities.map((activity) => (
+                            <div class="group bg-white p-10 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:border-wri-blue/20 transition-all duration-300">
+                                <div
+                                    class={`w-16 h-16 rounded-2xl ${activity.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                                >
+                                    <Icon
+                                        name={activity.icon}
+                                        class="w-8 h-8"
+                                    />
+                                </div>
+                                <h3 class="font-bold text-xl text-slate-900 mb-3">
+                                    {activity.title}
+                                </h3>
+                                <p class="text-slate-500 leading-relaxed text-sm">
+                                    {activity.desc}
+                                </p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+
+            {/* Miniclasses Section */}
+            <div
+                class="relative bg-white rounded-[2.5rem] p-8 md:p-16 shadow-xl shadow-slate-200/50 border border-slate-100 overflow-hidden"
+            >
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-wri-blue/5 to-transparent rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"
+                >
+                </div>
+
+                <div class="relative z-10">
+                    <div class="text-center mb-16">
+                        <h2
+                            class="text-3xl md:text-4xl font-bold text-slate-900 mb-4"
+                        >
+                            {tr.about.miniclassesTitle}
+                        </h2>
+                        <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+                            {tr.about.miniclassesDesc}
+                        </p>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                    >
+                        {
+                            miniclasses.map((mc) => (
+                                <a
+                                    href={mc.link}
+                                    class="group bg-slate-50/50 p-8 rounded-2xl border border-slate-100 hover:bg-white hover:border-wri-blue/30 hover:shadow-lg transition-all duration-300 flex flex-col h-full items-center text-center"
+                                >
+                                    <div class="mb-6">
+                                        <Icon
+                                            name={mc.icon}
+                                            class={`w-14 h-14 ${mc.color} group-hover:scale-110 transition-transform duration-300 drop-shadow-sm`}
+                                        />
+                                    </div>
+                                    <h3 class="font-bold text-xl text-slate-800 mb-6">
+                                        {mc.name}
+                                    </h3>
+                                    <div class="flex items-center text-sm font-medium text-slate-400 group-hover:text-wri-blue transition-colors mt-auto">
+                                        <span>Learn more</span>
+                                        <Icon
+                                            name="ph:arrow-right"
+                                            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                                        />
+                                    </div>
+                                </a>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </div>
+</Layout>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>

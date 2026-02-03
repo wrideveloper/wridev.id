@@ -53,6 +53,31 @@ export const en = {
     risetInformatika: "Riset Informatika",
     description:
       "An <b class='text-wri-gray-900'>inspiring community</b> of IT students at Polinema, where <b class='text-wri-gray-900'>creativity comes alive, knowledge is shared, and innovation</b> in <b class='text-wri-gray-900'>Science and Technology</b> continues to grow",
+    headline_1: `Building <span class="wri-italic from-wri-blue to-wri-blue/45">the Future</span> {{icon}}`,
+    headline_2: `with <span class="wri-italic from-wri-yellow to-wri-yellow/45">Technology</span>`,
+    activitiesTitle: "Our Activities",
+    miniclassesTitle: "Miniclasses",
+    miniclassesDesc: "Choose your learning path according to your interests and talents.",
+    activities: {
+      miniclass: {
+        title: "Miniclass",
+        desc: "Regular technical learning classes held for members.",
+      },
+      opentalk: {
+        title: "Open Talk",
+        desc: "A periodic seminar forum featuring professional IT practitioners.",
+      },
+      wrioot: {
+        title: "WRI OOT",
+        desc: "Weekly casual agenda for discussion and sharing latest tech info.",
+      },
+    },
+    miniclassesList: {
+      frontend: "Frontend",
+      backend: "Backend",
+      game: "Game Development",
+      uiux: "UI/UX Design",
+    },
   },
   miniclass: {
     game: {

@@ -11,7 +11,7 @@
 
 <div class="flex flex-col w-full">
     <button
-        class="flex items-center justify-between w-full py-3 sm:py-4 px-4 sm:px-6 text-left text-wri-gray-900 hover:text-wri-gray-700 transition-colors duration-200 gap-4"
+        class="flex items-center justify-between w-full py-3 sm:py-4 px-4 sm:px-6 text-left text-wri-gray-900 hover:text-wri-gray-700 transition-colors duration-200 gap-4 cursor-pointer"
         on:click={onToggle}
     >
         <span class="text-base sm:text-lg lg:text-xl font-medium flex-1 pr-2">{question}</span>

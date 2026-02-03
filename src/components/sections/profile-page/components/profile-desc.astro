@@ -15,7 +15,7 @@ interface TalentProfile {
     type: string;
     url: string;
   }[];
-  [key: string]: any; 
+  [key: string]: any;
 }
 
 interface Props {
@@ -42,20 +42,20 @@ const colorMap: Record<string, string> = {
 ---
 
 <div class="flex flex-col items-start gap-6 sticky top-32">
-  
-  <a 
-    href={getLocalizedPath("/", currentLocale)} 
+
+  <a
+    href={getLocalizedPath("/", currentLocale)}
     class="fixed top-8 left-8 z-50 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition shadow-lg"
   >
     <Icon name="ph:arrow-left" class="w-4 h-4" />
-    {tr.profile.back}
+    <!-- {tr.profile.back} -->
   </a>
 
   <div class="relative w-56 h-56 rounded-full bg-[#EA0B0B] overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
-    <img 
-      src={talent_data.profileImage} 
-      alt={talent_data.name} 
-      class="w-full h-full object-cover object-top translate-y-0.15" 
+    <img
+      src={talent_data.profileImage}
+      alt={talent_data.name}
+      class="w-full h-full object-cover object-top translate-y-0.15"
     />
   </div>
 
@@ -63,7 +63,7 @@ const colorMap: Record<string, string> = {
     <h1 class="text-6xl font-bold tracking-tight text-wri-text leading-none mb-2">
       {talent_data.name}
     </h1>
-    
+
     <div class="text-4xl text-wri-text font-serif italic">
        {talent_data.position}
     </div>
@@ -78,11 +78,11 @@ const colorMap: Record<string, string> = {
     {Array.isArray(talent_data.contacts) && talent_data.contacts.map((contact) => {
       const iconName = iconMap[contact.type] || "ph:link";
       const colorClass = colorMap[contact.type] || "bg-black text-white";
-      
+
       return (
-        <a 
-          href={contact.url} 
-          target="_blank" 
+        <a
+          href={contact.url}
+          target="_blank"
           class={`w-12 h-12 flex items-center justify-center rounded-xl hover:scale-110 transition-transform shadow-sm ${colorClass}`}
           aria-label={contact.type}
         >

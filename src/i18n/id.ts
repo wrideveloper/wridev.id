@@ -53,6 +53,31 @@ export const id = {
     workshop: "Workshop",
     risetInformatika: "Riset Informatika",
     description: 'Sebuah <b class="text-wri-gray-900">komunitas yang menginspirasi</b> bagi mahasiswa IT di Polinema, di mana <b class="text-wri-gray-900">kreativitas berkembang, pengetahuan dibagikan, dan inovasi</b> dalam <b class="text-wri-gray-900">Ilmu Pengetahuan dan Teknologi</b> terus berkembang.',
+    headline_1: `Membangun <span class="wri-italic from-wri-blue to-wri-blue/45">Masa Depan</span> {{icon}}`,
+    headline_2: `dengan <span class="wri-italic from-wri-yellow to-wri-yellow/45">Teknologi</span>`,
+    activitiesTitle: "Kegiatan Kami",
+    miniclassesTitle: "Miniclasses",
+    miniclassesDesc: "Pilih jalur belajarmu sesuai minat dan bakat.",
+    activities: {
+      miniclass: {
+        title: "Miniclass",
+        desc: "Kelas pembelajaran teknis yang diselenggarakan secara reguler.",
+      },
+      opentalk: {
+        title: "Open Talk",
+        desc: "Sebuah forum seminar yang diadakan secara berkala setiap beberapa bulan.",
+      },
+      wrioot: {
+        title: "WRI OOT",
+        desc: "Agenda mingguan santai untuk diskusi dan berbagi informasi teknologi terkini.",
+      },
+    },
+    miniclassesList: {
+      frontend: "Frontend",
+      backend: "Backend",
+      game: "Game Development",
+      uiux: "UI/UX Design",
+    },
   },
   miniclass: {
     game: {

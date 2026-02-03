@@ -18,7 +18,7 @@
         { name: "Mobile",   value: "mobile",         icon: MobileIcon },
         { name: "UI/UX",    value: "ui/ux",          icon: PaletteIcon },
         { name: "Creative", value: "creative",       icon: CreativeIcon },
-        { name: "Cyber",    value: "cyber-security", icon: CyberIcon }, 
+        { name: "Cyber",    value: "cyber-security", icon: CyberIcon },
     ];
 </script>
 
@@ -27,10 +27,10 @@
         <button
             on:click={() => ($selectedCategory = category.value)}
             class="flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-medium transition-all whitespace-nowrap
-            
+
             {$selectedCategory === category.value
                 ? 'bg-white text-blue-600 shadow-sm font-medium text-xl'
-                : 'text-gray-500 hover:bg-white/50 hover:text-gray-900 text-xl'}"
+                : 'text-gray-500 hover:bg-white/50 hover:text-gray-900 text-xl cursor-pointer'}"
         >
             <svelte:component this={category.icon} class="w-4 h-4" />
             {tr.filters.categories[category.name]}

@@ -32,7 +32,7 @@
         <div class="relative">
             <button
                 on:click={() => showAdvancedFilters = !showAdvancedFilters}
-                class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors text-xl"
+                class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors text-xl cursor-pointer"
             >
                 <svg
                     class="size-4"
@@ -53,7 +53,7 @@
             {#if showAdvancedFilters}
                 <AdvancedFilter tr={tr} />
                 <button
-                    class="fixed inset-0 z-40 w-full h-full cursor-default focus:outline-none"
+                    class="fixed inset-0 z-40 w-full h-full focus:outline-none"
                     on:click={() => (showAdvancedFilters = false)}
                     on:keydown={(e) =>
                         e.key === "Escape" && (showAdvancedFilters = false)}
