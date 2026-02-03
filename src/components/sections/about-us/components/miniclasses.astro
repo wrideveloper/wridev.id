@@ -18,7 +18,7 @@ const localizeLink = `/${Astro.currentLocale}${link}`;
 
 <a href={localizeLink}>
     <div
-        class={`miniclass h-140 bg-white rounded-xl  overflow-hidden flex flex-col ring-${color} hover:ring-4 transition-all duration-300 group`}
+        class={`miniclass h-[30rem] md:h-140 bg-white rounded-xl  overflow-hidden flex flex-col ring-${color} hover:ring-4 transition-all duration-300 group`}
     >
         <div
             class="flex justify-center items-center h-2/3 bg-wri-gray-200 relative perspective-[1000px]"
@@ -50,9 +50,9 @@ const localizeLink = `/${Astro.currentLocale}${link}`;
         >
             <div class="flex items-center mb-2">
                 <Icon name={titleIcon} class={`w-6 h-6 mr-3 text-${color}`} />
-                <h1 class="text-2xl font-bold">{title}</h1>
+                <h1 class="text-xl md:text-2xl font-bold">{title}</h1>
             </div>
-            <p class="text-wri-gray-600 line-clamp-3 text-lg">{description}</p>
+            <p class="text-wri-gray-600 line-clamp-3 text-md md:text-lg">{description}</p>
         </div>
     </div>
 </a>

@@ -25,14 +25,14 @@
                 type="text"
                 placeholder={tr.filters.search}
                 bind:value={$searchQuery}
-                class="block w-full rounded-lg border border-gray-200 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 text-xl focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                class="block w-full rounded-lg border border-gray-200 bg-white py-2 md:py-2.5 pl-10 pr-4 text-sm md:text-xl text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
             />
         </div>
 
         <div class="relative">
             <button
                 on:click={() => showAdvancedFilters = !showAdvancedFilters}
-                class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors text-xl cursor-pointer"
+                class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 md:px-4 md:py-2.5 text-sm md:text-xl font-medium text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer"
             >
                 <svg
                     class="size-4"

@@ -36,13 +36,13 @@
     class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
   ></div>
 
-  <div class="absolute bottom-0 left-0 w-full p-4 mb-2 flex flex-col justify-end">
+  <div class="absolute bottom-0 left-0 w-full p-2 md:p-4 mb-2 flex flex-col justify-end">
     <div
-      class="flex flex-wrap gap-2.5 translate-y-4 transition-transform duration-300 group-hover:translate-y-0"
+      class="flex flex-wrap gap-1.5 md:gap-2.5 translate-y-4 transition-transform duration-300 group-hover:translate-y-0"
     >
       {#each displayTags as tag}
         <span
-          class="rounded-md bg-white px-2 py-1 text-sm font-bold text-gray-900 shadow-sm"
+          class="rounded-md bg-white px-1.5 py-0.5 md:px-2 md:py-1 text-[0.6rem] md:text-sm font-bold text-gray-900 shadow-sm"
         >
           {tag}
         </span>
@@ -52,7 +52,7 @@
     <div
       class="mt-2 h-0 opacity-0 overflow-hidden transition-all duration-300 group-hover:h-auto group-hover:opacity-100"
     >
-      <p class="text-lg font-medium leading-snug text-white">
+      <p class="text-xs md:text-lg font-medium leading-snug text-white">
         {shortDescription}
       </p>
     </div>

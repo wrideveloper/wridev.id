@@ -8,7 +8,7 @@ const tr = t(Astro.currentLocale as keyof typeof language);
 const currentLocale = Astro.currentLocale || "en";
 ---
 
-<section class="w-full max-w-9xl mx-auto px-4 md:px-30 py-12">
+<section class="w-full max-w-9xl mx-auto px-4 md:px-30 py-8 md:py-12">
   <Toolbar client:load tr={tr} />
 
   <Grid

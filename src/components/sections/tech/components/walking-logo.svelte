@@ -11,7 +11,7 @@
       <img
         src={logo}
         alt="logo"
-        class="h-14 mx-10 select-none"
+        class="h-10 md:h-14 mx-4 md:mx-10 select-none"
         draggable="false"
       />
     {/each}

@@ -128,8 +128,8 @@ export const en = {
     ideas: "Ideas",
     and: "and",
     possibilities: "Possibilities",
-    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Experiences&nbsp;</span> That&nbsp; <img src="/assets/testimonial/inline-pics-1.webp" alt="inline-pics-1" class="translate-y-0.5" /> &nbsp;Spark`,
-    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Ideas&nbsp;</span> <img src="/assets/testimonial/inline-pics-2.webp" alt="inline-pics-2" class="translate-y-0.5" /> &nbsp;and <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Possibilities</span>`,
+    headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Experiences&nbsp;</span> That&nbsp; <img src="/assets/testimonial/inline-pics-1.webp" alt="inline-pics-1" class="h-10 md:h-16 translate-y-0.5" /> &nbsp;Spark`,
+    headline_2: `<span class="wri-italic from-wri-yellow to-wri-yellow/45">Ideas&nbsp;</span> <img src="/assets/testimonial/inline-pics-2.webp" alt="inline-pics-2" class="h-10 md:h-16 translate-y-0.5" /> &nbsp;and <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Possibilities</span>`,
     description:
       "At WRI, we believe in the power of shared experiences to ignite innovation and unlock new horizons. Hear from our members as they share their journeys of growth, discovery, and collaboration.",
   },

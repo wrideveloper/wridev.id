@@ -80,7 +80,7 @@
   }
 </script>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 justify-items-center">
     {#each displayedTalents as talent (talent.name)}
         <a 
             href={getLocalizedPath(`/talents/${createSlug(talent.name)}`, locale)}
@@ -109,15 +109,15 @@
       on:click={handleButtonClick}
       class="
         group
-        flex items-center gap-2 rounded-lg px-6 py-3
-        text-white font-semibold shadow-sm transition-all duration-200
+        flex items-center gap-2 rounded-lg px-3 py-2 md:px-6 md:py-3
+        text-white font-semibold text-sm md:text-base shadow-sm transition-all duration-200
         bg-linear-to-b from-wri-blue to-wri-blue/56
         border border-wri-darkerblue
-        ring-4 ring-[#DFEDFF]
+        ring-2 md:ring-4 ring-[#DFEDFF]
         hover:to-wri-blue hover:shadow-md hover:scale-[1.02]
       "
     >
-      <SparkleIcon class="w-5 h-5 text-white rotate-12" />
+      <SparkleIcon class="w-4 h-4 md:w-5 md:h-5 text-white rotate-12" />
       {buttonText}
     </button>
   </div>

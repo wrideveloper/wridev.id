@@ -40,18 +40,18 @@ const translatedMiniclasses = [
 <Container className={`${className}`}>
     <div class="w-full flex flex-col md:flex-row md:justify-between md:items-end">
         <div>
-            <PillsText>{tr.about.pills}</PillsText>
-            <h1 class="text-4xl md:text-6xl font-semibold mt-5 w-full md:w-2/3">
+            <PillsText className="mx-auto md:mx-0">{tr.about.pills}</PillsText>
+            <h1 class="text-center md:text-left text-4xl md:text-6xl font-semibold mt-5 w-full md:w-2/3">
                 <span class="wri-italic from-wri-blue to-wri-blue/45"
                     >{tr.about.workshop}</span
                 > {tr.about.risetInformatika}
             </h1>
         </div>
-        <h5 class="text-left md:text-right text-lg w-full md:w-1/3 text-wri-gray-600 mt-4 md:mt-0">
+        <h5 class="text-center md:text-right text-md md:text-lg w-full md:w-1/3 text-wri-gray-600 mt-4 md:mt-0">
             <Fragment set:html={tr.about.description}/>
         </h5>
     </div>
-    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16">
         {
             translatedMiniclasses.map((miniclass) => (
                 <MiniClassCard

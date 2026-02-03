@@ -14,7 +14,7 @@ const currentLocale = Astro.currentLocale || "en";
     class="w-full bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center rounded-3xl px-4 md:px-30"
 >
     <div
-        class="flex flex-col justify-center items-center mt-20 md:mt-60 font-medium tracking-tight"
+        class="flex flex-col justify-center items-center mt-32 md:mt-60 font-medium tracking-tight"
     >
         <div
             class="relative flex justify-center items-end text-4xl md:text-7xl"
@@ -45,16 +45,16 @@ const currentLocale = Astro.currentLocale || "en";
         >
             {tr.hero.description}
         </div>
-        <a href={getLocalizedPath("/talents", currentLocale)}>
+        <a href={getLocalizedPath("/talents", currentLocale)} class="group">
             <div
-                class="flex justify-center items-center bg-wri-lighterblue mt-10 text-wri-white p-1.5 rounded-2xl"
+                class="flex justify-center items-center bg-transparent group-hover:bg-wri-lighterblue transition-colors duration-300 mt-6 md:mt-10 text-wri-white p-1.5 rounded-2xl"
             >
                 <div
                     class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-3 py-2 md:px-5 md:py-3 rounded-xl border border-wri-darkerblue text-base md:text-lg"
                 >
                     <Icon
                         name="ph:magnifying-glass-bold"
-                        class="w-6 h-6 text-wri-white mr-2"
+                        class="w-5 h-5 md:w-6 md:h-6 text-wri-white mr-2"
                     /> {tr.hero.searchTalent}
                 </div>
             </div>
