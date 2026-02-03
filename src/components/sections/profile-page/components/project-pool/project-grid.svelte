@@ -38,13 +38,12 @@
       if (slug) {
         isLoading = true;
         try {
-           // 1. Wait 2.5 seconds to give the backend scraper a moment to finish
            await new Promise(resolve => setTimeout(resolve, 2500));
            
            const WORKER_URL = "https://your-worker-url.workers.dev"; 
            
            const res = await fetch(`${WORKER_URL}/talent/${slug}`);
-           const data  = await res.json();
+           const data: any  = await res.json();
            
            if (data.projects && Array.isArray(data.projects) && data.projects.length > 0) {
              console.log("[ProjectGrid] Healed! Projects found:", data.projects.length);
