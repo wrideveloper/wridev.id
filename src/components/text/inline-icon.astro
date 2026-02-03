@@ -1,23 +1,30 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { name, color, rotate, className } = Astro.props;
-
 const colorClasses = {
     "wri-blue": "bg-wri-blue/12 text-wri-blue",
     "wri-yellow": "bg-wri-yellow/12 text-wri-yellow",
 };
 
+interface Props {
+    name: string;
+    color: keyof typeof colorClasses;
+    rotate: number;
+    className?: string;
+}
+
+const { name, color, rotate, className } = Astro.props;
+
 const activeColor = colorClasses[color] || "bg-wri-yellow text-wri-yellow";
 ---
 
 <div
-    class={`size-20 flex bg-wri-white justify-center items-center rounded-xl shadow-md shadow-neutral-500/15 mx-3 ${className}`}
+    class={`size-[1.25em] flex bg-wri-white justify-center items-center rounded-xl shadow-md shadow-neutral-500/15 mx-[0.2em] -mb-[0.1em] ${className}`}
     style={{ rotate: `${rotate}deg` }}
 >
     <div
-        class={`size-17 flex justify-center items-center rounded-lg ${activeColor}`}
+        class={`size-[85%] flex justify-center items-center rounded-lg ${activeColor}`}
     >
-        <Icon name={name} class="w-8 h-8" />
+        <Icon name={name} class="size-[47%]" />
     </div>
 </div>
