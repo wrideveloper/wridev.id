@@ -3,7 +3,6 @@ import { getCollection, getEntry } from "astro:content";
 import SocialIcon from "~/components/ui/social-icon.astro";
 import ArticleCard from "~/components/sections/articles/components/article-card.svelte";
 import Layout from "~/layouts/Layout.astro";
-import FooterSection from "~/components/sections/footer/footer-section.astro";
 import ScrollProgress from "~/components/sections/articles/components/scroll-progress.svelte";
 import ScrollToTop from "~/components/sections/articles/components/scroll-to-top.svelte";
 import { t, language } from "~/i18n";
@@ -143,5 +142,4 @@ export async function getStaticPaths() {
             </div>
         )}
     </div>
-    <FooterSection className="mt-0" />
 </Layout>

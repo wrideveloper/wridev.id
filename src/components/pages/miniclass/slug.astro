@@ -1,7 +1,6 @@
 ---
 import { getEntry } from "astro:content";
 import Layout from "~/layouts/Layout.astro";
-import FooterSection from "~/components/sections/footer/footer-section.astro";
 import TalentCard from "~/components/sections/talent-pool/components/talent-card.svelte";
 import { TALENT_DATA } from "~/data/talents";
 import { t, language } from "~/i18n";
@@ -107,5 +106,4 @@ const [startTime, endTime] = entry.data.time;
             </div>
         )}
     </div>
-    <FooterSection className="mt-0" />
 </Layout>
