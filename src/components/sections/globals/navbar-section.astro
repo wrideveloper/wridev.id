@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-
 import { navItems } from "~/data/navigation";
 import { t, language } from "~/i18n";
 import { getLocalizedPath } from "~/utils/i18n";
@@ -20,7 +19,8 @@ const currentPath = Astro.url.pathname;
 
 const isLinkActive = (href: string) => {
     const localizeRootPath = getLocalizedPath("/", currentLocale);
-    if (href === localizeRootPath && currentPath === localizeRootPath) return true;
+    if (href === localizeRootPath && currentPath === localizeRootPath)
+        return true;
     if (href !== localizeRootPath && currentPath.startsWith(href)) return true;
     return false;
 };
@@ -31,7 +31,7 @@ const isLinkActive = (href: string) => {
 >
     <a
         href={getLocalizedPath("/", currentLocale)}
-        class="flex items-center gap-2"
+        class="flex items-center gap-2 z-50"
     >
         <img
             src="/assets/wri-logo.webp"
@@ -40,7 +40,7 @@ const isLinkActive = (href: string) => {
         />
     </a>
 
-    <ul class="flex gap-2 md:gap-0">
+    <ul class="hidden md:flex gap-0">
         {
             translatedNavItems.map((item) => {
                 const localizedHref = getLocalizedPath(
@@ -52,7 +52,7 @@ const isLinkActive = (href: string) => {
                     <li>
                         <a
                             href={localizedHref}
-                            class={`font-medium transition-colors duration-200 px-2 text-xs md:px-6 md:text-base ${
+                            class={`font-medium transition-colors duration-200 px-6 text-base ${
                                 isActive
                                     ? "text-black border-b-3 border-wri-blue pb-4"
                                     : "text-gray-500 border-b-2 border-wri-blue/50 pb-4.25 hover:text-black hover:border-b-3 hover:border-wri-blue hover:pb-4"
@@ -66,9 +66,134 @@ const isLinkActive = (href: string) => {
         }
     </ul>
 
-    <LanguageSwitcher
-        client:load
-        currentLocale={currentLocale}
-        currentPath={currentPath}
-    />
+    <div class="flex items-center gap-4 z-50">
+        <LanguageSwitcher
+            client:load
+            currentLocale={currentLocale}
+            currentPath={currentPath}
+        />
+
+        <button
+            id="menu-toggle"
+            class="md:hidden text-gray-800 hover:text-wri-blue focus:outline-none relative w-8 h-8"
+            aria-label="Toggle Menu"
+        >
+            <div
+                id="icon-menu"
+                class="absolute inset-0 flex items-center justify-center"
+            >
+                <Icon name="ph:list" class="w-8 h-8" />
+            </div>
+            <div
+                id="icon-close"
+                class="absolute inset-0 flex items-center justify-center opacity-0 scale-0"
+            >
+                <Icon name="ph:x" class="w-8 h-8" />
+            </div>
+        </button>
+    </div>
+
+    <div
+        id="mobile-menu"
+        class="h-svh fixed inset-0 bg-wri-white/98 backdrop-blur-xl z-40 md:hidden flex flex-col justify-center items-center gap-8 invisible"
+    >
+        <ul class="flex flex-col items-center gap-6">
+            {
+                translatedNavItems.map((item) => {
+                    const localizedHref = getLocalizedPath(
+                        item.href,
+                        currentLocale,
+                    );
+                    const isActive = isLinkActive(localizedHref);
+                    return (
+                        <li class="mobile-nav-item opacity-0 translate-y-4">
+                            <a
+                                href={localizedHref}
+                                class={`text-2xl font-medium transition-colors duration-200 ${
+                                    isActive
+                                        ? "text-wri-blue font-bold"
+                                        : "text-gray-600 hover:text-wri-blue"
+                                }`}
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    );
+                })
+            }
+        </ul>
+    </div>
 </nav>
+
+<script>
+    import gsap from "gsap";
+
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const iconMenu = document.getElementById("icon-menu");
+    const iconClose = document.getElementById("icon-close");
+    const navItems = document.querySelectorAll(".mobile-nav-item");
+
+    if (menuToggle && mobileMenu && iconMenu && iconClose) {
+        gsap.set(mobileMenu, { yPercent: -100, autoAlpha: 1 });
+
+        const tl = gsap.timeline({ paused: true, reversed: true });
+
+        tl.to(mobileMenu, {
+            yPercent: 0,
+            duration: 0.6,
+            ease: "power3.inOut",
+        })
+
+            .to(
+                iconMenu,
+                {
+                    rotation: 180,
+                    scale: 0,
+                    opacity: 0,
+                    duration: 0.3,
+                },
+                "<",
+            )
+            .to(
+                iconClose,
+                {
+                    rotation: 0,
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.3,
+                },
+                "<0.1",
+            )
+
+            .to(
+                navItems,
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.4,
+                    stagger: 0.1,
+                    ease: "back.out(1.7)",
+                },
+                "-=0.3",
+            );
+
+        menuToggle.addEventListener("click", () => {
+            if (tl.reversed()) {
+                tl.play();
+                document.body.style.overflow = "hidden";
+            } else {
+                tl.reverse();
+                document.body.style.overflow = "auto";
+            }
+        });
+
+        const menuLinks = mobileMenu.querySelectorAll("a");
+        menuLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                tl.reverse();
+                document.body.style.overflow = "auto";
+            });
+        });
+    }
+</script>

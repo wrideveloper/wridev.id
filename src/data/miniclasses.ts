@@ -8,7 +8,7 @@ export const miniclasses: Miniclass[] = [
     description:
       "Dive into game design, coding, and storytelling to craft immersive gaming experiences from concept to launch.",
     image: "/assets/miniclasses/game.webp",
-    imageHeight: "h-30",
+    imageHeight: "h-18 md:h-30",
   },
   {
     titleIcon: "ph:android-logo-fill",
@@ -17,7 +17,7 @@ export const miniclasses: Miniclass[] = [
     description:
       "Master mobile app development, creating intuitive interfaces and seamless user experiences for today's dynamic devices.",
     image: "/assets/miniclasses/backend.webp",
-    imageHeight: "h-25",
+    imageHeight: "h-13 md:h-25",
   },
   {
     titleIcon: "ph:palette-fill",
@@ -26,7 +26,7 @@ export const miniclasses: Miniclass[] = [
     description:
       "Elevate user experiences with thoughtful design, creating interfaces that are both visually appealing and functionally intuitive for users.",
     image: "/assets/miniclasses/ui-ux.webp",
-    imageHeight: "h-30",
+    imageHeight: "h-18 md:h-30",
   },
   {
     titleIcon: "ph:browsers-fill",
@@ -35,6 +35,6 @@ export const miniclasses: Miniclass[] = [
     description:
       "Craft stunning web and mobile interfaces with responsive design and Flutter for seamless, cutting-edge user experiences on any device.",
     image: "/assets/miniclasses/frontend.webp",
-    imageHeight: "h-35",
+    imageHeight: "h-23 md:h-35",
   },
 ];

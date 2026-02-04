@@ -11,16 +11,16 @@ const tr = t(Astro.currentLocale as keyof typeof language);
   <div
     class="w-full h-auto md:h-1/12 flex justify-between items-center px-2 my-2 text-wri-gray-600"
   >
-    <div class="flex gap-2 md:gap-4 items-center">
-      <Icon name="ph:x-circle-fill" class="w-5 h-5 md:w-7 md:h-7" />
-      <Icon name="ph:caret-circle-up-down-fill" class="w-5 h-5 md:w-7 md:h-7" />
-      <h5 class="text-sm md:text-lg font-semibold">WRI 2025/2026</h5>
+    <div class="flex gap-1.5 md:gap-4 items-center">
+      <Icon name="ph:x-circle-fill" class="size-3.5 md:size-7" />
+      <Icon name="ph:caret-circle-up-down-fill" class="size-3.5 md:size-7" />
+      <h5 class="text-[10px] md:text-lg font-semibold">WRI 2025/2026</h5>
     </div>
-    <div class="hidden md:flex gap-10 items-center">
-      <Icon name="ph:marker-circle" class="w-7 h-7" />
-      <Icon name="ph:device-rotate" class="w-7 h-7" />
-      <Icon name="ph:export" class="w-7 h-7" />
-      <h5 class="text-lg border border-wri-gray-600/50 px-2 py-1 rounded-xl">
+    <div class="flex gap-1.5 md:gap-10 items-center">
+      <Icon name="ph:marker-circle" class="size-3.5 md:size-7" />
+      <Icon name="ph:device-rotate" class="size-3.5 md:size-7" />
+      <Icon name="ph:export" class="size-3.5 md:size-7" />
+      <h5 class="text-[10px] md:text-lg border border-wri-gray-600/50 px-2 py-1 rounded-xl">
         {tr.hero.openWithPreview}
       </h5>
     </div>

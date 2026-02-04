@@ -38,7 +38,7 @@ export const en = {
       desc: "100+ curious minds exploring everything from mobiel apps to game worlds united by creativity and tech passion.",
     },
     stat3: {
-      title: "Miniclass",
+      title: "Miniclasses",
       value: "4",
       desc: "Four epic miniclasses: Frontend, Backend, UI/UX, and Game Development. Choose your path, learn your craft and level up together!",
     },
@@ -57,7 +57,8 @@ export const en = {
     headline_2: `with<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Technology</span>`,
     activitiesTitle: "Our Activities",
     miniclassesTitle: "Miniclasses",
-    miniclassesDesc: "Choose your learning path according to your interests and talents.",
+    miniclassesDesc:
+      "Choose your learning path according to your interests and talents.",
     activities: {
       miniclass: {
         title: "Miniclass",
@@ -162,7 +163,8 @@ export const en = {
     and: "and",
     analysis: "Analysis",
     headline_1: `<span class="wri-italic from-wri-blue to-wri-blue/45">Articles&nbsp;</span> and <span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Analysis</span>`,
-    description: "Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.",
+    description:
+      "Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.",
     searchPlaceholder: "Search articles",
     search: "Search",
   },
@@ -196,7 +198,8 @@ export const en = {
   },
   notFound: {
     title: "Oops! Page Not Found",
-    description: "The page you're looking for doesn't exist or has been moved. Let's get you back on track!",
+    description:
+      "The page you're looking for doesn't exist or has been moved. Let's get you back on track!",
     backHome: "Return to Home",
   },
   articleDetails: {
