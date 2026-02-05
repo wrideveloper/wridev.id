@@ -5,6 +5,7 @@ import svelte from "@astrojs/svelte";
 import icon from "astro-icon";
 import uicons from "unplugin-icons/vite";
 import cloudflare from "@astrojs/cloudflare";
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   adapter: cloudflare({
@@ -21,9 +22,11 @@ export default defineConfig({
     }
   },
 
-  integrations: [svelte(), icon()],
+  integrations: [svelte(), icon(), sitemap()],
 
   vite: {
     plugins: [tailwindcss(), uicons({ compiler: "svelte" })],
   },
+
+  site: "https://wridev.id"
 });

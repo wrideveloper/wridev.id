@@ -27,12 +27,12 @@ let optimizedImageSrc = "";
 
 if (talent_data.profileImage.startsWith("http")) {
   optimizedImageSrc = talent_data.profileImage;
-} 
+}
 else {
   const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/talents/*.{jpeg,jpg,png,gif,webp}');
-  
+
   // Clean filename incase data has old paths like "/assets/..."
-  const filename = talent_data.profileImage.split('/').pop(); 
+  const filename = talent_data.profileImage.split('/').pop();
   const imagePath = `/src/assets/talents/${filename}`;
 
   if (images[imagePath]) {
@@ -69,9 +69,9 @@ const colorMap: Record<string, string> = {
 ---
 
 <div class="flex flex-col items-start gap-6 sticky top-32 z-40">
-  
-  <a 
-    href={getLocalizedPath("/", currentLocale)} 
+
+  <a
+    href={getLocalizedPath("/", currentLocale)}
     class="fixed top-8 left-8 z-50 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition shadow-lg"
     aria-label="Back to Home"
   >
@@ -79,12 +79,12 @@ const colorMap: Record<string, string> = {
   </a>
 
   <div class="relative w-56 h-56 rounded-full bg-black overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
-    <img 
-      src={optimizedImageSrc} 
-      alt={talent_data.name} 
+    <img
+      src={optimizedImageSrc}
+      alt={talent_data.name}
       width="224"
       height="224"
-      class="w-full h-full object-cover object-top translate-y-0.15" 
+      class="w-full h-full object-cover object-top translate-y-0.15"
     />
   </div>
 

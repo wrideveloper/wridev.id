@@ -11,7 +11,11 @@ const articles = await getCollection("articles");
 const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<Layout>
+<Layout
+  title="Articles | Workshop Riset Informatika"
+  description="Explore articles, tutorials, and research insights from Workshop Riset Informatika (WRI) on web development, technology, and digital innovation."
+  canonical={Astro.url.href}
+>
     <div class="pt-24 md:pt-32">
         <div class="my-8 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
             <InlineIcon

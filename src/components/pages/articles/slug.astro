@@ -12,36 +12,46 @@ const tr = t(Astro.currentLocale as keyof typeof language);
 const currentLocale = Astro.currentLocale || "en";
 
 const { slug } = Astro.params;
+if (!slug) throw new Error("Slug is required");
 
-if (slug === undefined) {
-	throw new Error("Slug is required");
-}
 const entry = await getEntry("articles", slug);
-if (entry === undefined) {
-	return Astro.redirect("/404");
-}
-
-const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString(currentLocale === "id" ? "id-ID" : "en-US", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-});
-// the formula to convert words to time to read is -> words / 200
-const timeToReadInMinutes = Math.ceil(entry.body.split(" ").length / 200);
+if (!entry) return Astro.redirect("/404");
 
 const { Content } = await entry.render();
+
+const humanisedPostedDate = new Date(entry.data.date).toLocaleDateString(
+  currentLocale === "id" ? "id-ID" : "en-US",
+  { year: "numeric", month: "long", day: "numeric" }
+);
+
+const timeToReadInMinutes = Math.ceil(entry.body.split(" ").length / 200);
+
 const articles = await getCollection("articles");
 const sortedArticlesMeta = articles
-	.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-	.filter((a) => a.slug !== slug);
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .filter((a) => a.slug !== slug);
+
+const seoTitle = entry.data.title;
+const seoDescription =
+  entry.data.description ||
+  entry.body.slice(0, 160).replace(/\n/g, " ");
+
+const seoImage = entry.data.image;
+const canonical = Astro.url.href;
 
 export async function getStaticPaths() {
-	const entries = await getCollection("articles");
-	return entries.map((entry) => ({ params: { slug: entry.slug } }));
+  const entries = await getCollection("articles");
+  return entries.map((entry) => ({ params: { slug: entry.slug } }));
 }
 ---
 
-<Layout>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  image={seoImage}
+  canonical={canonical}
+  type="article"
+>
     <ScrollProgress client:load />
     <ScrollToTop client:load />
     <div class="w-full max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-20">
