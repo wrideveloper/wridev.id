@@ -106,7 +106,7 @@ export const en = {
     experience: "Experience",
     endless: "Endless",
     possibilities: "Possibilities",
-    headline_1: `<span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Skilled</span> Minds</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="/assets/talents/inline-pics.webp" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap">Real <span class="bg-linear-to-b from-wri-yellow to-wri-yellow/45 bg-clip-text text-transparent pl-2 wri-italic">Experience</span></span>`,
+    headline_1: `<span class="whitespace-nowrap"><span class="bg-linear-to-b from-wri-blue to-wri-blue/45 bg-clip-text text-transparent pr-2 wri-italic">Skilled</span> Minds</span> <div class="shrink-0 flex items-center justify-center px-2"><img src="{{inline_image}}" alt="Our Story" class="h-16 w-auto object-contain md:h-20" /></div> <span class="whitespace-nowrap">Real <span class="bg-linear-to-b from-wri-yellow to-wri-yellow/45 bg-clip-text text-transparent pl-2 wri-italic">Experience</span></span>`,
     headline_2: `Endless <span class="from-wri-blue to-wri-blue/45 wri-italic">Possibilities</span>`,
     description:
       "We bring together passionate individuals from diverse divisions, uniting skills and creativity to build a powerful force in the IT world.",

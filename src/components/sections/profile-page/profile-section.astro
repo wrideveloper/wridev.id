@@ -6,6 +6,8 @@ import ProjectPool from "./components/project-pool.astro";
 
 const { talent_data } = Astro.props;
 
+const hasMetrics = talent_data?.metrics && (talent_data.metrics.github || talent_data.metrics.figma);
+
 const hasProjects = talent_data?.projects && Array.isArray(talent_data.projects) && talent_data.projects.length > 0;
 ---
 
@@ -16,12 +18,15 @@ const hasProjects = talent_data?.projects && Array.isArray(talent_data.projects)
       <ProfileDesc talent_data={talent_data} />
     </div>
 
-    <div class="lg:col-span-7 xl:col-span-8 flex flex-col pt-12 lg:pt-0">
-       <ProfileStat talent_data={talent_data} />
+    <div class="lg:col-span-7 xl:col-span-8 flex flex-col pt-12 lg:pt-0 gap-12">
+        {/* Pass the FULL talent_data object, not just .metrics */}
+        {hasMetrics && (
+           <ProfileStat talent_data={talent_data} />
+        )}
 
-       {hasProjects && (
-         <ProjectPool projects={talent_data.projects} />
-       )}
+        {hasProjects && (
+           <ProjectPool projects={talent_data.projects} />
+        )}
     </div>
 
   </div>
