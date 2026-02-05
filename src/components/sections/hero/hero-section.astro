@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import InlineIcon from "~/components/text/inline-icon.astro";
 import HeroCard from "~/components/sections/hero/components/hero-card.astro";
 import Interpolate from "~/components/ui/interpolate.astro";
+import TalentModal from "~/components/sections/hero/components/talent-modal.astro";
 import { t, language } from "~/i18n";
 import { getLocalizedPath } from "~/utils/i18n";
 
@@ -45,7 +46,8 @@ const currentLocale = Astro.currentLocale || "en";
         >
             {tr.hero.description}
         </div>
-        <a href={getLocalizedPath("/talents", currentLocale)} class="group">
+
+        <button id="open-talent-modal" class="group cursor-pointer">
             <div
                 class="flex justify-center items-center bg-transparent group-hover:bg-wri-lighterblue transition-colors duration-300 mt-6 md:mt-10 text-wri-white p-1.5 rounded-2xl"
             >
@@ -55,12 +57,15 @@ const currentLocale = Astro.currentLocale || "en";
                     <Icon
                         name="ph:magnifying-glass-bold"
                         class="size-4.5 md:size-6 text-wri-white mr-2"
-                    /> {tr.hero.searchTalent}
+                    />
+                    {tr.hero.searchTalent}
                 </div>
             </div>
-        </a>
-    </div>
-    <div class="w-full">
-        <HeroCard />
+        </button>
+
+        <div class="w-full">
+            <HeroCard />
+        </div>
+        <TalentModal />
     </div>
 </div>

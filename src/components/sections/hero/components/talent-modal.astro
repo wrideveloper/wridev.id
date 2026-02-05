@@ -1,0 +1,429 @@
+---
+import { Icon } from "astro-icon/components";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+---
+
+<div
+    id="talent-modal-overlay"
+    class="fixed inset-0 z-[99999] flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 invisible"
+    aria-hidden="true"
+>
+    <div
+        class="bg-wri-white w-full max-w-125 mx-4 rounded-3xl shadow-2xl relative overflow-hidden opacity-0"
+        id="talent-modal-content"
+    >
+        <button
+            id="close-modal-btn"
+            class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors z-30 cursor-pointer bg-gray-100 rounded-full p-2"
+        >
+            <Icon name="ph:x-bold" class="size-5" />
+        </button>
+
+        <div
+            id="modal-state-form"
+            class="p-8 md:p-10 text-left relative h-[85vh] md:h-auto overflow-y-auto"
+        >
+            <div class="mb-10 pr-10">
+                <h3
+                    class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight"
+                >
+                    {tr.talentmodal.title_1}
+                    <span class="wri-italic from-wri-yellow to-wri-yellow/45">
+                        {tr.talentmodal.title_accent_1}
+                    </span>
+                    <span class="wri-italic from-wri-blue to-wri-blue/45">
+                        {tr.talentmodal.title_accent_2}
+                    </span>
+                    {tr.talentmodal.for}<br />
+                    {tr.talentmodal.title_2}
+                </h3>
+            </div>
+
+            <form id="talent-request-form" class="space-y-6">
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_1}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_company}
+                    </label>
+                    <div class="relative">
+                        <span
+                            class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none"
+                        >
+                            <Icon name="ph:user" class="text-gray-400 size-5" />
+                        </span>
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder={tr.talentmodal.ph_company}
+                            class="w-full pl-11 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400"
+                        />
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_required}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_2}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_email}
+                    </label>
+                    <div class="relative">
+                        <span
+                            class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none"
+                        >
+                            <Icon
+                                name="ph:envelope-simple"
+                                class="text-gray-400 size-5"
+                            />
+                        </span>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder={tr.talentmodal.ph_email}
+                            class="w-full pl-11 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400"
+                        />
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_required}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_3}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_prof}
+                    </label>
+                    <div class="relative">
+                        <select
+                            name="proficiency"
+                            class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700"
+                        >
+                            <option value="" disabled selected
+                                >{tr.talentmodal.ph_prof}</option
+                            >
+                            <option value="uiux"
+                                >{tr.talentmodal.opt_uiux}</option
+                            >
+                            <option value="frontend"
+                                >{tr.talentmodal.opt_fe}</option
+                            >
+                            <option value="backend"
+                                >{tr.talentmodal.opt_be}</option
+                            >
+                            <option value="mobile"
+                                >{tr.talentmodal.opt_mob}</option
+                            >
+                        </select>
+                        <span
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                        >
+                            <Icon
+                                name="ph:caret-down"
+                                class="text-gray-400 size-4"
+                            />
+                        </span>
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_prof}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_4}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_desc}
+                    </label>
+                    <textarea
+                        name="description"
+                        rows="4"
+                        placeholder={tr.talentmodal.ph_desc}
+                        class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400 resize-none"
+                    ></textarea>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.error_desc}
+                    </p>
+                </div>
+
+                <div class="pt-4 flex justify-end">
+                    <button
+                        type="submit"
+                        class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-blue-500/30 flex items-center gap-2 transition-transform active:scale-95"
+                    >
+                        <Icon name="ph:sparkle-fill" class="size-5" />
+                        {tr.talentmodal.btn_send}
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div
+            id="modal-state-loading"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div class="relative mb-6">
+                <div
+                    class="absolute inset-0 bg-blue-100 rounded-full animate-ping opacity-75"
+                >
+                </div>
+                <div class="relative bg-blue-50 p-6 rounded-full">
+                    <Icon
+                        name="ph:paper-plane-tilt-fill"
+                        class="size-12 text-blue-600"
+                        id="loading-icon"
+                    />
+                </div>
+            </div>
+            <h4 class="text-xl font-bold text-gray-900 mb-2">
+                {tr.talentmodal.processing_title}
+            </h4>
+            <p class="text-gray-500 text-sm max-w-62.5">
+                {tr.talentmodal.processing_desc}
+            </p>
+        </div>
+
+        <div
+            id="modal-state-success"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div class="mb-6 scale-0" id="success-icon-container">
+                <Icon
+                    name="ph:envelope-open-fill"
+                    class="size-16 text-yellow-400 mx-auto drop-shadow-lg"
+                />
+            </div>
+            <h4
+                class="text-2xl font-bold text-gray-900 mb-2 opacity-0 translate-y-4"
+                id="success-title"
+            >
+                {tr.talentmodal.success_title}
+            </h4>
+            <p
+                class="text-gray-500 text-sm max-w-75 mb-6 opacity-0 translate-y-4"
+                id="success-desc"
+            >
+                {tr.talentmodal.success_desc}
+            </p>
+            <button
+                id="close-success-btn"
+                class="cursor-pointer text-blue-600 font-semibold hover:underline opacity-0 translate-y-4"
+            >
+                {tr.talentmodal.btn_close}
+            </button>
+        </div>
+    </div>
+</div>
+
+<script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+></script>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modalOverlay = document.getElementById("talent-modal-overlay");
+        const modalContent = document.getElementById("talent-modal-content");
+        const openBtn = document.getElementById("open-talent-modal");
+        const closeBtns = [
+            document.getElementById("close-modal-btn"),
+            document.getElementById("close-success-btn"),
+        ];
+        const form = document.getElementById("talent-request-form");
+
+        const stateForm = document.getElementById("modal-state-form");
+        const stateLoading = document.getElementById("modal-state-loading");
+        const stateSuccess = document.getElementById("modal-state-success");
+
+        gsap.set(modalOverlay, { autoAlpha: 0 });
+        gsap.set(modalContent, { scale: 0.8, autoAlpha: 0 });
+
+        const resetForm = () => {
+            if (form) form.reset();
+
+            stateForm.classList.remove("hidden");
+            stateLoading.classList.add("hidden");
+            stateSuccess.classList.add("hidden");
+
+            gsap.set([stateForm, stateLoading, stateSuccess], {
+                clearProps: "all",
+            });
+            gsap.set(stateForm, { autoAlpha: 1 });
+
+            gsap.set(modalContent, { height: "auto" });
+
+            document
+                .querySelectorAll(".error-msg")
+                .forEach((el) => el.classList.add("hidden"));
+            document
+                .querySelectorAll("input, select, textarea")
+                .forEach((el) =>
+                    el.classList.remove("border-red-500", "bg-red-50"),
+                );
+
+            gsap.set(
+                [
+                    "#success-icon-container",
+                    "#success-title",
+                    "#success-desc",
+                    "#close-success-btn",
+                ],
+                {
+                    clearProps: "all",
+                    autoAlpha: 0,
+                    y: 10,
+                },
+            );
+        };
+
+        const switchState = (hideEl, showEl, onComplete) => {
+            const currentHeight = modalContent.offsetHeight;
+            gsap.set(modalContent, { height: currentHeight });
+
+            const tl = gsap.timeline({ onComplete });
+
+            tl.to(hideEl, {
+                autoAlpha: 0,
+                duration: 0.2,
+                onComplete: () => hideEl.classList.add("hidden"),
+            });
+
+            tl.add(() => showEl.classList.remove("hidden"));
+
+            tl.fromTo(
+                showEl,
+                { autoAlpha: 0 },
+                { autoAlpha: 1, duration: 0.3 },
+            );
+        };
+
+        const animateSuccess = () => {
+            const tl = gsap.timeline();
+            tl.to("#success-icon-container", {
+                scale: 1,
+                autoAlpha: 1,
+                duration: 0.5,
+                ease: "elastic.out(1, 0.6)",
+            })
+                .to(
+                    "#success-title",
+                    { autoAlpha: 1, y: 0, duration: 0.4 },
+                    "-=0.3",
+                )
+                .to(
+                    "#success-desc",
+                    { autoAlpha: 1, y: 0, duration: 0.4 },
+                    "-=0.3",
+                )
+                .to(
+                    "#close-success-btn",
+                    { autoAlpha: 1, y: 0, duration: 0.4 },
+                    "-=0.2",
+                );
+        };
+
+        const openModal = () => {
+            resetForm();
+            const tl = gsap.timeline();
+            tl.to(modalOverlay, { autoAlpha: 1, duration: 0.3 }).to(
+                modalContent,
+                {
+                    scale: 0.9,
+                    autoAlpha: 1,
+                    duration: 0.4,
+                    ease: "back.out(1.2)",
+                },
+                "-=0.2",
+            );
+        };
+
+        const closeModal = () => {
+            const tl = gsap.timeline();
+            tl.to(modalContent, {
+                scale: 0.9,
+                autoAlpha: 0,
+                duration: 0.2,
+            }).to(modalOverlay, { autoAlpha: 0, duration: 0.2 }, "-=0.1");
+        };
+
+        if (openBtn)
+            openBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal();
+            });
+
+        closeBtns.forEach((btn) => {
+            if (btn) btn.addEventListener("click", closeModal);
+        });
+
+        modalOverlay.addEventListener("click", (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        if (form) {
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let isValid = true;
+
+                form.querySelectorAll("input, select, textarea").forEach(
+                    (input) => {
+                        const group = input.closest(".group-input");
+                        const errorMsg = group?.querySelector(".error-msg");
+
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            input.classList.add("border-red-500", "bg-red-50");
+                            if (errorMsg) errorMsg.classList.remove("hidden");
+                            gsap.fromTo(
+                                input,
+                                { x: -5 },
+                                { x: 5, duration: 0.1, repeat: 3, yoyo: true },
+                            );
+                        } else {
+                            input.classList.remove(
+                                "border-red-500",
+                                "bg-red-50",
+                            );
+                            if (errorMsg) errorMsg.classList.add("hidden");
+                        }
+                    },
+                );
+
+                if (isValid) {
+                    switchState(stateForm, stateLoading);
+
+                    const loadingAnim = gsap.to("#loading-icon", {
+                        y: -10,
+                        duration: 0.6,
+                        yoyo: true,
+                        repeat: -1,
+                        ease: "power1.inOut",
+                    });
+
+                    setTimeout(() => {
+                        loadingAnim.kill();
+                        gsap.set("#loading-icon", { y: 0 });
+                        switchState(stateLoading, stateSuccess, animateSuccess);
+                    }, 2000);
+                }
+            });
+        }
+    });
+</script>
