@@ -15,7 +15,7 @@ export const en = {
     headline_2: `Unlock<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Potential</span> {{icon}} Shine`,
     description:
       "Learn, share, and connect with fellow tech enthusiasts. Get the latest tech insights and unlock exciting collaboration opportunities all in one place",
-    searchTalent: "Search Talent",
+    findTalent: "Find Your Talent",
     openWithPreview: "Open with Preview",
   },
   talentmodal: {
