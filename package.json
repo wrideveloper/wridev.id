@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.2.4",
     "@astrojs/tailwind": "^6.0.2",
     "@iconify-json/ph": "^1.2.2",
