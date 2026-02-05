@@ -2,17 +2,19 @@
 const { className } = Astro.props;
 import { footerSections } from "~/data/footer";
 import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
 
+const currentLocale = Astro.currentLocale || "en";
 const tr = t(Astro.currentLocale as keyof typeof language);
 
 const translatedFooterSections = [
     {
         title: tr.footer.miniclass,
         links: [
-            { name: tr.footer.frontend, href: "#" },
-            { name: tr.footer.backend, href: "#" },
-            { name: tr.footer.uiux, href: "#" },
-            { name: tr.footer.game, href: "#" },
+            { name: tr.footer.frontend, href: getLocalizedPath("/miniclass/frontend", currentLocale) },
+            { name: tr.footer.backend, href: getLocalizedPath("/miniclass/backend", currentLocale) },
+            { name: tr.footer.uiux, href: getLocalizedPath("/miniclass/game", currentLocale) },
+            { name: tr.footer.game, href: getLocalizedPath("/miniclass/ui-ux", currentLocale) },
         ],
     },
     {
