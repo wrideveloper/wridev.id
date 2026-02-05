@@ -29,9 +29,23 @@ const mentors = entry.data.mentors.map((mentorName) => {
 }).filter((t): t is typeof TALENT_DATA.talents[0] => t !== undefined);
 
 const [startTime, endTime] = entry.data.time;
+
+const seoTitle = `${entry.data.title} | Workshop Riset Informatika`;
+
+const seoDescription =
+  entry.data.description ||
+  entry.body.slice(0, 160).replace(/\n/g, " ");
+
+const seoImage = entry.data.image;
+const canonical = Astro.url.href;
 ---
 
-<Layout>
+<Layout
+  title={seoTitle}
+  description={seoDescription}
+  image={seoImage}
+  canonical={canonical}
+>
     <div class="w-full max-w-4xl mx-auto px-4 pt-24 md:pt-32 pb-20">
         <!-- Breadcrumbs -->
         <div class="flex items-center gap-2 text-wri-gray-500 text-sm mb-8">

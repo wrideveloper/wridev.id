@@ -8,7 +8,12 @@ const tr = t(Astro.currentLocale as keyof typeof language);
 const currentLocale = Astro.currentLocale || "en";
 ---
 
-<Layout>
+<Layout
+  title={tr.notFound.title}
+  description={tr.notFound.description}
+  canonical={Astro.url.href}
+  noindex={true}
+>
     <div class="w-screen h-screen bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center px-4 sm:px-8 md:px-30">
         <div class="flex flex-col justify-center items-center font-medium">
             <div class="text-2xl sm:text-3xl md:text-4xl text-wri-gray-800 mt-4 sm:mt-6">
