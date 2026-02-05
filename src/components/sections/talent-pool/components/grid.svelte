@@ -80,19 +80,19 @@
   }
 </script>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
     {#each displayedTalents as talent, i (talent.name)}
-        <a 
+        <a
             href={getLocalizedPath(`/talents/${createSlug(talent.name)}`, locale)}
             class="contents group cursor-pointer"
             data-namecursor={talent.name}
         >
             <TalentCard
               name={talent.name}
-              image={talent.profileImage}      
-              description={talent.about}        
+              image={talent.profileImage}
+              description={talent.about}
               tags={talent.proficiencies}
-              loading={i < 3 ? "eager" : "lazy"} 
+              loading={i < 3 ? "eager" : "lazy"}
             />
         </a>
     {/each}
