@@ -1,7 +1,7 @@
 ---
 title: "Frontend Development"
 description: "Beginner-friendly Frontend Development miniclass focusing on Web and Mobile UI using HTML, CSS, JavaScript, and Flutter with industry-standard tools."
-image: "https://placehold.co/1200x630/png"
+image: "https://m.media-amazon.com/images/I/71OI7ZgtiSL.jpg"
 icon: "../../../assets/astro.svg"
 day: "senin"
 time: ["19:00", "21:00"]

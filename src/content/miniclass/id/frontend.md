@@ -1,7 +1,7 @@
 ---
 title: "Frontend Development"
 description: "Miniclass Frontend Development untuk pemula yang mempelajari pengembangan antarmuka Web dan Mobile menggunakan HTML, CSS, JavaScript, dan Flutter sesuai standar industri."
-image: "https://placehold.co/1200x630/png"
+image: "https://m.media-amazon.com/images/I/71OI7ZgtiSL.jpg"
 icon: "../../../assets/astro.svg"
 day: "senin"
 time: ["19:00", "21:00"]

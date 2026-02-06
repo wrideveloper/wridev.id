@@ -1,7 +1,7 @@
 ---
 title: "Memahami SHA256 Dasar-dasar Hashing untuk Keamanan Data Digital"
 description: Artikel ini mengungkap SHA256 dengan bahasa sederhana. Anda akan memahami cara kerja, manfaat, dan tantangan algoritma hashing yang menjadi kunci keamanan data digital dan teknologi blockchain.
-image: "/assets/articles/241455a9-be38-413a-a752-b09f273de884.jpeg"
+image: "/assets/articles/241455a9-be38-413a-a752-b09f273de884.webp"
 author: Petrus Tyang Agung Rosario
 github: https://github.com/petrusthelastking
 linkedin: https://www.linkedin.com/in/petrus-rosario-69b149260/

@@ -1,7 +1,7 @@
 ---
 title: "Backend Development"
 description: "Beginner-friendly backend development miniclass focusing on PHP, MySQL, CRUD operations, HTTP methods, and real-world database relationships."
-image: "https://placehold.co/1200x630/png"
+image: "https://www.plough.com/-/media/images/plough/article/2023/autumn/kriner/krinerembed.jpg?la=en"
 icon: "../../../assets/astro.svg"
 day: "rabu"
 time: ["19:00", "21:00"]
