@@ -49,6 +49,8 @@ const url = canonical ?? Astro.url.href;
 
     {noindex && <meta name="robots" content="noindex, follow" />}
 
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
     {type === "article" && (
       <script type="application/ld+json">
         {JSON.stringify({
