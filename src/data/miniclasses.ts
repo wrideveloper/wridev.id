@@ -29,8 +29,8 @@ export const miniclasses: Miniclass[] = [
     title: "UI/UX Design",
     description:
       "Elevate user experiences with thoughtful design, creating interfaces that are both visually appealing and functionally intuitive for users.",
-    show1: "/assets/dummy/dummy.webp",
-    show2: "/assets/dummy/dummy.webp",
+    show1: "/assets/miniclasses/UI-UX1.webp",
+    show2: "/assets/miniclasses/UI-UX2.webp",
     image: "/assets/miniclasses/ui-ux.webp",
     imageHeight: "h-18 md:h-30",
   },
@@ -41,7 +41,7 @@ export const miniclasses: Miniclass[] = [
     description:
       "Craft stunning web and mobile interfaces with responsive design and Flutter for seamless, cutting-edge user experiences on any device.",
     show1: "/assets/miniclasses/FE1.webp",
-    show2: "/assets/dummy/dummy.webp",
+    show2: "/assets/miniclasses/FE2.webp",
     image: "/assets/miniclasses/frontend.webp",
     imageHeight: "h-23 md:h-35",
   },
