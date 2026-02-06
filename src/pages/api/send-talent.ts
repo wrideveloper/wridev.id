@@ -1,4 +1,10 @@
 import type { APIRoute } from "astro";
+import {
+  PUBLIC_TURNSTILE_SITE_KEY,
+  TURNSTILE_SECRET_KEY,
+  CTA_WORKER_URL,
+  CTA_PUBLIC_API_TOKEN,
+} from "astro:env/server";
 
 export const prerender = false;
 
@@ -59,11 +65,8 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
   }
 
   // --- CONFIG CHECK ---
-  const WORKER_URL = import.meta.env.CTA_WORKER_URL;
-  const API_TOKEN = import.meta.env.CTA_PUBLIC_API_TOKEN;
-  const TURNSTILE_SECRET = import.meta.env.TURNSTILE_SECRET_KEY;
 
-  if (!WORKER_URL || !API_TOKEN || !TURNSTILE_SECRET) {
+  if (!CTA_WORKER_URL || !CTA_PUBLIC_API_TOKEN || !TURNSTILE_SECRET_KEY) {
     console.error("Missing Server Config");
     return new Response(JSON.stringify({ error: "Server Config Error" }), {
       status: 500,
@@ -87,7 +90,11 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
     });
   }
 
-  const isHuman = await verifyTurnstile(token, TURNSTILE_SECRET, clientAddress);
+  const isHuman = await verifyTurnstile(
+    token,
+    TURNSTILE_SECRET_KEY,
+    clientAddress,
+  );
   if (!isHuman) {
     return new Response(
       JSON.stringify({ error: "Security check failed (Bot detected)" }),
@@ -106,14 +113,14 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
 
     console.log(
       "Attempting to send to Worker:",
-      `${WORKER_URL}/talent-request`,
+      `${CTA_WORKER_URL}/talent-request`,
     );
 
-    const workerResponse = await fetch(`${WORKER_URL}/talent-request`, {
+    const workerResponse = await fetch(`${CTA_WORKER_URL}/talent-request`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${API_TOKEN}`,
+        Authorization: `Bearer ${CTA_PUBLIC_API_TOKEN}`,
       },
       body: JSON.stringify(workerPayload),
     });
