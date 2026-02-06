@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { t, language } from "~/i18n";
-import { PUBLIC_TURNSTILE_SITE_KEY } from "astro:env/server";
+import { PUBLIC_TURNSTILE_SITE_KEY } from "astro:env/client";
 
 const tr = t(Astro.currentLocale as keyof typeof language);
 ---
