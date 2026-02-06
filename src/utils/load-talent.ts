@@ -8,7 +8,7 @@ export async function loadTalentData(
 
   const { env } = Astro.locals.runtime;
 
-  const url = `${env.WORKER_URL}/talent/${slug}?t=${Date.now()}`;
+  const url = `${env.METRIC_WORKER_URL}/talent/${slug}?t=${Date.now()}`;
 
   try {
     const response = await fetch(url, {
