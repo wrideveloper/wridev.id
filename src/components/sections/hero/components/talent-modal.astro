@@ -2,6 +2,8 @@
 import { Icon } from "astro-icon/components";
 import { t, language } from "~/i18n";
 
+
+
 const tr = t(Astro.currentLocale as keyof typeof language);
 
 const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
@@ -139,7 +141,7 @@ if (!TURNSTILE_SITE_KEY) {
           </p>
         </div>
 
-        <div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY || ""} data-size="flexible"></div>
+        <div class="cf-turnstile" data-sitekey={TURNSTILE_SITE_KEY } data-size="flexible"></div>
 
         <div class="pt-4 flex justify-end">
           <button
@@ -208,9 +210,11 @@ if (!TURNSTILE_SITE_KEY) {
   </div>
 </div>
 
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline />
+
 <script>
-  import gsap from "gsap";
   import { sendTalentRequest } from "~/utils/cta-mail.ts";
+  import gsap from "gsap";
 
   const modalOverlay = document.getElementById("talent-modal-overlay");
   const modalContent = document.getElementById("talent-modal-content");
