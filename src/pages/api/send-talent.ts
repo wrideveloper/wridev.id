@@ -59,9 +59,9 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
   }
 
   // --- CONFIG CHECK ---
-  const WORKER_URL = import.meta.env.CTA_WORKER_URL;
-  const API_TOKEN = import.meta.env.CTA_PUBLIC_API_TOKEN;
-  const TURNSTILE_SECRET = import.meta.env.TURNSTILE_SECRET_KEY;
+  const WORKER_URL = process.env.CTA_WORKER_URL;
+  const API_TOKEN = process.env.CTA_PUBLIC_API_TOKEN;
+  const TURNSTILE_SECRET = process.env.TURNSTILE_SECRET_KEY;
 
   if (!WORKER_URL || !API_TOKEN || !TURNSTILE_SECRET) {
     console.error("Missing Server Config");
