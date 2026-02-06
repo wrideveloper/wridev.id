@@ -27,7 +27,7 @@ const isLinkActive = (href: string) => {
 ---
 
 <nav
-    class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-4 px-4 md:py-10 md:px-30 flex justify-between items-center z-99"
+    class="fixed w-full bg-wri-white/65 backdrop-blur-xl py-4 px-4 md:py-10 md:px-30 flex justify-between items-center z-49"
 >
     <a
         href={getLocalizedPath("/", currentLocale)}
@@ -182,9 +182,11 @@ const isLinkActive = (href: string) => {
             if (tl.reversed()) {
                 tl.play();
                 document.body.style.overflow = "hidden";
+                document.body.style.height = "100svh";
             } else {
                 tl.reverse();
                 document.body.style.overflow = "auto";
+                document.body.style.height = "unset";
             }
         });
 
