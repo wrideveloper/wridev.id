@@ -49,6 +49,7 @@ const url = canonical ?? Astro.url.href;
 
     {noindex && <meta name="robots" content="noindex, follow" />}
 
+
     {type === "article" && (
       <script type="application/ld+json">
         {JSON.stringify({
