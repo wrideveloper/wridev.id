@@ -1,11 +1,11 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import svelte from "@astrojs/svelte";
 import icon from "astro-icon";
 import uicons from "unplugin-icons/vite";
 import cloudflare from "@astrojs/cloudflare";
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   adapter: cloudflare({
@@ -14,12 +14,42 @@ export default defineConfig({
     },
   }),
 
+  env: {
+    schema: {
+      PUBLIC_TURNSTILE_SITE_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
+      TURNSTILE_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
+      METRIC_WORKER_URL: envField.string({
+        context: "server",
+        access: "secret",
+        optional: false,
+      }),
+      CTA_WORKER_URL: envField.string({
+        context: "server",
+        access: "public",
+        optional: false,
+      }),
+      CTA_PUBLIC_API_TOKEN: envField.string({
+        context: "server",
+        access: "public",
+        optional: false,
+      }),
+    },
+  },
+
   i18n: {
     defaultLocale: "en",
     locales: ["en", "id"],
     routing: {
       prefixDefaultLocale: true,
-    }
+    },
   },
 
   integrations: [svelte(), icon(), sitemap()],
@@ -28,5 +58,5 @@ export default defineConfig({
     plugins: [tailwindcss(), uicons({ compiler: "svelte" })],
   },
 
-  site: "https://wridev.id"
+  site: "https://wridev.id",
 });
