@@ -1,7 +1,7 @@
 ---
 title: "Game Development"
 description: "Beginner-friendly Game Development miniclass using Unity, Blender, and Aseprite, where participants choose roles as programmers or artists and collaborate in a final game jam project."
-image: "https://placehold.co/1200x630/png"
+image: "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3Vwd2s2MTc3Nzk0MS13aWtpbWVkaWEtaW1hZ2Uta293YnN1MHYuanBn.jpg"
 icon: "../../../assets/astro.svg"
 day: "kamis"
 time: ["19:00", "21:00"]

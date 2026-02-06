@@ -1,7 +1,7 @@
 ---
 title: "UI / UX Design"
 description: "Miniclass UI/UX Design untuk pemula yang membahas desain produk digital menggunakan Figma, mulai dari UI fundamental, UX process, hingga prototyping dan testing sesuai standar industri."
-image: "https://placehold.co/1200x630/png"
+image: "https://images.unsplash.com/photo-1589538923929-76e12402048b?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0JTIwbmF0dXJlfGVufDB8fDB8fHww"
 icon: "../../../assets/astro.svg"
 day: "selasa"
 time: ["19:00", "21:00"]

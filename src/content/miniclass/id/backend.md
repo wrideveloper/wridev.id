@@ -1,7 +1,7 @@
 ---
 title: "Backend Development"
 description: "Miniclass Backend Development untuk pemula yang mempelajari dasar logika sistem menggunakan PHP dan MySQL, mulai dari database, CRUD, hingga relasi data sesuai standar industri."
-image: "https://placehold.co/1200x630/png"
+image: "https://www.plough.com/-/media/images/plough/article/2023/autumn/kriner/krinerembed.jpg?la=en"
 icon: "../../../assets/astro.svg"
 day: "rabu"
 time: ["19:00", "21:00"]
