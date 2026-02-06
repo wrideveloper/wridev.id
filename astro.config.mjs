@@ -18,7 +18,7 @@ export default defineConfig({
     schema: {
       PUBLIC_TURNSTILE_SITE_KEY: envField.string({
         context: "client",
-        access: "secret",
+        access: "public",
         optional: false,
       }),
       TURNSTILE_SECRET_KEY: envField.string({
