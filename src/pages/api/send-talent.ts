@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import type { AstroGlobal } from "astro";
 
 export const prerender = false;
 
