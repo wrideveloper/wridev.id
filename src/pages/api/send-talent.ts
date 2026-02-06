@@ -1,6 +1,5 @@
 import type { APIRoute } from "astro";
 import {
-  PUBLIC_TURNSTILE_SITE_KEY,
   TURNSTILE_SECRET_KEY,
   CTA_WORKER_URL,
   CTA_PUBLIC_API_TOKEN,
@@ -56,6 +55,11 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
   // --- ORIGIN CHECK ---
   const origin = request.headers.get("Origin");
   const allowedOrigin = new URL(url).origin;
+
+
+  console.log("TURNSTILE_SECRET_KEY:", TURNSTILE_SECRET_KEY)
+  console.log("CTA_WORKER_URL:", CTA_WORKER_URL)
+  console.log("CTA_PUBLIC_API_TOKEN:", CTA_PUBLIC_API_TOKEN)
 
   if (!origin || origin !== allowedOrigin) {
     return new Response(
