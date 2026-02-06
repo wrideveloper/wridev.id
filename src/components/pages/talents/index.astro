@@ -2,10 +2,16 @@
 import Layout from "~/layouts/Layout.astro";
 
 import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
+import TalentSection from "~/components/sections/talent/talent-section.astro";
 ---
 
-<Layout>
-    <main class="pt-32 w-full">
+<Layout
+  title="Talents | Workshop Riset Informatika"
+  description="Explore the digital talent pool at Workshop Riset Informatika (WRI), featuring skilled developers, designers, and technology enthusiasts."
+  canonical={Astro.url.href}
+>
+    <div class="pt-32 w-full">
+        <TalentSection/>
         <TalentPool />
-    </main>
+    </div>
 </Layout>

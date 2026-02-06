@@ -24,7 +24,7 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                     class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
                     set:html={tr.faq.headline_2}
                 />
-                <p class="mt-4 w-full text-sm sm:text-base text-wri-gray-600">
+                <p class="mt-4 max-w-full md:max-w-[34rem] text-sm sm:text-base text-wri-gray-600">
                     {tr.faq.description}
                 </p>
             </div>

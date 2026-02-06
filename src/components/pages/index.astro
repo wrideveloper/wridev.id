@@ -10,7 +10,10 @@ import FaqSection from "~/components/sections/faq/faq-section.astro";
 import TestimonialSection from "~/components/sections/testimonial/testimonial-section.astro";
 ---
 
-<Layout>
+<Layout
+  title="Home | Workshop Riset Informatika"
+  canonical={Astro.url.href}
+>
     <Hero />
     <FeatureSection className="mt-16 md:mt-32" />
     <TechSection className="mt-16 md:mt-32" />

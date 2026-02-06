@@ -80,18 +80,19 @@
   }
 </script>
 
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 justify-items-center">
-    {#each displayedTalents as talent (talent.name)}
-        <a 
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
+    {#each displayedTalents as talent, i (talent.name)}
+        <a
             href={getLocalizedPath(`/talents/${createSlug(talent.name)}`, locale)}
-            class="contents group cursor-pointer" 
+            class="contents group cursor-pointer"
             data-namecursor={talent.name}
         >
             <TalentCard
               name={talent.name}
-              image={talent.profileImage}      
-              description={talent.about}        
-              tags={talent.proficiencies}       
+              image={talent.profileImage}
+              description={talent.about}
+              tags={talent.proficiencies}
+              loading={i < 3 ? "eager" : "lazy"}
             />
         </a>
     {/each}
@@ -105,7 +106,7 @@
 
 {#if hasMoreItems && !isExpanded}
   <div class="mt-12 flex justify-center">
-    <button 
+    <button
       on:click={handleButtonClick}
       class="
         group
@@ -114,7 +115,7 @@
         bg-linear-to-b from-wri-blue to-wri-blue/56
         border border-wri-darkerblue
         ring-2 md:ring-4 ring-[#DFEDFF]
-        hover:to-wri-blue hover:shadow-md hover:scale-[1.02]
+        hover:to-wri-blue hover:shadow-md hover:scale-[1.02] cursor-pointer
       "
     >
       <SparkleIcon class="w-4 h-4 md:w-5 md:h-5 text-white rotate-12" />

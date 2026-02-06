@@ -5,6 +5,8 @@ const {
     color,
     title,
     description,
+    show1,
+    show2,
     image,
     imageHeight,
     link,
@@ -18,7 +20,7 @@ const localizeLink = `/${Astro.currentLocale}${link}`;
 
 <a href={localizeLink}>
     <div
-        class={`miniclass h-80 md:h-140 bg-white rounded-xl  overflow-hidden flex flex-col ring-${color} hover:ring-4 transition-all duration-300 group`}
+        class={`miniclass h-80 md:h-140 bg-white rounded-xl  overflow-hidden flex flex-col ring-${color} ring-2 hover:ring-4 transition-all duration-300 group`}
     >
         <div
             class="flex justify-center items-center h-2/3 bg-wri-gray-200 relative perspective-[1000px]"
@@ -28,12 +30,12 @@ const localizeLink = `/${Astro.currentLocale}${link}`;
             >
             </div>
             <img
-                src="../assets/dummy/dummy.webp"
+                src={show2}
                 alt="Project images"
                 class="projects aspect-video w-58 absolute right-18 rotate-4 opacity-0 translate-y-10"
             />
             <img
-                src="../assets/dummy/dummy.webp"
+                src={show1}
                 alt="Project images"
                 class="projects aspect-video w-58 absolute left-18 -rotate-4 opacity-0 translate-y-10"
             />

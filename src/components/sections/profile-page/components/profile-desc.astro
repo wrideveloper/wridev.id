@@ -1,16 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
-import { t, language } from "~/i18n";
 import { getLocalizedPath } from "~/utils/i18n";
+import { getImage } from "astro:assets";
 
-const tr = t(Astro.currentLocale as keyof typeof language);
 const currentLocale = Astro.currentLocale || "en";
 
 interface TalentProfile {
   name: string;
   position: string;
   about: string;
-  profileImage: string;
+  profileImage: string; // Expecting just filename like "person.webp"
   contacts: {
     type: string;
     url: string;
@@ -23,6 +22,34 @@ interface Props {
 }
 
 const { talent_data } = Astro.props;
+
+let optimizedImageSrc = "";
+
+if (talent_data.profileImage.startsWith("http")) {
+  optimizedImageSrc = talent_data.profileImage;
+}
+else {
+  const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/talents/*.{jpeg,jpg,png,gif,webp}');
+
+  // Clean filename incase data has old paths like "/assets/..."
+  const filename = talent_data.profileImage.split('/').pop();
+  const imagePath = `/src/assets/talents/${filename}`;
+
+  if (images[imagePath]) {
+    const imageModule = await images[imagePath]();
+    const optimized = await getImage({
+      src: imageModule.default,
+      width: 400,
+      height: 400,
+      format: "webp",
+    });
+    optimizedImageSrc = optimized.src;
+  } else {
+    // Fallback
+    console.error(`Image not found: ${imagePath}`);
+    optimizedImageSrc = "/assets/placeholder.webp";
+  }
+}
 
 const iconMap: Record<string, string> = {
   github: "ph:github-logo-fill",
@@ -41,20 +68,22 @@ const colorMap: Record<string, string> = {
 };
 ---
 
-<div class="flex flex-col items-start gap-6 sticky top-32">
+<div class="flex flex-col items-start gap-6 sticky top-32 z-40">
 
   <a
     href={getLocalizedPath("/", currentLocale)}
     class="fixed top-8 left-8 z-50 inline-flex items-center gap-2 px-5 py-2 rounded-full bg-black text-white text-sm font-medium hover:bg-gray-800 transition shadow-lg"
+    aria-label="Back to Home"
   >
     <Icon name="ph:arrow-left" class="w-4 h-4" />
-    <!-- {tr.profile.back} -->
   </a>
 
-  <div class="relative w-56 h-56 rounded-full bg-[#EA0B0B] overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
+  <div class="relative w-56 h-56 rounded-full bg-black overflow-hidden shrink-0 border-4 border-white shadow-2xl flex items-end justify-center">
     <img
-      src={talent_data.profileImage}
+      src={optimizedImageSrc}
       alt={talent_data.name}
+      width="224"
+      height="224"
       class="w-full h-full object-cover object-top translate-y-0.15"
     />
   </div>
@@ -74,7 +103,6 @@ const colorMap: Record<string, string> = {
   </p>
 
   <div class="flex items-center gap-3 mt-4 flex-wrap">
-    {/* Safe check to ensure contacts is an array before mapping */}
     {Array.isArray(talent_data.contacts) && talent_data.contacts.map((contact) => {
       const iconName = iconMap[contact.type] || "ph:link";
       const colorClass = colorMap[contact.type] || "bg-black text-white";
