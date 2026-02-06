@@ -1,14 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import { t, language } from "~/i18n";
+import { PUBLIC_TURNSTILE_SITE_KEY } from "astro:env/server";
 
 const tr = t(Astro.currentLocale as keyof typeof language);
-
-const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
-
-if (!TURNSTILE_SITE_KEY) {
-    console.error("CRITICAL: PUBLIC_TURNSTILE_SITE_KEY is missing in .env");
-}
 ---
 
 <div
@@ -177,7 +172,7 @@ if (!TURNSTILE_SITE_KEY) {
 
                 <div
                     class="cf-turnstile"
-                    data-sitekey={TURNSTILE_SITE_KEY}
+                    data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
                     data-size="flexible"
                 >
                 </div>
