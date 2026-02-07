@@ -15,7 +15,6 @@ export async function fetchWithCache(
   const cached = cache.get(url);
 
   if (cached && now - cached.timestamp < ttlSeconds * 1000) {
-    console.log(`[CACHE HIT] ${url}`);
     return new Response(JSON.stringify(cached.data), {
       status: cached.status,
       statusText: cached.statusText,
@@ -23,7 +22,6 @@ export async function fetchWithCache(
     });
   }
 
-  console.log(`[API FETCH] ${url}`);
   const response = await fetch(url);
 
   if (!response.ok) {

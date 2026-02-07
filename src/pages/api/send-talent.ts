@@ -56,11 +56,6 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
   const origin = request.headers.get("Origin");
   const allowedOrigin = new URL(url).origin;
 
-
-  console.log("TURNSTILE_SECRET_KEY:", TURNSTILE_SECRET_KEY)
-  console.log("CTA_WORKER_URL:", CTA_WORKER_URL)
-  console.log("CTA_PUBLIC_API_TOKEN:", CTA_PUBLIC_API_TOKEN)
-
   if (!origin || origin !== allowedOrigin) {
     return new Response(
       JSON.stringify({ error: "Forbidden: Invalid Origin" }),
@@ -71,7 +66,6 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
   // --- CONFIG CHECK ---
 
   if (!CTA_WORKER_URL || !CTA_PUBLIC_API_TOKEN || !TURNSTILE_SECRET_KEY) {
-    console.error("Missing Server Config");
     return new Response(JSON.stringify({ error: "Server Config Error" }), {
       status: 500,
     });
@@ -106,7 +100,6 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
     );
   }
 
-  // --- FORWARD TO WORKER ---
   try {
     const workerPayload = {
       companyName: body.companyName,
@@ -114,11 +107,6 @@ export const POST: APIRoute = async ({ request, url, clientAddress }) => {
       proficiency: body.proficiency,
       description: body.description,
     };
-
-    console.log(
-      "Attempting to send to Worker:",
-      `${CTA_WORKER_URL}/talent-request`,
-    );
 
     const workerResponse = await fetch(`${CTA_WORKER_URL}/talent-request`, {
       method: "POST",

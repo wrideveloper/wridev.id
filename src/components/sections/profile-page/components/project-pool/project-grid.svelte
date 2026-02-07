@@ -3,7 +3,7 @@
   import ProjectCard from './project-card.svelte';
 
   export let projects: any[] = [];
-  
+
   let isLoading = false;
 
   // Helper to extract URL based on type
@@ -31,20 +31,20 @@
   onMount(async () => {
     if (!projects || projects.length === 0) {
       console.log("[ProjectGrid] No projects found. Attempting client-side heal...");
-      
+
       const pathParts = window.location.pathname.split('/');
       const slug = pathParts[pathParts.length - 1] || pathParts[pathParts.length - 2]; // Handle trailing slash
-      
+
       if (slug) {
         isLoading = true;
         try {
            await new Promise(resolve => setTimeout(resolve, 2500));
-           
-           const WORKER_URL = "https://your-worker-url.workers.dev"; 
-           
+
+           const WORKER_URL = "https://your-worker-url.workers.dev";
+
            const res = await fetch(`${WORKER_URL}/talent/${slug}`);
            const data: any  = await res.json();
-           
+
            if (data.projects && Array.isArray(data.projects) && data.projects.length > 0) {
              console.log("[ProjectGrid] Healed! Projects found:", data.projects.length);
              projects = data.projects;
@@ -69,10 +69,10 @@
 {:else if projects.length > 0}
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {#each projects as project}
-      <ProjectCard 
-        title={project.name} 
+      <ProjectCard
+        title={project.name}
         category={getDescription(project.links)}
-        image={project.img} 
+        image={project.img}
         repoUrl={getLink(project.links, 'github')}
         figmaUrl={getLink(project.links, 'figma')}
         dribbbleUrl={getLink(project.links, 'dribbble')}

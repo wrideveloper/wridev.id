@@ -321,9 +321,7 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     const initTurnstile = () => {
         if (typeof window.turnstile !== "undefined") {
             isTurnstileReady = true;
-            console.log("✅ Turnstile API loaded");
         } else {
-            console.log("⏳ Waiting for Turnstile API...");
             setTimeout(initTurnstile, 100);
         }
     };
@@ -466,7 +464,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     };
 
     const renderTurnstile = () => {
-        console.log("renderTurnstile called");
         const turnstileContainer = document.getElementById("turnstile-widget");
         if (!turnstileContainer || !isTurnstileReady) return;
 
@@ -484,7 +481,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             turnstileWidgetId = window.turnstile.render("#turnstile-widget", {
                 sitekey: turnstileContainer.dataset.sitekey || "",
                 callback: (token: string) => {
-                    console.log("✅ Turnstile token received");
                     turnstileToken = token;
                     isTurnstileTokenReady = true;
                 },
@@ -499,7 +495,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                     isTurnstileTokenReady = false;
                 },
             });
-            console.log("✅ Turnstile widget rendered");
         } catch (error) {
             console.error("❌ Failed to render Turnstile:", error);
         }
@@ -600,7 +595,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             );
 
             if (isValid && stateForm && stateLoading && stateSuccess && stateError) {
-                console.log("Submit: all accepted");
                 // Disable submit button to prevent multiple clicks
                 if (submitBtn) submitBtn.disabled = true;
 
@@ -616,7 +610,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
 
                 // If Turnstile token is not ready yet, show loading state and wait
                 if (!isTurnstileTokenReady) {
-                    console.log("⏳ Waiting for Turnstile token...");
                     switchState(stateForm, stateLoading);
 
 
@@ -628,11 +621,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                         while (!isTurnstileTokenReady && (Date.now() - startTime) < maxWaitTime) {
                             await new Promise(resolve => setTimeout(resolve, 100));
                         }
-
-                        console.log("Token ready");
-
-                        // loadingAnim.kill();
-                        // gsap.set("#loading-icon", { y: 0 });
 
                         if (!isTurnstileTokenReady || !turnstileToken) {
                             const errorDescEl = document.getElementById("error-desc");

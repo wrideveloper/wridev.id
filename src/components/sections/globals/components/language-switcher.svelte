@@ -18,13 +18,11 @@
   }
 
   function selectLanguage(langCode: string) {
-    console.log("Selected language:", langCode, ", currentLocale:", currentLocale);
     if (langCode === currentLocale) {
       isOpen = false;
       return;
     }
     const newPath = switchLocalePath(currentPath, currentLocale, langCode);
-    console.log("newPath:", newPath);
     window.location.href = newPath;
   }
 
