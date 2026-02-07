@@ -15,7 +15,7 @@ export const id = {
     headline_2: `Gali<span class="wri-italic from-wri-yellow to-wri-yellow/45">&nbsp;Potensi Diri</span> {{icon}}`,
     description:
       "Belajar, berbagi, dan terhubung dengan sesama penggemar teknologi. Dapatkan wawasan teknologi terbaru dan temukan peluang kolaborasi menarik di satu tempat.",
-    findTalent: "Cari Talenta Mu",
+    findTalent: "Cari Talenta mu",
     openWithPreview: "Buka dengan Pratinjau",
   },
   talentmodal: {
