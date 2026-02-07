@@ -42,6 +42,7 @@ export const en = {
     opt_uiux: "UI/UX Designer",
     opt_cre: "Creative",
     opt_cysec: "Cyber Security",
+    opt_other: "Other",
     label_desc: "Description",
     ph_desc: "Describe what you are looking for...",
     btn_send: "Let's Send",

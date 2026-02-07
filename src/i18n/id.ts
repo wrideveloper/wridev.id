@@ -42,6 +42,7 @@ export const id = {
     opt_uiux: "Desainer UI/UX",
     opt_cre: "Kreatif",
     opt_cysec: "Keamanan Siber",
+    opt_other: "Lainnya",
     label_desc: "Deskripsi",
     ph_desc: "Jelaskan apa yang anda butuhkan...",
     btn_send: "Kirim Sekarang",
