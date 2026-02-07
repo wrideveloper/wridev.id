@@ -50,8 +50,9 @@ export const en = {
     success_title: "Success",
     success_desc: "Your request has been sent! We will contact you shortly.",
     btn_close: "Close Window",
-    error_title: "Error",
-    error_desc: "Something went wrong. Please try again later.",
+    error_title: "Something Went Wrong",
+    error_desc: "An unexpected error occurred. Please try again later.",
+    btn_retry: "Try Again"
   },
   feature: {
     pills: "FEATURES",

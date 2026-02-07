@@ -33,7 +33,6 @@ const url = canonical ?? Astro.url.href;
     <title>{fullTitle}</title>
     <meta name="description" content={safeDescription} />
     <link rel="canonical" href={url} />
-    <link rel="preconnect" href="https://challenges.cloudflare.com">
 
     <!-- Open Graph -->
     <meta property="og:title" content={fullTitle} />
@@ -50,6 +49,7 @@ const url = canonical ?? Astro.url.href;
 
     {noindex && <meta name="robots" content="noindex, follow" />}
 
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
     {type === "article" && (
       <script type="application/ld+json">

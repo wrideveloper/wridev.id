@@ -53,6 +53,7 @@ export const id = {
     btn_close: "Tutup Jendela",
     error_title: "Gagal",
     error_desc: "Terjadi kesalahan. Silakan coba lagi nanti.",
+    btn_retry: "Coba Lagi",
   },
   feature: {
     pills: "FITUR",

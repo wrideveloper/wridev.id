@@ -171,6 +171,7 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 </div>
 
                 <div
+                    id="turnstile-widget"
                     class="cf-turnstile"
                     data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
                     data-size="flexible"
@@ -199,63 +200,95 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                     class="absolute inset-0 bg-blue-100 rounded-full animate-ping opacity-75"
                 >
                 </div>
-                <div class="relative bg-blue-50 p-6 rounded-full">
+                <div
+                    id="loading-icon"
+                    class="relative bg-blue-500 rounded-full p-6"
+                >
                     <Icon
                         name="ph:paper-plane-tilt-fill"
-                        class="size-12 text-blue-600"
-                        id="loading-icon"
+                        class="text-white size-8"
                     />
                 </div>
             </div>
-            <h4 class="text-xl font-bold text-gray-900 mb-2">
+            <h4 class="text-2xl font-bold text-gray-900 mb-2">
                 {tr.talentmodal.processing_title}
             </h4>
-            <p class="text-gray-500 text-sm max-w-62.5">
-                {tr.talentmodal.processing_desc}
-            </p>
+            <p class="text-gray-600">{tr.talentmodal.processing_desc}</p>
         </div>
 
         <div
             id="modal-state-success"
             class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
         >
-            <div class="mb-6 scale-0" id="success-icon-container">
-                <Icon
-                    name="ph:envelope-open-fill"
-                    class="size-16 text-yellow-400 mx-auto drop-shadow-lg"
-                />
+            <div
+                id="success-icon-container"
+                class="relative mb-6 opacity-0 scale-90"
+            >
+                <div
+                    class="absolute inset-0 bg-green-100 rounded-full blur-xl opacity-75"
+                >
+                </div>
+                <div class="relative bg-green-500 rounded-full p-6">
+                    <Icon name="ph:check-bold" class="text-white size-8" />
+                </div>
             </div>
             <h4
-                class="text-2xl font-bold text-gray-900 mb-2 opacity-0 translate-y-4"
                 id="success-title"
+                class="text-2xl font-bold text-gray-900 mb-2 opacity-0"
             >
                 {tr.talentmodal.success_title}
             </h4>
-            <p
-                class="text-gray-500 text-sm max-w-75 mb-6 opacity-0 translate-y-4"
-                id="success-desc"
-            >
+            <p id="success-desc" class="text-gray-600 max-w-md mb-6 opacity-0">
                 {tr.talentmodal.success_desc}
             </p>
             <button
                 id="close-success-btn"
-                class="cursor-pointer text-blue-600 font-semibold hover:underline opacity-0 translate-y-4"
+                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-blue-500/30 transition-transform active:scale-95 opacity-0"
             >
                 {tr.talentmodal.btn_close}
+            </button>
+        </div>
+
+        <div
+            id="modal-state-error"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div
+                id="error-icon-container"
+                class="relative mb-6 opacity-0 scale-90"
+            >
+                <div
+                    class="absolute inset-0 bg-red-100 rounded-full blur-xl opacity-75"
+                >
+                </div>
+                <div class="relative bg-red-500 rounded-full p-6">
+                    <Icon name="ph:x-bold" class="text-white size-8" />
+                </div>
+            </div>
+            <h4
+                id="error-title"
+                class="text-2xl font-bold text-gray-900 mb-2 opacity-0"
+            >
+                {tr.talentmodal.error_title}
+            </h4>
+            <p id="error-desc" class="text-gray-600 max-w-md mb-6 opacity-0">
+                {tr.talentmodal.error_desc}
+            </p>
+            <button
+                id="close-error-btn"
+                class="cursor-pointer bg-red-500 hover:bg-red-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-red-500/30 transition-transform active:scale-95 opacity-0"
+            >
+                {tr.talentmodal.btn_retry}
             </button>
         </div>
     </div>
 </div>
 
-<script
-    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-    async
-    defer
-    is:inline></script>
-
 <script>
-    import { sendTalentRequest } from "~/utils/cta-mail.ts";
+    import { sendTalentRequest } from "~/utils/cta-mail";
     import gsap from "gsap";
+
+
 
     const modalOverlay = document.getElementById("talent-modal-overlay");
     const modalContent = document.getElementById("talent-modal-content");
@@ -263,44 +296,52 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     const closeBtns = [
         document.getElementById("close-modal-btn"),
         document.getElementById("close-success-btn"),
+        document.getElementById("close-error-btn"),
     ];
     const form = document.getElementById(
         "talent-request-form",
     ) as HTMLFormElement;
-    const submitBtn = document.getElementById(
-        "submit-btn",
-    ) as HTMLButtonElement;
-
+    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
     const stateForm = document.getElementById("modal-state-form");
     const stateLoading = document.getElementById("modal-state-loading");
     const stateSuccess = document.getElementById("modal-state-success");
+    const stateError = document.getElementById("modal-state-error");
 
-    if (modalOverlay && modalContent) {
-        gsap.set(modalOverlay, { autoAlpha: 0 });
-        gsap.set(modalContent, { scale: 0.8, autoAlpha: 0 });
+    let turnstileWidgetId: string | null = null;
+    let isTurnstileReady = false;
+    let turnstileToken: string | null = null;
+    let isTurnstileTokenReady = false;
+
+    let loadingAnim: gsap.core.Tween | null = null;
+
+    // Wait for Turnstile to be ready
+    const initTurnstile = () => {
+        if (typeof window.turnstile !== "undefined") {
+            isTurnstileReady = true;
+            console.log("✅ Turnstile API loaded");
+        } else {
+            console.log("⏳ Waiting for Turnstile API...");
+            setTimeout(initTurnstile, 100);
+        }
+    };
+
+    // Start checking for Turnstile
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initTurnstile);
+    } else {
+        initTurnstile();
     }
 
     const resetForm = () => {
-        if (form) form.reset();
-
-        // 3. Re-inserted Safe Turnstile Reset Logic
-        // @ts-ignore
-        if (window.turnstile) {
-            try {
-                // @ts-ignore
-                window.turnstile.reset();
-            } catch (e) {
-                console.warn("Turnstile reset skipped:", e);
-            }
-        }
-
+        form?.reset();
         stateForm?.classList.remove("hidden");
         stateLoading?.classList.add("hidden");
         stateSuccess?.classList.add("hidden");
+        stateError?.classList.add("hidden");
         if (submitBtn) submitBtn.disabled = false;
 
-        if (stateForm && stateLoading && stateSuccess) {
-            gsap.set([stateForm, stateLoading, stateSuccess], {
+        if (stateForm && stateLoading && stateSuccess && stateError) {
+            gsap.set([stateForm, stateLoading, stateSuccess, stateError], {
                 clearProps: "all",
             });
             gsap.set(stateForm, { autoAlpha: 1 });
@@ -330,6 +371,31 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 y: 10,
             },
         );
+
+        gsap.set(
+            [
+                "#error-icon-container",
+                "#error-title",
+                "#error-desc",
+                "#close-error-btn",
+            ],
+            {
+                clearProps: "all",
+                autoAlpha: 0,
+                y: 10,
+            },
+        );
+
+        // Reset Turnstile widget and token state
+        turnstileToken = null;
+        isTurnstileTokenReady = false;
+        if (isTurnstileReady && turnstileWidgetId !== null) {
+            try {
+                window.turnstile.reset(turnstileWidgetId);
+            } catch (error) {
+                console.error("Failed to reset Turnstile:", error);
+            }
+        }
     };
 
     const switchState = (
@@ -375,8 +441,73 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             );
     };
 
+    const animateError = () => {
+        const tl = gsap.timeline();
+        tl.to("#error-icon-container", {
+            scale: 1,
+            autoAlpha: 1,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.6)",
+        })
+            .to(
+                "#error-title",
+                { autoAlpha: 1, y: 0, duration: 0.4 },
+                "-=0.3",
+            )
+            .to("#error-desc", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
+            .to(
+                "#close-error-btn",
+                { autoAlpha: 1, y: 0, duration: 0.4 },
+                "-=0.2",
+            );
+    };
+
+    const renderTurnstile = () => {
+        console.log("renderTurnstile called");
+        const turnstileContainer = document.getElementById("turnstile-widget");
+        if (!turnstileContainer || !isTurnstileReady) return;
+
+        try {
+            // Remove existing widget if any
+            if (turnstileWidgetId !== null) {
+                window.turnstile.remove(turnstileWidgetId);
+            }
+
+            // Reset token state
+            turnstileToken = null;
+            isTurnstileTokenReady = false;
+
+            // Render new widget with callback to capture token
+            turnstileWidgetId = window.turnstile.render("#turnstile-widget", {
+                sitekey: turnstileContainer.dataset.sitekey || "",
+                callback: (token: string) => {
+                    console.log("✅ Turnstile token received");
+                    turnstileToken = token;
+                    isTurnstileTokenReady = true;
+                },
+                "error-callback": () => {
+                    console.error("❌ Turnstile error occurred");
+                    turnstileToken = null;
+                    isTurnstileTokenReady = false;
+                },
+                "expired-callback": () => {
+                    console.warn("⚠️ Turnstile token expired");
+                    turnstileToken = null;
+                    isTurnstileTokenReady = false;
+                },
+            });
+            console.log("✅ Turnstile widget rendered");
+        } catch (error) {
+            console.error("❌ Failed to render Turnstile:", error);
+        }
+    };
+
     const openModal = () => {
         resetForm();
+
+        setTimeout(() => {
+            renderTurnstile();
+        }, 300);
 
         document.body.style.overflow = "hidden";
         document.body.style.height = "100svh";
@@ -415,7 +546,20 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     }
 
     closeBtns.forEach((btn) => {
-        if (btn) btn.addEventListener("click", closeModal);
+        if (btn) {
+            btn.addEventListener("click", () => {
+                // If closing from error state, go back to form
+                if (btn.id === "close-error-btn" && stateError && stateForm) {
+                    switchState(stateError, stateForm);
+                    // Re-render Turnstile
+                    setTimeout(() => {
+                        renderTurnstile();
+                    }, 300);
+                } else {
+                    closeModal();
+                }
+            });
+        }
     });
 
     if (modalOverlay) {
@@ -431,6 +575,8 @@ const tr = t(Astro.currentLocale as keyof typeof language);
 
             form.querySelectorAll("input, select, textarea").forEach(
                 (input: any) => {
+                    if (input.name == "cf-turnstile-response") return;
+
                     const group = input.closest(".group-input");
                     const errorMsg = group?.querySelector(".error-msg");
 
@@ -450,48 +596,102 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 },
             );
 
-            if (isValid && stateForm && stateLoading && stateSuccess) {
-                // Re-inserted Turnstile Validation
-                const formData = new FormData(form);
-                const turnstileResponse = formData.get(
-                    "cf-turnstile-response",
-                ) as string;
+            if (isValid && stateForm && stateLoading && stateSuccess && stateError) {
+                console.log("Submit: all accepted");
+                // Disable submit button to prevent multiple clicks
+                if (submitBtn) submitBtn.disabled = true;
 
-                if (!turnstileResponse) {
-                    alert("Security check failed. Please refresh the page.");
-                    return;
-                }
+                // If Turnstile token is not ready yet, show loading state and wait
+                if (!isTurnstileTokenReady) {
+                    console.log("⏳ Waiting for Turnstile token...");
+                    switchState(stateForm, stateLoading);
 
-                switchState(stateForm, stateLoading);
+                    loadingAnim = gsap.to("#loading-icon", {
+                        y: -10,
+                        duration: 0.6,
+                        yoyo: true,
+                        repeat: -1,
+                        ease: "power1.inOut",
+                    });
 
-                const loadingAnim = gsap.to("#loading-icon", {
-                    y: -10,
-                    duration: 0.6,
-                    yoyo: true,
-                    repeat: -1,
-                    ease: "power1.inOut",
-                });
+                    // Wait for token with timeout
+                    const waitForToken = async () => {
+                        const maxWaitTime = 10000; // 10 seconds max
+                        const startTime = Date.now();
 
-                const requestData = {
-                    companyName: formData.get("company") as string,
-                    email: formData.get("email") as string,
-                    proficiency: formData.get("proficiency") as string,
-                    description: formData.get("description") as string,
-                    "cf-turnstile-response": turnstileResponse, // Added token here
-                };
+                        while (!isTurnstileTokenReady && (Date.now() - startTime) < maxWaitTime) {
+                            await new Promise(resolve => setTimeout(resolve, 100));
+                        }
 
-                const result = await sendTalentRequest(requestData);
+                        console.log("Token ready");
 
-                loadingAnim.kill();
-                gsap.set("#loading-icon", { y: 0 });
+                        // loadingAnim.kill();
+                        // gsap.set("#loading-icon", { y: 0 });
 
-                if (result.success) {
-                    switchState(stateLoading, stateSuccess, animateSuccess);
+                        if (!isTurnstileTokenReady || !turnstileToken) {
+                            const errorDescEl = document.getElementById("error-desc");
+                            if (errorDescEl) {
+                                errorDescEl.textContent = "Security verification failed. Please complete the security check and try again.";
+                            }
+                            switchState(stateLoading, stateError, animateError);
+                            if (submitBtn) submitBtn.disabled = false;
+                            return;
+                        }
+
+                        // Token is ready, proceed with submission
+                        await submitFormData();
+                    };
+
+                    await waitForToken();
                 } else {
-                    alert("Something went wrong: " + result.error);
-                    switchState(stateLoading, stateForm);
+                    // Token is already ready, proceed immediately
+                    await submitFormData();
                 }
             }
         });
+    }
+
+    async function submitFormData() {
+        if (!form || !stateForm || !stateLoading || !stateSuccess || !stateError) return;
+        if (!loadingAnim) return;
+
+        if (!turnstileToken) {
+            const errorDescEl = document.getElementById("error-desc");
+            if (errorDescEl) {
+                errorDescEl.textContent = "Security verification failed. Please complete the security check and try again.";
+            }
+            switchState(stateForm, stateError, animateError);
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+        }
+
+        switchState(stateForm, stateLoading);
+
+        const formData = new FormData(form);
+        const requestData = {
+            companyName: formData.get("company") as string,
+            email: formData.get("email") as string,
+            proficiency: formData.get("proficiency") as string,
+            description: formData.get("description") as string,
+            "cf-turnstile-response": turnstileToken,
+        };
+
+        const result = await sendTalentRequest(requestData);
+
+        loadingAnim.kill();
+        gsap.set("#loading-icon", { y: 0 });
+
+        if (result.success) {
+            switchState(stateLoading, stateSuccess, animateSuccess);
+        } else {
+            const errorDescEl = document.getElementById("error-desc");
+            if (errorDescEl) {
+                errorDescEl.textContent = result.error || "An unexpected error occurred. Please try again later.";
+            }
+            switchState(stateLoading, stateError, animateError);
+        }
+
+        // Re-enable submit button
+        if (submitBtn) submitBtn.disabled = false;
     }
 </script>
