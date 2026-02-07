@@ -22,7 +22,7 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
                 name="ph:sparkle-fill"
                 color="wri-yellow"
                 rotate={-4}
-                className="hidden md:flex -translate-y-14"
+                className="hidden md:flex -translate-y-14 text-4xl"
             />
 
             <div class="text-center">
@@ -44,7 +44,7 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
                 name="ph:book-open-text-fill"
                 color="wri-blue"
                 rotate={6}
-                className="hidden md:flex translate-y-4"
+                className="hidden md:flex translate-y-4  text-4xl"
             />
         </div>
         <Grid tr={tr} locale={Astro.currentLocale} articles={sortedArticlesMeta} client:load/>
