@@ -601,18 +601,21 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 // Disable submit button to prevent multiple clicks
                 if (submitBtn) submitBtn.disabled = true;
 
+                loadingAnim = gsap.to("#loading-icon", {
+                    y: -10,
+                    duration: 0.6,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "power1.inOut",
+                });
+
+                switchState(stateForm, stateLoading);
+
                 // If Turnstile token is not ready yet, show loading state and wait
                 if (!isTurnstileTokenReady) {
                     console.log("⏳ Waiting for Turnstile token...");
                     switchState(stateForm, stateLoading);
 
-                    loadingAnim = gsap.to("#loading-icon", {
-                        y: -10,
-                        duration: 0.6,
-                        yoyo: true,
-                        repeat: -1,
-                        ease: "power1.inOut",
-                    });
 
                     // Wait for token with timeout
                     const waitForToken = async () => {
@@ -664,8 +667,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             if (submitBtn) submitBtn.disabled = false;
             return;
         }
-
-        switchState(stateForm, stateLoading);
 
         const formData = new FormData(form);
         const requestData = {
