@@ -206,6 +206,7 @@ export const id = {
       "Telusuri koleksi artikel dan analisis yang telah kami kurasi. Jelajahi topik-topik yang beragam, dapatkan wawasan dari para ahli, dan tetap terinformasi tentang tren terbaru.",
     searchPlaceholder: "Cari artikel",
     search: "Cari",
+    noResults: "Tidak ada artikel yang ditemukan sesuai kriteria Anda.",
   },
   filters: {
     search: "Cari",

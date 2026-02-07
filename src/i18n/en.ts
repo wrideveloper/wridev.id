@@ -204,6 +204,7 @@ export const en = {
       "Dive into our curated collection of articles and analyses. Explore diverse topics, gain expert insights, and stay informed about the latest trends.",
     searchPlaceholder: "Search articles",
     search: "Search",
+    noResults: "No articles found matching your criteria.",
   },
   filters: {
     search: "Search",

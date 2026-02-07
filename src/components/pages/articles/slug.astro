@@ -121,9 +121,12 @@ export async function getStaticPaths() {
         <!-- Tags -->
         <div class="flex flex-wrap gap-2 mb-16">
             {entry.data.tags.map((tag) => (
-                <div class="bg-wri-gray-100 hover:bg-wri-gray-200 transition-colors rounded-full px-4 py-1.5 text-wri-gray-700 capitalize text-sm font-medium">
+                <a 
+                    href={`${getLocalizedPath("/articles", currentLocale)}#query=${tag}`}
+                    class="bg-wri-gray-100 hover:bg-wri-gray-200 transition-colors rounded-full px-4 py-1.5 text-wri-gray-700 capitalize text-sm font-medium"
+                >
                     {tag.replace(/-/g, " ")}
-                </div>
+                </a>
             ))}
         </div>
 

@@ -32,8 +32,6 @@
 
     let page = 1;
 
-    console.log(filteredArticles);
-
     // Scroll to the top of the page
     function scrollToTop() {
         if (typeof window !== "undefined") {
@@ -94,18 +92,21 @@
                 const query = queryFromHash.toLowerCase();
                 return (
                     article.title.toLowerCase().includes(query) ||
-                    article.description.toLowerCase().includes(query)
+                    article.description.toLowerCase().includes(query) ||
+                    (article.tags && article.tags.some((tag) => tag.toLowerCase().includes(query)))
                 );
             });
         }
     }
+
 
     function handleSearch() {
         filteredArticles = articles.filter((article) => {
             const query = $searchQuery.toLowerCase();
             return (
                 article.title.toLowerCase().includes(query) ||
-                article.description.toLowerCase().includes(query)
+                article.description.toLowerCase().includes(query) ||
+                (article.tags && article.tags.some((tag) => tag.toLowerCase().includes(query)))
             );
         });
         window.location.hash = `query=${$searchQuery}`;
@@ -146,40 +147,50 @@
             </div>
         </div>
     </div>
-    <Container className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {#each paginatedArticles as article}
-            <Card
-                title={article.title}
-                description={article.description}
-                date={article.date}
-                image={article.image}
-                author={article.author}
-                slug={article.slug}
-                tr={tr}
-                locale={locale}
-            />
-        {/each}
+    <Container className="mt-8">
+        {#if filteredArticles.length > 0}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {#each paginatedArticles as article}
+                    <Card
+                        title={article.title}
+                        description={article.description}
+                        date={article.date}
+                        image={article.image}
+                        author={article.author}
+                        slug={article.slug}
+                        tr={tr}
+                        locale={locale}
+                    />
+                {/each}
+            </div>
+        {:else}
+            <div class="flex flex-col items-center justify-center py-20 text-center">
+                <p class="text-wri-gray-500 text-lg">{tr.articles.noResults}</p>
+            </div>
+        {/if}
     </Container>
-    <div class="flex justify-center gap-2 mt-8">
-        <PageButton disabled={page === 1} on:click={goToFirstPage}>
-            <svelte:component this={FirstIcon} class="w-5 h-5" />
-        </PageButton>
-        <PageButton disabled={page === 1} on:click={goToPreviousPage}>
-            <svelte:component this={PreviousIcon} class="w-5 h-5" />
-        </PageButton>
-        {#each Array.from({ length: totalPages }, (_, i) => i + 1) as pageNumber}
-            <PageButton
-                active={pageNumber === page}
-                on:click={() => goToPage(pageNumber)}
-            >
-                {pageNumber}
+    {#if filteredArticles.length > 0}
+        <div class="flex justify-center gap-2 mt-8">
+            <PageButton disabled={page === 1} on:click={goToFirstPage}>
+                <svelte:component this={FirstIcon} class="w-5 h-5" />
             </PageButton>
-        {/each}
-        <PageButton disabled={page === totalPages} on:click={goToNextPage}>
-            <svelte:component this={NextIcon} class="w-5 h-5" />
-        </PageButton>
-        <PageButton disabled={page === totalPages} on:click={goToLastPage}>
-            <svelte:component this={LastIcon} class="w-5 h-5" />
-        </PageButton>
-    </div>
+            <PageButton disabled={page === 1} on:click={goToPreviousPage}>
+                <svelte:component this={PreviousIcon} class="w-5 h-5" />
+            </PageButton>
+            {#each Array.from({ length: totalPages }, (_, i) => i + 1) as pageNumber}
+                <PageButton
+                    active={pageNumber === page}
+                    on:click={() => goToPage(pageNumber)}
+                >
+                    {pageNumber}
+                </PageButton>
+            {/each}
+            <PageButton disabled={page === totalPages} on:click={goToNextPage}>
+                <svelte:component this={NextIcon} class="w-5 h-5" />
+            </PageButton>
+            <PageButton disabled={page === totalPages} on:click={goToLastPage}>
+                <svelte:component this={LastIcon} class="w-5 h-5" />
+            </PageButton>
+        </div>
+    {/if}
 </div>
