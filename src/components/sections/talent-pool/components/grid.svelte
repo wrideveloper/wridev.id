@@ -1,27 +1,14 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import TalentCard from '~/components/sections/talent-pool/components/talent-card.svelte';
   import { searchQuery, selectedCategory, selectedAvailability, selectedExperience } from '~/components/sections/talent-pool/stores/filter';
   import type { Talent } from '~/models/talent';
-  import SparkleIcon from '~icons/ph/sparkle-fill';
   import { t } from "~/i18n";
   import { getLocalizedPath } from "~/utils/i18n";
 
   export let talents: Talent[] = [];
-  export let buttonText: string = "See More";
   export let tr: ReturnType<typeof t>;
   export let locale: string = "en";
-
-  let isExpanded = false;
-  let currentPath = '';
-
-  onMount(() => {
-    currentPath = window.location.pathname;
-    const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.get('expand') === 'true') {
-      isExpanded = true;
-    }
-  });
+  export let limit: number = -1;
 
   function createSlug(name: string) {
     return name
@@ -63,21 +50,11 @@
     return matchesSearch && matchesCategory && matchesAvailability && matchesExperience;
   });
 
-  const INITIAL_LIMIT = 8;
+  console.log("Limit:", limit);
 
-  $: displayedTalents = isExpanded
+  $: displayedTalents = limit === -1
       ? filteredTalents
-      : filteredTalents.slice(0, INITIAL_LIMIT);
-
-  $: hasMoreItems = filteredTalents.length > INITIAL_LIMIT;
-
-  function handleButtonClick() {
-    if (currentPath === '/' || currentPath === `/${locale}`) {
-      window.location.href = getLocalizedPath('/talents', locale) + '?expand=true';
-    } else {
-      isExpanded = true;
-    }
-  }
+      : filteredTalents.slice(0, limit);
 </script>
 
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
@@ -103,23 +80,3 @@
         </div>
     {/if}
 </div>
-
-{#if hasMoreItems && !isExpanded}
-  <div class="mt-12 flex justify-center">
-    <button
-      on:click={handleButtonClick}
-      class="
-        group
-        flex items-center gap-2 rounded-lg px-3 py-2 md:px-6 md:py-3
-        text-white font-semibold text-sm md:text-base shadow-sm transition-all duration-200
-        bg-linear-to-b from-wri-blue to-wri-blue/56
-        border border-wri-darkerblue
-        ring-2 md:ring-4 ring-[#DFEDFF]
-        hover:to-wri-blue hover:shadow-md hover:scale-[1.02] cursor-pointer
-      "
-    >
-      <SparkleIcon class="w-4 h-4 md:w-5 md:h-5 text-white rotate-12" />
-      {buttonText}
-    </button>
-  </div>
-{/if}

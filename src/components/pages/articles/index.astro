@@ -48,5 +48,6 @@ const sortedArticlesMeta = articles.sort((a, b) => b.data.date.getTime() - a.dat
             />
         </div>
         <Grid tr={tr} locale={Astro.currentLocale} articles={sortedArticlesMeta} client:load/>
+
     </div>
 </Layout>

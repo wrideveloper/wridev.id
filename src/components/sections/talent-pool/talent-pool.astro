@@ -5,6 +5,7 @@ import { TALENT_DATA } from "~/data/talents.ts";
 import { t, language } from "~/i18n";
 import { getImage } from 'astro:assets';
 
+const { limit = -1 } = Astro.props;
 
 const tr = t(Astro.currentLocale as keyof typeof language);
 const currentLocale = Astro.currentLocale || "en";
@@ -14,14 +15,14 @@ const allImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/tale
 const optimizedTalents = await Promise.all(
   TALENT_DATA.talents.map(async (talent) => {
     const imagePath = `/src/assets/talents/${talent.profileImage}`;
-    
+
     if (!allImages[imagePath]) {
       console.error(`Image not found: ${imagePath}`);
       return talent; // Return original if missing (or handle error)
     }
 
     const imageModule = await allImages[imagePath]();
-    
+
     const optimizedImage = await getImage({
       src: imageModule.default,
       format: 'webp',
@@ -31,7 +32,7 @@ const optimizedTalents = await Promise.all(
 
     return {
       ...talent,
-      profileImage: optimizedImage.src, 
+      profileImage: optimizedImage.src,
     };
   })
 );
@@ -41,8 +42,8 @@ const optimizedTalents = await Promise.all(
   <Toolbar client:load tr={tr} />
 
   <Grid
+    limit={limit}
     talents={optimizedTalents}
-    buttonText={tr.talent.data.buttonText}
     tr={tr}
     locale={currentLocale}
     client:load

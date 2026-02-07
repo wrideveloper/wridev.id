@@ -1,8 +1,8 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 
+import TalentTitle from "~/components/sections/talent/components/title.astro";
 import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
-import TalentSection from "~/components/sections/talent/talent-section.astro";
 ---
 
 <Layout
@@ -11,7 +11,7 @@ import TalentSection from "~/components/sections/talent/talent-section.astro";
   canonical={Astro.url.href}
 >
     <div class="pt-32 w-full">
-        <TalentSection/>
+        <TalentTitle/>
         <TalentPool />
     </div>
 </Layout>

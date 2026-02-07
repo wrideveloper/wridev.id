@@ -1,46 +1,40 @@
 ---
-import Container from "~/components/sections/container.svelte";
 import PillsText from "~/components/text/pills.astro";
+import { Icon } from "astro-icon/components";
+import Container from "~/components/sections/container.svelte";
+import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
 const { className } = Astro.props;
 import { t, language } from "~/i18n";
-
-import { getImage } from "astro:assets";
-import inlinePicRaw from "~/assets/talents/inline-pics.webp";
-
-const optimizedInlinePic = await getImage({
-  src: inlinePicRaw,
-  format: "webp",
-});
+import { getLocalizedPath } from '~/utils/i18n.ts';
+import Title from "~/components/sections/talent/components/title.astro";
 
 const tr = t(Astro.currentLocale as keyof typeof language);
-
-const headlineWithImage = tr.talent.headline_1.replace(
-  "{{inline_image}}", 
-  optimizedInlinePic.src
-);
-
+const currentLocale = Astro.currentLocale || "en";
 ---
 
-<Container className={className}>
-    <div class="flex flex-col items-center justify-center text-center">
-        <PillsText>{tr.talent.pills}</PillsText>
-
-        <!-- <div -->
-        <!--     class="mt-4 md:mt-8 flex flex-col items-center font-medium text-gray-900 text-4xl md:text-7xl tracking-tight" -->
-        <!-- > -->
-        <div class="mt-8 flex flex-col items-center font-medium text-gray-900 text-5xl md:text-7xl tracking-tight">
-            <div
-                class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
-                set:html={headlineWithImage} 
-            />
-
-            <div class="mt-2 md:mt-4" set:html={tr.talent.headline_2} />
+<div>
+    <Container className={className}>
+        <div class="flex flex-col items-center justify-center text-center">
+            <PillsText>{tr.talent.pills}</PillsText>
+            <Title/>
         </div>
-
-        <div class="my-4 md:mt-8 max-w-2xl text-lg text-wri-gray-600 leading-relaxed">
-            <p>
-                {tr.talent.description}
-            </p>
-        </div>
+    </Container>
+    <TalentPool limit={8} className="mt-16 md:mt-32" />
+    <div class="mt-12 flex justify-center">
+    <a
+        href={getLocalizedPath("/talents", currentLocale)}
+        class="
+            group
+            flex items-center gap-2 rounded-lg px-3 py-2 md:px-6 md:py-3
+            text-white font-semibold text-sm md:text-base shadow-sm transition-all duration-200
+            bg-linear-to-b from-wri-blue to-wri-blue/56
+            border border-wri-darkerblue
+            ring-2 md:ring-4 ring-[#DFEDFF]
+            hover:to-wri-blue hover:shadow-md hover:scale-[1.02] cursor-pointer
+        "
+    >
+        <Icon name="ph:sparkle-fill" class="w-4 h-4 md:w-5 md:h-5 text-white rotate-12" />
+        {tr.talent.data.buttonText}
+    </a>
     </div>
-</Container>
+</div>
