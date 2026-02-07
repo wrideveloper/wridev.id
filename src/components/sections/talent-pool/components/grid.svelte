@@ -50,8 +50,6 @@
     return matchesSearch && matchesCategory && matchesAvailability && matchesExperience;
   });
 
-  console.log("Limit:", limit);
-
   $: displayedTalents = limit === -1
       ? filteredTalents
       : filteredTalents.slice(0, limit);
