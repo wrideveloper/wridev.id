@@ -1,12 +1,10 @@
 # Workshop Riset Informatika Website
 
+![Home Page](images/home.png)
+
 Welcome to the official repository for the Workshop Riset Informatika (WRI) website. This project is a modern, high-performance web application built with [Astro](https://astro.build) and [Svelte](https://svelte.dev), designed to showcase WRI's activities, articles, and community.
 
 This repository is a continuation and update of the previous website located at [wrideveloper/web-wri](https://github.com/wrideveloper/web-wri).
-
-## 📸 Website Appearance
-
-![Home Page](images/home.png)
 
 ## 🏗️ System Design
 
@@ -26,7 +24,6 @@ This project utilizes a modern jamstack architecture optimized for performance a
 ## 🛠️ Prerequisites
 
 Before you begin, ensure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18 or higher)
 - [Bun](https://bun.sh/) (v1.0 or higher) - *Preferred package manager*
 
 ## 📦 Installation
