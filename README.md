@@ -10,7 +10,7 @@ This repository is a continuation and update of the previous website located at 
 
 This project utilizes a modern jamstack architecture optimized for performance and ease of development.
 
-![System Design](images/system-design.png)
+![System Design](images/system-design.webp)
 
 ## 🚀 Tech Stack
 
@@ -24,11 +24,13 @@ This project utilizes a modern jamstack architecture optimized for performance a
 ## 🛠️ Prerequisites
 
 Before you begin, ensure you have the following installed:
-- [Bun](https://bun.sh/) (v1.0 or higher) - *Preferred package manager*
+
+- [Bun](https://bun.sh/) (v1.0 or higher) - _Preferred package manager_
 
 ## 📦 Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/wrideveloper/wridev.id.git
    cd wridev.id
@@ -80,6 +82,7 @@ bun run preview
 This project uses environment variables for configuration. Create a `.env` file in the root directory if needed, or configure them in your deployment platform (e.g., Cloudflare Pages).
 
 Key variables used (see `astro.config.mjs`):
+
 - `PUBLIC_TURNSTILE_SITE_KEY`
 - `TURNSTILE_SECRET_KEY`
 - `METRIC_WORKER_URL`
