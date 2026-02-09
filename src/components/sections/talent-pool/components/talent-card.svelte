@@ -31,16 +31,26 @@
 <div class="relative w-full group">
     {#if isVerified}
         <div
-            class="relative z-1 pointer-events-none opacity-0 transition-opacity duration-450 ease-in-out group-hover:opacity-100"
+            class="absolute top-5 right-5 md:top-[2.5vh] md:right-[2.5vh] z-1 flex flex-col items-end group/badge"
         >
             <div
-                class="absolute -top-10 -right-12 px-4 py-3 bg-linear-to-b from-wri-blue to-wri-litblue text-wri-white rounded-xl shadow-lg"
+                class="absolute -top-15 right-[-10%] mb-2 opacity-0 transition-opacity delay-750 duration-450 ease-in-out group-hover/badge:opacity-100 pointer-events-none"
             >
-                WRI Verified
+                <div
+                    class="absolute -right-15 px-4 py-3 bg-linear-to-b from-wri-blue to-wri-litblue text-wri-white rounded-xl text-[1vw] font-bold whitespace-nowrap"
+                >
+                    WRI Verified
+                    <div
+                        class="absolute bottom-[-15%] right-[60%] size-0 border-l-8 border-r-8 border-r-transparent border-l-transparent border-t-8 border-t-wri-litblue"
+                    ></div>
+                </div>
             </div>
-            <div
-                class="absolute top-1.75 right-7 size-0 border-l-10 border-r-10 border-r-transparent border-l-transparent border-t-10 border-t-wri-litblue"
-            ></div>
+
+            <img
+                src={verifiedIcon}
+                alt="Verified"
+                class="size-8 md:size-[2.35vw] object-contain cursor-pointer"
+            />
         </div>
     {/if}
 
@@ -53,26 +63,18 @@
             {loading}
             decoding="async"
             class="
-        absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-in-out
-        group-hover:scale-105 group-hover:grayscale-0
+      absolute inset-0 h-full w-full object-cover transition-all duration-500 ease-in-out
+      group-hover:scale-105 group-hover:grayscale-0
 
-        grayscale-0 lg:grayscale"
+      grayscale-0 lg:grayscale"
         />
-
-        {#if isVerified}
-            <img
-                src={verifiedIcon}
-                alt="Verified"
-                class="size-2/16 absolute top-4 right-4 object-contain z-10"
-            />
-        {/if}
 
         <div
             class="
-        absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300
-        group-hover:opacity-100
+      absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300
+      group-hover:opacity-100
 
-        opacity-100 lg:opacity-0"
+      opacity-100 lg:opacity-0"
         ></div>
 
         <div
@@ -80,10 +82,10 @@
         >
             <div
                 class="
-        flex flex-wrap gap-1.5 md:gap-2.5 transition-transform duration-300
-        group-hover:translate-y-0
+      flex flex-wrap gap-1.5 md:gap-2.5 transition-transform duration-300
+      group-hover:translate-y-0
 
-        translate-y-0 lg:translate-y-4"
+      translate-y-0 lg:translate-y-4"
             >
                 {#each displayTags as tag}
                     <span
@@ -96,10 +98,10 @@
 
             <div
                 class="
-        mt-2 overflow-hidden transition-all duration-300
-        group-hover:h-auto group-hover:opacity-100
+      mt-2 overflow-hidden transition-all duration-300
+      group-hover:h-auto group-hover:opacity-100
 
-        h-auto opacity-100 lg:h-0 lg:opacity-0"
+      h-auto opacity-100 lg:h-0 lg:opacity-0"
             >
                 <p
                     class="text-xs md:text-lg font-medium leading-snug text-white"
