@@ -55,7 +55,7 @@
       : filteredTalents.slice(0, limit);
 </script>
 
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 justify-items-center">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-[2vw] sm:gap-6 justify-items-center">
     {#each displayedTalents as talent, i (talent.name)}
         <a
             href={getLocalizedPath(`/talents/${createSlug(talent.name)}`, locale)}

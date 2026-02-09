@@ -89,7 +89,7 @@
             >
                 {#each displayTags as tag}
                     <span
-                        class="rounded-md bg-white px-1.5 py-0.5 md:px-2 md:py-1 text-[0.6rem] md:text-sm font-bold text-gray-900 shadow-sm"
+                        class="rounded-md bg-white px-1.5 py-0.5 md:px-2 md:py-1 text-[0.6rem] md:text-[.9vw] font-bold text-gray-900 shadow-sm"
                     >
                         {tag}
                     </span>
@@ -104,7 +104,7 @@
       h-auto opacity-100 lg:h-0 lg:opacity-0"
             >
                 <p
-                    class="text-xs md:text-lg font-medium leading-snug text-white"
+                    class="text-xs md:text-[1vw] font-medium leading-snug text-white"
                 >
                     {shortDescription}
                 </p>
