@@ -6,7 +6,8 @@
     import MobileIcon from "~icons/ph/device-mobile-duotone";
     import PaletteIcon from "~icons/ph/palette-duotone";
     import CreativeIcon from "~icons/ph/aperture";
-    import CyberIcon from "~icons/ph/bug";
+    import CyberIcon from "~icons/ph/bug"; 
+    import AiIcon from "~icons/ph/head-circuit"; 
     import { t } from "~/i18n";
 
     export let tr: ReturnType<typeof t>;
@@ -18,7 +19,8 @@
         { name: "Mobile",   value: "mobile",         icon: MobileIcon },
         { name: "UI/UX",    value: "ui/ux",          icon: PaletteIcon },
         { name: "Creative", value: "creative",       icon: CreativeIcon },
-        { name: "Cyber",    value: "cyber-security", icon: CyberIcon },
+        { name: "Cyber",    value: "cyber-security", icon: CyberIcon  },
+        { name: "AI",       value: "ai-engineer",    icon: AiIcon },
     ];
 </script>
 

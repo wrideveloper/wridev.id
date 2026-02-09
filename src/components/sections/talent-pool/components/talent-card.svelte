@@ -19,6 +19,7 @@
             if (tag === "cyber-security") return "Cyber Security";
             if (tag === "ui/ux") return "UI/UX";
             if (tag === "Web Dev") return "Web Dev";
+            if (tag === "ai-engineer") return "AI Engineer";
             return tag.charAt(0).toUpperCase() + tag.slice(1);
         });
     })();

@@ -1,3 +1,7 @@
+
+
+
+
 export const en = {
   nav: {
     home: "Home",
@@ -42,6 +46,7 @@ export const en = {
     opt_uiux: "UI/UX Designer",
     opt_cre: "Creative",
     opt_cysec: "Cyber Security",
+    opt_ai: "AI Engineer",
     opt_other: "Other",
     label_desc: "Description",
     ph_desc: "Describe what you are looking for...",
@@ -217,6 +222,7 @@ export const en = {
       "UI/UX": "UI/UX",
       Creative: "Creative",
       Cyber: "Cyber",
+      AI: "AI Engineer",
     },
     advanced: "Advanced Filter",
     availability: "Availability",

@@ -9,6 +9,8 @@ export type Proficiency =
   | "mobile"
   | "game"
   | "ui/ux"
+  | "game"
+  | "ai-engineer"
   | "creative"
   | "cyber-security"
   | "general";

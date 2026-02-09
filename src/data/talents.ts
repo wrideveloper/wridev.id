@@ -447,7 +447,7 @@ export const TALENT_DATA: TalentData = {
         },
       ],
       yearsOfExperience: 1.5,
-      proficiencies: ["frontend"],
+      proficiencies: ["frontend", "ai-engineer"],
       availabilities: ["freelance"],
       isVerified: false,
     },

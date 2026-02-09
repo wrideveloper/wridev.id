@@ -135,6 +135,9 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                             <option value="cybersec"
                                 >{tr.talentmodal.opt_cysec}</option
                             >
+                            <option value="ai-engineer"
+                                >{tr.talentmodal.opt_ai}</option
+                            >
                             <option value="other"
                                 >{tr.talentmodal.opt_other}</option
                             >
@@ -291,8 +294,6 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     import { sendTalentRequest } from "~/utils/cta-mail";
     import gsap from "gsap";
 
-
-
     const modalOverlay = document.getElementById("talent-modal-overlay");
     const modalContent = document.getElementById("talent-modal-content");
     const openBtn = document.getElementById("open-talent-modal");
@@ -304,7 +305,9 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     const form = document.getElementById(
         "talent-request-form",
     ) as HTMLFormElement;
-    const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement;
+    const submitBtn = document.getElementById(
+        "submit-btn",
+    ) as HTMLButtonElement;
     const stateForm = document.getElementById("modal-state-form");
     const stateLoading = document.getElementById("modal-state-loading");
     const stateSuccess = document.getElementById("modal-state-success");
@@ -450,11 +453,7 @@ const tr = t(Astro.currentLocale as keyof typeof language);
             duration: 0.5,
             ease: "elastic.out(1, 0.6)",
         })
-            .to(
-                "#error-title",
-                { autoAlpha: 1, y: 0, duration: 0.4 },
-                "-=0.3",
-            )
+            .to("#error-title", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
             .to("#error-desc", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
             .to(
                 "#close-error-btn",
@@ -594,7 +593,13 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 },
             );
 
-            if (isValid && stateForm && stateLoading && stateSuccess && stateError) {
+            if (
+                isValid &&
+                stateForm &&
+                stateLoading &&
+                stateSuccess &&
+                stateError
+            ) {
                 // Disable submit button to prevent multiple clicks
                 if (submitBtn) submitBtn.disabled = true;
 
@@ -612,20 +617,26 @@ const tr = t(Astro.currentLocale as keyof typeof language);
                 if (!isTurnstileTokenReady) {
                     switchState(stateForm, stateLoading);
 
-
                     // Wait for token with timeout
                     const waitForToken = async () => {
                         const maxWaitTime = 10000; // 10 seconds max
                         const startTime = Date.now();
 
-                        while (!isTurnstileTokenReady && (Date.now() - startTime) < maxWaitTime) {
-                            await new Promise(resolve => setTimeout(resolve, 100));
+                        while (
+                            !isTurnstileTokenReady &&
+                            Date.now() - startTime < maxWaitTime
+                        ) {
+                            await new Promise((resolve) =>
+                                setTimeout(resolve, 100),
+                            );
                         }
 
                         if (!isTurnstileTokenReady || !turnstileToken) {
-                            const errorDescEl = document.getElementById("error-desc");
+                            const errorDescEl =
+                                document.getElementById("error-desc");
                             if (errorDescEl) {
-                                errorDescEl.textContent = "Security verification failed. Please complete the security check and try again.";
+                                errorDescEl.textContent =
+                                    "Security verification failed. Please complete the security check and try again.";
                             }
                             switchState(stateLoading, stateError, animateError);
                             if (submitBtn) submitBtn.disabled = false;
@@ -646,13 +657,21 @@ const tr = t(Astro.currentLocale as keyof typeof language);
     }
 
     async function submitFormData() {
-        if (!form || !stateForm || !stateLoading || !stateSuccess || !stateError) return;
+        if (
+            !form ||
+            !stateForm ||
+            !stateLoading ||
+            !stateSuccess ||
+            !stateError
+        )
+            return;
         if (!loadingAnim) return;
 
         if (!turnstileToken) {
             const errorDescEl = document.getElementById("error-desc");
             if (errorDescEl) {
-                errorDescEl.textContent = "Security verification failed. Please complete the security check and try again.";
+                errorDescEl.textContent =
+                    "Security verification failed. Please complete the security check and try again.";
             }
             switchState(stateForm, stateError, animateError);
             if (submitBtn) submitBtn.disabled = false;
@@ -678,7 +697,9 @@ const tr = t(Astro.currentLocale as keyof typeof language);
         } else {
             const errorDescEl = document.getElementById("error-desc");
             if (errorDescEl) {
-                errorDescEl.textContent = result.error || "An unexpected error occurred. Please try again later.";
+                errorDescEl.textContent =
+                    result.error ||
+                    "An unexpected error occurred. Please try again later.";
             }
             switchState(stateLoading, stateError, animateError);
         }
