@@ -68,6 +68,7 @@
               description={talent.about}
               tags={talent.proficiencies}
               loading={i < 3 ? "eager" : "lazy"}
+              isVerified={talent.isVerified}
             />
         </a>
     {/each}
