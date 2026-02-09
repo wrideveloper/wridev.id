@@ -39,7 +39,7 @@
                 WRI Verified
             </div>
             <div
-                class="absolute top-2 right-6.5 size-0 border-l-10 border-r-10 border-r-transparent border-l-transparent border-t-10 border-t-wri-litblue"
+                class="absolute top-1.75 right-7 size-0 border-l-10 border-r-10 border-r-transparent border-l-transparent border-t-10 border-t-wri-litblue"
             ></div>
         </div>
     {/if}
@@ -63,7 +63,7 @@
             <img
                 src={verifiedIcon}
                 alt="Verified"
-                class="size-10 absolute top-4 right-4 object-contain z-10"
+                class="size-2/16 absolute top-4 right-4 object-contain z-10"
             />
         {/if}
 
