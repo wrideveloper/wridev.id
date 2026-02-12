@@ -1,0 +1,17 @@
+---
+import Layout from "~/layouts/Layout.astro";
+
+import TalentTitle from "~/components/sections/talent/components/title.astro";
+import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
+---
+
+<Layout
+  title="Talents | Workshop Riset Informatika"
+  description="Explore the digital talent pool at Workshop Riset Informatika (WRI), featuring skilled developers, designers, and technology enthusiasts."
+  canonical={Astro.url.href}
+>
+    <div class="pt-32 w-full">
+        <TalentTitle/>
+        <TalentPool />
+    </div>
+</Layout>

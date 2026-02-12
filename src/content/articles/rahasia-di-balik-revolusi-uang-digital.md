@@ -1,7 +1,7 @@
 ---
 title: "Bitcoin & Blockchain: Rahasia di Balik Revolusi Uang Digital"
 description: Penasaran kenapa Bitcoin dan blockchain jadi perbincangan seru? Yuk, cari tahu bagaimana Bitcoin memudahkan transaksi tanpa perantara bank dan kenapa teknologi blockchain begitu menarik di dunia keuangan digital.
-image: "/articles/e50e574a-e193-4bf5-88e6-894d74b89387.jpeg"
+image: "/assets/articles/e50e574a-e193-4bf5-88e6-894d74b89387.webp"
 author: Petrus Tyang Agung Rosario
 github: https://github.com/petrusthelastking
 linkedin: https://www.linkedin.com/in/petrus-rosario-69b149260/

@@ -1,21 +1,24 @@
 ---
-import Layout from "~/layouts/default.astro";
-import HeroSection from "~/components/section/hero-section.astro";
-import MiniclassSection from "~/components/section/miniclass/miniclass-section.astro";
-import TechnologySection from "~/components/section/technology-section.astro";
-// disable for now until we have the content ready
-// import ArticlesSection from "~/components/section/articles/articles-section.astro";
-import TalentPoolSection from "~/components/section/talent-pool/talent-pool-section.astro";
-import TestimonialSection from "~/components/section/testimonial/testimonial-section.astro";
-import FaqSection from "~/components/section/faq/faq-section.astro";
+import Layout from "~/layouts/Layout.astro";
+import Hero from "~/components/sections/hero/hero-section.astro";
+import FeatureSection from "~/components/sections/feature/feature-section.astro";
+import TechSection from "~/components/sections/tech/tech-section.astro";
+import AboutUsSection from "~/components/sections/about-us/about-us-section.astro";
+import TalentSection from "~/components/sections/talent/talent-section.astro";
+import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
+import FaqSection from "~/components/sections/faq/faq-section.astro";
+import TestimonialSection from "~/components/sections/testimonial/testimonial-section.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
 ---
 
-<Layout title="Home">
-	<HeroSection/>
-	<TechnologySection/>
-	<MiniclassSection/>
-	<TalentPoolSection/>
-	<hr class="w-full border-slate-200 border-t"/>
-	<TestimonialSection/>
-	<FaqSection/>
+<Layout>
+    <Hero />
+    <FeatureSection className="mt-16 md:mt-32" />
+    <TechSection className="mt-16 md:mt-32" />
+    <AboutUsSection className="mt-16 md:mt-32" />
+    <TalentSection className="mt-16 md:mt-32"/>
+    <TalentPool className="mt-16 md:mt-32"/>
+    <TestimonialSection className="mt-16 md:mt-32" />
+    <FaqSection className="mt-16 md:mt-32" />
+    <FooterSection />
 </Layout>

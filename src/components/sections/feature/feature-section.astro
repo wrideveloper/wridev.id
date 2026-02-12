@@ -1,0 +1,66 @@
+---
+import Container from "~/components/sections/container.svelte";
+import PillsText from "~/components/text/pills.astro";
+import InlineIcon from "~/components/text/inline-icon.astro";
+import StatsPool from "~/components/sections/feature/components/stats-pool.svelte";
+import Interpolate from "~/components/ui/interpolate.astro";
+
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+
+const { className } = Astro.props;
+
+const stats = [
+    {
+        title: tr.feature.stat1.title,
+        value: tr.feature.stat1.value,
+        desc: tr.feature.stat1.desc,
+    },
+    {
+        title: tr.feature.stat2.title,
+        value: tr.feature.stat2.value,
+        desc: tr.feature.stat2.desc,
+    },
+    {
+        title: tr.feature.stat3.title,
+        value: tr.feature.stat3.value,
+        desc: tr.feature.stat3.desc,
+    },
+];
+---
+
+<Container className={className}>
+    <PillsText className="mx-auto md:mx-0">{tr.feature.pills}</PillsText>
+    <div class="flex flex-col gap-8 md:gap-14 items-center w-full mt-6 md:mt-10 mb-10 md:mb-20">
+        <div>
+            <div
+                class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
+            >
+                <Interpolate text={tr.feature.headline_1}>
+                    <InlineIcon
+                        slot="icon"
+                        name="ph:student-fill"
+                        color="wri-blue"
+                        rotate={3}
+                        className="translate-y-0.5 md:translate-y-3"
+                    />
+                </Interpolate>
+            </div>
+            <div
+                class="relative flex justify-center items-end text-4xl md:text-6xl font-medium"
+            >
+                <Interpolate text={tr.feature.headline_2}>
+                    <InlineIcon
+                        slot="icon"
+                        name="ph:crown-simple-fill"
+                        color="wri-yellow"
+                        rotate={-2}
+                        className="translate-y-0.5 md:translate-y-2"
+                    />
+                </Interpolate>
+            </div>
+        </div>
+        <StatsPool stats={stats} />
+    </div>
+</Container>

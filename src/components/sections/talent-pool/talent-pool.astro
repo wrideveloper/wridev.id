@@ -1,0 +1,53 @@
+---
+import Toolbar from "~/components/sections/talent-pool/components/toolbar.svelte";
+import Grid from "~/components/sections/talent-pool/components/grid.svelte";
+import { TALENT_DATA } from "~/data/talents.ts";
+import { t, language } from "~/i18n";
+import { getImage } from "astro:assets";
+
+const { limit = -1 } = Astro.props;
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
+
+const allImages = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/talents/*.{jpeg,jpg,png,webp}",
+);
+
+const optimizedTalents = await Promise.all(
+    TALENT_DATA.talents.map(async (talent) => {
+        const imagePath = `/src/assets/talents/${talent.profileImage}`;
+
+        if (!allImages[imagePath]) {
+            console.error(`Image not found: ${imagePath}`);
+            return talent; // Return original if missing (or handle error)
+        }
+
+        const imageModule = await allImages[imagePath]();
+
+        const optimizedImage = await getImage({
+            src: imageModule.default,
+            format: "webp",
+            width: 400, // Resize to save bandwidth
+            height: 400,
+        });
+
+        return {
+            ...talent,
+            profileImage: optimizedImage.src,
+        };
+    }),
+);
+---
+
+<section class="w-full max-w-9xl mx-auto px-4 md:px-[10vw] py-8 md:py-12">
+    <Toolbar client:load tr={tr} />
+
+    <Grid
+        limit={limit}
+        talents={optimizedTalents}
+        tr={tr}
+        locale={currentLocale}
+        client:load
+    />
+</section>

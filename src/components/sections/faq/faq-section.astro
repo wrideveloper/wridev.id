@@ -1,0 +1,36 @@
+---
+import PillsText from "~/components/text/pills.astro";
+import Container from "~/components/sections/container.svelte";
+import Grid from "~/components/sections/faq/components/grid.svelte";
+
+const { className } = Astro.props;
+
+import { faqs } from "~/data/faq";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+---
+
+<Container className={`px-4 sm:px-6 lg:px-30 ${className}`}>
+    <div class="w-full">
+        <PillsText className="mx-auto lg:mx-0">{tr.faq.pills}</PillsText>
+        <div class="flex flex-col lg:flex-row mt-2 gap-6 lg:gap-8">
+            <div class="text-center md:text-left flex-shrink-0 md:mr-16">
+                <div
+                    class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
+                    set:html={tr.faq.headline_1}
+                />
+                <div
+                    class="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium"
+                    set:html={tr.faq.headline_2}
+                />
+                <p class="mt-4 max-w-full md:max-w-[34rem] text-sm sm:text-base text-wri-gray-600">
+                    {tr.faq.description}
+                </p>
+            </div>
+            <div class="w-full lg:flex-1 lg:ml-auto lg:min-h-[20rem]">
+                <Grid client:load faqs={faqs} />
+            </div>
+        </div>
+    </div>
+</Container>

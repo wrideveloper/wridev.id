@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import InlineIcon from "~/components/text/inline-icon.astro";
+import HeroCard from "~/components/sections/hero/components/hero-card.astro";
+import Interpolate from "~/components/ui/interpolate.astro";
+import TalentModal from "~/components/sections/hero/components/talent-modal.astro";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
+---
+
+<div
+    class="w-full bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center rounded-3xl px-4 md:px-30"
+>
+    <div
+        class="flex flex-col justify-center items-center mt-32 md:mt-60 font-medium tracking-tight"
+    >
+        <div
+            class="relative flex justify-center items-end text-4xl md:text-7xl"
+        >
+            <Interpolate text={tr.hero.headline_1}>
+                <InlineIcon
+                    slot="icon"
+                    name="ph:book-open-text-fill"
+                    color="wri-blue"
+                    rotate={-2}
+                />
+            </Interpolate>
+        </div>
+        <div
+            class="relative flex justify-center items-end text-4xl md:text-7xl"
+        >
+            <Interpolate text={tr.hero.headline_2}>
+                <InlineIcon
+                    slot="icon"
+                    name="ph:sparkle-fill"
+                    color="wri-yellow"
+                    rotate={2}
+                />
+            </Interpolate>
+        </div>
+        <div
+            class="text-base md:text-xl w-full md:w-4/7 mt-5 text-wri-gray-600 font-normal"
+        >
+            {tr.hero.description}
+        </div>
+
+        <button id="open-talent-modal" class="group cursor-pointer">
+            <div
+                class="flex justify-center items-center bg-transparent group-hover:bg-wri-lighterblue transition-colors duration-300 mt-6 md:mt-10 text-wri-white p-1.5 rounded-2xl"
+            >
+                <div
+                    class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-3 py-2 md:px-5 md:py-3 rounded-xl border border-wri-darkerblue text-base md:text-lg"
+                >
+                    <Icon
+                        name="ph:rocket-launch-bold"
+                        class="size-4.5 md:size-6 text-wri-white mr-2"
+                    />
+                    {tr.hero.findTalent}
+                </div>
+            </div>
+        </button>
+
+        <div class="w-full">
+            <HeroCard />
+        </div>
+        <TalentModal />
+    </div>
+</div>

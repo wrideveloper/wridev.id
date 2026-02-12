@@ -1,10 +1,43 @@
 ---
-import Layout from "~/layouts/default.astro";
+import Layout from "~/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
 ---
 
-<Layout title="404">
-	<div class="text-center flex flex-col justify-center items-center min-h-screen">
-		<h1 class="text-slate-800 text-4xl font-bold">404</h1>
-		<span class="text-slate-700 text-xl">Halaman yang kamu cari gaada.</span>
-	</div>
+<Layout
+  title={tr.notFound.title}
+  description={tr.notFound.description}
+  canonical={Astro.url.href}
+  noindex={true}
+>
+    <div class="w-screen h-screen bg-linear-to-b from-wri-white from-65% to-wri-lightblue to-100% flex flex-col items-center justify-center overflow-hidden text-center px-4 sm:px-8 md:px-30">
+        <div class="flex flex-col justify-center items-center font-medium">
+            <div class="text-2xl sm:text-3xl md:text-4xl text-wri-gray-800 mt-4 sm:mt-6">
+                {tr.notFound.title}
+            </div>
+            <div class="text-base sm:text-lg md:w-4/7 mt-4 sm:mt-5 text-wri-gray-600 font-normal px-4">
+                {tr.notFound.description}
+            </div>
+            <a href={getLocalizedPath("/", currentLocale)}>
+                <div class="flex justify-center items-center bg-wri-lighterblue mt-8 sm:mt-10 text-wri-white p-1.5 rounded-2xl">
+                    <div class="flex justify-center items-center bg-linear-to-b from-wri-blue to-wri-blue/56 px-4 sm:px-5 py-2 sm:py-3 rounded-xl border border-wri-darkerblue text-base sm:text-lg">
+                        <Icon name="ph:house-bold" class="w-5 sm:w-6 h-5 sm:h-6 text-wri-white mr-2" /> {tr.notFound.backHome}
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </Layout>
+
+<style>
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
