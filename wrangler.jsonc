@@ -11,8 +11,6 @@
     "enabled": true
   },
   "vars": {
-    "METRIC_WORKER_URL": "https://yourapiendpoint.com",
-    "CTA_WORKER_URL": "https://yourapiendpoint.com",
     "TTL": "60",
     "BUN_VERSION": "1.3.2"
   },
