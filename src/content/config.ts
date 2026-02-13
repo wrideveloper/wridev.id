@@ -26,7 +26,14 @@ const miniclassCollection = defineCollection({
 		}),
 });
 
+const pagesCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+	}),
+});
+
 export const collections = {
 	articles: articlesCollection,
 	miniclass: miniclassCollection,
+	pages: pagesCollection,
 };

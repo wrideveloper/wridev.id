@@ -1,46 +1,99 @@
-Ada beberapa cara yang bisa kamu lakukan untuk berkontribusi ke website WRI. Mulai dari hal sederhana dengan cara membuka issue apabila kamu menemukan masalah yang ada di website WRI, menulis sebuah artikel, memberbaiki bug, ataupun menambahkan fitur baru.
+# Contributing to Workshop Riset Informatika Website
 
-Website ini sebagian besar dibuat menggunakan [Astro](https://astro.build), [Svelte](https://svelte.dev) untuk bagian yang membutuhkan user interaction, dan menggunakan [TailwindCSS](https://tailwindcss.com) untuk styling.
+First off, thank you for considering contributing to the Workshop Riset Informatika (WRI) website! We welcome contributions from everyone.
 
-Apabila kamu ingin berkontribusi seperti memperbaiki bug atau menambahkan fitur baru, kamu perlu beberapa hal terlebih dahulu.
+## 🤝 How to Contribute
 
-- [NodeJS](https://nodejs.org)
-- [PNPM](https://pnpm.io)
-- [Git](https://git-scm.com)
-- Text Editor seperti [VSCode](https://code.visualstudio.com)
-
-Apabila kamu sudah punya ke-empat hal diatas, kamu bisa mulai melakukan development dengan cara fork lalu clone repository ini.
-
-Jalankan command dibawah untuk memulai dev server.
+### 1. Fork the Repository
+Fork this repository to your own GitHub account and then clone it to your local device.
 
 ```bash
-pnpm dev
+git clone https://github.com/your-username/wridev.id.git
+cd wridev.id
 ```
 
-Apabila dirasa sudah cukup, kamu bisa commit pekerjaan kamu. Jangan lupa membuat branch khusus terlebih dahulu sebelum melakukan commit.
+### 2. Create a Branch
+Create a new branch for your feature or bug fix.
 
-Pastikan commit kamu sebisa mungkin mengikuti aturan [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) agar lebih mudah dibaca oleh kontributor lainnya.
-
-### Kontribusi Artikel
-
-Apabila kamu ingin menulis artikel untuk website WRI, sebagian besar caranya sama seperti diatas termasuk kebutuhan yang harus kamu install terlebih dahulu.
-
-Perbedaannya ada pada file yang akan kamu kerjakan. Semua artikel ada di dalam directory `src/content/articles`. Kamu bisa mulai dengan membuat file markdown baru dengan judul pendek yang kamu inginkan (kalo masih belum familiar sama markdown, kamu bisa cek [markdowntutorial.com](https://www.markdowntutorial.com/)), pastikan semuanya menggunakan huruf lowercase dan menggunakan karakter `-` sebagai separator.
-
-Kamu harus mengisi beberapa field yang ada di dalam _frontmatter_ seperti contoh dibawah ini:
-
-```yaml
-title: judul artikel kamu
-description: deskripsi singkat dari artikel kamu
-image: gambar cover artikel
-author: nama kamu
-github: username github akun kamu
-linkedin: username dari akun linkedin kamu
-date: tanggal kamu menulis artikel
-tags:
-  - bebas
-  - diisi
-  - apa
+```bash
+git checkout -b feature/amazing-feature
+# or
+git checkout -b fix/bug-fix
 ```
 
-Selanjutnya bebas deh kamu mau nulis apa, usahakan masih relevan dengan teknologi ya
+### 3. Make Changes
+Make your changes to the code. Ensure your code follows the project's style and conventions.
+
+### 4. Commit Your Changes
+We follow the **Conventional Commits** specification. Please format your commit messages accordingly:
+
+- `feat`: A new feature
+- `fix`: A bug fix
+- `docs`: Documentation only changes
+- `style`: Changes that do not affect the meaning of the code (white-space, formatting, etc)
+- `refactor`: A code change that neither fixes a bug nor adds a feature
+- `perf`: A code change that improves performance
+- `test`: Adding missing tests or correcting existing tests
+- `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
+
+**Example:** `feat: add new article listing component`
+
+### 5. Push to Your Fork
+Push your changes to your fork on GitHub.
+
+```bash
+git push origin feature/amazing-feature
+```
+
+### 6. Submit a Pull Request
+Open a Pull Request on the original repository. Please provide a clear description of your changes and link to any relevant issues.
+
+## ✍️ Writing Articles
+
+We welcome article contributions from the community! To add an article:
+
+1.  **Create a New File**:
+    Inside `src/content/articles/`, create a new markdown file. The filename will be used as the slug (URL) for the article.
+    *   Example: `my-awesome-tutorial.md` -> `https://wridev.id/articles/my-awesome-tutorial`
+
+2.  **Add Frontmatter**:
+    At the top of your markdown file, add the following metadata block (Frontmatter):
+
+    ```yaml
+    ---
+    title: Your Article Title
+    description: A brief summary of your article (visible in previews).
+    image: https://path-to-your-image.com/image.jpg # Or a relative path in public/
+    author: Your Name
+    github: https://github.com/yourusername # Optional
+    linkedin: https://linkedin.com/in/yourprofile # Optional
+    date: 2024-03-20 # YYYY-MM-DD format
+    tags:
+      - tag1
+      - tag2
+    ---
+    ```
+
+3.  **Write Content**:
+    Write your article content below the frontmatter using standard Markdown syntax. You can include code blocks, images, and links.
+
+    > **Note**: For images within the article content, you can use standard markdown syntax `![Alt Text](URL)`.
+
+## 💻 Development Workflow
+
+1.  **Install Dependencies:** `bun install`
+2.  **Start Development Server:** `bun dev`
+3.  **Build for Production:** `bun run build`
+
+## 🎨 Coding Style
+
+- Use **TypeScript** whenever possible.
+- Use **Tailwind CSS** for styling. Avoid custom CSS files unless necessary.
+- Ensure all components are responsive and accessible.
+- Follow the existing folder structure.
+
+## 📝 Reporting Issues
+
+If you find a bug or have a suggestion, please open an issue on GitHub. Include as much detail as possible to help us understand and resolve the issue.
+
+Thank you for your contribution!

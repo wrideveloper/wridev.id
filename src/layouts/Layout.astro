@@ -1,0 +1,92 @@
+---
+import "~/styles/global.css";
+import Cursor from "~/components/sections/globals/cursor.astro";
+import NavbarSection from "~/components/sections/globals/navbar-section.astro";
+import FooterSection from "~/components/sections/footer/footer-section.astro";
+
+const {
+  title,
+  description,
+  image = "/og-image.png",
+  canonical,
+  type = "website",
+  noindex = false,
+} = Astro.props;
+
+const siteName = "Workshop Riset Informatika";
+const fullTitle = title ? `${title} | ${siteName}` : siteName;
+
+const defaultDescription =
+  "Workshop Riset Informatika (WRI) is a student research and development community at Politeknik Negeri Malang, building digital talent through real-world technology projects.";
+
+const safeDescription = description ?? defaultDescription;
+const url = canonical ?? Astro.url.href;
+---
+
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={safeDescription} />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={safeDescription} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={safeDescription} />
+    <meta name="twitter:image" content={image} />
+
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    {type === "article" && (
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: title,
+          description: safeDescription,
+          image,
+          url,
+          publisher: {
+            "@type": "Organization",
+            name: siteName,
+          },
+        })}
+      </script>
+    )}
+  </head>
+
+  <body>
+    <Cursor />
+    <NavbarSection />
+
+    <main id="content">
+      <slot />
+    </main>
+
+    <FooterSection />
+  </body>
+</html>
+
+<style>
+html,
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+</style>

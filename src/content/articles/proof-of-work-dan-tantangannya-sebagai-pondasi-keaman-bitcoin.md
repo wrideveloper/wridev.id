@@ -1,7 +1,7 @@
 ---
 title: "Proof-of-Work dan Tantangannya Sebagai Pondasi Keamanan Bitcoin"
 description: Artikel ini menjelaskan bagaimana Proof-of-Work (PoW) mengamankan Bitcoin. PoW melibatkan pencarian "nonce" untuk validasi transaksi dan penambahan blok ke blockchain. Tingkat kesulitan PoW otomatis menyesuaikan diri.
-image: "/articles/0bf20858-d3d0-4cbf-b2ca-2cbcf3d012ee.jpeg"
+image: "/assets/articles/0bf20858-d3d0-4cbf-b2ca-2cbcf3d012ee.webp"
 author: Petrus Tyang Agung Rosario
 github: https://github.com/petrusthelastking
 linkedin: https://www.linkedin.com/in/petrus-rosario-69b149260/

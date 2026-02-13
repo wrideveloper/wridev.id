@@ -1,6 +1,5 @@
 export type Testimonial = {
-	name: string;
-	profileImage?: string;
-	position: string;
-	testimony: string;
+    title: string;
+    description: string;
+    name: string;
 };

@@ -1,0 +1,24 @@
+---
+import GithubStat from './github-stat.astro';
+
+interface Props {
+  talent_data: any;
+}
+
+const { talent_data } = Astro.props; 
+
+const hasGithubContact = talent_data?.contacts?.some((c: any) => c.type === 'github');
+---
+
+<div class="flex flex-col gap-6 w-full">
+  
+  {hasGithubContact ? (
+     <GithubStat talent_data={talent_data} />
+  ) : (
+     /* Only show placeholder if there is NO Github contact at all */
+     <div class="bg-white p-6 rounded-3xl border border-wri-gray-200 min-h-32 flex items-center justify-center text-wri-gray-400 border-dashed">   
+       No metrics available
+     </div>
+  )}
+
+</div>

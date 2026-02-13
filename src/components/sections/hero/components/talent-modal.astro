@@ -1,0 +1,710 @@
+---
+import { Icon } from "astro-icon/components";
+import { t, language } from "~/i18n";
+import { PUBLIC_TURNSTILE_SITE_KEY } from "astro:env/client";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+---
+
+<div
+    id="talent-modal-overlay"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm opacity-0 invisible"
+    aria-hidden="true"
+>
+    <div
+        class="bg-wri-white w-full max-w-125 mx-4 rounded-3xl shadow-2xl relative overflow-hidden opacity-0"
+        id="talent-modal-content"
+    >
+        <button
+            id="close-modal-btn"
+            class="absolute top-6 right-6 text-gray-400 hover:text-gray-600 transition-colors z-30 cursor-pointer bg-gray-100 rounded-full p-2"
+        >
+            <Icon name="ph:x-bold" class="size-5" />
+        </button>
+
+        <div
+            id="modal-state-form"
+            class="p-8 md:p-10 text-left relative max-h-[85vh] md:max-h-[97vh] overflow-y-auto"
+        >
+            <div class="mb-10 pr-10">
+                <h3
+                    class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight"
+                >
+                    {tr.talentmodal.title_1}
+                    <span class="wri-italic from-wri-yellow to-wri-yellow/45">
+                        {tr.talentmodal.title_accent_1}
+                    </span>
+                    <span class="wri-italic from-wri-blue to-wri-blue/45">
+                        {tr.talentmodal.title_accent_2}
+                    </span>
+                    {tr.talentmodal.for}<br />
+                    {tr.talentmodal.title_2}
+                </h3>
+            </div>
+
+            <form id="talent-request-form" class="space-y-6">
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_1}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_company}
+                    </label>
+                    <div class="relative">
+                        <span
+                            class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none"
+                        >
+                            <Icon name="ph:user" class="text-gray-400 size-5" />
+                        </span>
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder={tr.talentmodal.ph_company}
+                            class="w-full pl-11 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400 bg-white"
+                        />
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_required}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_2}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_email}
+                    </label>
+                    <div class="relative">
+                        <span
+                            class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none"
+                        >
+                            <Icon
+                                name="ph:envelope-simple"
+                                class="text-gray-400 size-5"
+                            />
+                        </span>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder={tr.talentmodal.ph_email}
+                            class="w-full pl-11 pr-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400 bg-white"
+                        />
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_required}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_3}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_prof}
+                    </label>
+                    <div class="relative">
+                        <select
+                            name="proficiency"
+                            class="w-full pl-4 pr-10 py-3 bg-white border border-gray-200 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700"
+                        >
+                            <option value="" disabled selected
+                                >{tr.talentmodal.ph_prof}</option
+                            >
+                            <option value="backend"
+                                >{tr.talentmodal.opt_be}</option
+                            >
+                            <option value="frontend"
+                                >{tr.talentmodal.opt_fe}</option
+                            >
+                            <option value="mobile"
+                                >{tr.talentmodal.opt_mob}</option
+                            >
+                            <option value="uiux"
+                                >{tr.talentmodal.opt_uiux}</option
+                            >
+                            <option value="creative"
+                                >{tr.talentmodal.opt_cre}</option
+                            >
+                            <option value="cybersec"
+                                >{tr.talentmodal.opt_cysec}</option
+                            >
+                            <option value="ai-engineer"
+                                >{tr.talentmodal.opt_ai}</option
+                            >
+                            <option value="other"
+                                >{tr.talentmodal.opt_other}</option
+                            >
+                        </select>
+                        <span
+                            class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
+                        >
+                            <Icon
+                                name="ph:caret-down"
+                                class="text-gray-400 size-4"
+                            />
+                        </span>
+                    </div>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.err_prof}
+                    </p>
+                </div>
+
+                <div class="group-input">
+                    <p
+                        class="text-xs font-bold text-gray-400 uppercase tracking-wide mb-1"
+                    >
+                        {tr.talentmodal.step_4}
+                    </p>
+                    <label class="block text-lg font-bold text-gray-900 mb-2">
+                        {tr.talentmodal.label_desc}
+                    </label>
+                    <textarea
+                        name="description"
+                        rows="4"
+                        placeholder={tr.talentmodal.ph_desc}
+                        class="w-full p-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors text-gray-700 placeholder-gray-400 resize-none bg-white"
+                    ></textarea>
+                    <p class="hidden text-red-500 text-xs mt-1 error-msg">
+                        {tr.talentmodal.error_desc}
+                    </p>
+                </div>
+
+                <div
+                    id="turnstile-widget"
+                    class="cf-turnstile"
+                    data-sitekey={PUBLIC_TURNSTILE_SITE_KEY}
+                    data-size="flexible"
+                >
+                </div>
+
+                <div class="pt-4 flex justify-end">
+                    <button
+                        type="submit"
+                        id="submit-btn"
+                        class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-blue-500/30 flex items-center gap-2 transition-transform active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                    >
+                        <Icon name="ph:sparkle-fill" class="size-5" />
+                        <span id="submit-text">{tr.talentmodal.btn_send}</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div
+            id="modal-state-loading"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div class="relative mb-6">
+                <div
+                    class="absolute inset-0 bg-blue-100 rounded-full animate-ping opacity-75"
+                >
+                </div>
+                <div
+                    id="loading-icon"
+                    class="relative bg-blue-500 rounded-full p-6"
+                >
+                    <Icon
+                        name="ph:paper-plane-tilt-fill"
+                        class="text-white size-8"
+                    />
+                </div>
+            </div>
+            <h4 class="text-2xl font-bold text-gray-900 mb-2">
+                {tr.talentmodal.processing_title}
+            </h4>
+            <p class="text-gray-600">{tr.talentmodal.processing_desc}</p>
+        </div>
+
+        <div
+            id="modal-state-success"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div
+                id="success-icon-container"
+                class="relative mb-6 opacity-0 scale-90"
+            >
+                <div
+                    class="absolute inset-0 bg-green-100 rounded-full blur-xl opacity-75"
+                >
+                </div>
+                <div class="relative bg-green-500 rounded-full p-6">
+                    <Icon name="ph:check-bold" class="text-white size-8" />
+                </div>
+            </div>
+            <h4
+                id="success-title"
+                class="text-2xl font-bold text-gray-900 mb-2 opacity-0"
+            >
+                {tr.talentmodal.success_title}
+            </h4>
+            <p id="success-desc" class="text-gray-600 max-w-md mb-6 opacity-0">
+                {tr.talentmodal.success_desc}
+            </p>
+            <button
+                id="close-success-btn"
+                class="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-blue-500/30 transition-transform active:scale-95 opacity-0"
+            >
+                {tr.talentmodal.btn_close}
+            </button>
+        </div>
+
+        <div
+            id="modal-state-error"
+            class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 z-20"
+        >
+            <div
+                id="error-icon-container"
+                class="relative mb-6 opacity-0 scale-90"
+            >
+                <div
+                    class="absolute inset-0 bg-red-100 rounded-full blur-xl opacity-75"
+                >
+                </div>
+                <div class="relative bg-red-500 rounded-full p-6">
+                    <Icon name="ph:x-bold" class="text-white size-8" />
+                </div>
+            </div>
+            <h4
+                id="error-title"
+                class="text-2xl font-bold text-gray-900 mb-2 opacity-0"
+            >
+                {tr.talentmodal.error_title}
+            </h4>
+            <p id="error-desc" class="text-gray-600 max-w-md mb-6 opacity-0">
+                {tr.talentmodal.error_desc}
+            </p>
+            <button
+                id="close-error-btn"
+                class="cursor-pointer bg-red-500 hover:bg-red-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-lg shadow-red-500/30 transition-transform active:scale-95 opacity-0"
+            >
+                {tr.talentmodal.btn_retry}
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { sendTalentRequest } from "~/utils/cta-mail";
+    import gsap from "gsap";
+
+    const modalOverlay = document.getElementById("talent-modal-overlay");
+    const modalContent = document.getElementById("talent-modal-content");
+    const openBtn = document.getElementById("open-talent-modal");
+    const closeBtns = [
+        document.getElementById("close-modal-btn"),
+        document.getElementById("close-success-btn"),
+        document.getElementById("close-error-btn"),
+    ];
+    const form = document.getElementById(
+        "talent-request-form",
+    ) as HTMLFormElement;
+    const submitBtn = document.getElementById(
+        "submit-btn",
+    ) as HTMLButtonElement;
+    const stateForm = document.getElementById("modal-state-form");
+    const stateLoading = document.getElementById("modal-state-loading");
+    const stateSuccess = document.getElementById("modal-state-success");
+    const stateError = document.getElementById("modal-state-error");
+
+    let turnstileWidgetId: string | null = null;
+    let isTurnstileReady = false;
+    let turnstileToken: string | null = null;
+    let isTurnstileTokenReady = false;
+
+    let loadingAnim: gsap.core.Tween | null = null;
+
+    // Wait for Turnstile to be ready
+    const initTurnstile = () => {
+        if (typeof window.turnstile !== "undefined") {
+            isTurnstileReady = true;
+        } else {
+            setTimeout(initTurnstile, 100);
+        }
+    };
+
+    // Start checking for Turnstile
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initTurnstile);
+    } else {
+        initTurnstile();
+    }
+
+    const resetForm = () => {
+        form?.reset();
+        stateForm?.classList.remove("hidden");
+        stateLoading?.classList.add("hidden");
+        stateSuccess?.classList.add("hidden");
+        stateError?.classList.add("hidden");
+        if (submitBtn) submitBtn.disabled = false;
+
+        if (stateForm && stateLoading && stateSuccess && stateError) {
+            gsap.set([stateForm, stateLoading, stateSuccess, stateError], {
+                clearProps: "all",
+            });
+            gsap.set(stateForm, { autoAlpha: 1 });
+        }
+
+        if (modalContent) gsap.set(modalContent, { height: "auto" });
+
+        document
+            .querySelectorAll(".error-msg")
+            .forEach((el) => el.classList.add("hidden"));
+        document
+            .querySelectorAll("input, select, textarea")
+            .forEach((el) =>
+                el.classList.remove("border-red-500", "bg-red-50"),
+            );
+
+        gsap.set(
+            [
+                "#success-icon-container",
+                "#success-title",
+                "#success-desc",
+                "#close-success-btn",
+            ],
+            {
+                clearProps: "all",
+                autoAlpha: 0,
+                y: 10,
+            },
+        );
+
+        gsap.set(
+            [
+                "#error-icon-container",
+                "#error-title",
+                "#error-desc",
+                "#close-error-btn",
+            ],
+            {
+                clearProps: "all",
+                autoAlpha: 0,
+                y: 10,
+            },
+        );
+
+        // Reset Turnstile widget and token state
+        turnstileToken = null;
+        isTurnstileTokenReady = false;
+        if (isTurnstileReady && turnstileWidgetId !== null) {
+            try {
+                window.turnstile.reset(turnstileWidgetId);
+            } catch (error) {
+                console.error("Failed to reset Turnstile:", error);
+            }
+        }
+    };
+
+    const switchState = (
+        hideEl: HTMLElement,
+        showEl: HTMLElement,
+        onComplete?: () => void,
+    ) => {
+        if (!modalContent) return;
+        const currentHeight = modalContent.offsetHeight;
+        gsap.set(modalContent, { height: currentHeight });
+
+        const tl = gsap.timeline({ onComplete });
+
+        tl.to(hideEl, {
+            autoAlpha: 0,
+            duration: 0.2,
+            onComplete: () => hideEl.classList.add("hidden"),
+        });
+
+        tl.add(() => showEl.classList.remove("hidden"));
+
+        tl.fromTo(showEl, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.3 });
+    };
+
+    const animateSuccess = () => {
+        const tl = gsap.timeline();
+        tl.to("#success-icon-container", {
+            scale: 1,
+            autoAlpha: 1,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.6)",
+        })
+            .to(
+                "#success-title",
+                { autoAlpha: 1, y: 0, duration: 0.4 },
+                "-=0.3",
+            )
+            .to("#success-desc", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
+            .to(
+                "#close-success-btn",
+                { autoAlpha: 1, y: 0, duration: 0.4 },
+                "-=0.2",
+            );
+    };
+
+    const animateError = () => {
+        const tl = gsap.timeline();
+        tl.to("#error-icon-container", {
+            scale: 1,
+            autoAlpha: 1,
+            duration: 0.5,
+            ease: "elastic.out(1, 0.6)",
+        })
+            .to("#error-title", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
+            .to("#error-desc", { autoAlpha: 1, y: 0, duration: 0.4 }, "-=0.3")
+            .to(
+                "#close-error-btn",
+                { autoAlpha: 1, y: 0, duration: 0.4 },
+                "-=0.2",
+            );
+    };
+
+    const renderTurnstile = () => {
+        const turnstileContainer = document.getElementById("turnstile-widget");
+        if (!turnstileContainer || !isTurnstileReady) return;
+
+        try {
+            // Remove existing widget if any
+            if (turnstileWidgetId !== null) {
+                window.turnstile.remove(turnstileWidgetId);
+            }
+
+            // Reset token state
+            turnstileToken = null;
+            isTurnstileTokenReady = false;
+
+            // Render new widget with callback to capture token
+            turnstileWidgetId = window.turnstile.render("#turnstile-widget", {
+                sitekey: turnstileContainer.dataset.sitekey || "",
+                callback: (token: string) => {
+                    turnstileToken = token;
+                    isTurnstileTokenReady = true;
+                },
+                "error-callback": () => {
+                    console.error("❌ Turnstile error occurred");
+                    turnstileToken = null;
+                    isTurnstileTokenReady = false;
+                },
+                "expired-callback": () => {
+                    console.warn("⚠️ Turnstile token expired");
+                    turnstileToken = null;
+                    isTurnstileTokenReady = false;
+                },
+            });
+        } catch (error) {
+            console.error("❌ Failed to render Turnstile:", error);
+        }
+    };
+
+    const openModal = () => {
+        resetForm();
+
+        setTimeout(() => {
+            renderTurnstile();
+        }, 300);
+
+        document.body.style.overflow = "hidden";
+        document.body.style.height = "100svh";
+
+        const tl = gsap.timeline();
+        tl.to(modalOverlay, { autoAlpha: 1, duration: 0.3 }).to(
+            modalContent,
+            {
+                scale: 0.9,
+                autoAlpha: 1,
+                duration: 0.4,
+                ease: "back.out(1.2)",
+            },
+            "-=0.2",
+        );
+    };
+
+    const closeModal = () => {
+        const tl = gsap.timeline();
+
+        document.body.style.overflow = "auto";
+        document.body.style.height = "unset";
+
+        tl.to(modalContent, {
+            scale: 0.9,
+            autoAlpha: 0,
+            duration: 0.2,
+        }).to(modalOverlay, { autoAlpha: 0, duration: 0.2 }, "-=0.1");
+    };
+
+    if (openBtn) {
+        openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    closeBtns.forEach((btn) => {
+        if (btn) {
+            btn.addEventListener("click", () => {
+                // If closing from error state, go back to form
+                if (btn.id === "close-error-btn" && stateError && stateForm) {
+                    switchState(stateError, stateForm);
+                    // Re-render Turnstile
+                    setTimeout(() => {
+                        renderTurnstile();
+                    }, 300);
+                } else {
+                    closeModal();
+                }
+            });
+        }
+    });
+
+    if (modalOverlay) {
+        modalOverlay.addEventListener("click", (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+    }
+
+    if (form) {
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            let isValid = true;
+
+            form.querySelectorAll("input, select, textarea").forEach(
+                (input: any) => {
+                    if (input.name == "cf-turnstile-response") return;
+
+                    const group = input.closest(".group-input");
+                    const errorMsg = group?.querySelector(".error-msg");
+
+                    if (!input.value.trim()) {
+                        isValid = false;
+                        input.classList.add("border-red-500", "bg-red-50");
+                        if (errorMsg) errorMsg.classList.remove("hidden");
+                        gsap.fromTo(
+                            input,
+                            { x: -5 },
+                            { x: 5, duration: 0.1, repeat: 3, yoyo: true },
+                        );
+                    } else {
+                        input.classList.remove("border-red-500", "bg-red-50");
+                        if (errorMsg) errorMsg.classList.add("hidden");
+                    }
+                },
+            );
+
+            if (
+                isValid &&
+                stateForm &&
+                stateLoading &&
+                stateSuccess &&
+                stateError
+            ) {
+                // Disable submit button to prevent multiple clicks
+                if (submitBtn) submitBtn.disabled = true;
+
+                loadingAnim = gsap.to("#loading-icon", {
+                    y: -10,
+                    duration: 0.6,
+                    yoyo: true,
+                    repeat: -1,
+                    ease: "power1.inOut",
+                });
+
+                switchState(stateForm, stateLoading);
+
+                // If Turnstile token is not ready yet, show loading state and wait
+                if (!isTurnstileTokenReady) {
+                    switchState(stateForm, stateLoading);
+
+                    // Wait for token with timeout
+                    const waitForToken = async () => {
+                        const maxWaitTime = 10000; // 10 seconds max
+                        const startTime = Date.now();
+
+                        while (
+                            !isTurnstileTokenReady &&
+                            Date.now() - startTime < maxWaitTime
+                        ) {
+                            await new Promise((resolve) =>
+                                setTimeout(resolve, 100),
+                            );
+                        }
+
+                        if (!isTurnstileTokenReady || !turnstileToken) {
+                            const errorDescEl =
+                                document.getElementById("error-desc");
+                            if (errorDescEl) {
+                                errorDescEl.textContent =
+                                    "Security verification failed. Please complete the security check and try again.";
+                            }
+                            switchState(stateLoading, stateError, animateError);
+                            if (submitBtn) submitBtn.disabled = false;
+                            return;
+                        }
+
+                        // Token is ready, proceed with submission
+                        await submitFormData();
+                    };
+
+                    await waitForToken();
+                } else {
+                    // Token is already ready, proceed immediately
+                    await submitFormData();
+                }
+            }
+        });
+    }
+
+    async function submitFormData() {
+        if (
+            !form ||
+            !stateForm ||
+            !stateLoading ||
+            !stateSuccess ||
+            !stateError
+        )
+            return;
+        if (!loadingAnim) return;
+
+        if (!turnstileToken) {
+            const errorDescEl = document.getElementById("error-desc");
+            if (errorDescEl) {
+                errorDescEl.textContent =
+                    "Security verification failed. Please complete the security check and try again.";
+            }
+            switchState(stateForm, stateError, animateError);
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+        }
+
+        const formData = new FormData(form);
+        const requestData = {
+            companyName: formData.get("company") as string,
+            email: formData.get("email") as string,
+            proficiency: formData.get("proficiency") as string,
+            description: formData.get("description") as string,
+            "cf-turnstile-response": turnstileToken,
+        };
+
+        const result = await sendTalentRequest(requestData);
+
+        loadingAnim.kill();
+        gsap.set("#loading-icon", { y: 0 });
+
+        if (result.success) {
+            switchState(stateLoading, stateSuccess, animateSuccess);
+        } else {
+            const errorDescEl = document.getElementById("error-desc");
+            if (errorDescEl) {
+                errorDescEl.textContent =
+                    result.error ||
+                    "An unexpected error occurred. Please try again later.";
+            }
+            switchState(stateLoading, stateError, animateError);
+        }
+
+        // Re-enable submit button
+        if (submitBtn) submitBtn.disabled = false;
+    }
+</script>

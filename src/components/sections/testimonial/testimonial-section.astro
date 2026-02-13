@@ -1,0 +1,34 @@
+---
+import Container from "~/components/sections/container.svelte";
+import PillsText from "~/components/text/pills.astro";
+import Grid from "~/components/sections/testimonial/components/grid.svelte";
+
+const { className } = Astro.props;
+
+import { testimonials } from "~/data/testimonials";
+import { t, language } from "~/i18n";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+---
+
+<div class="flex flex-col gap-8 md:gap-14">
+    <Container className={`flex flex-col gap-4 ${className}`}>
+        <PillsText className="mx-auto md:mx-0">{tr.testimonial.pills}</PillsText>
+        <div>
+            <div
+                class="relative flex justify-center items-end text-3xl md:text-6xl font-medium"
+                set:html={tr.testimonial.headline_1}
+            />
+            <div
+                class="relative flex justify-center items-end text-3xl md:text-6xl font-medium"
+                set:html={tr.testimonial.headline_2}
+            />
+        </div>
+        <div class="flex flex-col items-center text-wri-gray-600 text-center max-w-xs sm:max-w-3xl mx-auto">
+            <p>
+                {tr.testimonial.description}
+            </p>
+        </div>
+    </Container>
+    <Grid testimonials={testimonials} />
+</div>

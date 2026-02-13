@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-wri-white: #fafafa;
+    --color-wri-text: #1c2029;
+    --color-wri-lighterblue: #cfdff5;
+    --color-wri-lightblue: #c8dff9;
+    --color-wri-litblue: #5FA7FD;
+    --color-wri-blue: #0b79ff;
+    --color-wri-darkerblue: #3c74bf;
+    --color-wri-yellow: #ffb12b;
+    --color-wri-gray-25: #fdfdfd;
+    --color-wri-gray-50: #fafafa;
+    --color-wri-gray-100: #f5f5f5;
+    --color-wri-gray-200: #e9eaeb;
+    --color-wri-gray-300: #d5d7da;
+    --color-wri-gray-400: #a4a7ae;
+    --color-wri-gray-500: #717680;
+    --color-wri-gray-600: #535862;
+    --color-wri-gray-700: #414651;
+    --color-wri-gray-800: #252b37;
+    --color-wri-gray-900: #181d27;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.wri-italic {
+    @apply bg-linear-to-b bg-clip-text text-transparent;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+}
+
+body {
+    font-family: "SF Pro Display", sans-serif;
+    color: var(--color-wri-text);
+    background-color: var(--color-wri-white);
+}
+
+@layer utilities {
+    @keyframes walk-left {
+        from {
+            transform: translate3d(0, 0, 0);
+        }
+        to {
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+
+    @keyframes walk-right {
+        from {
+            transform: translate3d(-50%, 0, 0);
+        }
+        to {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .animate-walk-left {
+        will-change: transform;
+        animation: walk-left 20s linear infinite;
+    }
+
+    .animate-walk-right {
+        will-change: transform;
+        animation: walk-right 20s linear infinite;
+    }
+}

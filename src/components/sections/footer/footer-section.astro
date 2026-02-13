@@ -1,0 +1,54 @@
+---
+const { className } = Astro.props;
+import { footerSections } from "~/data/footer";
+import { t, language } from "~/i18n";
+import { getLocalizedPath } from "~/utils/i18n";
+
+const currentLocale = Astro.currentLocale || "en";
+const tr = t(Astro.currentLocale as keyof typeof language);
+
+const translatedFooterSections = [
+    {
+        title: tr.footer.miniclass,
+        links: [
+            { name: tr.footer.frontend, href: getLocalizedPath("/miniclass/frontend", currentLocale) },
+            { name: tr.footer.backend, href: getLocalizedPath("/miniclass/backend", currentLocale) },
+            { name: tr.footer.uiux, href: getLocalizedPath("/miniclass/game", currentLocale) },
+            { name: tr.footer.game, href: getLocalizedPath("/miniclass/ui-ux", currentLocale) },
+        ],
+    },
+    {
+        title: tr.footer.contact,
+        links: footerSections[1].links,
+    },
+];
+---
+
+<footer class={`flex flex-col w-full px-6 md:px-28 py-10 md:py-16 gap-8 md:gap-10 ${className}`}>
+    <div class="flex flex-col md:flex-row gap-6 md:gap-0">
+        <div class="max-w-[20rem]">
+            <img src="/assets/wri-logo.webp" alt="WRI Dev Logo" class="h-10 md:h-14" />
+            <p class="mt-2 md:mt-4 text-sm md:text-base text-wri-gray-600">
+                {tr.footer.description}
+            </p>
+        </div>
+        <div class="ml-0 md:ml-auto flex gap-10">
+            {
+                translatedFooterSections.map((section) => (
+                    <div>
+                        <p class="text-lg md:text-xl text-semibold text-wri-gray-800">{section.title}</p>
+                        <div class="mt-2 md:mt-4 flex flex-col gap-2 text-sm md:text-base text-wri-gray-400">
+                            {section.links.map((link) => (
+                                <p><a href={link.href}>{link.name}</a></p>
+                            ))}
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="text-sm md:text-base flex text-wri-gray-600">
+        <div>{tr.footer.copyright}</div>
+        <div class="ml-auto">{tr.footer.builtWith}</div>
+    </div>
+</footer>
