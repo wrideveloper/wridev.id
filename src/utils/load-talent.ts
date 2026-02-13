@@ -1,5 +1,5 @@
 import type { AstroGlobal } from "astro";
-import { METRIC_WORKER_URL } from "astro:env/server";
+// import { METRIC_WORKER_URL } from "astro:env/server";
 
 export async function loadTalentData(
   Astro: AstroGlobal,
@@ -7,7 +7,11 @@ export async function loadTalentData(
 ) {
   if (!slug) return null;
 
-  const url = `${METRIC_WORKER_URL}/talent/${slug}?t=${Date.now()}`;
+  const runtime = Astro.locals.runtime;
+
+  const workURL = runtime?.env?.METRIC_WORKER_URL;
+
+  const url = `${workURL}/talent/${slug}?t=${Date.now()}`;
 
   try {
     const response = await fetch(url, {
