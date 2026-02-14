@@ -13,7 +13,7 @@
   "vars": {
     "TTL": "60",
     "BUN_VERSION": "1.3.2",
-    "METRIC_WORKER_URL": "yourapi",
+    "METRIC_WORKER_URL": "yourapi"
   },
   "observability": {
     "enabled": true,
