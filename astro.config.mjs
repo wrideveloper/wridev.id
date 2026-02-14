@@ -38,7 +38,7 @@ export default defineConfig({
       }),
       CTA_PUBLIC_API_TOKEN: envField.string({
         context: "server",
-        access: "public",
+        access: "secret",
         optional: false,
       }),
     },
