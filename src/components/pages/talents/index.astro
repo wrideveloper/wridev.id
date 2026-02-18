@@ -1,17 +1,25 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import { t, language } from "~/i18n";
 
+import PillsText from "~/components/text/pills.astro";
 import TalentTitle from "~/components/sections/talent/components/title.astro";
 import TalentPool from "~/components/sections/talent-pool/talent-pool.astro";
+
+const tr = t(Astro.currentLocale as keyof typeof language);
+const currentLocale = Astro.currentLocale || "en";
 ---
 
 <Layout
-  title="Talents | Workshop Riset Informatika"
-  description="Explore the digital talent pool at Workshop Riset Informatika (WRI), featuring skilled developers, designers, and technology enthusiasts."
-  canonical={Astro.url.href}
+    title="Talents | Workshop Riset Informatika"
+    description="Explore the digital talent pool at Workshop Riset Informatika (WRI), featuring skilled developers, designers, and technology enthusiasts."
+    canonical={Astro.url.href}
 >
     <div class="pt-32 w-full">
-        <TalentTitle/>
+        <div class="flex items-center justify-center mt-10">
+            <PillsText>{tr.talent.pills}</PillsText>
+        </div>
+        <TalentTitle />
         <TalentPool />
     </div>
 </Layout>
