@@ -216,6 +216,7 @@ export const id = {
       All: "Semua",
       Backend: "Backend",
       Frontend: "Frontend",
+      Game: "Game",
       Mobile: "Mobile",
       "UI/UX": "UI/UX",
       Creative: "Kreatif",

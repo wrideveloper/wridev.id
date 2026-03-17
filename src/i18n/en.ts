@@ -219,6 +219,7 @@ export const en = {
       Backend: "Backend",
       Frontend: "Frontend",
       Mobile: "Mobile",
+      Game: "Game",
       "UI/UX": "UI/UX",
       Creative: "Creative",
       Cyber: "Cyber",
