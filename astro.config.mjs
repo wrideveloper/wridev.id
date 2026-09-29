@@ -28,7 +28,7 @@ export default defineConfig({
       }),
       METRIC_WORKER_URL: envField.string({
         context: "server",
-        access: "secret",
+        access: "public",
         optional: false,
       }),
       CTA_WORKER_URL: envField.string({
@@ -38,7 +38,7 @@ export default defineConfig({
       }),
       CTA_PUBLIC_API_TOKEN: envField.string({
         context: "server",
-        access: "public",
+        access: "secret",
         optional: false,
       }),
     },
