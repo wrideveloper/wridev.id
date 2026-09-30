@@ -39,7 +39,7 @@
         : 'text-gray-500 hover:text-gray-900'}"
     >
       <svelte:component this={category.icon} class="w-4 h-4" />
-      {tr.filters.categories[category.name]}
+      {tr.filters.categories[category.name as keyof typeof tr.filters.categories]}
     </button>
   {/each}
 </div>
