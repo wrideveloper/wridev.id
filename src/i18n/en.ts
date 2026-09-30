@@ -218,6 +218,7 @@ export const en = {
       All: "All",
       Backend: "Backend",
       Frontend: "Frontend",
+      Game: "Game Dev",
       Mobile: "Mobile",
       "UI/UX": "UI/UX",
       Creative: "Creative",
