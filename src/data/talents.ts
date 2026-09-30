@@ -754,5 +754,21 @@ export const TALENT_DATA: TalentData = {
       ],
       isVerified: false,
     },
+    {
+      name: "Jonathan Emmanuel Kristanto",
+      about:
+        "Game Developer, Technical Artist, VFX Artist, Shader Enthusiast",
+      position: "Game Dev",
+      profileImage: "jonathan-emmanuel-kristanto.webp",
+      yearsOfExperience: 1,
+      proficiencies: ["game"],
+      availabilities: ["freelance"],
+      contacts: [
+        { type: "email", url: "mailto:jonathanemmanuel0107@gmail.com" },
+        { type: "web", url: "https://zhayagt.itch.io/" },
+        { type: "github", url: "https://github.com/ZhayaG" },
+      ],
+      isVerified: false,
+    },
   ],
 };

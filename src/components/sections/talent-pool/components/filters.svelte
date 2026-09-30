@@ -6,6 +6,7 @@
     import MobileIcon from "~icons/ph/device-mobile-duotone";
     import PaletteIcon from "~icons/ph/palette-duotone";
     import CreativeIcon from "~icons/ph/aperture";
+    import GameIcon from "~icons/ph/game-controller";
     import CyberIcon from "~icons/ph/bug"; 
     import AiIcon from "~icons/ph/head-circuit"; 
     import { t } from "~/i18n";
@@ -16,6 +17,7 @@
         { name: "All",      value: "All",            icon: AllIcon },
         { name: "Backend",  value: "backend",        icon: DatabaseIcon },
         { name: "Frontend", value: "frontend",       icon: CodeIcon },
+        { name: "Game",     value: "game",           icon: GameIcon },
         { name: "Mobile",   value: "mobile",         icon: MobileIcon },
         { name: "UI/UX",    value: "ui/ux",          icon: PaletteIcon },
         { name: "Creative", value: "creative",       icon: CreativeIcon },
@@ -35,7 +37,7 @@
                 : 'text-gray-500 hover:text-gray-900'}"
         >
             <svelte:component this={category.icon} class="w-4 h-4" />
-            {tr.filters.categories[category.name]}
+            {tr.filters.categories[category.name as keyof typeof tr.filters.categories]}
         </button>
     {/each}
 </div>
